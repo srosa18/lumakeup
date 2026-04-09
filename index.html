@@ -3,107 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lu Make Up | A Arte em Cada Detalhe</title>
-    <meta name="description" content="Excelência em Micropigmentação, Estética Facial e Soluções Reparadoras com a curadoria de Lu Rodrigues.">
-    <!-- Google Fonts -->
+    <title>Lu Make Up | Beleza em Cada Detalhe</title>
+    <!-- Fonts: Ever.co.id usa misturas editoriais -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <button class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-            </button>
+    <!-- Navbar Idêntica ao Ever -->
+    <nav class="ever-nav">
+        <div class="ever-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="nav-center">
-            <a href="#" class="logo">LU MAKE UP</a>
-        </div>
-        <div class="nav-right">
-            <a href="https://wa.me/seunumeroaqui" class="cta-button">AGENDAR</a>
-        </div>
+        <div class="ever-logo">L U &nbsp;M A K E &nbsp;U P</div>
+        <a href="https://wa.me/numerodawhatsapp" class="ever-cta-header">AGENDAR AVALIAÇÃO</a>
     </nav>
 
-    <!-- Sidebar Menu (Off-canvas) -->
-    <div class="sidebar" id="sidebar">
-        <button class="close-sidebar" id="closeSidebar">&times;</button>
-        <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#profissionais">Profissionais</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contato">Contato</a></li>
+    <!-- Side Menu Ghost -->
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" id="closeBtn">&times;</div>
+        <ul class="menu-list">
+            <li><a href="#">Sobre a Lu</a></li>
+            <li><a href="#">Sobrancelhas</a></li>
+            <li><a href="#">Lábios</a></li>
+            <li><a href="#">Estética</a></li>
+            <li><a href="#">Contato</a></li>
         </ul>
     </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
+    <!-- Hero Section (Fullscreen Image with text over) -->
+    <header class="ever-hero">
+        <!-- Imagem escura focalizada -->
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1596704017254-9b121068fb29?w=2000&q=80');"></div>
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="reveal-text">beleza em cada detalhe</h1>
-            <p class="reveal-text-sub">A arte da micropigmentação elevada ao seu estado mais puro e sofisticado.</p>
-            <div class="scroll-explore">
-                <span>DESCUBRA MAIS</span>
-                <div class="scroll-line"></div>
-            </div>
+        <h1 class="ever-hero-title">beleza em<br>cada detalhe</h1>
+        <div class="ever-scroll-indicator">
+            <span class="scroll-text">CONTINUE LENDO</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
-    <!-- Quote / Introduction Section -->
-    <section class="quote-section animate-on-scroll">
-        <div class="container">
-            <h2 class="serif-title">A Arte da Beleza Discreta</h2>
-            <p class="large-para">Mais do que uma clínica, a Lu Make Up é um centro de referência internacional onde ciência e arte se fundem para realçar sua essência natural.</p>
+    <!-- Brown Section (The Art of Understated Beauty & Services) -->
+    <div class="ever-brown-section">
+        
+        <!-- Moodboard Asymmetrical Grid -->
+        <div class="art-of-beauty">
+            <img src="https://images.unsplash.com/photo-1615526675159-e248c3021d3f?w=600" class="art-img img-1" alt="Textura pedra">
+            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?w=600" class="art-img img-2" alt="Textura folha">
+            <img src="https://images.unsplash.com/photo-1510414696678-2415ea847971?w=600" class="art-img img-3" alt="Textura tecido">
+            <img src="https://images.unsplash.com/photo-1522337363644-3251d22f6797?w=600" class="art-img img-4" alt="Macro maquiagem">
+            
+            <h2 class="art-title">A ARTE DA<br>BELEZA DISCRETA</h2>
         </div>
-    </section>
-
-    <!-- Services Section (Moodboard Layout) -->
-    <section id="servicos" class="services-moodboard">
-        <div class="moodboard-grid">
-            <!-- Service 1 -->
-            <div class="moodboard-item item-large animate-on-scroll">
-                <div class="item-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1522337363644-3251d22f6797?auto=format&fit=crop&q=80&w=1000" alt="Design de Sobrancelhas">
-                </div>
-                <div class="item-info">
-                    <h3 class="serif-title">Sobrancelhas</h3>
-                    <p>O seu olhar é nossa assinatura. Do design clássico à reconstrução total com fios hiper-realistas.</p>
-                    <a href="#" class="link-more">VER DETALHES +</a>
+        
+        <!-- Services text listing -->
+        <div class="services-list-container">
+            <div class="service-block animate-fade">
+                <p class="service-desc">Cada detalhe é desenhado com cuidado para realçar a sua beleza natural sem perder a autenticidade. Sobrancelhas que se assentam sem esforço, projetadas para valorizar o formato do seu rosto com precisão.</p>
+                <div class="service-label">Tratamentos</div>
+                <div class="service-items">
+                    <a href="#">Micropigmentação</a>
+                    <span class="divider">|</span>
+                    <a href="#">Brow Lamination</a>
+                    <span class="divider">|</span>
+                    <a href="#">Design Clássico</a>
                 </div>
             </div>
 
-            <!-- Service 2 -->
-            <div class="moodboard-item item-medium animate-on-scroll" style="margin-top: 100px;">
-                <div class="item-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1588405864443-47000e9324e9?auto=format&fit=crop&q=80&w=1000" alt="Micropigmentação Labial">
+            <div class="service-block animate-fade">
+                <p class="service-desc">Lábios que combinam cor e hidratação. Tons suaves, contornos definidos e hidratação duradoura. Cada técnica é adaptada para criar volume e equilíbrio sem parecer exagerado.</p>
+                <div class="service-label">Tratamentos</div>
+                <div class="service-items">
+                    <a href="#">Revitalização Labial</a>
+                    <span class="divider">|</span>
+                    <a href="#">Efeito Gloss</a>
+                    <span class="divider">|</span>
+                    <a href="#">Reconstrução Labial</a>
                 </div>
-                <div class="item-info">
-                    <h3 class="serif-title">Lábios</h3>
-                    <p>Revitalização de cor e contorno para lábios saudáveis e definidos em qualquer ocasião.</p>
-                    <a href="#" class="link-more">VER DETALHES +</a>
+            </div>
+            
+            <div class="service-block animate-fade">
+                <p class="service-desc">Limpeza e cuidados profundos com a pele. Nossas técnicas exclusivas combinam tecnologia e procedimentos delicados para revelar o brilho natural e uma textura facial impecável.</p>
+                <div class="service-label">Tratamentos</div>
+                <div class="service-items">
+                    <a href="#">Estética Facial Avançada</a>
+                    <span class="divider">|</span>
+                    <a href="#">Dermaplaning</a>
+                    <span class="divider">|</span>
+                    <a href="#">Pelling Iluminador</a>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Endless possibilities block -->
+        <div class="endless-possibilities animate-fade">
+            <div class="small-title">POSSIBILIDADES INFINITAS COM</div>
+            <h2 class="serif-huge">SERVIÇOS PERSONALIZADOS</h2>
+            <p class="endless-desc">Na Lu Make Up, nenhum detalhe passa despercebido. Cada serviço é cuidadosamente criado para complementar suas características únicas — porque a verdadeira beleza é íntima e pessoal.</p>
+            <a href="#" class="btn-clean">VER TODOS OS SERVIÇOS</a>
+        </div>
+    </div>
+    
+    <!-- Light Beige Section -->
+    <div class="grey-section animate-fade">
+        <h2 class="serif-medium">O Seu Momento de Brilhar <br>Começa Aqui</h2>
+        <p class="grey-desc">Vamos fazer isso sobre você. Um momento tranquilo para tratamentos pensados para restaurar o equilíbrio e destacar o seu charme natural. Porque sentir-se bem começa do lado de dentro.</p>
+        <a href="#" class="btn-solid">ENCONTRE-NOS</a>
+    </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo">LU MAKE UP</div>
-                <div class="footer-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">YouTube</a>
-                </div>
-                <div class="footer-copy">
-                    &copy; 2024 Lu Make Up. Todos os direitos reservados.
-                </div>
+    <!-- Minimalist Footer -->
+    <footer class="ever-footer">
+        <div class="footer-cta">
+            <p>Dúvidas frequentes? Envie-nos uma mensagem e ficaremos felizes em ajudar.</p>
+            <a href="#">Contato Via WhatsApp →</a>
+        </div>
+        <div class="footer-links-grid">
+            <a href="#">HOME</a>
+            <a href="#">NOSSA HISTÓRIA</a>
+            <a href="#">JOURNAL</a>
+            <a href="#">SERVIÇOS</a>
+            <a href="#">LOCALIZAÇÃO</a>
+            <a href="#">AGENDE UMA AVALIAÇÃO</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="#">LU MAKE UP</a>
+            <div class="legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
             </div>
         </div>
     </footer>
