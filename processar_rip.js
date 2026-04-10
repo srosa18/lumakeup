@@ -127,19 +127,16 @@ try {
             linear-gradient(180deg, var(--_primitives---opacity--transparent) 37%, var(--color--background) 66%), 
             radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, var(--_primitives---opacity--transparent)), 
             url("imagens%20do%20site/imagem%20hero.png") !important;
-        background-position: 0 0, 0 0, 50% 50% !important;
-        background-size: auto, auto, cover !important;
+        background-position: center 30% !important;
+        background-size: contain !important;
         background-repeat: no-repeat !important;
+        background-color: #0e0a07 !important; /* Fill gaps if any */
         min-height: 25vh !important;
     }
-    /* Reduction of hero padding and font size for a more compact look */
+    /* Restoration of text size and reduction of hero padding */
     .header83-image-background .padding-section-large {
-        padding-top: 1.5rem !important;
-        padding-bottom: 2rem !important;
-    }
-    .header83-image-background h1.heading-style-h1 {
-        font-size: 3rem !important;
-        margin-bottom: 0 !important;
+        padding-top: 2rem !important;
+        padding-bottom: 3rem !important;
     }
     </style>`;
     html = html.replace('</head>', heroImageStyle + '</head>');
