@@ -128,9 +128,9 @@ try {
             radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, transparent), 
             url("imagens%20do%20site/imagem%20hero.png") !important;
         background-position: top center !important;
-        background-size: contain !important;
+        background-size: 100% auto !important; /* Forces full width to eliminate side bleed */
         background-repeat: no-repeat !important;
-        background-color: #3b3e3c !important; /* Matches the grey background of the new photo */
+        background-color: var(--color--background) !important;
         min-height: 25vh !important;
     }
     /* Restoration of text size and reduction of hero padding */
