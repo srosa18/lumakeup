@@ -119,6 +119,10 @@ try {
     // Basic replacements
     html = html.replace(/<title>.*?<\/title>/gi, '<title>Lu Make Up | Beleza em Cada Detalhe</title>');
 
+    // Background Image Replacement
+    const heroImageStyle = '<style>.header83-image-background { background-image: url("imagens do site/imagem hero.png") !important; }</style>';
+    html = html.replace('</head>', heroImageStyle + '</head>');
+
     translations.forEach(([eng, pt]) => {
         // split join to replace all occurrences globally without regex escaping issues
         html = html.split(eng).join(pt);
