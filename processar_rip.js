@@ -119,8 +119,25 @@ try {
     // Basic replacements
     html = html.replace(/<title>.*?<\/title>/gi, '<title>Lu Make Up | Beleza em Cada Detalhe</title>');
 
-    // Background Image Replacement
-    const heroImageStyle = '<style>.header83-image-background { background-image: url("imagens%20do%20site/imagem%20hero.png") !important; background-position: center !important; background-size: cover !important; }</style>';
+    // Background Image Replacement & Height Adjustment
+    const heroImageStyle = `
+    <style>
+    .header83-image-background { 
+        background-image: 
+            linear-gradient(180deg, var(--_primitives---opacity--transparent) 37%, var(--color--background) 66%), 
+            radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, var(--_primitives---opacity--transparent)), 
+            url("imagens%20do%20site/imagem%20hero.png") !important;
+        background-position: 0 0, 0 0, 50% 50% !important;
+        background-size: auto, auto, cover !important;
+        background-repeat: no-repeat !important;
+        min-height: 50vh !important;
+    }
+    /* Reduce padding to shrink section height by ~30% */
+    .header83-image-background .padding-section-large {
+        padding-top: 4.5rem !important;
+        padding-bottom: 4.5rem !important;
+    }
+    </style>`;
     html = html.replace('</head>', heroImageStyle + '</head>');
 
     translations.forEach(([eng, pt]) => {
