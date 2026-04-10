@@ -124,8 +124,8 @@ try {
     <style>
     .header83-image-background { 
         background-image: 
-            linear-gradient(180deg, var(--_primitives---opacity--transparent) 37%, var(--color--background) 66%), 
-            radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, var(--_primitives---opacity--transparent)), 
+            linear-gradient(180deg, transparent 0%, var(--color--background) 90%), 
+            radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, transparent), 
             url("imagens%20do%20site/imagem%20hero.png") !important;
         background-position: top center !important;
         background-size: contain !important;
