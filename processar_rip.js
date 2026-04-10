@@ -120,7 +120,7 @@ try {
     html = html.replace(/<title>.*?<\/title>/gi, '<title>Lu Make Up | Beleza em Cada Detalhe</title>');
 
     // Background Image Replacement
-    const heroImageStyle = '<style>.header83-image-background { background-image: url("imagens do site/imagem hero.png") !important; }</style>';
+    const heroImageStyle = '<style>.header83-image-background { background-image: url("imagens%20do%20site/imagem%20hero.png") !important; }</style>';
     html = html.replace('</head>', heroImageStyle + '</head>');
 
     translations.forEach(([eng, pt]) => {
