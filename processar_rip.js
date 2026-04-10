@@ -127,7 +127,7 @@ try {
             linear-gradient(180deg, var(--_primitives---opacity--transparent) 37%, var(--color--background) 66%), 
             radial-gradient(circle farthest-corner at 50% 0%, #0e0a0780 19%, var(--_primitives---opacity--transparent)), 
             url("imagens%20do%20site/imagem%20hero.png") !important;
-        background-position: center !important;
+        background-position: top center !important;
         background-size: contain !important;
         background-repeat: no-repeat !important;
         background-color: #3b3e3c !important; /* Matches the grey background of the new photo */
