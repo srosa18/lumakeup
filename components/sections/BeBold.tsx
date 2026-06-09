@@ -113,8 +113,7 @@ const PINS: Pin[] = [
     y: 15.75,
     title: "Densidade e Autoestima Sem Cirurgia",
     subtitle: "Soluções Personalizadas para Homens e Mulheres",
-    // ⚠️ TODO:CONFIRMAR — no Figma este corpo está igual ao do card 6 (lábios).
-    body: "Quando a simetria dos lábios é afetada, a confiança também muda. Na Lu Make Up, a reconstrução labial combina colorimetria e visagismo para redesenhar, camuflar e harmonizar o formato da boca com naturalidade e precisão.",
+    body: "A perda de cabelo não é apenas uma mudança estética; para muitos, é uma perda de identidade. A Técnica Capilar da Lu Make Up é a solução não cirúrgica mais avançada do mundo para camuflar a calvície e a rarefação. Utilizando uma técnica refinada de pontilhismo, replicamos visualmente milhares de folículos capilares no couro cabeludo, criando um efeito imediato de densidade e preenchimento que restaura sua moldura facial e sua confiança.",
     tags: ["Efeito Densidade", "Camuflagem de Cicatrizes"],
     thumb: "/images/be-bold/thumbs/pin7.webp",
     thumbAlt: "Detalhe do couro cabeludo — micropigmentação capilar",
