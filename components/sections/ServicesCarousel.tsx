@@ -37,6 +37,7 @@ const PRODUCTS: Product[] = [
 
 const ARC_AMP = 0.5; // profundidade do arco (fração da largura do card)
 const SCROLL_SPEED = 5; // px/frame no extremo (gentil)
+const AUTO_DRIFT = 0.5; // px/frame — auto-deslize SUTIL ao entrar na viewport
 
 export function ServicesCarousel() {
   const scroller = useRef<HTMLDivElement | null>(null);
@@ -46,7 +47,11 @@ export function ServicesCarousel() {
     const el = scroller.current;
     if (!el) return;
 
-    const s = { mouseNorm: 0, hovering: false, dragging: false, startX: 0, startLeft: 0 };
+    const s = { mouseNorm: 0, hovering: false, dragging: false, startX: 0, startLeft: 0, autoDrift: false, interacted: false };
+    const stopAuto = () => {
+      s.autoDrift = false;
+      s.interacted = true;
+    };
 
     const onMove = (e: PointerEvent) => {
       if (s.dragging) {
@@ -73,6 +78,7 @@ export function ServicesCarousel() {
       s.dragging = false;
     };
     const onDown = (e: PointerEvent) => {
+      stopAuto(); // qualquer toque/clique encerra o auto-deslize
       if (e.pointerType === "mouse") {
         s.dragging = true;
         s.startX = e.clientX;
@@ -90,6 +96,23 @@ export function ServicesCarousel() {
     el.addEventListener("pointerdown", onDown);
     el.addEventListener("pointerup", onUp);
     el.addEventListener("pointercancel", onUp);
+    el.addEventListener("wheel", stopAuto, { passive: true });
+
+    // Auto-deslize SUTIL quando o carrossel entra na viewport — uma vez, e só até
+    // o usuário interagir (hover-scroll/drag/toque/wheel). Dá vida e sinaliza que
+    // é arrastável. (Sem trava de reduced-motion, por decisão de design.)
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && !s.interacted) {
+            s.autoDrift = true;
+            io.disconnect();
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(el);
 
     let raf = 0;
     const loop = () => {
@@ -101,9 +124,17 @@ export function ServicesCarousel() {
       const effMax = Math.max(0, max - cw * 0.35);
       // Scroll dirigido pela posição do mouse (finito, clampado a effMax)
       if (!s.dragging) {
-        let next = el.scrollLeft + (s.hovering ? s.mouseNorm * SCROLL_SPEED : 0);
+        const delta = s.hovering
+          ? s.mouseNorm * SCROLL_SPEED
+          : s.autoDrift
+            ? AUTO_DRIFT
+            : 0;
+        let next = el.scrollLeft + delta;
         if (next < 0) next = 0;
-        else if (next > effMax) next = effMax;
+        else if (next > effMax) {
+          next = effMax;
+          s.autoDrift = false; // chegou no fim: encerra o auto-deslize
+        }
         el.scrollLeft = next;
       }
       // Arco assimétrico gentil: esquerda alta → direita baixa
@@ -132,6 +163,8 @@ export function ServicesCarousel() {
       el.removeEventListener("pointerdown", onDown);
       el.removeEventListener("pointerup", onUp);
       el.removeEventListener("pointercancel", onUp);
+      el.removeEventListener("wheel", stopAuto);
+      io.disconnect();
     };
   }, []);
 
