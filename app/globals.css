@@ -134,14 +134,13 @@ body {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+/* Decisão do cliente: este marquee é parte essencial do design e roda SEMPRE
+   (mesmo com "reduzir movimento" ligado) — por isso NÃO há trava de
+   reduced-motion aqui. É um deslize lento/sutil, de baixo risco vestibular.
+   Era essa trava que o deixava "parado" quando o SO estava com reduce ligado. */
 .bebold-marquee {
   animation: bebold-marquee 65s linear infinite; /* lento/delicado, mas visível */
   will-change: transform;
-}
-@media (prefers-reduced-motion: reduce) {
-  .bebold-marquee {
-    animation: none;
-  }
 }
 
 /* (Carrossel de serviços: interação por drag + auto vai-e-vem fica no
