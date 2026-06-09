@@ -196,7 +196,7 @@ export function BeBold() {
       // decorativo SEM virar container de scroll (senão quebra o sticky do card).
       // pb só no mobile (cards empilhados); no desktop o BG termina onde a foto
       // termina (sem faixa de stone sobrando embaixo).
-      className="relative z-10 -mt-[72vh] overflow-x-clip bg-stone pb-16 md:pb-0"
+      className="relative z-10 -mt-[52vh] overflow-x-clip bg-stone pb-16 md:pb-0"
     >
       <h2 id="bebold-titulo" className="sr-only">
         Be bold, be light, be different, be you — áreas e procedimentos
