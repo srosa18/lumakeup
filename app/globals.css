@@ -139,7 +139,7 @@ body {
    reduced-motion aqui. É um deslize lento/sutil, de baixo risco vestibular.
    Era essa trava que o deixava "parado" quando o SO estava com reduce ligado. */
 .bebold-marquee {
-  animation: bebold-marquee 65s linear infinite; /* lento/delicado, mas visível */
+  animation: bebold-marquee 80s linear infinite; /* lento/delicado, mas visível */
   will-change: transform;
 }
 
