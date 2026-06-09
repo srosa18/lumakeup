@@ -33,6 +33,9 @@ next-env.d.ts
 # figma reference renders (local only)
 .figma-ref
 
+# rip antigo do ever.co.id — mantido só em disco, fora do repo
+/reference
+
 # imagens originais cruas — entram aqui, são otimizadas para public/images
 # (não versionar os pesados; só as versões web em public/ vão pro git)
 /assets-src/**
