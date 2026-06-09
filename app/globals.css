@@ -124,16 +124,23 @@ body {
     animation: bebold-fade 0.55s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform, filter;
   }
+}
 
-  /* Texto decorativo "BE BOLD • BE LIGHT • ..." — marquee infinito p/ a esquerda.
-     A trilha tem 4 cópias; -50% = 2 cópias → loop perfeito e sempre preenchido. */
-  @keyframes bebold-marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
+/* Texto decorativo "BE BOLD • BE LIGHT • ..." — marquee infinito p/ a esquerda.
+   A trilha tem 4 cópias; -50% = 2 cópias → loop perfeito e sempre preenchido.
+   LIGADO por padrão (keyframe no nível raiz, sempre existe); desligado só sob
+   reduced-motion. Antes estava dentro de no-preference e podia nem existir. */
+@keyframes bebold-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.bebold-marquee {
+  animation: bebold-marquee 42s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
   .bebold-marquee {
-    animation: bebold-marquee 42s linear infinite;
-    will-change: transform;
+    animation: none;
   }
 }
 
