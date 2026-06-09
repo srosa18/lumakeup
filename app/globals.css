@@ -135,7 +135,7 @@ body {
   to { transform: translateX(-50%); }
 }
 .bebold-marquee {
-  animation: bebold-marquee 120s linear infinite; /* bem lento/sutil */
+  animation: bebold-marquee 65s linear infinite; /* lento/delicado, mas visível */
   will-change: transform;
 }
 @media (prefers-reduced-motion: reduce) {
