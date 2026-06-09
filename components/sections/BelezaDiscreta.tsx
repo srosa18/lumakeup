@@ -122,7 +122,7 @@ export function BelezaDiscreta() {
         // Sobe LENTO no começo (movimento gentil aprovado) e ACELERA no fim
         // (power1.in) p/ o título sair completamente antes da Be Bold cobrir —
         // assim a Be Bold não encavala em cima do título "Beleza Discreta".
-        tl.to(textRef.current, { yPercent: -78, duration: 0.3, ease: "power1.in" }, 0.72);
+        tl.to(textRef.current, { yPercent: -40, duration: 0.3, ease: "power1.in" }, 0.72);
 
         ScrollTrigger.refresh();
       }, sectionRef);
@@ -157,10 +157,13 @@ export function BelezaDiscreta() {
             </div>
           ))}
 
-          {/* Headline + CTA */}
+          {/* Headline + CTA — repouso um pouco ACIMA do centro (pt-[40vh]) p/ o
+              título aparecer mais cedo na entrada (menos preto entre carrossel e
+              esta dobra). ⚠️ Acoplado à saída: como repousa mais alto, a fase 3
+              usa yPercent menor (-40) p/ não "correr na frente" da Be Bold. */}
           <div
             ref={textRef}
-            className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center"
+            className="absolute inset-0 z-20 flex flex-col items-center justify-start px-6 pt-[40vh] text-center"
           >
             <h2
               ref={titleRef}
