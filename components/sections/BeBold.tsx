@@ -127,18 +127,17 @@ const PINS: Pin[] = [
  */
 function CardBody({ pin }: { pin: Pin }) {
   return (
-    <div className="relative aspect-[450/200] w-full overflow-hidden bg-white text-text-on-bone shadow-[0_10px_40px_-12px_rgba(0,0,0,0.35)] md:aspect-[13/5]">
+    <div className="relative aspect-[450/200] w-full overflow-hidden bg-white text-text-on-bone shadow-[0_10px_40px_-12px_rgba(0,0,0,0.35)] md:aspect-[29/10]">
       <div className="absolute inset-0 flex gap-[3.3%] p-[3.3%]">
-        {/* Miniatura: quadrada com tamanho LIMITADO (não cresce com a altura do
-            card), alinhada ao topo — mantém a coluna de texto larga. */}
+        {/* Miniatura: quadrada ocupando a ALTURA toda do card (cara editorial). */}
         <ImageSlot
           src={pin.thumb}
           alt={pin.thumbAlt}
           art={pin.thumbAlt}
           ratio="1 / 1"
           tone="bone"
-          sizes="170px"
-          className="aspect-square w-[24%] max-w-[170px] shrink-0 self-start"
+          sizes="240px"
+          className="h-full shrink-0"
         />
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="flex gap-1.5">
@@ -154,7 +153,7 @@ function CardBody({ pin }: { pin: Pin }) {
               ) : null}
             </div>
           </div>
-          <p className="mt-1.5 overflow-hidden text-[0.76rem] leading-[1.45] text-text-on-bone/65 md:text-[0.86rem]">
+          <p className="mt-3 overflow-hidden text-[0.76rem] leading-[1.45] text-text-on-bone/65 md:text-[0.86rem]">
             {pin.body}
           </p>
           {pin.tags.length > 0 ? (
