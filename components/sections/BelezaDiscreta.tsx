@@ -75,19 +75,29 @@ export function BelezaDiscreta() {
             scrub: 1,
           },
         });
-        // Fase 1 — revelação: título com blur→foco; botão só com fade
-        // (botão sem `filter` para o seu backdrop-blur funcionar nas imagens).
-        tl.fromTo(
+        // Fase 1 — revelação ANTECIPADA: gatilho próprio que começa enquanto a
+        // seção ainda está ENTRANDO (top em 85% da viewport), para o headline já
+        // aparecer logo que o carrossel sai — sem gap preto. Título com blur→foco;
+        // botão só com fade (sem `filter`, para o backdrop-blur dele funcionar).
+        const tlReveal = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 88%",
+            end: "top top",
+            scrub: 1,
+          },
+        });
+        tlReveal.fromTo(
           titleRef.current,
           { opacity: 0, filter: "blur(14px)" },
-          { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "none" },
+          { opacity: 1, filter: "blur(0px)", ease: "none" },
           0
         );
-        tl.fromTo(
+        tlReveal.fromTo(
           btnRef.current,
           { opacity: 0 },
-          { opacity: 1, duration: 0.15, ease: "none" },
-          0.04
+          { opacity: 1, ease: "none" },
+          0.15
         );
         // Fase 2 — imagens subindo: percurso COMPLETO (abaixo da viewport → acima),
         // com inícios e velocidades variados (parallax real). Todas saem até ~0.70.
@@ -105,8 +115,14 @@ export function BelezaDiscreta() {
             a.start
           );
         });
-        // Fase 3 — imagens já saíram; o headline sobe sozinho e então solta o pin.
-        tl.to(textRef.current, { yPercent: -140, duration: 0.15, ease: "power1.in" }, 0.85);
+        // Fase 3 — o headline SOBE em sincronia com a entrada da Be Bold (que é
+        // puxada pra cima via -mt-[100vh] e começa a aparecer ~0.71). Começando a
+        // subida em 0.70 com ease linear, a Be Bold parece EMPURRAR o título pra
+        // cima (em vez de cobri-lo parado). Percurso longo p/ casar com o scroll.
+        // Sobe LENTO no começo (movimento gentil aprovado) e ACELERA no fim
+        // (power1.in) p/ o título sair completamente antes da Be Bold cobrir —
+        // assim a Be Bold não encavala em cima do título "Beleza Discreta".
+        tl.to(textRef.current, { yPercent: -78, duration: 0.3, ease: "power1.in" }, 0.72);
 
         ScrollTrigger.refresh();
       }, sectionRef);

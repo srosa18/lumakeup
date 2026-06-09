@@ -13,7 +13,7 @@
   /* ---- Cor ---- */
   --color-ink: #000000;        /* preto puro — fiel ao Figma (seções escuras) */
   --color-bone: #f4efe9;       /* creme/osso, fundo das seções claras */
-  --color-stone: #d9d4cd;      /* cinza-pedra quente (fundo "Be Bold") */
+  --color-stone: #d9d9d9;      /* cinza neutro — fundo da modelo "Be Bold" (hex oficial do cliente) */
   --color-text-on-ink: #f4efe9;
   --color-text-on-bone: #1a1a1a;
   --color-muted: #8a857e;      /* legendas, kickers */
@@ -110,6 +110,30 @@ body {
   }
   .scroll-cue-bounce {
     animation: scroll-cue-bounce 1.8s ease-in-out infinite;
+  }
+}
+
+/* Be Bold — entrada delicada do card: fade + blur desfocado→focado + leve subida.
+   Re-dispara a cada troca de pin (key remonta o nó). Só com movimento permitido. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes bebold-fade {
+    from { opacity: 0; transform: translateY(8px) scale(0.985); filter: blur(10px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  }
+  .bebold-fade {
+    animation: bebold-fade 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform, filter;
+  }
+
+  /* Texto decorativo "BE BOLD • BE LIGHT • ..." — marquee infinito p/ a esquerda.
+     A trilha tem 4 cópias; -50% = 2 cópias → loop perfeito e sempre preenchido. */
+  @keyframes bebold-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .bebold-marquee {
+    animation: bebold-marquee 42s linear infinite;
+    will-change: transform;
   }
 }
 

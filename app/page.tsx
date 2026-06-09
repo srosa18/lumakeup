@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { ServicesCarousel } from "@/components/sections/ServicesCarousel";
 import { BelezaDiscreta } from "@/components/sections/BelezaDiscreta";
+import { BeBold } from "@/components/sections/BeBold";
 import { PersonalizedServices } from "@/components/sections/PersonalizedServices";
 
 /**
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <ServicesCarousel />
       <BelezaDiscreta />
+      <BeBold />
       <PersonalizedServices />
     </>
   );
