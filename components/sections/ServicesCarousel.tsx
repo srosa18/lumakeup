@@ -136,7 +136,7 @@ export function ServicesCarousel() {
   }, []);
 
   return (
-    <section aria-label="Serviços" className="overflow-hidden bg-black pb-16 pt-0 lg:pb-20">
+    <section aria-label="Serviços" className="overflow-hidden bg-black pb-16 pt-12 lg:pb-20 lg:pt-16">
       <div
         ref={scroller}
         className="cursor-grab touch-pan-x select-none overflow-x-auto overflow-y-hidden overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
