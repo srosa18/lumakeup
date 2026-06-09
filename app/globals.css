@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   LU MAKE UP · DESIGN TOKENS
+   Fonte: BRIEF §2 + render do Figma (rUAWQOnyIjy7zNstGDtSGN), validados visualmente.
+   ⚠️ TODO:CONFIRMAR — hex exatos contra o Figma. O arquivo não expõe Figma
+   Variables consultáveis pela API; estes valores são a leitura aprovada do §2.
+   Disciplina de cor: 90% neutros tonais. O latão (--color-brass) é o ÚNICO
+   gesto statement e aparece em pouquíssimos pontos — nunca espalhado.
+   ============================================================================ */
+
+@theme {
+  /* ---- Cor ---- */
+  --color-ink: #000000;        /* preto puro — fiel ao Figma (seções escuras) */
+  --color-bone: #f4efe9;       /* creme/osso, fundo das seções claras */
+  --color-stone: #d9d4cd;      /* cinza-pedra quente (fundo "Be Bold") */
+  --color-text-on-ink: #f4efe9;
+  --color-text-on-bone: #1a1a1a;
+  --color-muted: #8a857e;      /* legendas, kickers */
+  --color-brass: #b8975a;      /* champagne/latão — uso pontual */
+
+  /* ---- Linhas ---- */
+  --color-line-subtle: rgba(244, 239, 233, 0.16);
+
+  /* ---- Tipografia ----
+     Mundial (Adobe Fonts, kit isf1jpj) — fonte ÚNICA do site, conforme a marca.
+     Pesos disponíveis: 100 hair · 200 thin · 300 light · 400 regular ·
+     600 demibold · 700 bold · 900 black (+ itálicos). */
+  --font-display: "mundial", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "mundial", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ---- Espaçamento (escala do §2) ---- */
+  --spacing-section: 9.5rem;   /* ~160px ritmo entre seções (desktop) */
+
+  /* ---- Container ---- */
+  --container-boutique: 90rem; /* 1440px */
+}
+
+/* ============================================================================
+   BASE
+   ============================================================================ */
+
+:root {
+  /* tracking de labels/kickers — caixa-alta +0.18em (§2) */
+  --tracking-kicker: 0.18em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ink);
+  color: var(--color-text-on-ink);
+  font-family: var(--font-body);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Foco visível — WCAG 2.2 AA (sempre perceptível sobre ink e bone) */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip-link de acessibilidade */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bone);
+  color: var(--color-text-on-bone);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-body);
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Utilitário de kicker (label caixa-alta espaçada) */
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-kicker);
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+/* CTA de scroll — seta com bounce sutil (só com movimento permitido) */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes scroll-cue-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+  .scroll-cue-bounce {
+    animation: scroll-cue-bounce 1.8s ease-in-out infinite;
+  }
+}
+
+/* (Carrossel de serviços: interação por drag + auto vai-e-vem fica no
+   componente ServicesCarousel.tsx; a barra de scroll é escondida via utilitário.) */
