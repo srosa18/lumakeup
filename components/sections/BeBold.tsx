@@ -113,7 +113,7 @@ const PINS: Pin[] = [
     y: 15.75,
     title: "Densidade e Autoestima Sem Cirurgia",
     subtitle: "Soluções Personalizadas para Homens e Mulheres",
-    body: "A perda de cabelo não é apenas uma mudança estética; para muitos, é uma perda de identidade. A Técnica Capilar da Lu Make Up é a solução não cirúrgica mais avançada do mundo para camuflar a calvície e a rarefação. Utilizando uma técnica refinada de pontilhismo, replicamos visualmente milhares de folículos capilares no couro cabeludo, criando um efeito imediato de densidade e preenchimento que restaura sua moldura facial e sua confiança.",
+    body: "A Técnica Capilar da Lu Make Up é uma solução não cirúrgica avançada para camuflar a calvície e a rarefação. Com uma técnica precisa de pontilhismo, recriamos visualmente os folículos capilares, devolvendo densidade, definição e confiança de forma imediata.",
     tags: ["Efeito Densidade", "Camuflagem de Cicatrizes"],
     thumb: "/images/be-bold/thumbs/pin7.webp",
     thumbAlt: "Detalhe do couro cabeludo — micropigmentação capilar",
@@ -301,7 +301,7 @@ export function BeBold() {
           aria-live="polite"
         >
           {activePin && (
-            <div key={activePin.n} className="bebold-fade pointer-events-auto">
+            <div key={activePin.n} className="bebold-fade">
               <CardBody pin={activePin} />
             </div>
           )}
