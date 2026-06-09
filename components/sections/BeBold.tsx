@@ -127,7 +127,7 @@ const PINS: Pin[] = [
  */
 function CardBody({ pin }: { pin: Pin }) {
   return (
-    <div className="relative aspect-[450/200] w-full overflow-hidden bg-white text-text-on-bone shadow-[0_10px_40px_-12px_rgba(0,0,0,0.35)] md:aspect-[18/5]">
+    <div className="relative aspect-[450/200] w-full overflow-hidden bg-white text-text-on-bone shadow-[0_10px_40px_-12px_rgba(0,0,0,0.35)] md:aspect-[27/10]">
       <div className="absolute inset-0 flex gap-[3.3%] p-[3.3%]">
         {/* Miniatura: quadrada, sempre = altura do card (sem variação) */}
         <ImageSlot
@@ -141,23 +141,23 @@ function CardBody({ pin }: { pin: Pin }) {
         />
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="flex gap-1.5">
-            <span className="font-display text-[0.7rem] leading-snug text-text-on-bone/45">{pin.n}</span>
+            <span className="font-display text-[0.78rem] leading-snug text-text-on-bone/45 md:text-[0.86rem]">{pin.n}</span>
             <div className="min-w-0">
-              <h3 className="font-display text-[0.82rem] font-semibold leading-snug text-text-on-bone">
+              <h3 className="font-display text-[0.9rem] font-semibold leading-snug text-text-on-bone md:text-[1.02rem]">
                 {pin.title}
               </h3>
               {pin.subtitle ? (
-                <p className="mt-0.5 font-display text-[0.7rem] font-medium leading-snug text-text-on-bone/80">
+                <p className="mt-0.5 font-display text-[0.78rem] font-medium leading-snug text-text-on-bone/80 md:text-[0.86rem]">
                   {pin.subtitle}
                 </p>
               ) : null}
             </div>
           </div>
-          <p className="mt-1.5 overflow-hidden text-[0.66rem] leading-[1.32] text-text-on-bone/65">
+          <p className="mt-1.5 overflow-hidden text-[0.72rem] leading-[1.4] text-text-on-bone/65 md:text-[0.8rem]">
             {pin.body}
           </p>
           {pin.tags.length > 0 ? (
-            <p className="mt-auto pt-2 text-[0.64rem] font-semibold leading-snug text-text-on-bone">
+            <p className="mt-auto pt-2 text-[0.7rem] font-semibold leading-snug text-text-on-bone md:text-[0.78rem]">
               {pin.tags.join("  |  ")}
             </p>
           ) : null}
