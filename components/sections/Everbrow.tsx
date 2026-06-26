@@ -104,38 +104,38 @@ export function Everbrow() {
           <div
             ref={cardRef}
             style={animate ? { opacity: 0 } : undefined}
-            className="w-full max-w-[560px] text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] [will-change:transform]"
+            className="w-full max-w-[440px] text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] [will-change:transform]"
           >
-            {/* Janela VAZADA (miolo): moldura stone (borda ~24px do Figma) + centro
-                TRANSPARENTE → revela o retrato real do fundo. Proporção 2:1
-                (landscape, igual ao Figma node 74:39). Sem borda embaixo. */}
-            <div className="aspect-[2/1] w-full border-x-[22px] border-t-[22px] border-stone" />
+            {/* Janela VAZADA (miolo): moldura stone (borda) + centro TRANSPARENTE →
+                revela o retrato real do fundo. Proporção 2:1 (landscape, igual ao
+                Figma node 74:39). Sem borda embaixo. */}
+            <div className="aspect-[2/1] w-full border-x-[16px] border-t-[16px] border-stone" />
 
             {/* Painel de texto (carrega o fundo stone do card) */}
-            <div className="bg-stone px-8 pb-10 pt-10">
+            <div className="bg-stone px-7 pb-8 pt-8">
               <h2
                 id="everbrow-heading"
-                className="font-display text-[1.9rem] font-light uppercase tracking-[0.22em] text-ink"
+                className="font-display text-[1.55rem] font-light uppercase tracking-[0.2em] text-ink"
               >
                 Everbrow
               </h2>
-              <p className="mt-1.5 text-[0.7rem] uppercase tracking-[0.18em] text-text-on-bone/65">
+              <p className="mt-1.5 text-[0.66rem] uppercase tracking-[0.18em] text-text-on-bone/65">
                 By Lu Medical
               </p>
 
-              <p className="mt-6 font-display text-[1.15rem] font-light leading-snug text-ink">
+              <p className="mt-5 font-display text-[1rem] font-light leading-snug text-ink">
                 O Transplante de Sobrancelhas
                 <br />
                 Exclusivo da Lu Medical
               </p>
 
-              <p className="mx-auto mt-4 max-w-[40ch] text-[0.78rem] leading-relaxed text-text-on-bone/75">
+              <p className="mx-auto mt-3.5 max-w-[38ch] text-[0.74rem] leading-relaxed text-text-on-bone/75">
                 Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
                 ciência para oferecer às clientes um resultado impecável, seguro e
                 exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
               </p>
 
-              <div className="mt-7">
+              <div className="mt-6">
                 <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
                   Agendar horário
                 </Cta>
