@@ -205,7 +205,10 @@ export function BeBold() {
 
       {/* Palco: modelo + texto decorativo + pins. flex-col p/ o card (filho flow)
           ir pro fim do palco via mt-auto; altura travada por aspect (não expande). */}
-      <div className="relative mx-auto flex aspect-[1529/1260] w-full max-w-[1280px] flex-col">
+      {/* MOBILE: palco +32% (w-132% centrado e clipado) → a modelo fica maior e
+          preenche mais espaço; pins (posição em % do palco) escalam junto, alinhados.
+          Desktop intacto (md:w-full max-w-[1280px] mx-auto). */}
+      <div className="relative left-1/2 flex aspect-[1529/1260] w-[132%] max-w-none -translate-x-1/2 flex-col md:left-auto md:mx-auto md:w-full md:max-w-[1280px] md:translate-x-0">
         {/* Texto decorativo, atrás da modelo — marquee infinito (dir→esq), em PRETO.
             Largura = viewport inteira (w-screen centralizado), recortado por overflow. */}
         <div
@@ -270,7 +273,7 @@ export function BeBold() {
                 if (e.pointerType === "mouse") setActive(null);
               }}
               className={[
-                "group absolute z-30 grid h-7 w-7 -translate-x-1/2 -translate-y-1/2 place-items-center border transition-colors duration-200",
+                "group absolute z-30 grid h-5 w-5 -translate-x-1/2 -translate-y-1/2 place-items-center border transition-colors duration-200 md:h-7 md:w-7",
                 // default (sem over): borda branca + vidro 20% (a pele aparece).
                 // hover/ativo: bloco creme sólido (igual à referência do cliente).
                 isActive
@@ -281,7 +284,7 @@ export function BeBold() {
             >
               <span
                 className={[
-                  "font-display text-[12px] font-light leading-none tracking-[0.1em] transition-colors duration-200",
+                  "font-display text-[9px] font-light leading-none tracking-[0.1em] transition-colors duration-200 md:text-[12px]",
                   isActive ? "text-text-on-bone" : "text-white group-hover:text-text-on-bone",
                 ].join(" ")}
               >
