@@ -1,142 +1,66 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import { Cta } from "@/components/ui/Cta";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { Kicker } from "@/components/ui/Kicker";
 
 /**
- * S5 · Serviços Personalizados + Depoimentos (§4, 🎯).
+ * S5 · "Serviços Personalizados" — réplica do Figma (canvas "serviços
+ * personalizado", node 69:20).
  *
- * ⚠️ PLANO B (autorizado): depoimentos atribuídos a perfis anônimos/
- * profissionais até a confirmação de direitos de imagem/citação das
- * celebridades (§12.4). Trocar `TESTIMONIALS` quando houver autorização.
+ * Layout editorial em duas colunas sobre fundo preto:
+ *  - Esquerda: kicker "POSSIBILIDADES INFINITAS" + headline grande no TOPO;
+ *    parágrafo + CTA "VER TODOS OS SERVIÇOS" ancorados embaixo (mt-auto).
+ *  - Direita: retrato (3:4) com a altura do bloco.
  *
- * A11y (§9): troca acionável por foco de teclado E por toque (botões reais),
- * nunca hover-only. Auto-rotação desligada sob prefers-reduced-motion.
+ * ⚠️ Imagem: stock (AdobeStock) extraído do Figma — substituir por foto real
+ *    da Lu Make Up. Conteúdo/posições exatos do frame 1440×919.
  */
-type Testimonial = {
-  quote: string;
-  /** perfil anônimo/profissional — sem nome real até confirmação */
-  attribution: string;
-  art: string;
-  alt: string;
-};
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    quote: "Ninguém percebe que é feito. Percebem que eu pareço descansada.",
-    attribution: "Cliente desde 2015",
-    art: "IMG: retrato editorial discreto, pele real, fundo escuro — substituir por depoente com direitos",
-    alt: "Retrato de cliente de longa data do instituto",
-  },
-  {
-    quote: "Encaminho minhas pacientes pela segurança do protocolo e pela naturalidade do traço.",
-    attribution: "Dermatologista parceira",
-    art: "IMG: retrato profissional sóbrio, luz suave — substituir por depoente com direitos",
-    alt: "Retrato de dermatologista parceira do instituto",
-  },
-  {
-    quote: "Cheguei com receio de exagero. Saí com a minha sobrancelha, só que melhor.",
-    attribution: "Noiva, 2024",
-    art: "IMG: retrato editorial quente, foco no olhar — substituir por depoente com direitos",
-    alt: "Retrato de cliente atendida antes do casamento",
-  },
-];
-
 export function PersonalizedServices() {
-  const [active, setActive] = useState(0);
-  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return; // sem auto-rotação
-    timer.current = setInterval(() => {
-      setActive((i) => (i + 1) % TESTIMONIALS.length);
-    }, 6500);
-    return () => {
-      if (timer.current) clearInterval(timer.current);
-    };
-  }, []);
-
-  const stop = () => {
-    if (timer.current) clearInterval(timer.current);
-  };
-
-  const current = TESTIMONIALS[active];
-
   return (
-    <section aria-labelledby="personalizados-heading" className="bg-ink py-24 lg:py-36">
-      <div className="mx-auto grid max-w-[var(--container-boutique)] gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10">
-        {/* Texto */}
-        <div>
-          <Kicker as="h2">Possibilidades infinitas</Kicker>
-          <p
-            id="personalizados-heading"
-            className="mt-4 font-display text-4xl font-light leading-[1.1] text-text-on-ink sm:text-5xl"
-          >
-            Serviços personalizados.
-          </p>
-          <p className="mt-6 max-w-[46ch] text-base leading-relaxed text-muted">
-            Nenhum rosto se repete — e nenhum protocolo deveria. Cada
-            procedimento começa por um estudo do seu traço, da sua pele, do seu
-            olhar.
-          </p>
-          <div className="mt-10">
-            <Cta href="/servicos" variant="outline">
-              Ver todos os serviços
-            </Cta>
+    <section
+      aria-labelledby="personalizados-heading"
+      className="overflow-hidden bg-ink py-24 lg:py-32"
+    >
+      <div className="mx-auto grid max-w-[920px] gap-12 px-6 lg:grid-cols-[1fr_344px] lg:items-stretch lg:gap-24 lg:px-8">
+        {/* Coluna de texto — headline no topo, corpo+CTA embaixo */}
+        <div className="flex flex-col">
+          <div>
+            <Kicker>Possibilidades infinitas</Kicker>
+            <h2
+              id="personalizados-heading"
+              className="mt-5 font-display text-[2rem] font-light uppercase leading-[1.12] tracking-[0.06em] text-text-on-ink sm:text-[2.4rem] lg:text-[2.75rem]"
+            >
+              Serviços
+              <br />
+              personalizados
+            </h2>
+          </div>
+
+          <div className="mt-10 lg:mt-auto lg:pt-16">
+            <p className="max-w-[46ch] text-sm leading-relaxed text-muted">
+              Na Lu Make Up, cada detalhe importa. Tudo é pensado para valorizar
+              seus traços naturais, porque acreditamos que a verdadeira beleza é
+              única e pessoal.
+            </p>
+            <div className="mt-8">
+              <Cta href="/servicos" variant="outline">
+                Ver todos os serviços
+              </Cta>
+            </div>
           </div>
         </div>
 
-        {/* Depoimentos */}
-        <figure className="border-t border-line-subtle pt-10">
-          <Kicker className="mb-8">Quem confia o próprio olhar à Lu</Kicker>
-
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-            <div className="w-32 shrink-0">
-              <ImageSlot
-                alt={current.alt}
-                art={current.art}
-                ratio="1 / 1"
-                tone="ink"
-                sizes="128px"
-              />
-            </div>
-
-            <div className="min-h-[7rem]">
-              <blockquote className="font-display text-xl font-light leading-snug text-text-on-ink">
-                “{current.quote}”
-              </blockquote>
-              <figcaption className="mt-4 text-sm tracking-[0.08em] text-muted">
-                {current.attribution}
-              </figcaption>
-            </div>
-          </div>
-
-          {/* Controles — botões reais (teclado + toque) */}
-          <div
-            role="tablist"
-            aria-label="Selecionar depoimento"
-            className="mt-8 flex gap-3"
-          >
-            {TESTIMONIALS.map((t, i) => (
-              <button
-                key={t.attribution}
-                role="tab"
-                aria-selected={i === active}
-                aria-label={`Depoimento de ${t.attribution}`}
-                onClick={() => {
-                  stop();
-                  setActive(i);
-                }}
-                className={`h-2 w-2 rounded-full transition-colors ${
-                  i === active ? "bg-brass" : "bg-text-on-ink/25 hover:bg-text-on-ink/50"
-                }`}
-              />
-            ))}
-          </div>
-        </figure>
+        {/* Retrato (direita) */}
+        <div className="w-full lg:w-[344px]">
+          <ImageSlot
+            src="/images/personalizados/retrato.webp"
+            alt="Retrato de cliente com pele natural valorizada"
+            art="Retrato editorial, pele real e traços naturais (stock AdobeStock — substituir por foto da Lu Make Up)"
+            ratio="344 / 455"
+            tone="ink"
+            sizes="(min-width:1024px) 344px, 100vw"
+            className="w-full"
+          />
+        </div>
       </div>
     </section>
   );
