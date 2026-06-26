@@ -16,14 +16,27 @@ import { ScrollCue } from "@/components/ui/ScrollCue";
 export function Hero() {
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-black">
-      {/* Imagem de fundo — priority para LCP */}
+      {/* Imagem de fundo — ART DIRECTION (priority para LCP):
+          MOBILE = só a modelo da esquerda, enquadrada no centro (a foto larga das
+          duas cortava "metade de cada uma" no celular).
+          DESKTOP = foto larga original.
+          ⚠️ hero-mobile.webp é um RECORTE da foto atual (stopgap) — trocar pela
+          imagem dedicada da modelo quando o cliente enviar (assets-src/hero/). */}
+      <Image
+        src="/images/hero-mobile.webp"
+        alt="Retrato de mulher sorrindo, pele natural — Lu Make Up"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[50%_22%] md:hidden"
+      />
       <Image
         src="/images/hero.png"
         alt="Retrato editorial de duas mulheres com pele natural, em fundo escuro"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[50%_12%]"
+        className="hidden object-cover object-[50%_12%] md:block"
       />
 
       {/* Scrim do topo (legibilidade da top bar) */}
