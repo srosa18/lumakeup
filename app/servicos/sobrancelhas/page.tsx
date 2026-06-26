@@ -180,9 +180,9 @@ export default function SobrancelhasPage() {
           <div className="relative min-h-[460px] lg:min-h-[680px]">
             <MediaFill
               src="/images/servicos/sobrancelhas/diferenciais.webp"
-              alt="Mapeamento e desenho da sobrancelha com precisão (visagismo)"
-              art="Procedimento de sobrancelha (AdobeStock_534932877) — mapeamento/visagismo"
-              position="center 50%"
+              alt="Retrato sereno de cliente valorizando a sobrancelha, luz editorial"
+              art="Foto real Lu Make Up (Lumakeup_fevereiro-246) — modelo anterior, repreferida pelo cliente"
+              position="center 25%"
             />
           </div>
           {/* texto */}
