@@ -109,8 +109,15 @@ export function Everbrow() {
 
         {/* Card pequeno, centralizado e um pouco abaixo do centro */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-5">
-          {/* wrapper só p/ deslocar o card p/ baixo (GSAP anima o card interno) */}
-          <div className="w-full max-w-[500px]" style={{ transform: `translateY(${CARD_DROP})` }}>
+          {/* wrapper: desloca o card p/ baixo (GSAP anima o card interno). Em telas
+              GRANDES o card ESCALA a partir do centro (scale é prop. separada do
+              transform no Tailwind v4, não conflita c/ o translateY): a janela cresce
+              p/ cima (pega a sobrancelha) e p/ baixo → o olhar fica enquadrado,
+              proporcional ao rosto que aumenta no full-bleed. 13" intacto (<1700px). */}
+          <div
+            className="w-full max-w-[500px] min-[1700px]:scale-[1.3] min-[2400px]:scale-[1.65] min-[3200px]:scale-[2]"
+            style={{ transform: `translateY(${CARD_DROP})` }}
+          >
             <div
               ref={cardRef}
               style={animate ? { opacity: 0 } : undefined}
