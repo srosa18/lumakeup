@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 /**
@@ -42,6 +42,8 @@ const AUTO_DRIFT = 0.5; // px/frame — auto-deslize SUTIL ao entrar na viewport
 export function ServicesCarousel() {
   const scroller = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLAnchorElement | null>>([]);
+  // Dica de swipe (mobile): some na 1ª interação real do usuário.
+  const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {
     const el = scroller.current;
@@ -51,6 +53,7 @@ export function ServicesCarousel() {
     const stopAuto = () => {
       s.autoDrift = false;
       s.interacted = true;
+      setShowHint(false); // qualquer toque/clique/wheel esconde a dica de swipe
     };
 
     const onMove = (e: PointerEvent) => {
@@ -169,7 +172,34 @@ export function ServicesCarousel() {
   }, []);
 
   return (
-    <section aria-label="Serviços" className="overflow-hidden bg-black pb-0 pt-12 lg:pt-16">
+    <section aria-label="Serviços" className="relative overflow-hidden bg-black pb-0 pt-12 lg:pt-16">
+      {/* Dica de SWIPE (só mobile) — dedinho desliza sobre as cartas indicando que
+          dá p/ arrastar; some na 1ª interação (showHint). Centragem no wrapper de
+          fora; a animação (translateX) fica no .swipe-hint de dentro p/ não brigar. */}
+      {showHint && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-[34%] z-20 -translate-x-1/2 md:hidden"
+        >
+          <div className="swipe-hint grid place-items-center rounded-full bg-black/35 p-3 text-white shadow-lg backdrop-blur-sm">
+            <svg
+              viewBox="0 0 24 24"
+              className="h-7 w-7"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2" />
+              <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2" />
+              <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8" />
+              <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+            </svg>
+          </div>
+        </div>
+      )}
+
       <div
         ref={scroller}
         className="cursor-grab touch-pan-x select-none overflow-x-auto overflow-y-hidden overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
@@ -178,7 +208,9 @@ export function ServicesCarousel() {
           className="relative flex w-max items-start pb-52 pt-8"
           style={
             {
-              "--card": "clamp(277px, 29vw, 396px)",
+              // min 305 (era 277): +~10% no mobile/telas estreitas; desktop usa 29vw
+              // (inalterado, pois 29vw > 305 acima de ~1050px). Vão é proporcional.
+              "--card": "clamp(305px, 29vw, 396px)",
               gap: "calc(var(--card) * 0.0667)",
             } as React.CSSProperties
           }

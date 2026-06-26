@@ -145,3 +145,19 @@ body {
 
 /* (Carrossel de serviços: interação por drag + auto vai-e-vem fica no
    componente ServicesCarousel.tsx; a barra de scroll é escondida via utilitário.) */
+
+/* Dica de SWIPE (mobile) — dedinho desliza p/ esquerda, em loop, indicando que dá
+   p/ arrastar o carrossel. Some quando o usuário interage (estado no componente). */
+@keyframes swipe-hint {
+  0%, 100% { transform: translateX(26px); opacity: 0; }
+  18% { opacity: 1; }
+  50% { transform: translateX(-26px); opacity: 1; }
+  74% { opacity: 0; }
+}
+.swipe-hint {
+  animation: swipe-hint 2.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+@media (prefers-reduced-motion: reduce) {
+  .swipe-hint { animation: none; opacity: 1; }
+}
