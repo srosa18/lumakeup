@@ -4,6 +4,7 @@ import { BelezaDiscreta } from "@/components/sections/BelezaDiscreta";
 import { BeBold } from "@/components/sections/BeBold";
 import { PersonalizedServices } from "@/components/sections/PersonalizedServices";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Everbrow } from "@/components/sections/Everbrow";
 
 /**
  * Home (réplica do Figma, por módulos):
@@ -19,6 +20,7 @@ export default function Home() {
       <BeBold />
       <PersonalizedServices />
       <Testimonials />
+      <Everbrow />
     </>
   );
 }
