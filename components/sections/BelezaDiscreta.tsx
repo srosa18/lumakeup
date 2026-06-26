@@ -162,7 +162,10 @@ export function BelezaDiscreta() {
         {/* --img-scale: imagens +40% no mobile (ocupam mais o preto, mais destaque);
             1.0 no desktop (md+), sem alterar o aprovado. */}
         <div
-          className={`relative mx-auto w-full max-w-[1100px] [--img-scale:1.4] md:[--img-scale:1] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
+          // Telas grandes: o container cresce (1100→1540, +40%) → as imagens (que são
+          // % dele) e as posições do parallax escalam juntas. clamp com 75vw mantém o
+          // 13" (≤1440) em 1100 (intacto) e cappa em 1540 no 2560/4K.
+          className={`relative mx-auto w-full max-w-[clamp(1100px,75vw,1540px)] [--img-scale:1.4] md:[--img-scale:1] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
         >
           {COLLAGE.map((p, i) => (
             <div
