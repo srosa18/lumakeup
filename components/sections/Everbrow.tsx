@@ -134,7 +134,9 @@ export function Everbrow() {
                 </p>
 
                 <p className="mt-3.5 font-display text-[0.95rem] font-light leading-snug text-ink">
-                  O Transplante de Sobrancelhas Exclusivo da Lu Medical
+                  O Transplante de Sobrancelhas
+                  <br />
+                  Exclusivo da Lu Medical
                 </p>
 
                 <p className="mt-2.5 text-[0.72rem] leading-normal text-text-on-bone/75">
