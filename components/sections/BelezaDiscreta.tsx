@@ -45,6 +45,17 @@ const IMG_ANIM = [
   { start: 0.54, dur: 0.3 }, // sobrancelha — última, média
 ];
 
+// MOBILE: seção é mais curta (280vh) e o Be Bold cobre ~0.81 do timeline. Então as
+// imagens precisam TERMINAR todas ANTES disso (até ~0.70), p/ a sequência ficar
+// limpa: sobem todas → texto sai (0.74) → Be Bold entra. (Sem sobrepor as imagens.)
+const IMG_ANIM_MOBILE = [
+  { start: 0.03, dur: 0.24 }, // termina 0.27
+  { start: 0.15, dur: 0.22 }, // 0.37
+  { start: 0.27, dur: 0.26 }, // 0.53
+  { start: 0.39, dur: 0.21 }, // 0.60
+  { start: 0.47, dur: 0.23 }, // 0.70 — última fecha aqui
+];
+
 export function BelezaDiscreta() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const textRef = useRef<HTMLDivElement | null>(null);
@@ -101,9 +112,13 @@ export function BelezaDiscreta() {
         );
         // Fase 2 — imagens subindo: percurso COMPLETO (abaixo da viewport → acima),
         // com inícios e velocidades variados (parallax real). Todas saem até ~0.70.
+        // Mobile usa timing próprio (imagens fecham até ~0.70, antes do Be Bold cobrir).
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const IMG = isMobile ? IMG_ANIM_MOBILE : IMG_ANIM;
+        const exitAt = isMobile ? 0.74 : 0.72;
         imgRefs.current.forEach((el, i) => {
           if (!el) return;
-          const a = IMG_ANIM[i];
+          const a = IMG[i];
           tl.fromTo(
             el,
             { y: 0 },
@@ -122,7 +137,7 @@ export function BelezaDiscreta() {
         // Sobe LENTO no começo (movimento gentil aprovado) e ACELERA no fim
         // (power1.in) p/ o título sair completamente antes da Be Bold cobrir —
         // assim a Be Bold não encavala em cima do título "Beleza Discreta".
-        tl.to(textRef.current, { yPercent: -40, duration: 0.3, ease: "power1.in" }, 0.72);
+        tl.to(textRef.current, { yPercent: -40, duration: 0.3, ease: "power1.in" }, exitAt);
 
         ScrollTrigger.refresh();
       }, sectionRef);
