@@ -6,29 +6,27 @@ import { Cta } from "@/components/ui/Cta";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * S7 · "Everbrow — By Lu Medical" — réplica do Figma (node 69:20 / card 74:39) +
+ * S7 · "Everbrow — By Lu Medical" — réplica do Figma (card node 74:39) +
  * interação descrita pelo cliente.
  *
  * Sequência scroll-pinned (CSS sticky h-screen + GSAP ScrollTrigger scrub):
  *  Fase 1 — o RETRATO ocupa a viewport inteira (full-bleed) e TRAVA (sticky).
- *  Fase 2 — seguindo o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom) e
- *           fica fixo, sobre o rosto dela.
+ *  Fase 2 — seguindo o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom).
  *  Fase 3 — card fixo; o sticky SOLTA e tudo sobe junto p/ a próxima dobra.
  *
- * Card LANDSCAPE (decisão do cliente — não cobrir o rosto): layout HORIZONTAL,
- * janela à esquerda + texto à direita (baixo, cobre só a faixa dos olhos).
+ * Layout do Figma: card VERTICAL (janela em cima + texto embaixo), pequeno,
+ * CENTRALIZADO e um pouco ABAIXO do centro p/ a janela cair sobre o OLHAR dela.
  *
  * ⚠️ A "janela" é um VAZADO/RECORTE real — moldura stone (borda) + centro
- *    TRANSPARENTE → revela o PRÓPRIO retrato do fundo (em registro). Como a janela
- *    fica à esquerda e os olhos dela estão no centro da tela, o retrato é deslocado
- *    no eixo X (PORTRAIT_POS) p/ trazer o olhar p/ dentro da janela. ⚠️ o X é
- *    AFINÁVEL visualmente (depende da viewport).
+ *    TRANSPARENTE → revela o PRÓPRIO retrato do fundo (em registro). Como fica
+ *    centralizada, o olhar dela (centro da tela) aparece dentro dela.
  *
  * ⚠️ Retrato = stock do Figma (placeholder) — substituir por foto real Lu Medical.
  * Fundo CLARO → data-section-theme="light" (TopBar inverte p/ preto).
  */
 const PORTRAIT_SRC = "/images/everbrow/retrato.webp";
-const PORTRAIT_POS = "68% 30%"; // X deslocado p/ alinhar o olhar à janela (esquerda)
+const PORTRAIT_POS = "center 30%";
+const CARD_DROP = "3vh"; // desce o card um pouco p/ a janela cair no olhar (afinável)
 
 export function Everbrow() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -99,43 +97,48 @@ export function Everbrow() {
           style={{ objectPosition: PORTRAIT_POS }}
         />
 
-        {/* Card LANDSCAPE centralizado sobre o rosto */}
+        {/* Card pequeno, centralizado e um pouco abaixo do centro */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-5">
-          <div
-            ref={cardRef}
-            style={animate ? { opacity: 0 } : undefined}
-            className="flex w-full max-w-[640px] items-stretch text-left shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] [will-change:transform]"
-          >
-            {/* Janela VAZADA (esquerda): moldura stone (3 lados) + centro
-                TRANSPARENTE → revela o olhar real do fundo. */}
-            <div className="w-[42%] shrink-0 border-y-[14px] border-l-[14px] border-stone" />
+          {/* wrapper só p/ deslocar o card p/ baixo (GSAP anima o card interno) */}
+          <div className="w-full max-w-[400px]" style={{ transform: `translateY(${CARD_DROP})` }}>
+            <div
+              ref={cardRef}
+              style={animate ? { opacity: 0 } : undefined}
+              className="text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] [will-change:transform]"
+            >
+              {/* Janela VAZADA (topo): moldura stone + centro TRANSPARENTE → revela
+                  o olhar real do fundo. Proporção 2:1. Sem borda embaixo. */}
+              <div className="aspect-[2/1] w-full border-x-[14px] border-t-[14px] border-stone" />
 
-            {/* Texto (direita) */}
-            <div className="flex flex-1 flex-col justify-center bg-stone px-7 py-7">
-              <h2
-                id="everbrow-heading"
-                className="font-display text-[1.4rem] font-light uppercase tracking-[0.18em] text-ink"
-              >
-                Everbrow
-              </h2>
-              <p className="mt-1 text-[0.62rem] uppercase tracking-[0.16em] text-text-on-bone/65">
-                By Lu Medical
-              </p>
+              {/* Texto */}
+              <div className="bg-stone px-6 pb-7 pt-7">
+                <h2
+                  id="everbrow-heading"
+                  className="font-display text-[1.4rem] font-light uppercase tracking-[0.2em] text-ink"
+                >
+                  Everbrow
+                </h2>
+                <p className="mt-1 text-[0.62rem] uppercase tracking-[0.18em] text-text-on-bone/65">
+                  By Lu Medical
+                </p>
 
-              <p className="mt-4 font-display text-[0.95rem] font-light leading-snug text-ink">
-                O Transplante de Sobrancelhas Exclusivo da Lu Medical
-              </p>
+                <p className="mt-4 font-display text-[0.95rem] font-light leading-snug text-ink">
+                  O Transplante de Sobrancelhas
+                  <br />
+                  Exclusivo da Lu Medical
+                </p>
 
-              <p className="mt-3 text-[0.72rem] leading-relaxed text-text-on-bone/75">
-                Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
-                ciência para oferecer às clientes um resultado impecável, seguro e
-                exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
-              </p>
+                <p className="mx-auto mt-3 max-w-[36ch] text-[0.72rem] leading-relaxed text-text-on-bone/75">
+                  Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
+                  ciência para oferecer às clientes um resultado impecável, seguro e
+                  exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
+                </p>
 
-              <div className="mt-5">
-                <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
-                  Agendar horário
-                </Cta>
+                <div className="mt-5">
+                  <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
+                    Agendar horário
+                  </Cta>
+                </div>
               </div>
             </div>
           </div>
