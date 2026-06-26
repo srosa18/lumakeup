@@ -1,32 +1,94 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { Cta } from "@/components/ui/Cta";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * S7 · "Everbrow — By Lu Medical" — réplica do Figma (node 69:20).
+ * S7 · "Everbrow — By Lu Medical" — réplica do Figma (node 69:20) + interação
+ * descrita pelo cliente.
  *
- * Comportamento correto (confirmado por print do cliente): o RETRATO é
- * full-bleed (tela cheia) e o CARD claro fica CENTRALIZADO SOBRE o rosto dela.
- * No Figma o card estava posicionado FORA do frame (sobre o canvas cinza) — não
- * era um "painel escuro" de design; aqui ele volta pro centro do rosto.
+ * Sequência scroll-pinned (GSAP ScrollTrigger pin via CSS sticky + scrub):
+ *  Fase 1 — o RETRATO ocupa a viewport inteira (full-bleed) e TRAVA (sticky).
+ *  Fase 2 — continuando o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom +
+ *           blur→foco) e se fixa CENTRALIZADO sobre o rosto dela.
+ *  Fase 3 — card fixo; seguindo o scroll, o sticky SOLTA e tudo sobe junto
+ *           (rosto + card), indo para a próxima dobra.
  *
- * O card traz: janela com CLOSE das sobrancelhas + EVERBROW / By Lu Medical +
- * subtítulo + parágrafo + CTA (WhatsApp).
+ * No Figma o card estava FORA do frame (sobre o canvas cinza) — não era painel
+ * escuro de design. O comportamento real veio dos prints do cliente.
  *
- * ⚠️ Retrato e close = stock extraído do Figma — placeholders; substituir por
- *    fotos reais da Lu Medical.
+ * ⚠️ Retrato e close das sobrancelhas = stock extraído do Figma — placeholders;
+ *    substituir por fotos reais da Lu Medical.
  *
- * Fundo CLARO → leva data-section-theme="light" (TopBar inverte p/ preto).
+ * Fundo CLARO → data-section-theme="light" (TopBar inverte p/ preto).
+ * Fallback (SSR/pré-hidratação): card já visível, centralizado, sem pin.
  */
 export function Everbrow() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+
+    let cancelled = false;
+    let ctx: { revert: () => void } | undefined;
+    (async () => {
+      const gsapMod = await import("gsap");
+      const stMod = await import("gsap/ScrollTrigger");
+      if (cancelled) return;
+      const gsap = gsapMod.gsap ?? gsapMod.default;
+      const ScrollTrigger = stMod.ScrollTrigger ?? stMod.default;
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        });
+
+        // Fase 2 — o card entra em cena. Antes de 0.12 ele fica no estado "from"
+        // (invisível): a fase 1 é o retrato cheio sozinho. Entra subindo, com um
+        // leve zoom e o blur resolvendo p/ foco — delicado, quiet luxury. Depois
+        // de ~0.48 não há mais tween: o card SEGURA fixo até o sticky soltar.
+        tl.fromTo(
+          cardRef.current,
+          { opacity: 0, y: 70, scale: 0.94, filter: "blur(10px)" },
+          { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.36, ease: "power2.out" },
+          0.12
+        );
+
+        ScrollTrigger.refresh();
+      }, sectionRef);
+    })();
+
+    return () => {
+      cancelled = true;
+      ctx?.revert();
+    };
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="everbrow-heading"
       data-section-theme="light"
-      className="relative overflow-hidden bg-stone"
+      className={`relative bg-stone ${animate ? "h-[185vh]" : ""}`}
     >
-      {/* Retrato full-bleed */}
-      <div className="relative h-[88vh] min-h-[660px] w-full">
+      <div
+        className={
+          animate
+            ? "sticky top-0 h-screen overflow-hidden"
+            : "relative h-[88vh] min-h-[660px] overflow-hidden"
+        }
+      >
+        {/* Retrato full-bleed */}
         <Image
           src="/images/everbrow/retrato.webp"
           alt="Retrato de cliente em close, com sobrancelhas naturais e definidas pela Lu Medical"
@@ -36,8 +98,12 @@ export function Everbrow() {
         />
 
         {/* Card centralizado sobre o rosto */}
-        <div className="absolute inset-0 flex items-center justify-center px-5">
-          <div className="w-full max-w-[440px] bg-stone px-7 pb-9 pt-7 text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] sm:px-9">
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-5">
+          <div
+            ref={cardRef}
+            style={animate ? { opacity: 0 } : undefined}
+            className="w-full max-w-[440px] bg-stone px-7 pb-9 pt-7 text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] will-change-transform sm:px-9"
+          >
             {/* Janela — close das sobrancelhas */}
             <div className="relative aspect-[16/10] w-full overflow-hidden">
               <Image
