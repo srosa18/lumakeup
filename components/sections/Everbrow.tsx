@@ -87,13 +87,23 @@ export function Everbrow() {
             : "relative h-[88vh] min-h-[660px] overflow-hidden"
         }
       >
-        {/* Retrato full-bleed (fundo) — é ele que aparece pelo vazado */}
+        {/* Retrato full-bleed (fundo) — é ele que aparece pelo vazado. ART DIRECTION:
+            MOBILE usa um corte vertical mais recuado, já enquadrado p/ a sobrancelha
+            + olho caírem dentro da janela (a foto original é close demais p/ caber
+            bem numa tela estreita). DESKTOP usa a landscape em alta. */}
+        <Image
+          src="/images/everbrow/retrato-mobile.webp"
+          alt="Sobrancelhas e olhar de cliente em close — Lu Medical"
+          fill
+          sizes="100vw"
+          className="object-cover object-center md:hidden"
+        />
         <Image
           src={PORTRAIT_SRC}
           alt="Retrato de cliente em close, com sobrancelhas naturais e definidas pela Lu Medical"
           fill
           sizes="100vw"
-          className="object-cover"
+          className="hidden object-cover md:block"
           style={{ objectPosition: PORTRAIT_POS }}
         />
 
