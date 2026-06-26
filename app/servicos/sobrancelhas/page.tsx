@@ -146,9 +146,9 @@ export default function SobrancelhasPage() {
       <section className="relative h-[62vh] min-h-[440px] overflow-hidden bg-ink lg:h-[75vh]">
         <MediaFill
           src="/images/servicos/sobrancelhas/band.webp"
-          alt="Cliente com a mão no rosto, sobrancelhas em destaque, retrato intimista"
-          art="Foto real Lu Make Up (Lumakeup_namorados-249)"
-          position="center 30%"
+          alt="Micropigmentação de sobrancelhas em execução, técnica fio a fio"
+          art="Procedimento de sobrancelha (AdobeStock_423253585) — execução"
+          position="center 45%"
         />
       </section>
 
@@ -180,9 +180,9 @@ export default function SobrancelhasPage() {
           <div className="relative min-h-[460px] lg:min-h-[680px]">
             <MediaFill
               src="/images/servicos/sobrancelhas/diferenciais.webp"
-              alt="Retrato sereno valorizando a sobrancelha, luz editorial"
-              art="Foto real Lu Make Up (Lumakeup_fevereiro-246)"
-              position="center 25%"
+              alt="Mapeamento e desenho da sobrancelha com precisão (visagismo)"
+              art="Procedimento de sobrancelha (AdobeStock_534932877) — mapeamento/visagismo"
+              position="center 50%"
             />
           </div>
           {/* texto */}
@@ -218,8 +218,8 @@ export default function SobrancelhasPage() {
               <ImageSlot
                 key={i}
                 src={`/images/servicos/sobrancelhas/result-${i}.webp`}
-                alt={`Retrato de cliente com sobrancelhas naturais e definidas — Lu Make Up (${i})`}
-                art={`Foto real Lu Make Up — galeria de resultados ${i} (substituir por antes/depois com direitos, se houver)`}
+                alt={`Sobrancelhas naturais e definidas — resultado e procedimento Lu Make Up (${i})`}
+                art={`Procedimento/resultado de sobrancelha (AdobeStock) — galeria ${i}`}
                 ratio="4 / 5"
                 tone="ink"
                 sizes="(min-width:1024px) 400px, (min-width:640px) 45vw, 100vw"
