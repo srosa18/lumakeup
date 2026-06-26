@@ -138,11 +138,16 @@ export function BelezaDiscreta() {
     <section
       ref={sectionRef}
       aria-labelledby="beleza-discreta-titulo"
-      className={`relative bg-black ${animate ? "h-[450vh]" : "py-16 lg:py-24"}`}
+      // MOBILE mais RÁPIDO: seção bem mais curta (280vh) → comprime o scrub e tudo
+      // acontece com menos scroll (texto/imagens aparecem antes, saída antes).
+      // Desktop intacto (md:h-[450vh], ritmo aprovado).
+      className={`relative bg-black ${animate ? "h-[280vh] md:h-[450vh]" : "py-16 lg:py-24"}`}
     >
       <div className={animate ? "sticky top-0 h-screen overflow-hidden" : ""}>
+        {/* --img-scale: imagens +40% no mobile (ocupam mais o preto, mais destaque);
+            1.0 no desktop (md+), sem alterar o aprovado. */}
         <div
-          className={`relative mx-auto w-full max-w-[1100px] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
+          className={`relative mx-auto w-full max-w-[1100px] [--img-scale:1.4] md:[--img-scale:1] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
         >
           {COLLAGE.map((p, i) => (
             <div
@@ -151,7 +156,7 @@ export function BelezaDiscreta() {
                 imgRefs.current[i] = el;
               }}
               className="absolute will-change-transform"
-              style={{ left: p.left, top: animate ? "100%" : p.top, width: p.width }}
+              style={{ left: p.left, top: animate ? "100%" : p.top, width: `calc(${p.width} * var(--img-scale, 1))` }}
             >
               <ImageSlot src={p.src} alt={p.alt} art={p.alt} ratio={p.ratio} tone="ink" sizes="(min-width:1024px) 320px, 30vw" />
             </div>
