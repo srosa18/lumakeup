@@ -7,24 +7,26 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
  * S7 · "Everbrow — By Lu Medical" — réplica do Figma (node 69:20) + interação
- * descrita pelo cliente.
+ * descrita pelo cliente (prints + chat).
  *
- * Sequência scroll-pinned (GSAP ScrollTrigger pin via CSS sticky + scrub):
+ * Sequência scroll-pinned (CSS sticky h-screen + GSAP ScrollTrigger scrub):
  *  Fase 1 — o RETRATO ocupa a viewport inteira (full-bleed) e TRAVA (sticky).
- *  Fase 2 — continuando o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom +
- *           blur→foco) e se fixa CENTRALIZADO sobre o rosto dela.
- *  Fase 3 — card fixo; seguindo o scroll, o sticky SOLTA e tudo sobe junto
- *           (rosto + card), indo para a próxima dobra.
+ *  Fase 2 — seguindo o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom) e
+ *           fica fixo, CENTRALIZADO sobre o rosto dela.
+ *  Fase 3 — card fixo; o sticky SOLTA e tudo sobe junto p/ a próxima dobra.
  *
- * No Figma o card estava FORA do frame (sobre o canvas cinza) — não era painel
- * escuro de design. O comportamento real veio dos prints do cliente.
+ * ⚠️ A "janela" do card é um VAZADO/RECORTE de verdade — NÃO uma imagem colada.
+ *    O card NÃO tem fundo: a janela é uma MOLDURA (borda stone) com o CENTRO
+ *    TRANSPARENTE, então aparece o PRÓPRIO retrato do fundo que está atrás (em
+ *    registro perfeito, pois é o mesmo elemento — o rosto fica contínuo: testa
+ *    acima da janela, sobrancelha/olho dentro dela). O painel de texto abaixo é
+ *    que carrega o fundo stone.
  *
- * ⚠️ Retrato e close das sobrancelhas = stock extraído do Figma — placeholders;
- *    substituir por fotos reais da Lu Medical.
- *
+ * ⚠️ Retrato = stock do Figma (placeholder) — substituir por foto real Lu Medical.
  * Fundo CLARO → data-section-theme="light" (TopBar inverte p/ preto).
- * Fallback (SSR/pré-hidratação): card já visível, centralizado, sem pin.
  */
+const PORTRAIT_SRC = "/images/everbrow/retrato.webp";
+
 export function Everbrow() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const cardRef = useRef<HTMLDivElement | null>(null);
@@ -53,14 +55,13 @@ export function Everbrow() {
           },
         });
 
-        // Fase 2 — o card entra em cena. Antes de 0.12 ele fica no estado "from"
-        // (invisível): a fase 1 é o retrato cheio sozinho. Entra subindo, com um
-        // leve zoom e o blur resolvendo p/ foco — delicado, quiet luxury. Depois
-        // de ~0.48 não há mais tween: o card SEGURA fixo até o sticky soltar.
+        // Fase 2 — card entra em cena: fade + sobe + leve zoom. Como a janela é um
+        // VAZADO (não imagem fixed), transform é seguro: o recorte varre o fundo e
+        // assenta sobre a sobrancelha dela.
         tl.fromTo(
           cardRef.current,
-          { opacity: 0, y: 70, scale: 0.94, filter: "blur(10px)" },
-          { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.36, ease: "power2.out" },
+          { opacity: 0, y: 64, scale: 0.96 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.36, ease: "power2.out" },
           0.12
         );
 
@@ -88,13 +89,14 @@ export function Everbrow() {
             : "relative h-[88vh] min-h-[660px] overflow-hidden"
         }
       >
-        {/* Retrato full-bleed */}
+        {/* Retrato full-bleed (fundo) — é ele que aparece pelo vazado do card */}
         <Image
-          src="/images/everbrow/retrato.webp"
+          src={PORTRAIT_SRC}
           alt="Retrato de cliente em close, com sobrancelhas naturais e definidas pela Lu Medical"
           fill
           sizes="100vw"
-          className="object-cover object-[center_30%]"
+          className="object-cover"
+          style={{ objectPosition: "center 30%" }}
         />
 
         {/* Card centralizado sobre o rosto */}
@@ -102,45 +104,42 @@ export function Everbrow() {
           <div
             ref={cardRef}
             style={animate ? { opacity: 0 } : undefined}
-            className="w-full max-w-[440px] bg-stone px-7 pb-9 pt-7 text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] will-change-transform sm:px-9"
+            className="w-full max-w-[560px] text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] [will-change:transform]"
           >
-            {/* Janela — close das sobrancelhas */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden">
-              <Image
-                src="/images/everbrow/sobrancelhas.webp"
-                alt="Close das sobrancelhas naturais e definidas após o procedimento Everbrow"
-                fill
-                sizes="(min-width:640px) 360px, 80vw"
-                className="object-cover object-[center_22%]"
-              />
-            </div>
+            {/* Janela VAZADA (miolo): moldura stone (borda ~24px do Figma) + centro
+                TRANSPARENTE → revela o retrato real do fundo. Proporção 2:1
+                (landscape, igual ao Figma node 74:39). Sem borda embaixo. */}
+            <div className="aspect-[2/1] w-full border-x-[22px] border-t-[22px] border-stone" />
 
-            <h2
-              id="everbrow-heading"
-              className="mt-7 font-display text-[1.9rem] font-light uppercase tracking-[0.22em] text-ink"
-            >
-              Everbrow
-            </h2>
-            <p className="mt-1.5 text-[0.7rem] uppercase tracking-[0.18em] text-text-on-bone/65">
-              By Lu Medical
-            </p>
+            {/* Painel de texto (carrega o fundo stone do card) */}
+            <div className="bg-stone px-8 pb-10 pt-10">
+              <h2
+                id="everbrow-heading"
+                className="font-display text-[1.9rem] font-light uppercase tracking-[0.22em] text-ink"
+              >
+                Everbrow
+              </h2>
+              <p className="mt-1.5 text-[0.7rem] uppercase tracking-[0.18em] text-text-on-bone/65">
+                By Lu Medical
+              </p>
 
-            <p className="mt-6 font-display text-[1.15rem] font-light leading-snug text-ink">
-              O Transplante de Sobrancelhas
-              <br />
-              Exclusivo da Lu Medical
-            </p>
+              <p className="mt-6 font-display text-[1.15rem] font-light leading-snug text-ink">
+                O Transplante de Sobrancelhas
+                <br />
+                Exclusivo da Lu Medical
+              </p>
 
-            <p className="mx-auto mt-4 max-w-[36ch] text-[0.78rem] leading-relaxed text-text-on-bone/75">
-              Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
-              ciência para oferecer às clientes um resultado impecável, seguro e
-              exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
-            </p>
+              <p className="mx-auto mt-4 max-w-[40ch] text-[0.78rem] leading-relaxed text-text-on-bone/75">
+                Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
+                ciência para oferecer às clientes um resultado impecável, seguro e
+                exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
+              </p>
 
-            <div className="mt-7">
-              <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
-                Agendar horário
-              </Cta>
+              <div className="mt-7">
+                <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
+                  Agendar horário
+                </Cta>
+              </div>
             </div>
           </div>
         </div>
