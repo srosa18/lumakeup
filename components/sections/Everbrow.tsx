@@ -6,26 +6,29 @@ import { Cta } from "@/components/ui/Cta";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * S7 · "Everbrow — By Lu Medical" — réplica do Figma (node 69:20) + interação
- * descrita pelo cliente (prints + chat).
+ * S7 · "Everbrow — By Lu Medical" — réplica do Figma (node 69:20 / card 74:39) +
+ * interação descrita pelo cliente.
  *
  * Sequência scroll-pinned (CSS sticky h-screen + GSAP ScrollTrigger scrub):
  *  Fase 1 — o RETRATO ocupa a viewport inteira (full-bleed) e TRAVA (sticky).
  *  Fase 2 — seguindo o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom) e
- *           fica fixo, CENTRALIZADO sobre o rosto dela.
+ *           fica fixo, sobre o rosto dela.
  *  Fase 3 — card fixo; o sticky SOLTA e tudo sobe junto p/ a próxima dobra.
  *
- * ⚠️ A "janela" do card é um VAZADO/RECORTE de verdade — NÃO uma imagem colada.
- *    O card NÃO tem fundo: a janela é uma MOLDURA (borda stone) com o CENTRO
- *    TRANSPARENTE, então aparece o PRÓPRIO retrato do fundo que está atrás (em
- *    registro perfeito, pois é o mesmo elemento — o rosto fica contínuo: testa
- *    acima da janela, sobrancelha/olho dentro dela). O painel de texto abaixo é
- *    que carrega o fundo stone.
+ * Card LANDSCAPE (decisão do cliente — não cobrir o rosto): layout HORIZONTAL,
+ * janela à esquerda + texto à direita (baixo, cobre só a faixa dos olhos).
+ *
+ * ⚠️ A "janela" é um VAZADO/RECORTE real — moldura stone (borda) + centro
+ *    TRANSPARENTE → revela o PRÓPRIO retrato do fundo (em registro). Como a janela
+ *    fica à esquerda e os olhos dela estão no centro da tela, o retrato é deslocado
+ *    no eixo X (PORTRAIT_POS) p/ trazer o olhar p/ dentro da janela. ⚠️ o X é
+ *    AFINÁVEL visualmente (depende da viewport).
  *
  * ⚠️ Retrato = stock do Figma (placeholder) — substituir por foto real Lu Medical.
  * Fundo CLARO → data-section-theme="light" (TopBar inverte p/ preto).
  */
 const PORTRAIT_SRC = "/images/everbrow/retrato.webp";
+const PORTRAIT_POS = "68% 30%"; // X deslocado p/ alinhar o olhar à janela (esquerda)
 
 export function Everbrow() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -55,12 +58,9 @@ export function Everbrow() {
           },
         });
 
-        // Fase 2 — card entra em cena: fade + sobe + leve zoom. Como a janela é um
-        // VAZADO (não imagem fixed), transform é seguro: o recorte varre o fundo e
-        // assenta sobre a sobrancelha dela.
         tl.fromTo(
           cardRef.current,
-          { opacity: 0, y: 64, scale: 0.96 },
+          { opacity: 0, y: 56, scale: 0.97 },
           { opacity: 1, y: 0, scale: 1, duration: 0.36, ease: "power2.out" },
           0.12
         );
@@ -89,53 +89,50 @@ export function Everbrow() {
             : "relative h-[88vh] min-h-[660px] overflow-hidden"
         }
       >
-        {/* Retrato full-bleed (fundo) — é ele que aparece pelo vazado do card */}
+        {/* Retrato full-bleed (fundo) — é ele que aparece pelo vazado */}
         <Image
           src={PORTRAIT_SRC}
           alt="Retrato de cliente em close, com sobrancelhas naturais e definidas pela Lu Medical"
           fill
           sizes="100vw"
           className="object-cover"
-          style={{ objectPosition: "center 30%" }}
+          style={{ objectPosition: PORTRAIT_POS }}
         />
 
-        {/* Card centralizado sobre o rosto */}
+        {/* Card LANDSCAPE centralizado sobre o rosto */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-5">
           <div
             ref={cardRef}
             style={animate ? { opacity: 0 } : undefined}
-            className="w-full max-w-[440px] text-center shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] [will-change:transform]"
+            className="flex w-full max-w-[640px] items-stretch text-left shadow-[0_40px_90px_-50px_rgba(20,20,20,0.55)] [will-change:transform]"
           >
-            {/* Janela VAZADA (miolo): moldura stone (borda) + centro TRANSPARENTE →
-                revela o retrato real do fundo. Proporção 2:1 (landscape, igual ao
-                Figma node 74:39). Sem borda embaixo. */}
-            <div className="aspect-[2/1] w-full border-x-[16px] border-t-[16px] border-stone" />
+            {/* Janela VAZADA (esquerda): moldura stone (3 lados) + centro
+                TRANSPARENTE → revela o olhar real do fundo. */}
+            <div className="w-[42%] shrink-0 border-y-[14px] border-l-[14px] border-stone" />
 
-            {/* Painel de texto (carrega o fundo stone do card) */}
-            <div className="bg-stone px-7 pb-8 pt-8">
+            {/* Texto (direita) */}
+            <div className="flex flex-1 flex-col justify-center bg-stone px-7 py-7">
               <h2
                 id="everbrow-heading"
-                className="font-display text-[1.55rem] font-light uppercase tracking-[0.2em] text-ink"
+                className="font-display text-[1.4rem] font-light uppercase tracking-[0.18em] text-ink"
               >
                 Everbrow
               </h2>
-              <p className="mt-1.5 text-[0.66rem] uppercase tracking-[0.18em] text-text-on-bone/65">
+              <p className="mt-1 text-[0.62rem] uppercase tracking-[0.16em] text-text-on-bone/65">
                 By Lu Medical
               </p>
 
-              <p className="mt-5 font-display text-[1rem] font-light leading-snug text-ink">
-                O Transplante de Sobrancelhas
-                <br />
-                Exclusivo da Lu Medical
+              <p className="mt-4 font-display text-[0.95rem] font-light leading-snug text-ink">
+                O Transplante de Sobrancelhas Exclusivo da Lu Medical
               </p>
 
-              <p className="mx-auto mt-3.5 max-w-[38ch] text-[0.74rem] leading-relaxed text-text-on-bone/75">
+              <p className="mt-3 text-[0.72rem] leading-relaxed text-text-on-bone/75">
                 Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
                 ciência para oferecer às clientes um resultado impecável, seguro e
                 exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
               </p>
 
-              <div className="mt-6">
+              <div className="mt-5">
                 <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
                   Agendar horário
                 </Cta>
