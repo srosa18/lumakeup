@@ -25,7 +25,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  * Fundo CLARO → data-section-theme="light" (TopBar inverte p/ preto).
  */
 const PORTRAIT_SRC = "/images/everbrow/retrato.webp";
-const PORTRAIT_POS = "center 30%";
+const PORTRAIT_POS = "center 20%"; // desktop: % menor = rosto mais p/ baixo (afinável)
 const CARD_DROP = "3vh"; // desce o card p/ a janela cair no olhar sem cortar (afinável)
 
 export function Everbrow() {
