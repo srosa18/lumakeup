@@ -161,3 +161,21 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .swipe-hint { animation: none; opacity: 1; }
 }
+
+/* Carrossel — tamanho das cartas. Base (até ~1600px, inclui o 13"): igual ao
+   aprovado. ACIMA de 1600px (telas grandes/4K) as cartas ESCALAM com a tela, p/
+   (a) ficarem maiores e (b) o conteúdo voltar a TRANSBORDAR a viewport — sem isso
+   o carrossel "trava" (cabe tudo, nada p/ rolar/arrastar). gap e o respiro do arco
+   (pb) são proporcionais à carta. */
+.services-track {
+  --card: clamp(305px, 29vw, 396px);
+  gap: calc(var(--card) * 0.0667);
+  padding-bottom: calc(var(--card) * 0.55); /* acomoda o arco (amp = card*0.5) */
+}
+@media (min-width: 1600px) {
+  /* +~48% num 30" (2560) e ~+125% no 4K — grande o bastante p/ transbordar com
+     folga e dar um arrasto/auto-drift confortável (sem isso o scroll fica mínimo). */
+  .services-track {
+    --card: clamp(396px, 24vw, 1000px);
+  }
+}

@@ -204,17 +204,10 @@ export function ServicesCarousel() {
         ref={scroller}
         className="cursor-grab touch-pan-x select-none overflow-x-auto overflow-y-hidden overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
       >
-        <div
-          className="relative flex w-max items-start pb-52 pt-8"
-          style={
-            {
-              // min 305 (era 277): +~10% no mobile/telas estreitas; desktop usa 29vw
-              // (inalterado, pois 29vw > 305 acima de ~1050px). Vão é proporcional.
-              "--card": "clamp(305px, 29vw, 396px)",
-              gap: "calc(var(--card) * 0.0667)",
-            } as React.CSSProperties
-          }
-        >
+        {/* services-track (globals.css): --card, gap e pb (proporcional ao arco).
+            Base inclui o 13" (min 305 = +10% no mobile); acima de 1600px escala
+            com a tela (telas grandes/4K) p/ ficar maior e voltar a transbordar. */}
+        <div className="services-track relative flex w-max items-start pt-8">
           {PRODUCTS.map((p, i) => (
             <Link
               key={p.slug}
