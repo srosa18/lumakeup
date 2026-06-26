@@ -85,6 +85,7 @@ export function Testimonials() {
   return (
     <section
       aria-labelledby="depoimentos-heading"
+      data-section-theme="light"
       className="overflow-hidden bg-bone py-24 lg:py-32"
     >
       <div className="mx-auto max-w-[1040px] px-6 lg:px-8">

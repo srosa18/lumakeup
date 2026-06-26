@@ -188,6 +188,7 @@ export function BeBold() {
     <section
       ref={rootRef}
       aria-labelledby="bebold-titulo"
+      data-section-theme="light"
       // -mt + z: a Be Bold sobe por baixo e vai cobrindo a cauda preta da seção
       // sticky anterior (Beleza Discreta) enquanto o título dela sobe — sem buraco preto.
       // -85vh (não -100): entra um pouco MAIS TARDE, p/ não cobrir cedo demais o
