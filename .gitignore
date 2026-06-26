@@ -41,3 +41,7 @@ next-env.d.ts
 /assets-src/**
 !/assets-src/**/.gitkeep
 !/assets-src/README.md
+
+# originais crus que o cliente subiu em public/ (~27MB cada) — NÃO versionar;
+# só as versões otimizadas (public/images/servicos/...) vão pro git.
+/public/images/imagens/**

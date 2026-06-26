@@ -95,8 +95,10 @@ export default function SobrancelhasPage() {
         className="relative flex min-h-[90svh] items-end overflow-hidden bg-ink"
       >
         <MediaFill
-          alt="Retrato editorial em close do olhar, com sobrancelha fio a fio natural"
-          art="HERO full-bleed: retrato editorial, close do olhar, fio a fio natural, fundo escuro, pele real, grading quente — foto real a entrar"
+          src="/images/servicos/sobrancelhas/hero.webp"
+          alt="Retrato editorial com sobrancelhas naturais e olhar em destaque — Lu Make Up"
+          art="Foto real Lu Make Up (Lumakeup_namorados-279)"
+          position="center 22%"
         />
         <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -143,9 +145,10 @@ export default function SobrancelhasPage() {
       {/* 3 · FAIXA DE IMAGEM grande (quebra visual) */}
       <section className="relative h-[62vh] min-h-[440px] overflow-hidden bg-ink lg:h-[75vh]">
         <MediaFill
-          alt="Detalhe do traço fio a fio sendo executado, em close"
-          art="Faixa full-bleed: macro do procedimento/traço fio a fio, mãos da profissional, luz editorial — foto real a entrar"
-          position="center 35%"
+          src="/images/servicos/sobrancelhas/band.webp"
+          alt="Cliente com a mão no rosto, sobrancelhas em destaque, retrato intimista"
+          art="Foto real Lu Make Up (Lumakeup_namorados-249)"
+          position="center 30%"
         />
       </section>
 
@@ -176,8 +179,10 @@ export default function SobrancelhasPage() {
           {/* imagem grande */}
           <div className="relative min-h-[460px] lg:min-h-[680px]">
             <MediaFill
+              src="/images/servicos/sobrancelhas/diferenciais.webp"
               alt="Retrato sereno valorizando a sobrancelha, luz editorial"
-              art="Imagem grande (coluna): retrato sereno, foco na sobrancelha, pele real, luz quente — foto real a entrar"
+              art="Foto real Lu Make Up (Lumakeup_fevereiro-246)"
+              position="center 25%"
             />
           </div>
           {/* texto */}
@@ -212,8 +217,9 @@ export default function SobrancelhasPage() {
             {[1, 2, 3].map((i) => (
               <ImageSlot
                 key={i}
-                alt={`Resultado de micropigmentação de sobrancelhas — exemplo ${i}`}
-                art="Galeria editorial de resultados (antes/depois com bom gosto) — usar apenas com direitos de imagem; foto real a entrar"
+                src={`/images/servicos/sobrancelhas/result-${i}.webp`}
+                alt={`Retrato de cliente com sobrancelhas naturais e definidas — Lu Make Up (${i})`}
+                art={`Foto real Lu Make Up — galeria de resultados ${i} (substituir por antes/depois com direitos, se houver)`}
                 ratio="4 / 5"
                 tone="ink"
                 sizes="(min-width:1024px) 400px, (min-width:640px) 45vw, 100vw"
@@ -256,9 +262,10 @@ export default function SobrancelhasPage() {
       {/* 9 · CTA final — faixa full-bleed com imagem */}
       <section className="relative flex min-h-[62vh] items-center justify-center overflow-hidden bg-ink text-center lg:min-h-[70vh]">
         <MediaFill
+          src="/images/servicos/sobrancelhas/cta.webp"
           alt="Retrato editorial de cliente, olhar em destaque"
-          art="CTA full-bleed: retrato editorial, olhar em destaque, fundo escuro — foto real a entrar"
-          position="center 30%"
+          art="Foto real Lu Make Up (Lumakeup_shoot-417)"
+          position="center 25%"
         />
         <div aria-hidden className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 mx-auto max-w-[680px] px-6 lg:px-8">
