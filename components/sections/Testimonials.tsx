@@ -101,8 +101,8 @@ export function Testimonials() {
 
         {/* Depoimento em destaque */}
         <div className="mt-14 grid gap-10 lg:mt-16 lg:grid-cols-[300px_1fr] lg:items-center lg:gap-16">
-          {/* Foto */}
-          <div className="w-full max-w-[300px]">
+          {/* Foto — centralizada no mobile (no desktop fica na coluna esquerda) */}
+          <div className="mx-auto w-full max-w-[300px] lg:mx-0">
             <div key={`p-${active}`} className="bebold-fade">
               <ImageSlot
                 src={t.photo}
@@ -136,7 +136,7 @@ export function Testimonials() {
         <div
           role="tablist"
           aria-label="Selecionar depoimento"
-          className="mt-12 flex flex-wrap items-center gap-3"
+          className="mt-12 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
         >
           {TESTIMONIALS.map((item, i) => {
             const isActive = i === active;
