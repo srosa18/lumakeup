@@ -26,7 +26,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  */
 const PORTRAIT_SRC = "/images/everbrow/retrato.webp";
 const PORTRAIT_POS = "center 30%";
-const CARD_DROP = "3vh"; // desce o card um pouco p/ a janela cair no olhar (afinável)
+const CARD_DROP = "5vh"; // desce o card p/ a janela cair no olhar sem cortar (afinável)
 
 export function Everbrow() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -100,7 +100,7 @@ export function Everbrow() {
         {/* Card pequeno, centralizado e um pouco abaixo do centro */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-5">
           {/* wrapper só p/ deslocar o card p/ baixo (GSAP anima o card interno) */}
-          <div className="w-full max-w-[400px]" style={{ transform: `translateY(${CARD_DROP})` }}>
+          <div className="w-full max-w-[500px]" style={{ transform: `translateY(${CARD_DROP})` }}>
             <div
               ref={cardRef}
               style={animate ? { opacity: 0 } : undefined}
@@ -111,7 +111,7 @@ export function Everbrow() {
               <div className="aspect-[2/1] w-full border-x-[14px] border-t-[14px] border-stone" />
 
               {/* Texto */}
-              <div className="bg-stone px-6 pb-7 pt-7">
+              <div className="bg-stone px-7 pb-6 pt-6">
                 <h2
                   id="everbrow-heading"
                   className="font-display text-[1.4rem] font-light uppercase tracking-[0.2em] text-ink"
@@ -128,7 +128,7 @@ export function Everbrow() {
                   Exclusivo da Lu Medical
                 </p>
 
-                <p className="mx-auto mt-3 max-w-[36ch] text-[0.72rem] leading-relaxed text-text-on-bone/75">
+                <p className="mx-auto mt-3 max-w-[44ch] text-[0.72rem] leading-relaxed text-text-on-bone/75">
                   Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
                   ciência para oferecer às clientes um resultado impecável, seguro e
                   exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
