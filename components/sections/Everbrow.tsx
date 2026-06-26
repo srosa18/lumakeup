@@ -26,7 +26,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  */
 const PORTRAIT_SRC = "/images/everbrow/retrato.webp";
 const PORTRAIT_POS = "center 30%";
-const CARD_DROP = "5vh"; // desce o card p/ a janela cair no olhar sem cortar (afinável)
+const CARD_DROP = "3vh"; // desce o card p/ a janela cair no olhar sem cortar (afinável)
 
 export function Everbrow() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -110,8 +110,9 @@ export function Everbrow() {
                   o olhar real do fundo. Proporção 2:1. Sem borda embaixo. */}
               <div className="aspect-[2/1] w-full border-x-[14px] border-t-[14px] border-stone" />
 
-              {/* Texto */}
-              <div className="bg-stone px-7 pb-6 pt-6">
+              {/* Texto — altura compacta: parágrafo LARGO (poucas linhas) p/ baixar
+                  a altura do card SEM mexer na janela do olhar. */}
+              <div className="bg-stone px-7 pb-5 pt-5">
                 <h2
                   id="everbrow-heading"
                   className="font-display text-[1.4rem] font-light uppercase tracking-[0.2em] text-ink"
@@ -122,19 +123,17 @@ export function Everbrow() {
                   By Lu Medical
                 </p>
 
-                <p className="mt-4 font-display text-[0.95rem] font-light leading-snug text-ink">
-                  O Transplante de Sobrancelhas
-                  <br />
-                  Exclusivo da Lu Medical
+                <p className="mt-3.5 font-display text-[0.95rem] font-light leading-snug text-ink">
+                  O Transplante de Sobrancelhas Exclusivo da Lu Medical
                 </p>
 
-                <p className="mx-auto mt-3 max-w-[44ch] text-[0.72rem] leading-relaxed text-text-on-bone/75">
+                <p className="mt-2.5 text-[0.72rem] leading-normal text-text-on-bone/75">
                   Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
                   ciência para oferecer às clientes um resultado impecável, seguro e
                   exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
                 </p>
 
-                <div className="mt-5">
+                <div className="mt-4">
                   <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
                     Agendar horário
                   </Cta>
