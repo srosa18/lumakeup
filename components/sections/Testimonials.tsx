@@ -27,13 +27,17 @@ type Testimonial = {
   celebrity?: boolean;
 };
 
+// ⚠️ FOTOS = STAND-INS TEMPORÁRIOS do Unsplash (stock), só p/ visualizar o layout.
+// Trocar TODAS por fotos reais autorizadas antes de publicar. Nos slots de
+// celebridade o rosto é genérico — NÃO é a celebridade; entra a foto real depois.
 const TESTIMONIALS: Testimonial[] = [
   // — Anônimos / profissionais (plano B do brief: frases reais, publicáveis hoje) —
   {
     quote: "Ninguém percebe que é feito. Percebem que eu pareço descansada.",
     name: "Cliente desde 2015",
     role: "Sobrancelha + olhos",
-    art: "Retrato editorial discreto, pele real, sem identificação — substituir por depoente com direitos",
+    photo: "/images/depoimentos/p1.webp",
+    art: "Retrato editorial discreto, pele real — STAND-IN Unsplash, substituir por depoente com direitos",
     alt: "Retrato de cliente de longa data do instituto",
   },
   {
@@ -41,22 +45,25 @@ const TESTIMONIALS: Testimonial[] = [
       "Encaminho minhas pacientes pela segurança do protocolo e pela naturalidade do traço.",
     name: "Dermatologista parceira",
     role: "Indicação profissional",
-    art: "Retrato profissional sóbrio, luz suave — substituir por depoente com direitos",
+    photo: "/images/depoimentos/p2.webp",
+    art: "Retrato profissional sóbrio — STAND-IN Unsplash, substituir por depoente com direitos",
     alt: "Retrato de dermatologista parceira do instituto",
   },
   {
     quote: "Cheguei com receio de exagero. Saí com a minha sobrancelha, só que melhor.",
     name: "Noiva, 2024",
     role: "Sobrancelha fio a fio",
-    art: "Retrato editorial quente, foco no olhar — substituir por depoente com direitos",
+    photo: "/images/depoimentos/p3.webp",
+    art: "Retrato editorial quente — STAND-IN Unsplash, substituir por depoente com direitos",
     alt: "Retrato de cliente atendida antes do casamento",
   },
-  // — Celebridades (PLACEHOLDER — só publicar COM autorização) —
+  // — Celebridades (PLACEHOLDER — só publicar COM autorização; rosto é genérico) —
   {
     quote: "TODO:CONFIRMAR — depoimento da celebridade (texto + autorização de uso).",
     name: "Celebridade — a confirmar",
     role: "TODO:CONFIRMAR",
-    art: "Foto da celebridade — aguardando autorização de imagem/citação (§12.4)",
+    photo: "/images/depoimentos/p4.webp",
+    art: "Rosto genérico (STAND-IN) — entra a foto da celebridade COM autorização (§12.4)",
     alt: "Retrato de depoente — a confirmar",
     celebrity: true,
   },
@@ -64,7 +71,8 @@ const TESTIMONIALS: Testimonial[] = [
     quote: "TODO:CONFIRMAR — depoimento da celebridade (texto + autorização de uso).",
     name: "Celebridade — a confirmar",
     role: "TODO:CONFIRMAR",
-    art: "Foto da celebridade — aguardando autorização de imagem/citação (§12.4)",
+    photo: "/images/depoimentos/p5.webp",
+    art: "Rosto genérico (STAND-IN) — entra a foto da celebridade COM autorização (§12.4)",
     alt: "Retrato de depoente — a confirmar",
     celebrity: true,
   },
@@ -83,9 +91,11 @@ export function Testimonials() {
         <Kicker>Depoimentos</Kicker>
         <h2
           id="depoimentos-heading"
-          className="mt-4 max-w-[18ch] font-display text-[2rem] font-light leading-[1.12] text-text-on-bone sm:text-[2.4rem] lg:text-[2.75rem]"
+          className="mt-4 font-display text-[2rem] font-light leading-[1.12] text-text-on-bone sm:text-[2.4rem] lg:text-[2.75rem]"
         >
-          Quem confia o próprio olhar à Lu
+          Quem confia o próprio
+          <br />
+          olhar à Lu Make Up
         </h2>
 
         {/* Depoimento em destaque */}
