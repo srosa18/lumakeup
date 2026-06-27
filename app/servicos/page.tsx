@@ -74,7 +74,7 @@ export default function ServicosIndex() {
       </section>
 
       {/* CTA */}
-      <section className="bg-bone py-24 text-center lg:py-32">
+      <section data-section-theme="light" className="bg-bone py-24 text-center lg:py-32">
         <div className="mx-auto max-w-[680px] px-6 lg:px-8">
           <h2 className="font-display text-[1.9rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.4rem]">
             Não sabe por onde começar?

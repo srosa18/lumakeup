@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Monogram } from "@/components/ui/Monogram";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -32,6 +33,7 @@ const BAR_H = 64; // h-16
 export function TopBar() {
   const [open, setOpen] = useState(false);
   const [overLight, setOverLight] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -46,6 +48,10 @@ export function TopBar() {
   // a seção clara que cruza essa linha está sob a barra. Robusto (independe de
   // eventos de scroll, que nem sempre disparam com scroll programático/smooth).
   useEffect(() => {
+    // Reset ao trocar de rota (nova página costuma abrir sobre seção escura) e
+    // RE-OBSERVA as seções da página atual — a TopBar persiste no layout, então o
+    // observer precisa reconstruir a cada navegação (dep: pathname).
+    setOverLight(false);
     const sections = Array.from(
       document.querySelectorAll('[data-section-theme="light"]'),
     );
@@ -77,7 +83,7 @@ export function TopBar() {
       io?.disconnect();
       window.removeEventListener("resize", build);
     };
-  }, []);
+  }, [pathname]);
 
   // Elementos escuros só quando sobre seção clara E menu fechado (menu aberto =
   // contexto escuro, elementos brancos).

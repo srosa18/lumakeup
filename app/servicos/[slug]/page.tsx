@@ -125,7 +125,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 2 · A ARTE */}
-      <section aria-labelledby="arte-heading" className="bg-bone py-24 lg:py-32">
+      <section aria-labelledby="arte-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
         <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
           <Kicker>A arte</Kicker>
           <h2 id="arte-heading" className="mt-5 whitespace-pre-line font-display text-[2rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.6rem]">
@@ -169,7 +169,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 5 · DIFERENCIAIS — 2 colunas com imagem */}
-      <section aria-labelledby="dif-heading" className="overflow-hidden bg-bone">
+      <section aria-labelledby="dif-heading" data-section-theme="light" className="overflow-hidden bg-bone">
         <div className="mx-auto grid max-w-[1280px] lg:grid-cols-2">
           <div className="relative min-h-[460px] lg:min-h-[680px]">
             <MediaFill
@@ -224,7 +224,7 @@ export default async function ServicoPage({
 
       {/* 7 · PROVA (opcional) */}
       {proof && (
-        <section aria-labelledby="prova-heading" className="bg-bone py-24 lg:py-32">
+        <section aria-labelledby="prova-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
           <div className="mx-auto max-w-[820px] px-6 text-center lg:px-8">
             <h2 id="prova-heading" className="sr-only">Prova social</h2>
             <span aria-hidden="true" className="font-display text-6xl leading-none text-brass/40">&ldquo;</span>
