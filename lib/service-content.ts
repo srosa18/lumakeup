@@ -35,6 +35,8 @@ export type ServiceContent = {
   essence: string;
   arte: { heading: string; body: string };
   ritual?: RitualStep[];
+  /** Título da seção Diferenciais (varia por serviço; fallback no default). */
+  diferenciaisHeading?: string;
   diferenciais?: Diferencial[];
   proof?: { quote: string; author: string };
   faq: QA[];
@@ -83,6 +85,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     h1: "Micropigmentação de Sobrancelhas",
     h1Break: ["Micropigmentação", "de Sobrancelhas"],
     essence: "A sobrancelha que ninguém percebe ser feita.",
+    diferenciaisHeading: "O que sustenta um traço natural",
+    diferenciais: [
+      { title: "Visagismo antes do traço", body: "Lemos proporção, simetria e expressão antes de desenhar. A sobrancelha nasce do seu rosto — não de um molde." },
+      { title: "Cor que envelhece bonito", body: "Pigmentos desenvolvidos pela própria Lu Rodrigues, livres de metais pesados — colorimetria pensada para a sua pele." },
+      { title: "Fio a fio que não se anuncia", body: "Mais de vinte anos refinando uma única obsessão: realçar sem revelar a técnica." },
+    ],
     arte: {
       heading: "A arte da naturalidade\npara a sua sobrancelha",
       body: "Há mais de vinte anos refinamos uma única obsessão: realçar sem revelar a técnica. Cada sobrancelha começa por um estudo do seu rosto — proporção, expressão, a forma como você sorri — e por uma cor escolhida para conversar com a sua pele. O traço fio a fio se integra aos seus pelos, corrigindo falhas e assimetrias com uma naturalidade que não se anuncia.",
@@ -125,6 +133,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Micropigmentação labial em tom natural — cor que parece sua. Técnica autoral da Lu Make Up, pigmentos livres de metais pesados, atendimento por avaliação.",
     h1: "Micropigmentação Labial",
     essence: "Cor que parece sua, não aplicada.",
+    diferenciaisHeading: "O que faz a cor parecer sua",
+    diferenciais: [
+      { title: "Colorimetria a partir do seu subtom", body: "A cor nasce da sua pele, com pigmentos próprios livres de metais pesados. Viva ao acordar, nunca artificial." },
+      { title: "Contorno que respeita a sua boca", body: "Técnica autoral que devolve definição sem pesar — a leveza de quem nunca quis parecer maquiada." },
+      { title: "Biossegurança hospitalar", body: "Salas privativas e material 100% descartável. O cuidado que não se vê é o que mais importa." },
+    ],
     arte: {
       heading: "Cor que nasce de você",
       body: "A micropigmentação labial devolve contorno e cor à boca com a leveza de quem nunca quis parecer maquiada. Estudamos o seu subtom de pele para escolher uma cor que parece sua — viva ao acordar, discreta o suficiente para ser só você, um pouco melhor.",
@@ -157,6 +171,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Micropigmentação dos olhos e delineado discreto que valoriza o olhar. Técnica autoral da Lu Make Up, por avaliação personalizada.",
     h1: "Micropigmentação dos Olhos",
     essence: "O traço que valoriza o olhar.",
+    diferenciaisHeading: "O que abre o olhar sem endurecer",
+    diferenciais: [
+      { title: "Desenho a partir da sua anatomia", body: "O traço certo, na espessura certa, pensado para o formato do seu olho — presença sem peso." },
+      { title: "Delicadeza na região mais sensível", body: "Biossegurança hospitalar e material descartável onde o cuidado importa ainda mais." },
+      { title: "Pigmentos próprios, livres de metais pesados", body: "Desenvolvidos pela Lu Rodrigues para um envelhecer bonito da cor." },
+    ],
     arte: {
       heading: "O olhar em destaque,\nsem esforço",
       body: "Um delineado pensado para a sua anatomia: o traço certo, na espessura certa, que abre o olhar e dá presença aos cílios — sem nunca pesar. O luxo de acordar com o olhar pronto.",
@@ -188,6 +208,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Micropigmentação capilar para simular densidade e disfarçar a rarefação. Técnica autoral da Lu Make Up, resultado natural — por avaliação.",
     h1: "Micropigmentação Capilar",
     essence: "Densidade onde o tempo levou.",
+    diferenciaisHeading: "O que cria densidade que convence",
+    diferenciais: [
+      { title: "Pontilhismo de precisão", body: "Recriamos a impressão de fios ponto a ponto — densidade que parece sempre ter existido." },
+      { title: "Cor fiel ao seu cabelo", body: "Colorimetria com pigmentos próprios, livres de metais pesados, para um resultado discreto e definido." },
+      { title: "Biossegurança hospitalar", body: "Salas privativas e material 100% descartável." },
+    ],
     arte: {
       heading: "Densidade que parece\nter sempre existido",
       body: "Recriamos visualmente a densidade do couro cabeludo com uma técnica de pontilhismo precisa, devolvendo a impressão de fios onde a rarefação aparece. Discreto, definido — confiança que volta sem alarde.",
@@ -214,6 +240,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Micropigmentação para alopécia — reconstrução da moldura do rosto com naturalidade e cuidado. Técnica autoral da Lu Make Up, por avaliação.",
     h1: "Micropigmentação para Alopécia",
     essence: "Reconstruir a moldura do rosto.",
+    diferenciaisHeading: "O que devolve a moldura do rosto",
+    diferenciais: [
+      { title: "Sensibilidade caso a caso", body: "Cada alopécia é única. Avaliamos e desenhamos com o tempo e o cuidado que a sua história pede." },
+      { title: "Técnica autoral", body: "Mais de vinte anos reconstruindo molduras com naturalidade — para você se reconhecer no espelho." },
+      { title: "Pigmentos próprios e biossegurança hospitalar", body: "Livres de metais pesados, em salas privativas e com material 100% descartável." },
+    ],
     arte: {
       heading: "Reconstruir a moldura\ndo seu rosto",
       body: "Para quem convive com a alopécia, a sobrancelha e o contorno do olhar fazem toda a diferença. Reconstruímos a moldura do rosto com sensibilidade e técnica — devolvendo naturalidade e a sensação de se reconhecer no espelho.",
@@ -241,6 +273,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Exobrow: tratamento exclusivo da Lu Make Up para a saúde e o volume das sobrancelhas. Por avaliação personalizada.",
     h1: "Exobrow",
     essence: "Volume e desenho em um gesto.",
+    diferenciaisHeading: "O que age na raiz, não no disfarce",
+    diferenciais: [
+      { title: "Tratamento exclusivo da Lu Make Up", body: "Um protocolo autoral voltado à vitalidade do fio. (TODO:CONFIRMAR descrição do protocolo.)" },
+      { title: "Cuidado, não só estética", body: "O foco é a saúde da sobrancelha — densidade que volta com naturalidade." },
+      { title: "Biossegurança hospitalar", body: "Salas privativas e material 100% descartável." },
+    ],
     arte: {
       heading: "Mais do que desenhar:\nreativar",
       body: "Por muito tempo, sobrancelhas falhadas eram apenas disfarçadas. O Exobrow, tratamento exclusivo da Lu Make Up, age na raiz do problema — a saúde do folículo — para devolver vitalidade e densidade natural aos fios. (TODO:CONFIRMAR descrição técnica e ativos.)",
@@ -271,6 +309,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Micropigmentação paramédica — a técnica a serviço da reconstrução. Trabalho reparador da Lu Make Up, conduzido com cuidado e dignidade. Por avaliação.",
     h1: "Micropigmentação Paramédica",
     essence: "A técnica a serviço da reconstrução.",
+    diferenciaisHeading: "O que reconstrói com dignidade",
+    diferenciais: [
+      { title: "Discrição e acolhimento", body: "Conduzimos cada atendimento com respeito pela sua história e pelo seu tempo." },
+      { title: "Técnica a serviço da reparação", body: "Mais de vinte anos a serviço de devolver inteireza — não apenas estética." },
+      { title: "Biossegurança hospitalar", body: "Salas privativas e material 100% descartável." },
+    ],
     arte: {
       heading: "Quando a técnica\nreconstrói",
       body: "Há trabalhos que vão além da estética: a camuflagem de cicatrizes, a reconstrução de detalhes que devolvem a uma pessoa a sensação de inteireza. Conduzimos cada atendimento com discrição, cuidado e respeito pela sua história.",
@@ -296,6 +340,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Reconstrução labial — devolver o contorno e a cor aos lábios, com cuidado. Trabalho reparador da Lu Make Up, por avaliação personalizada.",
     h1: "Reconstrução Labial",
     essence: "Devolver o contorno, com cuidado.",
+    diferenciaisHeading: "O que devolve definição com cuidado",
+    diferenciais: [
+      { title: "Olhar reparador", body: "Para cicatrizes, assimetrias e perda de contorno — avaliamos cada caso individualmente." },
+      { title: "Colorimetria personalizada", body: "Cor e contorno desenhados com pigmentos próprios, livres de metais pesados." },
+      { title: "Biossegurança hospitalar", body: "Salas privativas e material 100% descartável." },
+    ],
     arte: {
       heading: "Devolver o contorno,\ncom cuidado",
       body: "Para lábios que perderam definição por cicatrizes ou outras condições, a reconstrução labial devolve contorno e cor com naturalidade e sensibilidade — um gesto técnico a serviço da autoestima.",

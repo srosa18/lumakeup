@@ -182,7 +182,7 @@ export default async function ServicoPage({
           <div className="px-6 py-20 lg:px-16 lg:py-32">
             <Kicker>Por que a Lu Make Up</Kicker>
             <h2 id="dif-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.4rem]">
-              O que não se vê é o que mais importa
+              {content.diferenciaisHeading ?? "O que não se vê é o que mais importa"}
             </h2>
             <div className="mt-12 space-y-10">
               {diferenciais.map((d) => (
