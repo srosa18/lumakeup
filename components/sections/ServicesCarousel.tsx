@@ -30,7 +30,7 @@ type Product = {
 const PRODUCTS: Product[] = [
   { slug: "labios", label: "Lábios", image: "/images/servicos/labios.png", alt: "Detalhe de lábios com micropigmentação labial", rotation: -2.7 },
   { slug: "sobrancelhas", label: "Sobrancelha", image: "/images/servicos/sobrancelha.png", alt: "Detalhe de sobrancelha com micropigmentação fio a fio", rotation: -1.22 },
-  { slug: "face", label: "Face", image: "/images/servicos/face.png", alt: "Retrato de rosto com pele natural", rotation: 0.26 },
+  { slug: "olhos", label: "Olhos", image: "/images/servicos/olhos.png", alt: "Detalhe do olhar — micropigmentação de olhos e delineado", rotation: 0.26 },
   { slug: "capilar", label: "Capilar", image: "/images/servicos/capilar.png", alt: "Retrato com micropigmentação capilar", rotation: 1.73 },
   { slug: "exobrow", label: "Exobrow", subtitle: "Tratamento regenerativo", image: "/images/servicos/exobrow.png", alt: "Detalhe do olhar com técnica Exobrow", rotation: 3.21 },
 ];
