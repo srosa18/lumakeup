@@ -136,6 +136,20 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Uma cor pensada para você",
+    images: {
+      hero: "/images/servicos/labios/hero.webp",
+      band: "/images/servicos/labios/band.webp",
+      bandPos: "center 45%",
+      diferenciais: "/images/servicos/labios/diferenciais.webp",
+      diferenciaisPos: "center 45%",
+      results: [
+        "/images/servicos/labios/result-1.webp",
+        "/images/servicos/labios/result-2.webp",
+        "/images/servicos/labios/result-3.webp",
+      ],
+      cta: "/images/servicos/labios/cta.webp",
+      ctaPos: "center 25%",
+    },
   },
   olhos: {
     title: "Micropigmentação dos Olhos (Delineado) em São Paulo",
@@ -153,6 +167,20 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Valorize o seu olhar",
+    images: {
+      hero: "/images/servicos/olhos/hero.webp",
+      band: "/images/servicos/olhos/band.webp",
+      bandPos: "center 30%",
+      diferenciais: "/images/servicos/olhos/diferenciais.webp",
+      diferenciaisPos: "center 30%",
+      results: [
+        "/images/servicos/olhos/result-1.webp",
+        "/images/servicos/olhos/result-2.webp",
+        "/images/servicos/olhos/result-3.webp",
+      ],
+      cta: "/images/servicos/olhos/cta.webp",
+      ctaPos: "center 25%",
+    },
   },
   capilar: {
     title: "Micropigmentação Capilar em São Paulo",
@@ -170,6 +198,15 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Densidade, com naturalidade",
+    images: {
+      hero: "/images/servicos/capilar/hero.webp",
+      band: "/images/servicos/capilar/band.webp",
+      bandPos: "center 45%",
+      diferenciais: "/images/servicos/capilar/diferenciais.webp",
+      diferenciaisPos: "center 25%",
+      cta: "/images/servicos/capilar/cta.webp",
+      ctaPos: "center 25%",
+    },
   },
   alopecia: {
     title: "Micropigmentação para Alopécia em São Paulo",
@@ -188,6 +225,15 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Reconhecer-se no espelho",
+    images: {
+      hero: "/images/servicos/alopecia/hero.webp",
+      band: "/images/servicos/alopecia/band.webp",
+      bandPos: "center 45%",
+      diferenciais: "/images/servicos/alopecia/diferenciais.webp",
+      diferenciaisPos: "center 25%",
+      cta: "/images/servicos/alopecia/cta.webp",
+      ctaPos: "center 25%",
+    },
   },
   exobrow: {
     title: "Exobrow — Regeneração de Sobrancelhas | Lu Make Up",
@@ -204,6 +250,20 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Sobrancelhas com vida",
+    images: {
+      hero: "/images/servicos/exobrow/hero.webp",
+      band: "/images/servicos/exobrow/band.webp",
+      bandPos: "center 45%",
+      diferenciais: "/images/servicos/exobrow/diferenciais.webp",
+      diferenciaisPos: "center 25%",
+      results: [
+        "/images/servicos/exobrow/result-1.webp",
+        "/images/servicos/exobrow/result-2.webp",
+        "/images/servicos/exobrow/result-3.webp",
+      ],
+      cta: "/images/servicos/exobrow/cta.webp",
+      ctaPos: "center 25%",
+    },
   },
   paramedica: {
     title: "Micropigmentação Paramédica em São Paulo | Lu Make Up",
@@ -220,6 +280,15 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Um cuidado que reconstrói",
+    images: {
+      hero: "/images/servicos/paramedica/hero.webp",
+      band: "/images/servicos/paramedica/band.webp",
+      bandPos: "center 35%",
+      diferenciais: "/images/servicos/paramedica/diferenciais.webp",
+      diferenciaisPos: "center 30%",
+      cta: "/images/servicos/paramedica/cta.webp",
+      ctaPos: "center 25%",
+    },
   },
   "reconstrucao-labial": {
     title: "Reconstrução Labial em São Paulo | Lu Make Up",
@@ -237,6 +306,15 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Devolver a definição",
+    images: {
+      hero: "/images/servicos/reconstrucao-labial/hero.webp",
+      band: "/images/servicos/reconstrucao-labial/band.webp",
+      bandPos: "center 55%",
+      diferenciais: "/images/servicos/reconstrucao-labial/diferenciais.webp",
+      diferenciaisPos: "center 25%",
+      cta: "/images/servicos/reconstrucao-labial/cta.webp",
+      ctaPos: "center 25%",
+    },
   },
 };
 
