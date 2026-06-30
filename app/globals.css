@@ -162,6 +162,58 @@ body {
   .swipe-hint { animation: none; opacity: 1; }
 }
 
+/* Diário — corpo do post (HTML migrado, sanitizado). Leitura sobre fundo bone.
+   Ritmo editorial: parágrafos arejados, subtítulos em display, latão pontual. */
+.prose-lu {
+  color: var(--color-text-on-bone);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-lu > * + * { margin-top: 1.5rem; }
+.prose-lu p { color: rgba(26, 26, 26, 0.86); }
+.prose-lu h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-top: 3rem;
+  letter-spacing: -0.01em;
+}
+.prose-lu h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 2.25rem;
+}
+.prose-lu strong { font-weight: 600; color: var(--color-text-on-bone); }
+.prose-lu ul, .prose-lu ol { padding-left: 1.25rem; }
+.prose-lu li { margin-top: 0.6rem; padding-left: 0.25rem; }
+.prose-lu ul li { list-style: none; position: relative; }
+.prose-lu ul li::before {
+  content: ""; position: absolute; left: -1rem; top: 0.7em;
+  width: 6px; height: 1px; background: var(--color-brass);
+}
+.prose-lu ol { list-style: decimal; }
+.prose-lu blockquote {
+  border-left: 2px solid var(--color-brass);
+  padding-left: 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--color-text-on-bone);
+}
+.prose-lu hr {
+  border: 0; height: 1px;
+  background: rgba(26, 26, 26, 0.12);
+  margin: 2.5rem 0;
+}
+.prose-lu a { color: var(--color-brass); text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 1024px) {
+  .prose-lu { font-size: 1.125rem; }
+  .prose-lu h2 { font-size: 1.9rem; }
+}
+
 /* Carrossel — tamanho das cartas. Base (até ~1600px, inclui o 13"): igual ao
    aprovado. ACIMA de 1600px (telas grandes/4K) as cartas ESCALAM com a tela, p/
    (a) ficarem maiores e (b) o conteúdo voltar a TRANSBORDAR a viewport — sem isso

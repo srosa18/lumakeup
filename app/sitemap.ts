@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { SERVICES } from "@/lib/services";
+import { DIARIO } from "@/lib/diario";
 
 /**
- * Sitemap (§8). Home + índice de serviços + 1 página por serviço.
- * Conforme P2 adicionar (instituto, lu-medical, localizações, diário), incluir aqui.
+ * Sitemap (§8). Home + serviços + A Casa + Diário (índice + posts) + políticas.
+ * Conforme P2 avançar (instituto, lu-medical, localizações, contato), incluir aqui.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -17,5 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: s.hero ? 0.9 : 0.8,
     })),
+    { url: `${SITE.url}/a-casa`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${SITE.url}/diario`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...DIARIO.map((p) => ({
+      url: `${SITE.url}/diario/${p.slug}`,
+      lastModified: new Date(p.date),
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
+    })),
+    { url: `${SITE.url}/politica-de-privacidade`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

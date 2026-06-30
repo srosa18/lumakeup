@@ -14,8 +14,8 @@ const COLS = [
     title: "A Casa",
     links: [
       { href: "/a-casa", label: "Nossa História" },
-      { href: "/a-casa/lu-rodrigues", label: "Lu Rodrigues" },
-      { href: "/a-casa/pigmentos", label: "Os Pigmentos" },
+      { href: "/a-casa#lu-rodrigues", label: "Lu Rodrigues" },
+      { href: "/a-casa#pigmentos", label: "Os Pigmentos" },
       { href: "/diario", label: "Diário" },
     ],
   },
