@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: s.hero ? 0.9 : 0.8,
     })),
     { url: `${SITE.url}/a-casa`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${SITE.url}/lu-medical`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE.url}/instituto-living-sculpture`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE.url}/diario`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...DIARIO.map((p) => ({
       url: `${SITE.url}/diario/${p.slug}`,

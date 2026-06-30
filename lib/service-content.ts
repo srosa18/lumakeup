@@ -366,6 +366,40 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       ctaPos: "center 25%",
     },
   },
+  "reconstrucao-de-areola": {
+    title: "Reconstrução de Aréola (pós-mastectomia) em São Paulo | Lu Make Up",
+    description:
+      "Reconstrução de aréola e mama pós-mastectomia com micropigmentação. Trabalho reparador do Instituto Living Sculpture, conduzido com cuidado e dignidade. Por avaliação.",
+    h1: "Reconstrução de Aréola",
+    essence: "Devolver a sensação de inteireza.",
+    diferenciaisHeading: "O que reconstrói com dignidade",
+    diferenciais: [
+      { title: "Acolhimento em cada etapa", body: "Conduzimos o atendimento com discrição e respeito pela sua história — do primeiro contato ao retorno." },
+      { title: "Técnica de cor e relevo", body: "Recriamos a aréola e o contorno com naturalidade e simetria, devolvendo a impressão de profundidade. (TODO:CONFIRMAR descrição da técnica 3D.)" },
+      { title: "Pigmentos próprios e biossegurança hospitalar", body: "Livres de metais pesados, em salas privativas e com material 100% descartável." },
+    ],
+    arte: {
+      heading: "Quando a arte\ndevolve a inteireza",
+      body: "Após a mastectomia, a reconstrução da aréola é, muitas vezes, o último gesto de um longo caminho — e o que devolve a sensação de se reconhecer no espelho. Recriamos cor, contorno e a impressão de relevo com naturalidade e sensibilidade. Cada atendimento é conduzido com discrição, acolhimento e respeito pela sua história. (TODO:CONFIRMAR detalhes da técnica e do fluxo.)",
+    },
+    proof: { quote: "Foi o gesto que faltava para eu me sentir inteira de novo.", author: "Cliente do Instituto Living Sculpture" },
+    faq: [
+      { q: "Quando posso fazer a reconstrução da aréola?", a: "Em geral após a alta e a liberação da equipe médica que acompanhou a sua reconstrução. Avaliamos cada caso com cuidado. (TODO:CONFIRMAR janela e pré-requisitos médicos.)" },
+      { q: "Preciso de encaminhamento médico?", a: "Muitas vezes trabalhamos em diálogo com a sua equipe médica. Avaliamos individualmente, com segurança. (TODO:CONFIRMAR fluxo de encaminhamento.)" },
+      { q: "O resultado parece natural?", a: "O objetivo é recriar cor e a impressão de relevo para um resultado natural e simétrico, respeitando a sua pele. (TODO:CONFIRMAR.)" },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Um cuidado que devolve inteireza",
+    images: {
+      hero: "/images/servicos/reconstrucao-de-areola/hero.webp",
+      band: "/images/servicos/reconstrucao-de-areola/band.webp",
+      bandPos: "center 30%",
+      diferenciais: "/images/servicos/reconstrucao-de-areola/diferenciais.webp",
+      diferenciaisPos: "center 25%",
+      cta: "/images/servicos/reconstrucao-de-areola/cta.webp",
+      ctaPos: "center 25%",
+    },
+  },
 };
 
 export function getServiceContent(slug: string): ServiceContent | undefined {

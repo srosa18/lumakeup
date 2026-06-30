@@ -78,6 +78,13 @@ export const SERVICES: Service[] = [
     art: "IMG: close de lábios em tom natural após reconstrução, luz suave — substituir",
     alt: "Detalhe de lábios após reconstrução labial",
   },
+  {
+    slug: "reconstrucao-de-areola",
+    label: "Reconstrução de Aréola",
+    essence: "Devolver a sensação de inteireza.",
+    art: "IMG: retrato digno e sereno, ou mãos/pigmentos — tom editorial, SEM teor clínico-gráfico em destaque (cuidado §6) — substituir",
+    alt: "Reconstrução de aréola e mama pós-mastectomia — trabalho reparador da Lu Make Up",
+  },
 ];
 
 export const HERO_SERVICE = SERVICES.find((s) => s.hero) ?? SERVICES[0];
