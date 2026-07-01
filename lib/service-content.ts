@@ -45,6 +45,8 @@ export type ServiceContent = {
   proof?: { quote: string; author: string };
   faq: QA[];
   ctaHeading: string;
+  /** Alinhamento do bloco do CTA final (default "center"; "right" p/ sair de cima do rosto). */
+  ctaAlign?: "center" | "right";
   images?: ServiceImages;
 };
 
@@ -158,6 +160,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Uma cor pensada para você",
+    ctaAlign: "right",
     images: {
       hero: "/images/servicos/labios/hero.webp",
       heroPos: "70% 62%",

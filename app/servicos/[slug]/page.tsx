@@ -85,6 +85,7 @@ export default async function ServicoPage({
   const diferenciais = content.diferenciais ?? DEFAULT_DIFERENCIAIS;
   const proof = content.proof;
   const img = content.images ?? {};
+  const ctaRight = content.ctaAlign === "right";
 
   // §8 — Service + FAQPage (AEO/GEO: as FAQs viram rich results / chunks citáveis).
   const jsonLd = {
@@ -279,8 +280,8 @@ export default async function ServicoPage({
         </div>
       </section>
 
-      {/* 9 · CTA final — faixa full-bleed */}
-      <section className="relative flex min-h-[46vh] items-center justify-center overflow-hidden bg-ink text-center lg:min-h-[52vh]">
+      {/* 9 · CTA final — faixa full-bleed. Bloco alinhável (ctaAlign) p/ sair de cima do rosto. */}
+      <section className={`relative flex min-h-[46vh] items-center overflow-hidden bg-ink lg:min-h-[52vh] ${ctaRight ? "justify-end text-right" : "justify-center text-center"}`}>
         <MediaFill
           src={img.cta}
           alt={`Retrato editorial — ${content.h1}`}
@@ -288,14 +289,14 @@ export default async function ServicoPage({
           position={img.ctaPos ?? "center 25%"}
         />
         <div aria-hidden className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 mx-auto max-w-[680px] px-6 lg:px-8">
+        <div className={`relative z-10 max-w-[680px] px-6 lg:px-8 ${ctaRight ? "lg:pr-[6%]" : "mx-auto"}`}>
           <h2 className="font-display text-[1.5rem] font-light leading-[1.08] text-text-on-ink lg:text-[2rem]">
             {content.ctaHeading}
           </h2>
-          <p className="mx-auto mt-5 max-w-[46ch] text-sm leading-relaxed text-text-on-ink/80">
+          <p className={`mt-5 max-w-[46ch] text-sm leading-relaxed text-text-on-ink/80 ${ctaRight ? "ml-auto" : "mx-auto"}`}>
             Tudo começa por uma avaliação personalizada — sem compromisso.
           </p>
-          <div className="mt-9 flex justify-center">
+          <div className={`mt-9 flex ${ctaRight ? "justify-end" : "justify-center"}`}>
             <Cta href={agendar} external variant="outline">
               Reservar meu horário
             </Cta>
