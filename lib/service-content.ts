@@ -292,8 +292,6 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       heroPos: "center 42%",
       diferenciais: "/images/servicos/alopecia/diferenciais-2.webp",
       diferenciaisPos: "65% 30%",
-      cta: "/images/servicos/alopecia/cta.webp",
-      ctaPos: "center 25%",
     },
   },
   exobrow: {
