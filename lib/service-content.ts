@@ -245,7 +245,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     ctaHeading: "Densidade, com naturalidade",
     images: {
-      hero: "/images/servicos/capilar/hero.webp",
+      hero: "/images/servicos/capilar/hero-2.webp",
+      heroPos: "center 22%",
       band: "/images/servicos/capilar/band.webp",
       bandPos: "center 45%",
       diferenciais: "/images/servicos/capilar/diferenciais.webp",
