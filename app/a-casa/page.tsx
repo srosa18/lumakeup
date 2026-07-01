@@ -46,11 +46,11 @@ export default function ACasa() {
           priority
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-20 lg:px-8 lg:pb-28">
+        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 min-[2000px]:pb-28">
           <Kicker tone="on-ink">A Casa · Desde 2002</Kicker>
           <h1
             id="acasa-heading"
-            className="mt-5 font-display text-[2.6rem] font-light uppercase leading-[1.05] tracking-[0.04em] text-text-on-ink sm:text-[3.4rem] lg:text-[4.4rem]"
+            className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[1.9rem] lg:text-[2.1rem] min-[2000px]:text-[2.5rem]"
           >
             A Casa
           </h1>
