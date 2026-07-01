@@ -126,7 +126,7 @@ export default async function ServicoPage({
           <Kicker tone="on-ink">Serviços · Micropigmentação de assinatura</Kicker>
           <h1
             id="servico-heading"
-            className="mt-5 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[2rem] lg:text-[2.5rem]"
+            className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[2rem] lg:text-[2.5rem]"
           >
             {content.h1Break ? (
               <>
@@ -138,10 +138,10 @@ export default async function ServicoPage({
               content.h1
             )}
           </h1>
-          <p className="mt-6 max-w-[34ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
+          <p className="mt-4 max-w-[34ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
             {content.essence}
           </p>
-          <div className="mt-9">
+          <div className="mt-7">
             <Cta href={agendar} external variant="outline">
               Agendar avaliação
             </Cta>
