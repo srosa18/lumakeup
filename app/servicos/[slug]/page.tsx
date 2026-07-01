@@ -10,6 +10,7 @@ import {
   DEFAULT_RITUAL,
   getServiceContent,
 } from "@/lib/service-content";
+import { SITE } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
@@ -84,6 +85,30 @@ export default async function ServicoPage({
   const diferenciais = content.diferenciais ?? DEFAULT_DIFERENCIAIS;
   const proof = content.proof;
   const img = content.images ?? {};
+
+  // §8 — Service + FAQPage (AEO/GEO: as FAQs viram rich results / chunks citáveis).
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: content.h1,
+        serviceType: content.h1,
+        description: content.description,
+        url: `${SITE.url}/servicos/${slug}`,
+        provider: { "@type": "MedicalBusiness", name: SITE.name, url: SITE.url },
+        areaServed: ["São Paulo", "Rio de Janeiro", "Brasília", "Manaus", "Miami"],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: content.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
 
   return (
     <>
@@ -277,6 +302,8 @@ export default async function ServicoPage({
           </div>
         </div>
       </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );
 }

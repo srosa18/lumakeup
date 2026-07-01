@@ -20,6 +20,18 @@ export const metadata: Metadata = {
 };
 
 export default function ACasa() {
+  // §8 — Person (entidade Lu Rodrigues p/ E-E-A-T e grafo de conhecimento).
+  const personLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Lu Rodrigues",
+    jobTitle: "Fundadora e micropigmentadora",
+    description:
+      "Pioneira da micropigmentação de assinatura no Brasil e do estudo do Linergismo. Fundou a Lu Make Up em 2002.",
+    worksFor: { "@type": "Organization", name: SITE.name, url: SITE.url },
+    sameAs: [SITE.social.instagram],
+  };
+
   return (
     <>
       {/* HERO full-bleed */}
@@ -226,6 +238,8 @@ export default function ACasa() {
           </div>
         </div>
       </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
     </>
   );
 }
