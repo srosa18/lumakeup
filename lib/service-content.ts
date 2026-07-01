@@ -202,6 +202,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Valorize o seu olhar",
+    ctaAlign: "right",
     images: {
       hero: "/images/servicos/olhos/hero.webp",
       heroPos: "center 32%",
@@ -214,8 +215,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         "/images/servicos/olhos/result-2b.webp",
         "/images/servicos/olhos/result-3b.webp",
       ],
-      cta: "/images/servicos/olhos/cta.webp",
-      ctaPos: "center 25%",
+      cta: "/images/servicos/olhos/cta-2.webp",
+      ctaPos: "35% 35%",
     },
   },
   capilar: {
