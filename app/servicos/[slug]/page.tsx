@@ -280,7 +280,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 9 · CTA final — faixa full-bleed */}
-      <section className="relative flex min-h-[52vh] items-center justify-center overflow-hidden bg-ink text-center lg:min-h-[58vh]">
+      <section className="relative flex min-h-[46vh] items-center justify-center overflow-hidden bg-ink text-center lg:min-h-[52vh]">
         <MediaFill
           src={img.cta}
           alt={`Retrato editorial — ${content.h1}`}
