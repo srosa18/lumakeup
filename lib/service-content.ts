@@ -215,8 +215,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         "/images/servicos/olhos/result-2b.webp",
         "/images/servicos/olhos/result-3b.webp",
       ],
-      cta: "/images/servicos/olhos/cta-2.webp",
-      ctaPos: "35% 35%",
+      cta: "/images/servicos/olhos/cta-3.webp",
+      ctaPos: "25% 45%",
     },
   },
   capilar: {

@@ -282,7 +282,7 @@ export default async function ServicoPage({
 
       {/* 9 · CTA final — faixa full-bleed. Bloco dentro do container da página (guideline);
           ctaAlign="right" alinha à direita DA COLUNA (não da viewport), em bloco estreito. */}
-      <section className="relative flex min-h-[46vh] items-center overflow-hidden bg-ink lg:min-h-[52vh]">
+      <section className="relative flex min-h-[42vh] items-center overflow-hidden bg-ink lg:min-h-[48vh]">
         <MediaFill
           src={img.cta}
           alt={`Retrato editorial — ${content.h1}`}
