@@ -289,7 +289,7 @@ export default async function ServicoPage({
           art={`CTA full-bleed de ${content.h1}: retrato editorial, fundo escuro — foto real a entrar`}
           position={img.ctaPos ?? "center 25%"}
         />
-        <div aria-hidden className="absolute inset-0 bg-black/55" />
+        <div aria-hidden className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 lg:px-8">
           <div className={ctaRight ? "ml-auto max-w-[440px] text-left" : "mx-auto max-w-[680px] text-center"}>
             <h2 className="font-display text-[1.5rem] font-light leading-[1.08] text-text-on-ink lg:text-[2rem]">
