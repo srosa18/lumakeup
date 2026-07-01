@@ -204,6 +204,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Valorize o seu olhar",
     images: {
       hero: "/images/servicos/olhos/hero.webp",
+      heroPos: "center 32%",
       band: "/images/servicos/olhos/band.webp",
       bandPos: "center 30%",
       diferenciais: "/images/servicos/olhos/diferenciais.webp",
