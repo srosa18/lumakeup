@@ -306,7 +306,9 @@ export default async function ServicoPage({
               {content.ctaHeading}
             </h2>
             <p className={`mt-5 text-sm leading-relaxed ${ctaLight ? "text-text-on-bone/70" : "text-text-on-ink/80"} ${ctaRight ? "" : "mx-auto max-w-[46ch]"}`}>
-              Tudo começa por uma avaliação personalizada, sem compromisso.
+              Tudo começa por uma avaliação personalizada,
+              <br />
+              sem compromisso.
             </p>
             <div className={`mt-9 flex ${ctaRight ? "justify-start" : "justify-center"}`}>
               <Cta href={agendar} external variant="outline" tone={ctaLight ? "on-bone" : "on-ink"}>
