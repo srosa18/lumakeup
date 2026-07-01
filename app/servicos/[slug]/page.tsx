@@ -285,35 +285,55 @@ export default async function ServicoPage({
 
       {/* 9 · CTA final — faixa full-bleed. Bloco dentro do container da página (guideline);
           ctaAlign="right" alinha à direita DA COLUNA (não da viewport), em bloco estreito. */}
+      {/* No MOBILE, o CTA final é sempre off-white (bone + texto/botão pretos);
+          no DESKTOP mantém o comportamento normal (foto+overlay quando há img.cta). */}
       <section
         data-section-theme={ctaLight ? "light" : undefined}
-        className={`relative flex min-h-[42vh] items-center overflow-hidden lg:min-h-[48vh] ${ctaLight ? "bg-bone" : "bg-ink"}`}
+        className={`relative flex min-h-[42vh] items-center overflow-hidden lg:min-h-[48vh] ${ctaLight ? "bg-bone" : "bg-bone md:bg-ink"}`}
       >
         {!ctaLight && (
-          <>
+          // foto + overlay só no desktop; no mobile some (fundo bone)
+          <div aria-hidden className="absolute inset-0 hidden md:block">
             <MediaFill
               src={img.cta}
               alt={`Retrato editorial — ${content.h1}`}
               art={`CTA full-bleed de ${content.h1}: retrato editorial, fundo escuro — foto real a entrar`}
               position={img.ctaPos ?? "center 25%"}
             />
-            <div aria-hidden className="absolute inset-0 bg-black/40" />
-          </>
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
         )}
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 lg:px-8">
           <div className={ctaRight ? "ml-auto max-w-[440px] text-left" : "mx-auto max-w-[680px] text-center"}>
-            <h2 className={`font-display text-[1.5rem] font-light leading-[1.08] lg:text-[2rem] ${ctaLight ? "text-text-on-bone" : "text-text-on-ink"}`}>
+            <h2 className={`font-display text-[1.5rem] font-light leading-[1.08] lg:text-[2rem] ${ctaLight ? "text-text-on-bone" : "text-text-on-bone md:text-text-on-ink"}`}>
               {content.ctaHeading}
             </h2>
-            <p className={`mt-5 text-sm leading-relaxed ${ctaLight ? "text-text-on-bone/70" : "text-text-on-ink/80"} ${ctaRight ? "" : "mx-auto max-w-[46ch]"}`}>
+            <p className={`mt-5 text-sm leading-relaxed ${ctaLight ? "text-text-on-bone/70" : "text-text-on-bone/70 md:text-text-on-ink/80"} ${ctaRight ? "" : "mx-auto max-w-[46ch]"}`}>
               Tudo começa por uma avaliação personalizada,
               <br />
               sem compromisso.
             </p>
             <div className={`mt-9 flex ${ctaRight ? "justify-start" : "justify-center"}`}>
-              <Cta href={agendar} external variant="outline" tone={ctaLight ? "on-bone" : "on-ink"}>
-                Reservar meu horário
-              </Cta>
+              {ctaLight ? (
+                <Cta href={agendar} external variant="outline" tone="on-bone">
+                  Reservar meu horário
+                </Cta>
+              ) : (
+                <>
+                  {/* mobile: botão preto (on-bone) · desktop: botão branco (on-ink).
+                      Visibilidade no wrapper p/ não brigar com o inline-flex base do Cta. */}
+                  <span className="md:hidden">
+                    <Cta href={agendar} external variant="outline" tone="on-bone">
+                      Reservar meu horário
+                    </Cta>
+                  </span>
+                  <span className="hidden md:block">
+                    <Cta href={agendar} external variant="outline" tone="on-ink">
+                      Reservar meu horário
+                    </Cta>
+                  </span>
+                </>
+              )}
             </div>
           </div>
         </div>

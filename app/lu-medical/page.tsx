@@ -166,29 +166,40 @@ export default function LuMedical() {
         </div>
       </section>
 
-      {/* CTA final */}
-      <section className="relative flex min-h-[62vh] items-center justify-center overflow-hidden bg-ink text-center lg:min-h-[70vh]">
-        <Image
-          src="/images/lu-medical/cta.webp"
-          alt="Lu Medical — atendimento por avaliação"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition: "center 25%" }}
-        />
-        <div aria-hidden className="absolute inset-0 bg-black/60" />
+      {/* CTA final — MOBILE off-white (bone + preto); DESKTOP normal (foto + branco). */}
+      <section className="relative flex min-h-[62vh] items-center justify-center overflow-hidden bg-bone text-center md:bg-ink lg:min-h-[70vh]">
+        {/* foto + overlay só no desktop */}
+        <div aria-hidden className="absolute inset-0 hidden md:block">
+          <Image
+            src="/images/lu-medical/cta.webp"
+            alt="Lu Medical — atendimento por avaliação"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: "center 25%" }}
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
         <div className="relative z-10 mx-auto max-w-[680px] px-6 lg:px-8">
-          <h2 className="font-display text-[2rem] font-light leading-[1.12] text-text-on-ink lg:text-[2.8rem]">
+          <h2 className="font-display text-[2rem] font-light leading-[1.12] text-text-on-bone md:text-text-on-ink lg:text-[2.8rem]">
             Um resultado exclusivo começa por uma conversa
           </h2>
-          <p className="mx-auto mt-5 max-w-[44ch] text-sm leading-relaxed text-text-on-ink/80">
+          <p className="mx-auto mt-5 max-w-[44ch] text-sm leading-relaxed text-text-on-bone/70 md:text-text-on-ink/80">
             O atendimento da Lu Medical é por avaliação — pensado para o seu caso, sem
             compromisso.
           </p>
           <div className="mt-9 flex justify-center">
-            <Cta href={avaliacao} external variant="outline">
-              Solicitar avaliação
-            </Cta>
+            {/* mobile: botão preto (on-bone) · desktop: botão branco (on-ink) */}
+            <span className="md:hidden">
+              <Cta href={avaliacao} external variant="outline" tone="on-bone">
+                Solicitar avaliação
+              </Cta>
+            </span>
+            <span className="hidden md:block">
+              <Cta href={avaliacao} external variant="outline" tone="on-ink">
+                Solicitar avaliação
+              </Cta>
+            </span>
           </div>
         </div>
       </section>
