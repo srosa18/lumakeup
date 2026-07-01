@@ -291,14 +291,14 @@ export default async function ServicoPage({
         />
         <div aria-hidden className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 lg:px-8">
-          <div className={ctaRight ? "ml-auto max-w-[440px] text-right" : "mx-auto max-w-[680px] text-center"}>
+          <div className={ctaRight ? "ml-auto max-w-[440px] text-left" : "mx-auto max-w-[680px] text-center"}>
             <h2 className="font-display text-[1.5rem] font-light leading-[1.08] text-text-on-ink lg:text-[2rem]">
               {content.ctaHeading}
             </h2>
             <p className={`mt-5 text-sm leading-relaxed text-text-on-ink/80 ${ctaRight ? "" : "mx-auto max-w-[46ch]"}`}>
               Tudo começa por uma avaliação personalizada, sem compromisso.
             </p>
-            <div className={`mt-9 flex ${ctaRight ? "justify-end" : "justify-center"}`}>
+            <div className={`mt-9 flex ${ctaRight ? "justify-start" : "justify-center"}`}>
               <Cta href={agendar} external variant="outline">
                 Reservar meu horário
               </Cta>
