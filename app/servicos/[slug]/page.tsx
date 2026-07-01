@@ -280,8 +280,9 @@ export default async function ServicoPage({
         </div>
       </section>
 
-      {/* 9 · CTA final — faixa full-bleed. Bloco alinhável (ctaAlign) p/ sair de cima do rosto. */}
-      <section className={`relative flex min-h-[46vh] items-center overflow-hidden bg-ink lg:min-h-[52vh] ${ctaRight ? "justify-end text-right" : "justify-center text-center"}`}>
+      {/* 9 · CTA final — faixa full-bleed. Bloco dentro do container da página (guideline);
+          ctaAlign="right" alinha à direita DA COLUNA (não da viewport), em bloco estreito. */}
+      <section className="relative flex min-h-[46vh] items-center overflow-hidden bg-ink lg:min-h-[52vh]">
         <MediaFill
           src={img.cta}
           alt={`Retrato editorial — ${content.h1}`}
@@ -289,17 +290,19 @@ export default async function ServicoPage({
           position={img.ctaPos ?? "center 25%"}
         />
         <div aria-hidden className="absolute inset-0 bg-black/55" />
-        <div className={`relative z-10 max-w-[680px] px-6 lg:px-8 ${ctaRight ? "lg:pr-[6%]" : "mx-auto"}`}>
-          <h2 className="font-display text-[1.5rem] font-light leading-[1.08] text-text-on-ink lg:text-[2rem]">
-            {content.ctaHeading}
-          </h2>
-          <p className={`mt-5 max-w-[46ch] text-sm leading-relaxed text-text-on-ink/80 ${ctaRight ? "ml-auto" : "mx-auto"}`}>
-            Tudo começa por uma avaliação personalizada — sem compromisso.
-          </p>
-          <div className={`mt-9 flex ${ctaRight ? "justify-end" : "justify-center"}`}>
-            <Cta href={agendar} external variant="outline">
-              Reservar meu horário
-            </Cta>
+        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 lg:px-8">
+          <div className={ctaRight ? "ml-auto max-w-[440px] text-right" : "mx-auto max-w-[680px] text-center"}>
+            <h2 className="font-display text-[1.5rem] font-light leading-[1.08] text-text-on-ink lg:text-[2rem]">
+              {content.ctaHeading}
+            </h2>
+            <p className={`mt-5 text-sm leading-relaxed text-text-on-ink/80 ${ctaRight ? "" : "mx-auto max-w-[46ch]"}`}>
+              Tudo começa por uma avaliação personalizada — sem compromisso.
+            </p>
+            <div className={`mt-9 flex ${ctaRight ? "justify-end" : "justify-center"}`}>
+              <Cta href={agendar} external variant="outline">
+                Reservar meu horário
+              </Cta>
+            </div>
           </div>
         </div>
       </section>
