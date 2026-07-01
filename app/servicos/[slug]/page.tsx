@@ -118,7 +118,7 @@ export default async function ServicoPage({
           src={img.hero}
           alt={`${content.h1} — Lu Make Up`}
           art={`HERO full-bleed de ${content.h1}: retrato editorial, fundo escuro, pele real — foto real a entrar`}
-          position="center 22%"
+          position={img.heroPos ?? "center 22%"}
         />
         <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
