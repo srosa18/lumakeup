@@ -6,8 +6,10 @@
  * sobrepor. Essência/arte/FAQ são por serviço. `images` aponta p/ slots reais; se
  * ausente, a página renderiza placeholder nomeado (foto a entrar por serviço).
  *
- * 🎯 SOBRANCELHAS = molde aprovado (copy + fotos reais). Os demais são RASCUNHO
- *    (refinar com a Lu, como foi a sobrancelha); fatos clínicos = TODO:CONFIRMAR.
+ * Fatos dos serviços (durabilidade, sessões, indicações, pós-cuidados) migrados
+ * do site atual (lumakeup.com.br) para a camada de resposta (FAQ). Copy boutique
+ * mantida enxuta. Claims fortes (ex.: "risco zero") foram suavizados; revisão
+ * clínica final com a Lu recomendada antes de publicar.
  */
 export type RitualStep = { n: string; title: string; body: string };
 export type Diferencial = { title: string; body: string };
@@ -103,10 +105,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     proof: { quote: "Ninguém percebe que é feito. Percebem que eu pareço descansada.", author: "Cliente desde 2015 · Sobrancelha" },
     faq: [
-      { q: "Quanto dura a micropigmentação de sobrancelhas?", a: "A durabilidade varia conforme a sua pele, a sua rotina e os cuidados pós-procedimento. Na avaliação explicamos a previsão para o seu caso. (TODO:CONFIRMAR faixa em meses.)" },
-      { q: "Dói?", a: "O conforto é parte do protocolo: trabalhamos com anestésico tópico e uma técnica delicada. A maioria das clientes relata um desconforto mínimo. (TODO:CONFIRMAR detalhes do protocolo.)" },
+      { q: "Quanto dura a micropigmentação de sobrancelhas?", a: "Em média de 8 a 18 meses, variando conforme o seu tipo de pele (peles oleosas tendem a clarear mais rápido) e os cuidados pós-procedimento. Um retoque de acabamento é feito entre 30 e 45 dias." },
+      { q: "Quanto tempo dura o procedimento?", a: "Entre 1h30 e 2h, incluindo o estudo do desenho, a aprovação com você e a execução fio a fio." },
+      { q: "Dói?", a: "Trabalhamos com anestésico tópico em pomada antes e durante o procedimento — a maioria das clientes descreve como muito tranquilo, muitas vezes indolor." },
+      { q: "Para quem é indicada?", a: "Para quem tem falhas, cicatrizes ou assimetrias, sobrancelhas muito claras, ralas ou sem definição, para casos de alopécia e para quem deseja acordar pronta, sem depender da maquiagem." },
       { q: "Qual a diferença entre fio a fio e efeito sombreado?", a: "O fio a fio recria pelos individuais para um resultado realista; o sombreado preenche com um esfumado suave, como uma maquiagem leve. Na avaliação indicamos o que valoriza o seu olhar — ou a combinação dos dois." },
-      { q: "Como me preparo para o procedimento?", a: "Venha com o rosto limpo, sem maquiagem, e com uma ideia do que deseja." },
+      { q: "Já fiz micropigmentação antes. Posso refazer?", a: "Depende do estado da cor e do desenho anteriores — em alguns casos indicamos uma despigmentação antes. Avaliamos individualmente." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "O seu olhar merece um estudo",
@@ -144,9 +148,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       body: "A micropigmentação labial devolve contorno e cor à boca com a leveza de quem nunca quis parecer maquiada. Estudamos o seu subtom de pele para escolher uma cor que parece sua — viva ao acordar, discreta o suficiente para ser só você, um pouco melhor.",
     },
     faq: [
-      { q: "A cor fica muito forte?", a: "Não. Trabalhamos a partir do seu subtom natural, para um resultado de cor que parece sua. Na avaliação você escolhe a intensidade. (TODO:CONFIRMAR nuances de técnica.)" },
-      { q: "Descasca depois?", a: "Há uma fase natural de cicatrização nos primeiros dias, com a cor assentando aos poucos. Orientamos todos os cuidados. (TODO:CONFIRMAR pós-procedimento.)" },
-      FAQ_PRIMEIRA,
+      { q: "Quanto dura a micropigmentação labial?", a: "Em média de 12 a 24 meses, com um esmaecimento gradual e uniforme, conforme a hidratação e os cuidados." },
+      { q: "Quais técnicas existem?", a: "Revitalização (cor suave e translúcida, efeito 'lip tint'), efeito batom (cor mais definida, que corrige assimetrias e dá volume visual) e neutralização de lábios escuros (harmoniza o excesso de melanina antes de aplicar a cor desejada)." },
+      { q: "A cor fica muito forte?", a: "Não. Trabalhamos a partir do seu subtom natural e você escolhe a intensidade na avaliação — de um tom que parece seu a um efeito mais marcante." },
+      { q: "Dói? E incha?", a: "Usamos anestésicos tópicos potentes; a sensação costuma ser de vibração ou leve ardência, bem tolerável. Há um inchaço leve a moderado nas primeiras 24h, que se resolve rápido." },
+      { q: "Tenho herpes labial. Posso fazer?", a: "Sim, mas é necessário um protocolo de medicação profilática (antiviral) prescrito por médico nos dias anteriores, para evitar que o procedimento reative o vírus." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Uma cor pensada para você",
@@ -182,8 +188,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       body: "Um delineado pensado para a sua anatomia: o traço certo, na espessura certa, que abre o olhar e dá presença aos cílios — sem nunca pesar. O luxo de acordar com o olhar pronto.",
     },
     faq: [
-      { q: "O delineado fica natural?", a: "Sim. Desenhamos a partir do formato do seu olho, com a espessura que valoriza sem endurecer a expressão. (TODO:CONFIRMAR técnicas disponíveis.)" },
-      FAQ_PRIMEIRA,
+      { q: "O delineado fica natural?", a: "Sim. Desenhamos a partir do formato do seu olho, com a espessura que valoriza sem endurecer a expressão." },
+      { q: "Quais tipos de delineado existem?", a: "Efeito preenchimento de cílios (infra-ciliar, dá volume e densidade sem parecer maquiagem), delineado clássico (uma linha fina e elegante, superior ou inferior) e efeito esfumado (um degradê suave, como uma sombra leve)." },
+      { q: "Quanto dura?", a: "Em média de 1 a 3 anos. Por ser uma pele de renovação celular baixa, a fixação costuma ser excelente." },
+      { q: "É seguro? Dói?", a: "A agulha nunca se aproxima do globo ocular — o pigmento é depositado com precisão milimétrica na pálpebra. Com anestésico tópico, a sensação é mais de vibração do que de dor." },
+      { q: "Quais os cuidados depois?", a: "Um leve inchaço nas primeiras 24h (compressas frias ajudam). O uso de lentes de contato pode ser retomado após 3 a 5 dias." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Valorize o seu olhar",
@@ -219,8 +228,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       body: "Recriamos visualmente a densidade do couro cabeludo com uma técnica de pontilhismo precisa, devolvendo a impressão de fios onde a rarefação aparece. Discreto, definido — confiança que volta sem alarde.",
     },
     faq: [
-      { q: "Para quem é indicada?", a: "Para quem busca disfarçar rarefação, falhas ou cicatrizes no couro cabeludo. Na avaliação verificamos a indicação para o seu caso. (TODO:CONFIRMAR indicações.)" },
-      FAQ_INVESTIMENTO,
+      { q: "Para quem é indicada?", a: "Para quem busca disfarçar rarefação, calvície ou cicatrizes no couro cabeludo — homens e mulheres. Na avaliação verificamos a melhor solução para o seu caso." },
+      { q: "Quais soluções existem?", a: "Efeito densidade (micro-pontos entre os fios existentes, para cabelo ralo sem raspar), efeito 'shaved look' (simula o fio nascendo em couro cabeludo raspado, recriando a linha frontal) e camuflagem de cicatrizes (inclusive de transplante, mesclando-as ao cabelo)." },
+      { q: "Quantas sessões e quanto tempo?", a: "Geralmente de 2 a 3 sessões para construir a densidade ideal, com cada sessão entre 2 e 4 horas." },
+      { q: "Preciso me afastar do trabalho?", a: "Não. A cicatrização é rápida e o procedimento não exige afastamento." },
+      { q: "Quais os cuidados depois?", a: "Nos primeiros dias, evite sol forte, sauna, piscina e suor excessivo. O boné é permitido e recomendado para proteção solar." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Densidade, com naturalidade",
@@ -252,7 +264,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     },
     proof: DEFAULT_PROOF,
     faq: [
-      { q: "Serve para alopécia total?", a: "Avaliamos cada caso individualmente para indicar a melhor abordagem. (TODO:CONFIRMAR indicações e limites.)" },
+      { q: "Serve para quais casos?", a: "Reconstrução da moldura do rosto na alopécia (sobrancelhas e contorno do olhar), camuflagem de cicatrizes e reconstrução de aréola pós-mastectomia. Avaliamos cada caso individualmente." },
+      { q: "O resultado parece natural?", a: "Sim. A técnica 3D trabalha luz e sombra na pele, criando profundidade, textura e projeção com realismo — não é uma tatuagem plana." },
+      { q: "Quanto dura?", a: "Em média de 2 a 4 anos, com clareamento gradual. Um retoque mantém a naturalidade e a cor." },
       FAQ_PRIMEIRA,
       FAQ_AGENDAMENTO,
     ],
@@ -275,16 +289,19 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     essence: "Volume e desenho em um gesto.",
     diferenciaisHeading: "O que age na raiz, não no disfarce",
     diferenciais: [
-      { title: "Tratamento exclusivo da Lu Make Up", body: "Um protocolo autoral voltado à vitalidade do fio. (TODO:CONFIRMAR descrição do protocolo.)" },
+      { title: "Tratamento exclusivo da Lu Make Up", body: "Um protocolo regenerativo com exossomos — tecnologia de regeneração celular — voltado à vitalidade e à densidade do fio." },
       { title: "Cuidado, não só estética", body: "O foco é a saúde da sobrancelha — densidade que volta com naturalidade." },
       { title: "Biossegurança hospitalar", body: "Salas privativas e material 100% descartável." },
     ],
     arte: {
       heading: "Mais do que desenhar:\nreativar",
-      body: "Por muito tempo, sobrancelhas falhadas eram apenas disfarçadas. O Exobrow, tratamento exclusivo da Lu Make Up, age na raiz do problema — a saúde do folículo — para devolver vitalidade e densidade natural aos fios. (TODO:CONFIRMAR descrição técnica e ativos.)",
+      body: "Por muito tempo, sobrancelhas falhadas eram apenas disfarçadas. O Exobrow, tratamento exclusivo da Lu Make Up, age na raiz do problema — a saúde do folículo. Com exossomos, uma tecnologia de regeneração celular, reativa fios em dormência e fortalece os existentes, devolvendo densidade natural.",
     },
     faq: [
-      { q: "Como o Exobrow funciona?", a: "É um tratamento voltado à saúde do folículo e à regeneração dos fios. Na avaliação explicamos o protocolo indicado para você. (TODO:CONFIRMAR mecanismo e número de sessões.)" },
+      { q: "Como o Exobrow funciona?", a: "É um protocolo regenerativo que usa exossomos — tecnologia de regeneração celular — aplicados por microagulhamento de precisão ou laser de baixa potência. Fios em fase de repouso voltam a crescer e fios finos ganham espessura e força." },
+      { q: "Quantas sessões?", a: "Um ciclo de 3 a 5 sessões, com intervalos de 15 a 30 dias, para a melhor regeneração celular. Os resultados são graduais." },
+      { q: "Substitui a micropigmentação?", a: "Não. O Exobrow recupera o fio natural; a micropigmentação recria visualmente o fio onde não há raiz viável. Podem se complementar — inclusive com o EverBrow." },
+      { q: "Dói?", a: "É um procedimento muito tranquilo, com anestésico tópico e mínima sensação." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Sobrancelhas com vida",
@@ -320,7 +337,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       body: "Há trabalhos que vão além da estética: a camuflagem de cicatrizes, a reconstrução de detalhes que devolvem a uma pessoa a sensação de inteireza. Conduzimos cada atendimento com discrição, cuidado e respeito pela sua história.",
     },
     faq: [
-      { q: "Preciso de encaminhamento médico?", a: "Em alguns casos sim. Avaliamos cada situação individualmente, sempre com cuidado e segurança. (TODO:CONFIRMAR fluxo e encaminhamentos.)" },
+      { q: "O que a micropigmentação paramédica trata?", a: "Camuflagem de cicatrizes cirúrgicas (abdominoplastia, cesárea, mamoplastia), estrias brancas, vitiligo estável (sem evolução há pelo menos seis meses), manchas de hipopigmentação e reconstrução de aréola." },
+      { q: "Como funciona?", a: "Implantamos pigmentos no tom exato da pele saudável sobre a área com cicatriz ou mancha. Em alguns casos combinamos indução de colágeno para melhorar a textura da pele." },
+      { q: "Funciona em qualquer estria?", a: "O melhor resultado é em estrias brancas (maduras). Estrias recentes, ainda avermelhadas, precisam que o tecido se recupere antes." },
+      { q: "Quanto dura?", a: "O resultado é duradouro, com desgaste natural ao longo dos anos. Recomendamos um retoque a cada 2 a 3 anos para manter cor e realismo." },
+      { q: "Preciso de encaminhamento médico?", a: "Em alguns casos sim. Avaliamos cada situação individualmente, com transparência e segurança — e recusamos o procedimento quando não é indicado." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Um cuidado que reconstrói",
@@ -352,7 +373,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     },
     proof: DEFAULT_PROOF,
     faq: [
-      { q: "Para quais casos é indicada?", a: "Cicatrizes, assimetrias e perda de definição do contorno labial, entre outros. Avaliamos cada caso individualmente. (TODO:CONFIRMAR indicações.)" },
+      { q: "Para quais casos é indicada?", a: "Fissura labiopalatina (lábio leporino) após cirurgias corretivas, cicatrizes (de acidentes, cirurgias ou herpes), assimetrias importantes e perda de contorno por idade ou grânulos de Fordyce." },
+      { q: "Como é o processo?", a: "Em três etapas: desenho por visagismo (o 'novo lábio' a lápis, aprovado por você), colorimetria personalizada (às vezes um tom para neutralizar a cicatriz e outro para o restante) e a micropigmentação de precisão, na camada certa para não borrar." },
+      { q: "Dá para aumentar bastante o lábio?", a: "Há um limite de segurança: pigmentamos até a linha de transição da pele. Ir além cria um resultado artificial — para volume, o indicado é associar preenchimento com ácido hialurônico." },
+      { q: "Cicatriz de herpes pode?", a: "Sim, é uma ótima indicação para devolver a cor. Mas é obrigatória a medicação profilática (antiviral) prescrita por médico nos dias anteriores." },
+      { q: "Dói, mesmo sobre cicatriz?", a: "O tecido cicatricial costuma ter sensibilidade reduzida. De todo modo, usamos anestésicos tópicos eficazes." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Devolver a definição",
@@ -375,18 +400,20 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     diferenciaisHeading: "O que reconstrói com dignidade",
     diferenciais: [
       { title: "Acolhimento em cada etapa", body: "Conduzimos o atendimento com discrição e respeito pela sua história — do primeiro contato ao retorno." },
-      { title: "Técnica de cor e relevo", body: "Recriamos a aréola e o contorno com naturalidade e simetria, devolvendo a impressão de profundidade. (TODO:CONFIRMAR descrição da técnica 3D.)" },
+      { title: "Realismo 3D de cor e relevo", body: "Um estudo de luz e sombra recria aréola, contorno e a impressão do mamilo — inclusive as glândulas de Montgomery. Parece tridimensional, mesmo sendo plano na pele." },
       { title: "Pigmentos próprios e biossegurança hospitalar", body: "Livres de metais pesados, em salas privativas e com material 100% descartável." },
     ],
     arte: {
       heading: "Quando a arte\ndevolve a inteireza",
-      body: "Após a mastectomia, a reconstrução da aréola é, muitas vezes, o último gesto de um longo caminho — e o que devolve a sensação de se reconhecer no espelho. Recriamos cor, contorno e a impressão de relevo com naturalidade e sensibilidade. Cada atendimento é conduzido com discrição, acolhimento e respeito pela sua história. (TODO:CONFIRMAR detalhes da técnica e do fluxo.)",
+      body: "Após a mastectomia, a reconstrução da aréola é, muitas vezes, o último gesto de um longo caminho — e o que devolve a sensação de se reconhecer no espelho. Com a técnica de realismo 3D, recriamos cor, contorno e a impressão de relevo com naturalidade e sensibilidade. Cada atendimento é conduzido com discrição, acolhimento e respeito pela sua história.",
     },
     proof: { quote: "Foi o gesto que faltava para eu me sentir inteira de novo.", author: "Cliente do Instituto Living Sculpture" },
     faq: [
-      { q: "Quando posso fazer a reconstrução da aréola?", a: "Em geral após a alta e a liberação da equipe médica que acompanhou a sua reconstrução. Avaliamos cada caso com cuidado. (TODO:CONFIRMAR janela e pré-requisitos médicos.)" },
-      { q: "Preciso de encaminhamento médico?", a: "Muitas vezes trabalhamos em diálogo com a sua equipe médica. Avaliamos individualmente, com segurança. (TODO:CONFIRMAR fluxo de encaminhamento.)" },
-      { q: "O resultado parece natural?", a: "O objetivo é recriar cor e a impressão de relevo para um resultado natural e simétrico, respeitando a sua pele. (TODO:CONFIRMAR.)" },
+      { q: "Quando posso fazer a reconstrução da aréola?", a: "Em geral, pedimos a liberação do seu mastologista ou cirurgião plástico. Na média, aguardamos de 6 a 12 meses após a cirurgia final." },
+      { q: "O resultado parece natural?", a: "Sim. A técnica de realismo 3D trabalha luz e sombra para simular a projeção do mamilo e a textura da aréola, inclusive as glândulas de Montgomery — parece tridimensional, mesmo sendo plano na pele." },
+      { q: "Que pigmentos são usados?", a: "Não usamos tinta de tatuagem. Usamos pigmentos paramédicos desenvolvidos para não migrar (borrar) e esmaecer de forma natural, sem virar azul ou verde com os anos." },
+      { q: "Quanto dura?", a: "Em média de 2 a 4 anos, com clareamento gradual. Um retoque é recomendado após esse período." },
+      { q: "Dói?", a: "Na maioria dos casos pós-mastectomia a sensibilidade da região está diminuída, tornando o procedimento indolor. Quando necessário, usamos anestésico tópico." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Um cuidado que devolve inteireza",
