@@ -31,6 +31,8 @@ export type ImageSlotProps = {
   className?: string;
   /** label opcional no placeholder (ex.: nome do serviço) */
   label?: string;
+  /** object-position do recorte (ex.: "center", "65% 30%") */
+  position?: string;
 };
 
 export function ImageSlot({
@@ -43,6 +45,7 @@ export function ImageSlot({
   sizes = "100vw",
   className,
   label,
+  position,
 }: ImageSlotProps) {
   const toneBg = tone === "ink" ? "bg-ink" : "bg-bone";
   const toneText = tone === "ink" ? "text-text-on-ink/55" : "text-text-on-bone/55";
@@ -60,6 +63,7 @@ export function ImageSlot({
           priority={priority}
           sizes={sizes}
           className="object-cover"
+          style={position ? { objectPosition: position } : undefined}
         />
       </div>
     );

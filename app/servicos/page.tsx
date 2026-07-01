@@ -53,7 +53,8 @@ export default function ServicosIndex() {
                 <div className="overflow-hidden">
                   <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
                     <ImageSlot
-                      src={c?.images?.results?.[0] ?? c?.images?.hero}
+                      src={c?.images?.card ?? c?.images?.results?.[0] ?? c?.images?.hero}
+                      position={c?.images?.cardPos}
                       alt={`${s.label} — Lu Make Up`}
                       art={`Card do serviço ${s.label} (foto real a entrar)`}
                       ratio="4 / 5"

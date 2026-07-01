@@ -28,6 +28,10 @@ export type ServiceImages = {
   results?: string[];
   cta?: string;
   ctaPos?: string;
+  /** imagem do card no índice /servicos (fallback: results[0] → hero). */
+  card?: string;
+  /** object-position do card (padrão "center"). */
+  cardPos?: string;
 };
 
 export type ServiceContent = {
@@ -292,6 +296,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       heroPos: "center 42%",
       diferenciais: "/images/servicos/alopecia/diferenciais-2.webp",
       diferenciaisPos: "65% 30%",
+      card: "/images/servicos/alopecia/diferenciais-2.webp",
+      cardPos: "62% 40%",
     },
   },
   exobrow: {
@@ -360,6 +366,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Um cuidado que reconstrói",
     images: {
       hero: "/images/servicos/paramedica/hero.webp",
+      cardPos: "68% 40%",
       band: "/images/servicos/paramedica/band.webp",
       bandPos: "center 35%",
       diferenciais: "/images/servicos/paramedica/diferenciais.webp",
@@ -396,6 +403,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Devolver a definição",
     images: {
       hero: "/images/servicos/reconstrucao-labial/hero.webp",
+      cardPos: "68% 40%",
       band: "/images/servicos/reconstrucao-labial/band.webp",
       bandPos: "center 55%",
       diferenciais: "/images/servicos/reconstrucao-labial/diferenciais.webp",
@@ -432,6 +440,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Um cuidado que devolve inteireza",
     images: {
       hero: "/images/servicos/reconstrucao-de-areola/hero.webp",
+      cardPos: "68% 40%",
       band: "/images/servicos/reconstrucao-de-areola/band.webp",
       bandPos: "center 30%",
       diferenciais: "/images/servicos/reconstrucao-de-areola/diferenciais.webp",
