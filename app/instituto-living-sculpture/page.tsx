@@ -46,7 +46,7 @@ export default function InstitutoLivingSculpture() {
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-20 lg:px-8 lg:pb-28">
-          <Kicker>Instituto Living Sculpture</Kicker>
+          <Kicker tone="on-ink">Instituto Living Sculpture</Kicker>
           <h1
             id="instituto-heading"
             className="mt-5 font-display text-[2.4rem] font-light uppercase leading-[1.05] tracking-[0.04em] text-text-on-ink sm:text-[3.2rem] lg:text-[4.2rem]"

@@ -123,7 +123,7 @@ export default async function ServicoPage({
         <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-20 lg:px-8 lg:pb-28">
-          <Kicker>Serviços · Micropigmentação de assinatura</Kicker>
+          <Kicker tone="on-ink">Serviços · Micropigmentação de assinatura</Kicker>
           <h1
             id="servico-heading"
             className="mt-5 font-display text-[2.6rem] font-light uppercase leading-[1.05] tracking-[0.04em] text-text-on-ink sm:text-[3.4rem] lg:text-[4.4rem]"
