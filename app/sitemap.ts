@@ -38,5 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { url: `${SITE.url}/contato`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE.url}/politica-de-privacidade`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE.url}/termos-de-servico`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 }
