@@ -138,7 +138,7 @@ export default async function ServicoPage({
               content.h1
             )}
           </h1>
-          <p className="mt-4 max-w-[34ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
+          <p className="mt-3 max-w-[34ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
             {content.essence}
           </p>
           <div className="mt-7">
