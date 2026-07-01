@@ -254,6 +254,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       bandTall: true,
       diferenciais: "/images/servicos/capilar/diferenciais-2.webp",
       diferenciaisPos: "center 45%",
+      results: [
+        "/images/servicos/capilar/result-1.webp",
+        "/images/servicos/capilar/result-2.webp",
+        "/images/servicos/capilar/result-3.webp",
+      ],
       cta: "/images/servicos/capilar/cta.webp",
       ctaPos: "center 25%",
     },
