@@ -290,8 +290,6 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     images: {
       hero: "/images/servicos/alopecia/hero-7.webp",
       heroPos: "center 42%",
-      band: "/images/servicos/alopecia/band.webp",
-      bandPos: "center 45%",
       diferenciais: "/images/servicos/alopecia/diferenciais.webp",
       diferenciaisPos: "center 25%",
       cta: "/images/servicos/alopecia/cta.webp",
