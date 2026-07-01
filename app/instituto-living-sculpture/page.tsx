@@ -78,7 +78,13 @@ export default function InstitutoLivingSculpture() {
                 Tudo começou de perto — em uma história de família — e se transformou em
                 causa: acolher mulheres em reconstrução após o câncer de mama e devolver,
                 pela arte da micropigmentação, a sensação de se reconhecer no espelho.
-                {/* TODO:CONFIRMAR detalhes da origem (avó/câncer de mama) e parcerias/causa. */}
+                {/* TODO:CONFIRMAR detalhes da origem (história de família). */}
+              </p>
+              <p>
+                Dessa causa nasceu o <strong className="text-text-on-bone">Projeto Living
+                Sculpture</strong>: um projeto social premiado que oferece reconstrução
+                gratuita para mulheres de baixa renda que venceram o câncer de mama. Já são
+                milhares atendidas. {/* TODO:CONFIRMAR prêmios, parcerias e como se inscrever. */}
               </p>
             </div>
           </div>
@@ -114,10 +120,11 @@ export default function InstitutoLivingSculpture() {
                 A técnica a serviço da reconstrução
               </h2>
               <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-                Reconstrução de aréola após a mastectomia, camuflagem de cicatrizes,
-                reparação de contornos. Cada atendimento é conduzido com discrição,
-                acolhimento e respeito pela história de quem nos procura.
-                {/* TODO:CONFIRMAR abrangência (vitiligo, queimaduras) e imagens de resultado aprovadas. */}
+                Reconstrução de aréola após a mastectomia, camuflagem de cicatrizes
+                cirúrgicas e estrias, repigmentação de vitiligo estável e reparação de
+                contornos. Cada atendimento é conduzido com discrição, acolhimento e
+                respeito pela história de quem nos procura.
+                {/* TODO:CONFIRMAR imagens de resultado aprovadas para a página. */}
               </p>
 
               <ul className="mt-10 grid gap-px overflow-hidden border border-line-subtle sm:grid-cols-2">

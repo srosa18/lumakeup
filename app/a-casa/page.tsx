@@ -85,21 +85,60 @@ export default function ACasa() {
             <div className="mt-8 space-y-6 text-base leading-relaxed text-muted lg:text-lg">
               <p>
                 Pioneira da micropigmentação de assinatura no Brasil, Lu Rodrigues fundou
-                a Lu Make Up em 2002 e, desde então, transformou a técnica em uma forma de
-                arte — guiada pelo visagismo, pela colorimetria e por um respeito absoluto
-                à anatomia de cada rosto.
+                a Lu Make Up em 2002, em Treze Tílias, Santa Catarina. O que começou como
+                um estúdio no interior cresceu, ao longo de mais de duas décadas, até se
+                tornar uma referência — hoje com unidades em São Paulo, Rio de Janeiro,
+                Brasília, Manaus e Miami.
               </p>
               <p>
-                Sua busca pela excelência a levou a aperfeiçoar-se continuamente e a
-                desenvolver os próprios pigmentos, livres de metais pesados, pensados para
-                um envelhecer bonito da cor. {/* TODO:CONFIRMAR formação internacional (Europa, China) e marcos da trajetória. */}
+                Com formação em biomedicina e cosmetologia, é uma das pioneiras no estudo
+                do Linergismo — a leitura das linhas do rosto. Sua busca pela excelência a
+                levou a mais de cinco anos de atuação e aperfeiçoamento na Europa (Alemanha,
+                França e Suíça) e a viagens de pesquisa até a China, absorvendo o que há de
+                mais avançado em técnica e tecnologia.
               </p>
               <p>
-                Hoje, a sua técnica autoral é referência — e cada profissional da casa é
-                formado sob o mesmo rigor e a mesma sensibilidade.
+                Dessa trajetória nasceram um método autoral e os próprios pigmentos, livres
+                de metais pesados, pensados para um envelhecer bonito da cor. Hoje, mais do
+                que executar, Lu forma cada profissional da casa sob o mesmo rigor e a mesma
+                sensibilidade. {/* TODO:CONFIRMAR anos/instituições exatas da formação internacional. */}
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* O MÉTODO + EQUIPE */}
+      <section aria-labelledby="metodo-heading" className="bg-ink py-24 lg:py-32">
+        <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
+          <div className="max-w-[640px]">
+            <Kicker>O Método Lu Rodrigues</Kicker>
+            <h2 id="metodo-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-ink lg:text-[2.4rem]">
+              Um rigor que se ensina
+            </h2>
+            <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
+              Não basta uma boa mão. A técnica autoral da casa é transmitida a cada
+              profissional sob três princípios — para que a segurança de ser atendida pela
+              Lu Make Up não dependa de quem executa.
+            </p>
+          </div>
+          <ol className="mt-14 grid gap-px overflow-hidden border border-line-subtle sm:grid-cols-3">
+            {[
+              { t: "Formação multidisciplinar", b: "Fisiologia da pele, química do pigmento e geometria facial — a base científica por trás de cada traço." },
+              { t: "Atualização constante", b: "Presença em congressos e workshops para incorporar as tendências e tecnologias globais." },
+              { t: "Biossegurança hospitalar", b: "Protocolos rigorosos de esterilização e higiene, salas privativas e material descartável." },
+            ].map((p) => (
+              <li key={p.t} className="bg-ink p-7 outline outline-1 outline-line-subtle">
+                <h3 className="font-display text-lg font-light text-text-on-ink">{p.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{p.b}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-10 max-w-[60ch] text-sm leading-relaxed text-muted">
+            Ao lado de Lu Rodrigues, a casa reúne especialistas de referência — entre eles
+            André Ishimura, nome nacional em procedimentos capilares, Fabiana Avesani e
+            Fernanda Eleutério. {/* TODO:CONFIRMAR nomes/funções atuais da equipe. */}
+          </p>
         </div>
       </section>
 
@@ -145,10 +184,10 @@ export default function ACasa() {
             <h2 id="espaco-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-ink lg:text-[2.4rem]">
               Ateliês pensados para o seu conforto
             </h2>
-            <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-              Salas privativas, biossegurança hospitalar e a atmosfera de quem trata cada
-              atendimento como um ritual. Abaixo, a unidade São Paulo.
-              {/* TODO:CONFIRMAR endereços/legendas por unidade (entram nas Localizações). */}
+            <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
+              Na tradicional Avenida Nove de Julho, a Casa Conceito reúne mais de dez salas
+              privativas, um centro cirúrgico com tecnologia de ponta e a atmosfera de quem
+              trata cada atendimento como um ritual. Abaixo, a unidade São Paulo.
             </p>
           </div>
           <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
