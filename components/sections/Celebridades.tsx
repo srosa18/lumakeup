@@ -29,7 +29,9 @@ export function Celebridades() {
             id="celebridades-heading"
             className="mt-5 font-display text-[2rem] font-light leading-[1.12] text-text-on-ink lg:text-[2.6rem]"
           >
-            Quem confia o próprio olhar à Lu Make Up
+            Quem confia o próprio olhar
+            <br />
+            à Lu Make Up
           </h2>
           <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
             De atrizes e apresentadoras a mulheres que atravessaram o câncer — o mesmo

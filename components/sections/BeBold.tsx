@@ -169,6 +169,7 @@ function CardBody({ pin }: { pin: Pin }) {
 
 export function BeBold() {
   const [active, setActive] = useState<number | null>(null); // nada visível até hover/foco
+  const [selectedM, setSelectedM] = useState<number | null>(null); // mobile: card selecionado (persiste até tocar outro pin)
   const rootRef = useRef<HTMLElement | null>(null);
   const activePin = active === null ? null : PINS.find((p) => p.n === active) ?? null;
 
@@ -262,6 +263,7 @@ export function BeBold() {
                 // e, no mobile, rola até o card empilhado.
                 if ((e.nativeEvent as PointerEvent).pointerType === "mouse") return;
                 setActive(p.n);
+                setSelectedM(p.n); // marca o card no mobile (stroke)
                 scrollToMobileCard(p.n);
               }}
               onFocus={() => setActive(p.n)}
@@ -314,7 +316,18 @@ export function BeBold() {
       {/* MOBILE — todos os cards empilhados na sequência, abaixo da modelo */}
       <div className="mx-auto mt-6 flex max-w-[440px] flex-col gap-4 px-5 md:hidden">
         {PINS.map((p) => (
-          <div key={p.n} id={`bebold-card-m-${p.n}`} className="scroll-mt-24">
+          <div
+            key={p.n}
+            id={`bebold-card-m-${p.n}`}
+            className="scroll-mt-24 transition-shadow duration-300"
+            // stroke bronze/latão no card selecionado (o nº tocado no rosto):
+            // 2px de respiro (stone) + anel de 2px em brass. Inline p/ garantir o var().
+            style={
+              selectedM === p.n
+                ? { boxShadow: "0 0 0 2px var(--color-stone), 0 0 0 4px var(--color-brass)" }
+                : undefined
+            }
+          >
             <CardBody pin={p} />
           </div>
         ))}
