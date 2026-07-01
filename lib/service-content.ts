@@ -206,7 +206,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       hero: "/images/servicos/olhos/hero.webp",
       heroPos: "center 32%",
       band: "/images/servicos/olhos/band.webp",
-      bandPos: "center 30%",
+      bandPos: "center 42%",
       diferenciais: "/images/servicos/olhos/diferenciais.webp",
       diferenciaisPos: "center 30%",
       results: [
