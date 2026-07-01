@@ -49,7 +49,8 @@ export function ServicesCarousel() {
     const el = scroller.current;
     if (!el) return;
 
-    const s = { mouseNorm: 0, hovering: false, dragging: false, startX: 0, startLeft: 0, autoDrift: false, interacted: false };
+    const s = { mouseNorm: 0, hovering: false, down: false, dragging: false, startX: 0, startLeft: 0, justDragged: false, autoDrift: false, interacted: false };
+    const DRAG_THRESHOLD = 6; // px — abaixo disso é CLIQUE (navega); acima, arraste.
     const stopAuto = () => {
       s.autoDrift = false;
       s.interacted = true;
@@ -57,11 +58,24 @@ export function ServicesCarousel() {
     };
 
     const onMove = (e: PointerEvent) => {
-      if (s.dragging) {
-        el.scrollLeft = s.startLeft - (e.clientX - s.startX);
-        return;
+      if (s.down && e.pointerType === "mouse") {
+        const dx = e.clientX - s.startX;
+        // Só vira "arraste" (e captura o ponteiro) depois de passar o limiar.
+        // Capturar no pointerdown roubaria o clique dos <Link> — era esse o bug.
+        if (!s.dragging && Math.abs(dx) > DRAG_THRESHOLD) {
+          s.dragging = true;
+          try {
+            el.setPointerCapture(e.pointerId);
+          } catch {
+            /* noop */
+          }
+        }
+        if (s.dragging) {
+          el.scrollLeft = s.startLeft - dx;
+          return;
+        }
       }
-      if (e.pointerType === "mouse") {
+      if (!s.dragging && e.pointerType === "mouse") {
         const r = el.getBoundingClientRect();
         let n = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
         if (n > 1) n = 1;
@@ -73,24 +87,37 @@ export function ServicesCarousel() {
     const onEnter = (e: PointerEvent) => {
       if (e.pointerType === "mouse") s.hovering = true;
     };
+    const endDrag = () => {
+      if (s.dragging) s.justDragged = true; // suprime o clique-fantasma pós-arraste
+      s.down = false;
+      s.dragging = false;
+    };
     const onLeave = (e: PointerEvent) => {
       if (e.pointerType === "mouse") {
         s.hovering = false;
         s.mouseNorm = 0;
       }
-      s.dragging = false;
+      endDrag();
     };
     const onDown = (e: PointerEvent) => {
       stopAuto(); // qualquer toque/clique encerra o auto-deslize
+      s.justDragged = false;
       if (e.pointerType === "mouse") {
-        s.dragging = true;
+        s.down = true;
+        s.dragging = false;
         s.startX = e.clientX;
         s.startLeft = el.scrollLeft;
-        el.setPointerCapture(e.pointerId);
+        // NÃO captura o ponteiro aqui (só quando o arraste começa, no onMove).
       }
     };
-    const onUp = () => {
-      s.dragging = false;
+    const onUp = () => endDrag();
+    // Um arraste real termina disparando um "click" no card — cancelamos p/ não navegar.
+    const onClickCapture = (e: MouseEvent) => {
+      if (s.justDragged) {
+        e.preventDefault();
+        e.stopPropagation();
+        s.justDragged = false;
+      }
     };
 
     el.addEventListener("pointermove", onMove);
@@ -99,6 +126,7 @@ export function ServicesCarousel() {
     el.addEventListener("pointerdown", onDown);
     el.addEventListener("pointerup", onUp);
     el.addEventListener("pointercancel", onUp);
+    el.addEventListener("click", onClickCapture, true);
     el.addEventListener("wheel", stopAuto, { passive: true });
 
     // Auto-deslize SUTIL quando o carrossel entra na viewport — uma vez, e só até
@@ -166,6 +194,7 @@ export function ServicesCarousel() {
       el.removeEventListener("pointerdown", onDown);
       el.removeEventListener("pointerup", onUp);
       el.removeEventListener("pointercancel", onUp);
+      el.removeEventListener("click", onClickCapture, true);
       el.removeEventListener("wheel", stopAuto);
       io.disconnect();
     };
