@@ -211,8 +211,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       diferenciaisPos: "center 30%",
       results: [
         "/images/servicos/olhos/result-1.webp",
-        "/images/servicos/olhos/result-2.webp",
-        "/images/servicos/olhos/result-3.webp",
+        "/images/servicos/olhos/result-2b.webp",
+        "/images/servicos/olhos/result-3b.webp",
       ],
       cta: "/images/servicos/olhos/cta.webp",
       ctaPos: "center 25%",
