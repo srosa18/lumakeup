@@ -45,3 +45,10 @@ next-env.d.ts
 # originais crus que o cliente subiu em public/ (~27MB cada) — NÃO versionar;
 # só as versões otimizadas (public/images/servicos/...) vão pro git.
 /public/images/imagens/**
+
+# pastas de ORIGINAIS que o cliente larga (nunca deletar; só ignorar do git/deploy):
+# _src/ e pastas com acento tipo "serviços/". Ficam no disco, fora do repo.
+/public/images/**/_src/**
+/public/images/servicos/serviços/**
+
+.vercel
