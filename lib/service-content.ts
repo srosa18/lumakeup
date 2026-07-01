@@ -160,7 +160,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Uma cor pensada para você",
     images: {
       hero: "/images/servicos/labios/hero.webp",
-      heroPos: "62% 30%",
+      heroPos: "center 30%",
       band: "/images/servicos/labios/band.webp",
       bandPos: "center 45%",
       diferenciais: "/images/servicos/labios/diferenciais.webp",
