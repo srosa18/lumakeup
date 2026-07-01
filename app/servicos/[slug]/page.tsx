@@ -113,7 +113,7 @@ export default async function ServicoPage({
   return (
     <>
       {/* 1 · HERO full-bleed */}
-      <section aria-labelledby="servico-heading" className="relative flex min-h-[90svh] items-end overflow-hidden bg-ink">
+      <section aria-labelledby="servico-heading" className="relative flex min-h-[78svh] items-end overflow-hidden bg-ink">
         <MediaFill
           src={img.hero}
           alt={`${content.h1} — Lu Make Up`}
@@ -163,7 +163,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 3 · FAIXA DE IMAGEM grande */}
-      <section className="relative h-[62vh] min-h-[440px] overflow-hidden bg-ink lg:h-[75vh]">
+      <section className="relative h-[52vh] min-h-[360px] overflow-hidden bg-ink lg:h-[62vh]">
         <MediaFill
           src={img.band}
           alt={`Detalhe do procedimento de ${content.h1}`}
@@ -280,7 +280,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 9 · CTA final — faixa full-bleed */}
-      <section className="relative flex min-h-[62vh] items-center justify-center overflow-hidden bg-ink text-center lg:min-h-[70vh]">
+      <section className="relative flex min-h-[52vh] items-center justify-center overflow-hidden bg-ink text-center lg:min-h-[58vh]">
         <MediaFill
           src={img.cta}
           alt={`Retrato editorial — ${content.h1}`}
