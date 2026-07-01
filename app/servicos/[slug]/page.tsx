@@ -126,7 +126,7 @@ export default async function ServicoPage({
           <Kicker tone="on-ink">Serviços · Micropigmentação de assinatura</Kicker>
           <h1
             id="servico-heading"
-            className="mt-5 font-display text-[1.6rem] font-light uppercase leading-[1.18] tracking-[0.07em] text-text-on-ink sm:text-[2rem] lg:text-[2.5rem]"
+            className="mt-5 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[2rem] lg:text-[2.5rem]"
           >
             {content.h1Break ? (
               <>
@@ -153,7 +153,7 @@ export default async function ServicoPage({
       <section aria-labelledby="arte-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
         <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
           <Kicker>A arte</Kicker>
-          <h2 id="arte-heading" className="mt-5 whitespace-pre-line font-display text-[1.55rem] font-light leading-[1.25] text-text-on-bone lg:text-[1.95rem]">
+          <h2 id="arte-heading" className="mt-5 whitespace-pre-line font-display text-[1.55rem] font-light leading-[1.12] text-text-on-bone lg:text-[1.95rem]">
             {content.arte.heading}
           </h2>
           <p className="mx-auto mt-8 max-w-[60ch] text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
@@ -177,7 +177,7 @@ export default async function ServicoPage({
         <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
           <div className="max-w-[640px]">
             <Kicker>A experiência</Kicker>
-            <h2 id="ritual-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.25] text-text-on-ink lg:text-[1.85rem]">
+            <h2 id="ritual-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.12] text-text-on-ink lg:text-[1.85rem]">
               Um ritual, do estudo ao retorno
             </h2>
           </div>
@@ -206,7 +206,7 @@ export default async function ServicoPage({
           </div>
           <div className="px-6 py-20 lg:px-16 lg:py-32">
             <Kicker>Por que a Lu Make Up</Kicker>
-            <h2 id="dif-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.25] text-text-on-bone lg:text-[1.85rem]">
+            <h2 id="dif-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.12] text-text-on-bone lg:text-[1.85rem]">
               {content.diferenciaisHeading ?? "O que não se vê é o que mais importa"}
             </h2>
             <div className="mt-12 space-y-10">
@@ -227,7 +227,7 @@ export default async function ServicoPage({
         <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
           <div className="max-w-[640px]">
             <Kicker>Resultados</Kicker>
-            <h2 id="result-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.25] text-text-on-ink lg:text-[1.85rem]">
+            <h2 id="result-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.12] text-text-on-ink lg:text-[1.85rem]">
               O traço que respeita a sua anatomia
             </h2>
           </div>
@@ -265,7 +265,7 @@ export default async function ServicoPage({
       <section aria-labelledby="faq-heading" className="bg-ink py-24 lg:py-32">
         <div className="mx-auto max-w-[860px] px-6 lg:px-8">
           <Kicker>Perguntas frequentes</Kicker>
-          <h2 id="faq-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.25] text-text-on-ink lg:text-[1.85rem]">
+          <h2 id="faq-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.12] text-text-on-ink lg:text-[1.85rem]">
             Sobre {service.label.toLowerCase()}
           </h2>
           <dl className="mt-12 border-t border-white/[0.14]">
@@ -289,7 +289,7 @@ export default async function ServicoPage({
         />
         <div aria-hidden className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 mx-auto max-w-[680px] px-6 lg:px-8">
-          <h2 className="font-display text-[1.5rem] font-light leading-[1.2] text-text-on-ink lg:text-[2rem]">
+          <h2 className="font-display text-[1.5rem] font-light leading-[1.08] text-text-on-ink lg:text-[2rem]">
             {content.ctaHeading}
           </h2>
           <p className="mx-auto mt-5 max-w-[46ch] text-sm leading-relaxed text-text-on-ink/80">
