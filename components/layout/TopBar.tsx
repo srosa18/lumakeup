@@ -148,6 +148,16 @@ export function TopBar() {
           className="border-t border-line-subtle bg-black/95 backdrop-blur-sm"
         >
           <ul className="mx-auto flex max-w-[var(--container-boutique)] flex-col gap-6 px-6 py-12 lg:px-10">
+            {/* Início (voltar p/ home) — só no mobile; no desktop o monograma já leva à home. */}
+            <li className="sm:hidden">
+              <Link
+                href="/"
+                className="font-display text-3xl font-light text-white transition-colors hover:text-brass"
+                onClick={() => setOpen(false)}
+              >
+                Início
+              </Link>
+            </li>
             {NAV.map((item) => (
               <li key={item.href}>
                 <Link
