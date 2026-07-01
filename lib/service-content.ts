@@ -287,7 +287,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     ctaHeading: "Reconhecer-se no espelho",
     images: {
-      hero: "/images/servicos/alopecia/hero-4.webp",
+      hero: "/images/servicos/alopecia/hero-5.webp",
       heroPos: "center 40%",
       band: "/images/servicos/alopecia/band.webp",
       bandPos: "center 45%",
