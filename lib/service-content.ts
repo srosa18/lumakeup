@@ -171,7 +171,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         "/images/servicos/labios/result-3.webp",
       ],
       cta: "/images/servicos/labios/cta.webp",
-      ctaPos: "center 55%",
+      ctaPos: "center 45%",
     },
   },
   olhos: {
