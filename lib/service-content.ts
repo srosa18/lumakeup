@@ -126,7 +126,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "O seu olhar merece um estudo",
     images: {
       hero: "/images/servicos/sobrancelhas/hero.webp",
-      card: "/images/servicos/sobrancelhas/card.webp",
+      card: "/images/servicos/sobrancelhas/card-2.webp",
       band: "/images/servicos/sobrancelhas/band.webp",
       bandPos: "center 45%",
       diferenciais: "/images/servicos/sobrancelhas/diferenciais.webp",
@@ -213,7 +213,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaAlign: "right",
     images: {
       hero: "/images/servicos/olhos/hero.webp",
-      card: "/images/servicos/olhos/card.webp",
+      card: "/images/servicos/olhos/card-4.webp",
       heroPos: "center 32%",
       band: "/images/servicos/olhos/band-3.webp",
       bandPos: "center 50%",
@@ -255,7 +255,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Densidade, com naturalidade",
     images: {
       hero: "/images/servicos/capilar/hero-4.webp",
-      card: "/images/servicos/capilar/card.webp",
+      card: "/images/servicos/capilar/card-2.webp",
       heroPos: "center 42%",
       band: "/images/servicos/capilar/band-2.webp",
       bandPos: "center 40%",
@@ -300,7 +300,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       heroPos: "center 42%",
       diferenciais: "/images/servicos/alopecia/diferenciais-2.webp",
       diferenciaisPos: "65% 30%",
-      card: "/images/servicos/alopecia/card.webp",
+      card: "/images/servicos/alopecia/card-4.webp",
     },
   },
   exobrow: {
@@ -407,7 +407,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Devolver a definição",
     images: {
       hero: "/images/servicos/reconstrucao-labial/hero.webp",
-      card: "/images/servicos/reconstrucao-labial/card.webp",
+      card: "/images/servicos/reconstrucao-labial/card-2.webp",
       band: "/images/servicos/reconstrucao-labial/band.webp",
       bandPos: "center 55%",
       diferenciais: "/images/servicos/reconstrucao-labial/diferenciais.webp",
