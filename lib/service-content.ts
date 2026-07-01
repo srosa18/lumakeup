@@ -126,6 +126,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "O seu olhar merece um estudo",
     images: {
       hero: "/images/servicos/sobrancelhas/hero.webp",
+      card: "/images/servicos/sobrancelhas/card.webp",
       band: "/images/servicos/sobrancelhas/band.webp",
       bandPos: "center 45%",
       diferenciais: "/images/servicos/sobrancelhas/diferenciais.webp",
@@ -169,6 +170,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaAlign: "right",
     images: {
       hero: "/images/servicos/labios/hero.webp",
+      card: "/images/servicos/labios/card.webp",
       heroPos: "70% 62%",
       band: "/images/servicos/labios/band.webp",
       bandPos: "center 38%",
@@ -211,6 +213,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaAlign: "right",
     images: {
       hero: "/images/servicos/olhos/hero.webp",
+      card: "/images/servicos/olhos/card.webp",
       heroPos: "center 32%",
       band: "/images/servicos/olhos/band-3.webp",
       bandPos: "center 50%",
@@ -252,6 +255,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Densidade, com naturalidade",
     images: {
       hero: "/images/servicos/capilar/hero-4.webp",
+      card: "/images/servicos/capilar/card.webp",
       heroPos: "center 42%",
       band: "/images/servicos/capilar/band-2.webp",
       bandPos: "center 40%",
@@ -296,8 +300,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       heroPos: "center 42%",
       diferenciais: "/images/servicos/alopecia/diferenciais-2.webp",
       diferenciaisPos: "65% 30%",
-      card: "/images/servicos/alopecia/diferenciais-2.webp",
-      cardPos: "62% 40%",
+      card: "/images/servicos/alopecia/card.webp",
     },
   },
   exobrow: {
@@ -326,6 +329,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Sobrancelhas com vida",
     images: {
       hero: "/images/servicos/exobrow/hero.webp",
+      card: "/images/servicos/exobrow/card.webp",
       band: "/images/servicos/exobrow/band.webp",
       bandPos: "center 45%",
       diferenciais: "/images/servicos/exobrow/diferenciais.webp",
@@ -366,7 +370,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Um cuidado que reconstrói",
     images: {
       hero: "/images/servicos/paramedica/hero.webp",
-      cardPos: "68% 40%",
+      card: "/images/servicos/paramedica/card.webp",
       band: "/images/servicos/paramedica/band.webp",
       bandPos: "center 35%",
       diferenciais: "/images/servicos/paramedica/diferenciais.webp",
@@ -403,7 +407,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Devolver a definição",
     images: {
       hero: "/images/servicos/reconstrucao-labial/hero.webp",
-      cardPos: "68% 40%",
+      card: "/images/servicos/reconstrucao-labial/card.webp",
       band: "/images/servicos/reconstrucao-labial/band.webp",
       bandPos: "center 55%",
       diferenciais: "/images/servicos/reconstrucao-labial/diferenciais.webp",
@@ -440,7 +444,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Um cuidado que devolve inteireza",
     images: {
       hero: "/images/servicos/reconstrucao-de-areola/hero.webp",
-      cardPos: "68% 40%",
+      card: "/images/servicos/reconstrucao-de-areola/card.webp",
       band: "/images/servicos/reconstrucao-de-areola/band.webp",
       bandPos: "center 30%",
       diferenciais: "/images/servicos/reconstrucao-de-areola/diferenciais.webp",
