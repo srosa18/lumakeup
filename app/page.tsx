@@ -4,6 +4,7 @@ import { BelezaDiscreta } from "@/components/sections/BelezaDiscreta";
 import { BeBold } from "@/components/sections/BeBold";
 import { PersonalizedServices } from "@/components/sections/PersonalizedServices";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Celebridades } from "@/components/sections/Celebridades";
 import { Everbrow } from "@/components/sections/Everbrow";
 import { Faq } from "@/components/sections/Faq";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <BeBold />
       <PersonalizedServices />
       <Testimonials />
+      <Celebridades />
       <Everbrow />
       <Faq />
     </>
