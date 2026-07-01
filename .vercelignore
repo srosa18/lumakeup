@@ -1,0 +1,8 @@
+# Deploy Vercel — não subir o que não é necessário ao build.
+.git
+.next
+node_modules
+.claude
+assets-src
+public/images/imagens
+*.log
