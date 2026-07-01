@@ -49,7 +49,7 @@ export function ServicesCarousel() {
     const el = scroller.current;
     if (!el) return;
 
-    const s = { mouseNorm: 0, hovering: false, down: false, dragging: false, startX: 0, startLeft: 0, justDragged: false, autoDrift: false, interacted: false };
+    const s = { mouseNorm: 0, hovering: false, down: false, dragging: false, startX: 0, startLeft: 0, justDragged: false, autoDrift: false, interacted: false, paused: false, lastScroll: 0 };
     const DRAG_THRESHOLD = 6; // px — abaixo disso é CLIQUE (navega); acima, arraste.
     const stopAuto = () => {
       s.autoDrift = false;
@@ -100,17 +100,25 @@ export function ServicesCarousel() {
       endDrag();
     };
     const onDown = (e: PointerEvent) => {
-      stopAuto(); // qualquer toque/clique encerra o auto-deslize
       s.justDragged = false;
+      setShowHint(false); // qualquer toque/clique esconde a dica de swipe
       if (e.pointerType === "mouse") {
+        stopAuto(); // desktop: interação do mouse encerra o auto-deslize (assume o scroll por posição)
         s.down = true;
         s.dragging = false;
         s.startX = e.clientX;
         s.startLeft = el.scrollLeft;
         // NÃO captura o ponteiro aqui (só quando o arraste começa, no onMove).
+      } else {
+        // touch/caneta: PAUSA o auto-deslize enquanto o dedo está na tela e RETOMA ao soltar.
+        // (Antes, qualquer toque chamava stopAuto() e a animação ficava parada de vez — o bug.)
+        s.paused = true;
       }
     };
-    const onUp = () => endDrag();
+    const onUp = (e: PointerEvent) => {
+      endDrag();
+      if (e.pointerType !== "mouse") s.paused = false; // touch soltou → retoma de onde estava
+    };
     // Um arraste real termina disparando um "click" no card — cancelamos p/ não navegar.
     const onClickCapture = (e: MouseEvent) => {
       if (s.justDragged) {
@@ -155,19 +163,23 @@ export function ServicesCarousel() {
       const effMax = Math.max(0, max - cw * 0.35);
       // Scroll dirigido pela posição do mouse (finito, clampado a effMax)
       if (!s.dragging) {
-        const delta = s.hovering
-          ? s.mouseNorm * SCROLL_SPEED
-          : s.autoDrift
-            ? AUTO_DRIFT
-            : 0;
-        let next = el.scrollLeft + delta;
-        if (next < 0) next = 0;
-        else if (next > effMax) {
-          next = effMax;
-          s.autoDrift = false; // chegou no fim: encerra o auto-deslize
+        // Momentum/scroll nativo do touch em andamento? Não brigar com ele — nem
+        // sequer escrever scrollLeft (escrever mata a inércia no iOS).
+        const userScrolling = Math.abs(el.scrollLeft - s.lastScroll) > 1.2;
+        let delta = 0;
+        if (s.hovering) delta = s.mouseNorm * SCROLL_SPEED;
+        else if (s.autoDrift && !s.paused && !userScrolling) delta = AUTO_DRIFT;
+        if (delta !== 0) {
+          let next = el.scrollLeft + delta;
+          if (next < 0) next = 0;
+          else if (next > effMax) {
+            next = effMax;
+            s.autoDrift = false; // chegou no fim: encerra o auto-deslize
+          }
+          el.scrollLeft = next;
         }
-        el.scrollLeft = next;
       }
+      s.lastScroll = el.scrollLeft;
       // Arco assimétrico gentil: esquerda alta → direita baixa
       const amp = cw * ARC_AMP;
       for (let i = 0; i < cardRefs.current.length; i++) {
@@ -231,7 +243,7 @@ export function ServicesCarousel() {
 
       <div
         ref={scroller}
-        className="cursor-grab touch-pan-x select-none overflow-x-auto overflow-y-hidden overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
+        className="cursor-grab [touch-action:pan-x_pan-y] select-none overflow-x-auto overflow-y-hidden overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
       >
         {/* services-track (globals.css): --card, gap e pb (proporcional ao arco).
             Base inclui o 13" (min 305 = +10% no mobile); acima de 1600px escala
