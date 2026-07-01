@@ -259,8 +259,6 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         "/images/servicos/capilar/result-2.webp",
         "/images/servicos/capilar/result-3.webp",
       ],
-      cta: "/images/servicos/capilar/cta.webp",
-      ctaPos: "center 25%",
     },
   },
   alopecia: {

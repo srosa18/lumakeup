@@ -86,6 +86,7 @@ export default async function ServicoPage({
   const proof = content.proof;
   const img = content.images ?? {};
   const ctaRight = content.ctaAlign === "right";
+  const ctaLight = !img.cta; // sem imagem de CTA → fundo off-white + texto preto
 
   // §8 — Service + FAQPage (AEO/GEO: as FAQs viram rich results / chunks citáveis).
   const jsonLd = {
@@ -282,24 +283,31 @@ export default async function ServicoPage({
 
       {/* 9 · CTA final — faixa full-bleed. Bloco dentro do container da página (guideline);
           ctaAlign="right" alinha à direita DA COLUNA (não da viewport), em bloco estreito. */}
-      <section className="relative flex min-h-[42vh] items-center overflow-hidden bg-ink lg:min-h-[48vh]">
-        <MediaFill
-          src={img.cta}
-          alt={`Retrato editorial — ${content.h1}`}
-          art={`CTA full-bleed de ${content.h1}: retrato editorial, fundo escuro — foto real a entrar`}
-          position={img.ctaPos ?? "center 25%"}
-        />
-        <div aria-hidden className="absolute inset-0 bg-black/40" />
+      <section
+        data-section-theme={ctaLight ? "light" : undefined}
+        className={`relative flex min-h-[42vh] items-center overflow-hidden lg:min-h-[48vh] ${ctaLight ? "bg-bone" : "bg-ink"}`}
+      >
+        {!ctaLight && (
+          <>
+            <MediaFill
+              src={img.cta}
+              alt={`Retrato editorial — ${content.h1}`}
+              art={`CTA full-bleed de ${content.h1}: retrato editorial, fundo escuro — foto real a entrar`}
+              position={img.ctaPos ?? "center 25%"}
+            />
+            <div aria-hidden className="absolute inset-0 bg-black/40" />
+          </>
+        )}
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 lg:px-8">
           <div className={ctaRight ? "ml-auto max-w-[440px] text-left" : "mx-auto max-w-[680px] text-center"}>
-            <h2 className="font-display text-[1.5rem] font-light leading-[1.08] text-text-on-ink lg:text-[2rem]">
+            <h2 className={`font-display text-[1.5rem] font-light leading-[1.08] lg:text-[2rem] ${ctaLight ? "text-text-on-bone" : "text-text-on-ink"}`}>
               {content.ctaHeading}
             </h2>
-            <p className={`mt-5 text-sm leading-relaxed text-text-on-ink/80 ${ctaRight ? "" : "mx-auto max-w-[46ch]"}`}>
+            <p className={`mt-5 text-sm leading-relaxed ${ctaLight ? "text-text-on-bone/70" : "text-text-on-ink/80"} ${ctaRight ? "" : "mx-auto max-w-[46ch]"}`}>
               Tudo começa por uma avaliação personalizada, sem compromisso.
             </p>
             <div className={`mt-9 flex ${ctaRight ? "justify-start" : "justify-center"}`}>
-              <Cta href={agendar} external variant="outline">
+              <Cta href={agendar} external variant="outline" tone={ctaLight ? "on-bone" : "on-ink"}>
                 Reservar meu horário
               </Cta>
             </div>
