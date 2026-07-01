@@ -11,12 +11,12 @@ import { UNITS } from "@/lib/units";
  */
 const COLS = [
   {
-    title: "A Casa",
+    title: "O Ateliê",
     links: [
       { href: "/a-casa", label: "Nossa História" },
       { href: "/a-casa#lu-rodrigues", label: "Lu Rodrigues" },
       { href: "/a-casa#pigmentos", label: "Os Pigmentos" },
-      { href: "/diario", label: "Diário" },
+      { href: "/diario", label: "Notícias" },
     ],
   },
   {
