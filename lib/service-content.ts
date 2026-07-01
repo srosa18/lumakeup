@@ -266,6 +266,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     description:
       "Micropigmentação para alopécia — reconstrução da moldura do rosto com naturalidade e cuidado. Técnica autoral da Lu Make Up, por avaliação.",
     h1: "Micropigmentação para Alopécia",
+    h1Break: ["Micropigmentação", "para Alopécia"],
     essence: "Reconstruir a moldura do rosto.",
     diferenciaisHeading: "O que devolve a moldura do rosto",
     diferenciais: [
