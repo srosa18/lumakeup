@@ -21,6 +21,8 @@ export type ServiceImages = {
   heroPos?: string;
   band?: string;
   bandPos?: string;
+  /** faixa mais alta (revela mais da cena; útil p/ fotos que ficam "fechadas"). */
+  bandTall?: boolean;
   diferenciais?: string;
   diferenciaisPos?: string;
   results?: string[];
@@ -249,6 +251,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       heroPos: "center 42%",
       band: "/images/servicos/capilar/band-2.webp",
       bandPos: "center 40%",
+      bandTall: true,
       diferenciais: "/images/servicos/capilar/diferenciais.webp",
       diferenciaisPos: "center 25%",
       cta: "/images/servicos/capilar/cta.webp",

@@ -164,7 +164,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 3 · FAIXA DE IMAGEM grande */}
-      <section className="relative h-[40vh] min-h-[300px] overflow-hidden bg-ink lg:h-[48vh]">
+      <section className={`relative overflow-hidden bg-ink ${img.bandTall ? "h-[56vh] min-h-[400px] lg:h-[66vh]" : "h-[40vh] min-h-[300px] lg:h-[48vh]"}`}>
         <MediaFill
           src={img.band}
           alt={`Detalhe do procedimento de ${content.h1}`}
