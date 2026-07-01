@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { SERVICES } from "@/lib/services";
 import { DIARIO } from "@/lib/diario";
+import { UNITS } from "@/lib/units";
 
 /**
  * Sitemap (§8). Home + serviços + A Casa + Diário (índice + posts) + políticas.
@@ -28,6 +29,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.6,
     })),
+    { url: `${SITE.url}/localizacoes`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...UNITS.map((u) => ({
+      url: `${SITE.url}/localizacoes/${u.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    { url: `${SITE.url}/contato`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE.url}/politica-de-privacidade`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

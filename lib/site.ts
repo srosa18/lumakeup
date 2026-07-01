@@ -15,7 +15,8 @@ export const SITE = {
   boilerplate:
     "Lu Make Up é um instituto de micropigmentação de assinatura fundado por Lu Rodrigues em 2002, com unidades em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami.",
   social: {
-    // ⚠️ TODO:CONFIRMAR handles oficiais (usados em sameAs do JSON-LD).
-    instagram: "https://www.instagram.com/lumakeup",
+    // Handle real do site atual (@lumakeupbr). ⚠️ TODO:CONFIRMAR demais redes (FB/YouTube).
+    instagram: "https://www.instagram.com/lumakeupbr",
+    instagramHandle: "@lumakeupbr",
   },
 } as const;
