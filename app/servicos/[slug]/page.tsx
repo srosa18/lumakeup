@@ -46,11 +46,14 @@ function MediaFill({
   art,
   src,
   position = "center",
+  size,
 }: {
   alt: string;
   art: string;
   src?: string;
   position?: string;
+  /** tamanho ideal da foto (ex.: "2560 × 1440 px") — exibido no canto do placeholder */
+  size?: string;
 }) {
   if (src) {
     return (
@@ -66,6 +69,11 @@ function MediaFill({
       className="absolute inset-0 flex items-center justify-center bg-ink"
     >
       <span className="kicker max-w-[40ch] px-6 text-center text-text-on-ink/35">Imagem · {alt}</span>
+      {size ? (
+        <span className="absolute bottom-3 right-4 text-[0.62rem] tracking-[0.08em] text-text-on-ink/45">
+          {size}
+        </span>
+      ) : null}
     </div>
   );
 }
@@ -121,6 +129,7 @@ export default async function ServicoPage({
           alt={`${content.h1} · Lu Make Up`}
           art={`HERO full-bleed de ${content.h1}: retrato editorial, fundo escuro, pele real · foto real a entrar`}
           position={img.heroPos ?? "center 22%"}
+          size="2560 × 1440 px"
         />
         <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -172,6 +181,7 @@ export default async function ServicoPage({
             alt={`Detalhe do procedimento de ${content.h1}`}
             art={`Faixa full-bleed de ${content.h1}: macro do procedimento, luz editorial · foto real a entrar`}
             position={img.bandPos ?? "center 40%"}
+            size="2560 × 1300 px"
           />
         </section>
       ) : null}
@@ -206,6 +216,7 @@ export default async function ServicoPage({
               alt={`Retrato editorial · ${content.h1}`}
               art={`Imagem grande (coluna) de ${content.h1}: retrato editorial, pele real · foto real a entrar`}
               position={img.diferenciaisPos ?? "center 25%"}
+              size="1400 × 1750 px"
             />
           </div>
           <div className="px-6 py-20 lg:px-16 lg:py-32">
@@ -245,6 +256,7 @@ export default async function ServicoPage({
                 ratio="4 / 5"
                 tone="ink"
                 sizes="(min-width:1024px) 400px, (min-width:640px) 45vw, 100vw"
+                size="1000 × 1250 px"
               />
             ))}
           </div>
@@ -299,6 +311,7 @@ export default async function ServicoPage({
               alt={`Retrato editorial · ${content.h1}`}
               art={`CTA full-bleed de ${content.h1}: retrato editorial, fundo escuro · foto real a entrar`}
               position={img.ctaPos ?? "center 25%"}
+              size="2560 × 1300 px"
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>

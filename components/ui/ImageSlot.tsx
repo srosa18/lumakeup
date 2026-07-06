@@ -33,6 +33,8 @@ export type ImageSlotProps = {
   label?: string;
   /** object-position do recorte (ex.: "center", "65% 30%") */
   position?: string;
+  /** tamanho ideal da foto (ex.: "1000 × 1250 px") — exibido no canto do placeholder */
+  size?: string;
 };
 
 export function ImageSlot({
@@ -46,6 +48,7 @@ export function ImageSlot({
   className,
   label,
   position,
+  size,
 }: ImageSlotProps) {
   const toneBg = tone === "ink" ? "bg-ink" : "bg-bone";
   const toneText = tone === "ink" ? "text-text-on-ink/55" : "text-text-on-bone/55";
@@ -89,6 +92,12 @@ export function ImageSlot({
           {alt}
         </span>
       </div>
+      {/* Tamanho ideal da foto — orientação p/ o cliente preparar a imagem. */}
+      {size ? (
+        <span className={`absolute bottom-2 right-3 text-[0.62rem] tracking-[0.08em] ${toneText} opacity-80`}>
+          {size}
+        </span>
+      ) : null}
     </div>
   );
 }
