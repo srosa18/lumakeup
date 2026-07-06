@@ -132,9 +132,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       diferenciais: "/images/servicos/sobrancelhas/diferenciais.webp",
       diferenciaisPos: "center 25%",
       results: [
-        "/images/servicos/sobrancelhas/result-1.webp",
-        "/images/servicos/sobrancelhas/result-2.webp",
-        "/images/servicos/sobrancelhas/result-3.webp",
+        "/images/servicos/sobrancelhas/result-4.webp",
+        "/images/servicos/sobrancelhas/result-5.webp",
+        "/images/servicos/sobrancelhas/result-6.webp",
       ],
       cta: "/images/servicos/sobrancelhas/cta.webp",
       ctaPos: "center 25%",
