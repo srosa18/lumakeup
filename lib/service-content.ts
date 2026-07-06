@@ -332,8 +332,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       card: "/images/servicos/exobrow/card-2.webp",
       band: "/images/servicos/exobrow/band.webp",
       bandPos: "center 45%",
-      diferenciais: "/images/servicos/exobrow/diferenciais.webp",
-      diferenciaisPos: "center 25%",
+      diferenciais: "/images/servicos/exobrow/diferenciais-2.webp",
+      diferenciaisPos: "center 30%",
       results: [
         "/images/servicos/exobrow/result-4.webp",
         "/images/servicos/exobrow/result-5.webp",
