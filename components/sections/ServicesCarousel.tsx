@@ -280,7 +280,10 @@ export function ServicesCarousel() {
                   className="transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
                 <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/65 to-transparent" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 lg:p-6">
+                {/* Nome CENTRALIZADO na base: a 1ª carta entra sangrada (25% cortada
+                    à esquerda), então texto à esquerda sumia; centrado fica sempre
+                    visível e mais editorial. Base (não meio) p/ não cobrir o assunto. */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-center lg:p-6">
                   <p className="font-display text-lg font-light tracking-[0.04em] text-white lg:text-xl">
                     {p.label}
                   </p>
