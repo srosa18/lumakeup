@@ -442,15 +442,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Um cuidado que devolve inteireza",
+    // Página SEM imagens por decisão do cliente (assunto sensível): todos os
+    // slots renderizam o placeholder "Imagem · a definir" até as fotos chegarem.
+    // O card do índice /servicos permanece (página separada).
     images: {
-      hero: "/images/servicos/reconstrucao-de-areola/hero.webp",
       card: "/images/servicos/reconstrucao-de-areola/card.webp",
-      band: "/images/servicos/reconstrucao-de-areola/band.webp",
-      bandPos: "center 30%",
-      diferenciais: "/images/servicos/reconstrucao-de-areola/diferenciais.webp",
-      diferenciaisPos: "center 25%",
-      cta: "/images/servicos/reconstrucao-de-areola/cta.webp",
-      ctaPos: "center 25%",
     },
   },
 };
