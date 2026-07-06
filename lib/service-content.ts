@@ -335,9 +335,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       diferenciais: "/images/servicos/exobrow/diferenciais.webp",
       diferenciaisPos: "center 25%",
       results: [
-        "/images/servicos/exobrow/result-1.webp",
-        "/images/servicos/exobrow/result-2.webp",
-        "/images/servicos/exobrow/result-3.webp",
+        "/images/servicos/exobrow/result-4.webp",
+        "/images/servicos/exobrow/result-5.webp",
+        "/images/servicos/exobrow/result-6.webp",
       ],
       cta: "/images/servicos/exobrow/cta.webp",
       ctaPos: "center 25%",
