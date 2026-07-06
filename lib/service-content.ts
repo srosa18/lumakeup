@@ -300,7 +300,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       heroPos: "center 42%",
       diferenciais: "/images/servicos/alopecia/diferenciais-2.webp",
       diferenciaisPos: "65% 30%",
-      card: "/images/servicos/alopecia/card-5.webp",
+      card: "/images/servicos/alopecia/card-6.webp",
     },
   },
   exobrow: {
@@ -407,7 +407,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Devolver a definição",
     images: {
       hero: "/images/servicos/reconstrucao-labial/hero.webp",
-      card: "/images/servicos/reconstrucao-labial/card-3.webp",
+      card: "/images/servicos/reconstrucao-labial/card-4.webp",
       band: "/images/servicos/reconstrucao-labial/band.webp",
       bandPos: "center 55%",
       diferenciais: "/images/servicos/reconstrucao-labial/diferenciais.webp",
