@@ -25,13 +25,15 @@ export function Hero() {
     <section className="relative min-h-[100svh] overflow-hidden bg-black">
       {/* Imagem de fundo · ART DIRECTION (priority para LCP):
           MOBILE = recorte vertical da modelo; DESKTOP = foto larga original. */}
+      {/* MOBILE: versão composta mais alta (foto no topo + base preta com fade)
+          → o rosto sobe e o bloco de texto assenta no preto, sem cobrir a boca. */}
       <Image
-        src="/images/hero-mobile.webp"
+        src="/images/hero-mobile-2.webp"
         alt="Retrato de mulher sorrindo, pele natural · Lu Make Up"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[50%_22%] md:hidden"
+        className="object-cover object-[50%_0%] md:hidden"
       />
       <Image
         src="/images/hero.png"
@@ -51,7 +53,7 @@ export function Hero() {
 
       {/* Conteúdo · bloco inferior (kicker + H1 + subtítulo + CTAs) */}
       <div className="absolute inset-0 z-10 flex items-end">
-        <div className="mx-auto w-full max-w-[1280px] px-6 pb-20 lg:px-8 lg:pb-24 min-[2000px]:pb-32">
+        <div className="mx-auto w-full max-w-[1280px] px-6 pb-10 md:pb-20 lg:px-8 lg:pb-24 min-[2000px]:pb-32">
           <Kicker tone="on-ink">Be Always Ready</Kicker>
           {/* Linha ÚNICA sempre: nowrap + tamanho fluido (clamp) p/ caber do mobile ao 4K. */}
           <h1 className="mt-4 whitespace-nowrap font-display text-[clamp(1.55rem,7.2vw,3.1rem)] font-light leading-[1.08] text-text-on-ink min-[2000px]:text-[3.6rem]">
