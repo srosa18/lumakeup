@@ -8,4 +8,5 @@ public/images/imagens
 # originais que o cliente larga (ficam no disco, não vão pro deploy):
 public/images/servicos/_src
 public/images/servicos/serviços
+public/images/beleza-discreta/novas
 *.log

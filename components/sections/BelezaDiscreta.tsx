@@ -26,12 +26,13 @@ type Piece = {
   ratio: string;
 };
 
+// Fotos reais do cliente (originais preservados em beleza-discreta/novas/).
 const COLLAGE: Piece[] = [
-  { src: "/images/beleza-discreta/sorriso.png", alt: "Retrato de mulher sorrindo, pele natural", left: "4.5%", top: "3%", width: "27.6%", ratio: "249 / 380" },
-  { src: "/images/beleza-discreta/mao-rosto.png", alt: "Retrato de mulher com a mão no rosto", left: "64%", top: "6%", width: "23%", ratio: "201 / 362" },
-  { src: "/images/beleza-discreta/madura.png", alt: "Retrato de mulher madura, olhar sereno", left: "33%", top: "43%", width: "31%", ratio: "312 / 444" },
-  { src: "/images/beleza-discreta/loira.png", alt: "Retrato editorial de mulher loira", left: "72%", top: "38%", width: "31%", ratio: "312 / 444" },
-  { src: "/images/beleza-discreta/sobrancelha.png", alt: "Detalhe de sobrancelha e olhar", left: "3%", top: "82%", width: "33.4%", ratio: "288 / 172" },
+  { src: "/images/beleza-discreta/sorriso-2.webp", alt: "Retrato masculino em luz suave, pele natural", left: "4.5%", top: "3%", width: "27.6%", ratio: "249 / 380" },
+  { src: "/images/beleza-discreta/mao-rosto-2.webp", alt: "Retrato de mulher jovem com a mão no rosto", left: "64%", top: "6%", width: "23%", ratio: "201 / 362" },
+  { src: "/images/beleza-discreta/madura-2.webp", alt: "Retrato de mulher, olhar sereno", left: "33%", top: "43%", width: "31%", ratio: "312 / 444" },
+  { src: "/images/beleza-discreta/loira-2.webp", alt: "Duas mulheres, duas gerações, pele natural", left: "72%", top: "38%", width: "31%", ratio: "312 / 444" },
+  { src: "/images/beleza-discreta/sobrancelha-2.webp", alt: "Mãe e filha abraçadas, sorrindo", left: "3%", top: "82%", width: "33.4%", ratio: "288 / 172" },
 ];
 
 // Animação por imagem na linha do tempo (0..1): início + duração (= velocidade).

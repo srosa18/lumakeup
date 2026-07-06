@@ -50,5 +50,6 @@ next-env.d.ts
 # _src/ e pastas com acento tipo "serviços/". Ficam no disco, fora do repo.
 /public/images/**/_src/**
 /public/images/servicos/serviços/**
+/public/images/beleza-discreta/novas/**
 
 .vercel
