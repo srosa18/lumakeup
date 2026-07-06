@@ -40,11 +40,11 @@ export default function LuMedical() {
           />
           <SizeTag size="2560 × 1440 px" className="bottom-3 right-3" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-          <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 min-[2000px]:pb-28">
+          <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 3xl:pb-28">
             <Kicker tone="on-ink">Lu Medical · Por avaliação</Kicker>
             <h1
               id="lumedical-heading"
-              className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[1.9rem] lg:text-[2.1rem] min-[2000px]:text-[2.5rem]"
+              className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[1.9rem] lg:text-[2.1rem] 3xl:text-[2.5rem]"
             >
               Lu Medical
             </h1>
@@ -65,7 +65,7 @@ export default function LuMedical() {
         <section aria-labelledby="manifesto-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
           <div className="mx-auto max-w-[820px] px-6 text-center lg:px-8">
             <Kicker>Cirurgia & olhar artístico</Kicker>
-            <h2 id="manifesto-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.6rem]">
+            <h2 id="manifesto-heading" className="mt-5 font-display text-[1.6rem] font-light leading-[1.18] text-text-on-bone sm:text-[2rem] sm:leading-[1.15] lg:text-[2.6rem]">
               Onde a precisão cirúrgica encontra o desenho
             </h2>
             <p className="mx-auto mt-8 max-w-[60ch] text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
@@ -195,7 +195,7 @@ export default function LuMedical() {
             <div className="absolute inset-0 bg-black/60" />
           </div>
           <div className="relative z-10 mx-auto max-w-[680px] px-6 lg:px-8">
-            <h2 className="font-display text-[2rem] font-light leading-[1.12] text-text-on-bone md:text-text-on-ink lg:text-[2.8rem]">
+            <h2 className="font-display text-[1.6rem] font-light leading-[1.16] text-text-on-bone sm:text-[2rem] sm:leading-[1.12] md:text-text-on-ink lg:text-[2.8rem]">
               Um resultado exclusivo começa por uma conversa
             </h2>
             <p className="mx-auto mt-5 max-w-[44ch] text-sm leading-relaxed text-text-on-bone/70 md:text-text-on-ink/80">

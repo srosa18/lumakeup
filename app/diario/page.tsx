@@ -65,7 +65,7 @@ export default function DiarioIndex() {
                 </div>
                 <div>
                   <p className="kicker text-brass">{destaque.tema}</p>
-                  <h2 className="mt-4 font-display text-[1.8rem] font-light leading-[1.15] text-text-on-ink transition-colors group-hover:text-brass lg:text-[2.3rem]">
+                  <h2 className="mt-4 font-display text-[1.45rem] font-light leading-[1.2] text-text-on-ink transition-colors group-hover:text-brass sm:text-[1.8rem] sm:leading-[1.15] lg:text-[2.3rem]">
                     {destaque.title}
                   </h2>
                   <p className="mt-4 max-w-[52ch] text-sm leading-relaxed text-muted lg:text-base">

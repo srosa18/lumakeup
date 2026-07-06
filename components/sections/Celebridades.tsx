@@ -51,7 +51,7 @@ export function Celebridades() {
           <Kicker>Confiança</Kicker>
           <h2
             id="celebridades-heading"
-            className="mt-5 font-display text-[2rem] font-light leading-[1.12] text-text-on-ink lg:text-[2.6rem]"
+            className="mt-5 font-display text-[1.42rem] font-light leading-[1.16] text-text-on-ink sm:text-[2rem] sm:leading-[1.12] lg:text-[2.6rem]"
           >
             Quem confia o próprio olhar
             <br />

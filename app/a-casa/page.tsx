@@ -49,11 +49,11 @@ export default function ACasa() {
           />
           <SizeTag size="2560 × 1440 px" className="bottom-3 right-3" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-          <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 min-[2000px]:pb-28">
+          <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 3xl:pb-28">
             <Kicker tone="on-ink">O Ateliê · Desde 2002</Kicker>
             <h1
               id="acasa-heading"
-              className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[1.9rem] lg:text-[2.1rem] min-[2000px]:text-[2.5rem]"
+              className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[1.9rem] lg:text-[2.1rem] 3xl:text-[2.5rem]"
             >
               O Ateliê
             </h1>
@@ -69,7 +69,7 @@ export default function ACasa() {
         <section aria-labelledby="historia-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
           <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
             <Kicker>O Instituto</Kicker>
-            <h2 id="historia-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.6rem]">
+            <h2 id="historia-heading" className="mt-5 text-balance font-display text-[1.6rem] font-light leading-[1.18] text-text-on-bone sm:text-[2rem] sm:leading-[1.15] lg:text-[2.6rem]">
               Um ateliê de micropigmentação de assinatura
             </h2>
             <p className="mx-auto mt-8 max-w-[62ch] text-base leading-relaxed text-text-on-bone/80 lg:text-lg">

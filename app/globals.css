@@ -10,6 +10,9 @@
    ============================================================================ */
 
 @theme {
+  /* ---- Breakpoints ---- */
+  --breakpoint-3xl: 125rem; /* 2000px · monitores grandes (30 pol+ / 2560) · MESMA unidade dos defaults (rem) p/ ordenar certo */
+
   /* ---- Cor ---- */
   --color-ink: #000000;        /* preto puro — fiel ao Figma (seções escuras) */
   --color-bone: #f4efe9;       /* creme/osso, fundo das seções claras */
