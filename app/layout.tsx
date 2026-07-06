@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { TopBar } from "@/components/layout/TopBar";
 import { Footer } from "@/components/layout/Footer";
@@ -65,6 +66,18 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* QA widget (SR Studio) — comentários de revisão por seção.
+            Banco único multi-cliente (data-multi=1), projeto "lumakeup".
+            Preencher data-hide-on com o domínio final quando o site publicar. */}
+        <Script
+          src="https://srosa18.github.io/qa-widget/qa.js"
+          strategy="afterInteractive"
+          data-supabase-url="https://itwaxivhuxtnatjuoebe.supabase.co"
+          data-supabase-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0d2F4aXZodXh0bmF0anVvZWJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkzNzI5NzMsImV4cCI6MjA5NDk0ODk3M30.mbjL6lV5Y05TaBBo3_BuGhK6AdIa6Bm6WDRcc2BC9-Q"
+          data-project="lumakeup"
+          data-multi="1"
+          data-hide-on=""
         />
       </body>
     </html>

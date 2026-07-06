@@ -27,15 +27,33 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
-      <ServicesCarousel />
-      <BelezaDiscreta />
-      <BeBold />
-      <PersonalizedServices />
-      <Testimonials />
-      <Celebridades />
-      <Everbrow />
-      <Faq />
+      <div data-comment-id="home.hero" data-comment-label="Home · Hero">
+        <Hero />
+      </div>
+      <div data-comment-id="home.servicos-carrossel" data-comment-label="Home · Carrossel de serviços">
+        <ServicesCarousel />
+      </div>
+      <div data-comment-id="home.beleza-discreta" data-comment-label="Home · A arte da beleza discreta">
+        <BelezaDiscreta />
+      </div>
+      <div data-comment-id="home.be-bold" data-comment-label="Home · Be Bold">
+        <BeBold />
+      </div>
+      <div data-comment-id="home.personalizados" data-comment-label="Home · Serviços personalizados">
+        <PersonalizedServices />
+      </div>
+      <div data-comment-id="home.depoimentos" data-comment-label="Home · Depoimentos">
+        <Testimonials />
+      </div>
+      <div data-comment-id="home.celebridades" data-comment-label="Home · Celebridades">
+        <Celebridades />
+      </div>
+      <div data-comment-id="home.everbrow" data-comment-label="Home · Everbrow">
+        <Everbrow />
+      </div>
+      <div data-comment-id="home.faq" data-comment-label="Home · Perguntas frequentes">
+        <Faq />
+      </div>
     </>
   );
 }
