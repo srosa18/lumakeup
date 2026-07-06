@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Cta } from "@/components/ui/Cta";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { DIARIO, getPost, formatData } from "@/lib/diario";
 import { SITE } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -93,6 +94,7 @@ export default async function DiarioPost({
               className="object-cover"
               priority
             />
+            <SizeTag size="2200 × 1100 px" />
           </div>
         </div>
       )}
@@ -137,6 +139,7 @@ export default async function DiarioPost({
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                       />
                     )}
+                    <SizeTag size="1600 × 1100 px" />
                   </div>
                   <h3 className="mt-4 font-display text-base font-light leading-snug text-text-on-ink transition-colors group-hover:text-brass">
                     {p.title}

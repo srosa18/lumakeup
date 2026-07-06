@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 
 /**
  * Prova social · clientes públicas. Galeria de celebridades atendidas pela
@@ -85,6 +86,7 @@ export function Celebridades() {
                         isOn ? "grayscale-0 scale-[1.05]" : "grayscale scale-100",
                       ].join(" ")}
                     />
+                    <SizeTag size="900 × 1200 px" />
                   </div>
                   <p className="mt-3 font-display text-sm font-light text-text-on-ink">{c.name}</p>
                 </button>

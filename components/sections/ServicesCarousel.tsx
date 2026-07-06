@@ -278,6 +278,7 @@ export function ServicesCarousel() {
                   tone="ink"
                   sizes="(min-width:1024px) 396px, 75vw"
                   className="transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  size="1080 × 1080 px"
                 />
                 <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/65 to-transparent" />
                 {/* Nome CENTRALIZADO na base: a 1ª carta entra sangrada (25% cortada

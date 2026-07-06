@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Cta } from "@/components/ui/Cta";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { SERVICES } from "@/lib/services";
 import {
   DEFAULT_DIFERENCIAIS,
@@ -57,7 +58,10 @@ function MediaFill({
 }) {
   if (src) {
     return (
-      <Image src={src} alt={alt} fill sizes="100vw" className="object-cover" style={{ objectPosition: position }} />
+      <>
+        <Image src={src} alt={alt} fill sizes="100vw" className="object-cover" style={{ objectPosition: position }} />
+        <SizeTag size={size} className="bottom-3 right-3" />
+      </>
     );
   }
   return (
@@ -69,11 +73,7 @@ function MediaFill({
       className="absolute inset-0 flex items-center justify-center bg-ink"
     >
       <span className="kicker max-w-[40ch] px-6 text-center text-text-on-ink/35">Imagem · {alt}</span>
-      {size ? (
-        <span className="absolute bottom-3 right-3 z-10 border border-brass/50 bg-black/45 px-2 py-1 text-[0.7rem] font-medium tracking-[0.1em] text-brass">
-          {size}
-        </span>
-      ) : null}
+      <SizeTag size={size} className="bottom-3 right-3" />
     </div>
   );
 }

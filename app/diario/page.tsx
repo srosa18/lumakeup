@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { DIARIO, formatData } from "@/lib/diario";
 
 /**
@@ -60,6 +61,7 @@ export default function DiarioIndex() {
                       priority
                     />
                   )}
+                  <SizeTag size="1600 × 1100 px" />
                 </div>
                 <div>
                   <p className="kicker text-brass">{destaque.tema}</p>
@@ -97,6 +99,7 @@ export default function DiarioIndex() {
                           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                         />
                       )}
+                      <SizeTag size="1600 × 1100 px" />
                     </div>
                     <p className="kicker mt-5 text-brass">{p.tema}</p>
                     <h3 className="mt-3 font-display text-lg font-light leading-snug text-text-on-ink transition-colors group-hover:text-brass">

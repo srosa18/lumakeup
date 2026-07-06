@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Cta } from "@/components/ui/Cta";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { SITE } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
@@ -46,6 +47,7 @@ export default function ACasa() {
             style={{ objectPosition: "center 58%" }}
             priority
           />
+          <SizeTag size="2560 × 1440 px" className="bottom-3 right-3" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
           <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 min-[2000px]:pb-28">
             <Kicker tone="on-ink">O Ateliê · Desde 2002</Kicker>
@@ -93,6 +95,7 @@ export default function ACasa() {
                 className="object-cover"
                 style={{ objectPosition: "center 25%" }}
               />
+              <SizeTag size="1400 × 1750 px" />
             </div>
             <div className="px-6 py-20 lg:px-16 lg:py-32">
               <Kicker>A Fundadora</Kicker>
@@ -193,6 +196,7 @@ export default function ACasa() {
                 className="object-cover"
                 style={{ objectPosition: "center 40%" }}
               />
+              <SizeTag size="1400 × 1750 px" />
             </div>
           </div>
         </section>
@@ -226,6 +230,7 @@ export default function ACasa() {
                     sizes="(min-width:1024px) 400px, 50vw"
                     className="object-cover"
                   />
+                  <SizeTag size={n === 1 ? "1600 × 1200 px" : "900 × 1200 px"} />
                 </div>
               ))}
             </div>

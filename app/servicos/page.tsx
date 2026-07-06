@@ -64,6 +64,7 @@ export default function ServicosIndex() {
                         tone="ink"
                         label={s.label}
                         sizes="(min-width:1024px) 340px, (min-width:640px) 45vw, 100vw"
+                      size="1000 × 1250 px"
                       />
                     </div>
                   </div>

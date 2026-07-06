@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Cta } from "@/components/ui/Cta";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
@@ -45,6 +46,7 @@ export default function InstitutoLivingSculpture() {
             style={{ objectPosition: "center 25%" }}
             priority
           />
+          <SizeTag size="2560 × 1440 px" className="bottom-3 right-3" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
           <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 min-[2000px]:pb-28">
             <Kicker tone="on-ink">Instituto Living Sculpture</Kicker>
@@ -100,6 +102,7 @@ export default function InstitutoLivingSculpture() {
                 className="object-cover"
                 style={{ objectPosition: "center 25%" }}
               />
+              <SizeTag size="1400 × 1750 px" />
             </div>
           </div>
         </section>
@@ -118,6 +121,7 @@ export default function InstitutoLivingSculpture() {
                   sizes="(min-width:1024px) 560px, 100vw"
                   className="object-cover"
                 />
+                <SizeTag size="1400 × 1750 px" />
               </div>
               <div className="lg:order-1">
                 <Kicker>O trabalho</Kicker>
@@ -163,6 +167,7 @@ export default function InstitutoLivingSculpture() {
                 className="object-cover"
                 style={{ objectPosition: "center 40%" }}
               />
+              <SizeTag size="1400 × 1750 px" />
             </div>
             <div className="px-6 py-20 lg:px-16 lg:py-32">
               <Kicker>Os pigmentos</Kicker>

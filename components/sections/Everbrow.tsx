@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Cta } from "@/components/ui/Cta";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
@@ -106,6 +107,7 @@ export function Everbrow() {
           className="hidden object-cover md:block"
           style={{ objectPosition: PORTRAIT_POS }}
         />
+        <SizeTag size="2560 × 1440 px" />
 
         {/* Card pequeno, centralizado e um pouco abaixo do centro */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-5">

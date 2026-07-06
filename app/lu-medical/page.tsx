@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Cta } from "@/components/ui/Cta";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
@@ -37,6 +38,7 @@ export default function LuMedical() {
             style={{ objectPosition: "center 28%" }}
             priority
           />
+          <SizeTag size="2560 × 1440 px" className="bottom-3 right-3" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
           <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 min-[2000px]:pb-28">
             <Kicker tone="on-ink">Lu Medical · Por avaliação</Kicker>
@@ -97,6 +99,7 @@ export default function LuMedical() {
                     className="object-cover"
                     style={{ objectPosition: "center 20%" }}
                   />
+                  <SizeTag size="1600 × 1200 px" />
                 </div>
                 <div className="p-8 lg:p-12">
                   <p className="kicker text-brass">EverBrow</p>
@@ -122,6 +125,7 @@ export default function LuMedical() {
                     className="object-cover"
                     style={{ objectPosition: "center 30%" }}
                   />
+                  <SizeTag size="1600 × 1200 px" />
                 </div>
                 <div className="p-8 lg:p-12">
                   <p className="kicker text-brass">EverLashes</p>
@@ -187,6 +191,7 @@ export default function LuMedical() {
               className="object-cover"
               style={{ objectPosition: "center 25%" }}
             />
+            <SizeTag size="2560 × 1300 px" className="bottom-3 right-3" />
             <div className="absolute inset-0 bg-black/60" />
           </div>
           <div className="relative z-10 mx-auto max-w-[680px] px-6 lg:px-8">

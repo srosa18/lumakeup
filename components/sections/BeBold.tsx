@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ImageSlot } from "@/components/ui/ImageSlot";
+import { SizeTag } from "@/components/ui/SizeTag";
 
 /**
  * S? · "BE BOLD • BE LIGHT • BE DIFFERENT • BE YOU" · réplica do Figma.
@@ -138,6 +139,7 @@ function CardBody({ pin }: { pin: Pin }) {
           tone="bone"
           sizes="240px"
           className="h-full shrink-0"
+          size="600 × 600 px"
         />
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="flex gap-1.5">
@@ -227,6 +229,7 @@ export function BeBold() {
             como no Figma (img 1870×1236 em frame 1529×1260: left -297, top 24),
             convertido p/ % para os pins alinharem com o rosto. */}
         <div className="absolute inset-0 z-10">
+          <SizeTag size="1900 × 1250 px" />
           {MODEL_SRC ? (
             <div className="absolute" style={{ left: "-19.42%", width: "122.30%", top: "1.9%", height: "98.1%" }}>
               <Image

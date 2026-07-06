@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Cta } from "@/components/ui/Cta";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { SITE } from "@/lib/site";
 import { UNITS, getUnit, HORARIO, CENTRAL_PHONE_DISPLAY, type UnitAddress } from "@/lib/units";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -102,6 +103,7 @@ export default async function UnidadePage({
               {photos.slice(0, 4).map((src, i) => (
                 <div key={src} className={`relative overflow-hidden bg-stone/10 ${i === 0 ? "col-span-2 aspect-[4/3] lg:col-span-2 lg:row-span-2 lg:aspect-auto" : "aspect-[3/4]"}`}>
                   <Image src={src} alt={`Ateliê Lu Make Up ${unit.city} · ambiente ${i + 1}`} fill sizes="(min-width:1024px) 500px, 50vw" className="object-cover" />
+                  <SizeTag size="1200 × 900 px" />
                 </div>
               ))}
             </div>

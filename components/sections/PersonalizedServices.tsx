@@ -60,6 +60,7 @@ export function PersonalizedServices() {
             tone="ink"
             sizes="(min-width:1024px) 344px, 100vw"
             className="w-full"
+            size="900 × 1190 px"
           />
         </div>
       </div>

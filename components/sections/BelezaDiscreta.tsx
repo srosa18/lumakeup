@@ -24,15 +24,16 @@ type Piece = {
   top: string;
   width: string;
   ratio: string;
+  size: string;
 };
 
 // Fotos reais do cliente (originais preservados em beleza-discreta/novas/).
 const COLLAGE: Piece[] = [
-  { src: "/images/beleza-discreta/sorriso-2.webp", alt: "Retrato masculino em luz suave, pele natural", left: "4.5%", top: "3%", width: "27.6%", ratio: "249 / 380" },
-  { src: "/images/beleza-discreta/mao-rosto-2.webp", alt: "Retrato de mulher jovem com a mão no rosto", left: "64%", top: "6%", width: "23%", ratio: "201 / 362" },
-  { src: "/images/beleza-discreta/madura-2.webp", alt: "Retrato de mulher, olhar sereno", left: "33%", top: "43%", width: "31%", ratio: "312 / 444" },
-  { src: "/images/beleza-discreta/loira-2.webp", alt: "Duas mulheres, duas gerações, pele natural", left: "72%", top: "38%", width: "31%", ratio: "312 / 444" },
-  { src: "/images/beleza-discreta/sobrancelha-2.webp", alt: "Mãe e filha abraçadas, sorrindo", left: "3%", top: "82%", width: "33.4%", ratio: "288 / 172" },
+  { src: "/images/beleza-discreta/sorriso-2.webp", alt: "Retrato masculino em luz suave, pele natural", left: "4.5%", top: "3%", width: "27.6%", ratio: "249 / 380", size: "1000 × 1526 px" },
+  { src: "/images/beleza-discreta/mao-rosto-2.webp", alt: "Retrato de mulher jovem com a mão no rosto", left: "64%", top: "6%", width: "23%", ratio: "201 / 362", size: "900 × 1621 px" },
+  { src: "/images/beleza-discreta/madura-2.webp", alt: "Retrato de mulher, olhar sereno", left: "33%", top: "43%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
+  { src: "/images/beleza-discreta/loira-2.webp", alt: "Duas mulheres, duas gerações, pele natural", left: "72%", top: "38%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
+  { src: "/images/beleza-discreta/sobrancelha-2.webp", alt: "Mãe e filha abraçadas, sorrindo", left: "3%", top: "82%", width: "33.4%", ratio: "288 / 172", size: "1200 × 717 px" },
 ];
 
 // Animação por imagem na linha do tempo (0..1): início + duração (= velocidade).
@@ -177,7 +178,7 @@ export function BelezaDiscreta() {
               className="absolute will-change-transform"
               style={{ left: p.left, top: animate ? "100%" : p.top, width: `calc(${p.width} * var(--img-scale, 1))` }}
             >
-              <ImageSlot src={p.src} alt={p.alt} art={p.alt} ratio={p.ratio} tone="ink" sizes="(min-width:1024px) 320px, 30vw" />
+              <ImageSlot src={p.src} alt={p.alt} art={p.alt} ratio={p.ratio} tone="ink" sizes="(min-width:1024px) 320px, 30vw" size={p.size} />
             </div>
           ))}
 

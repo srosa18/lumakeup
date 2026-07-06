@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Cta } from "@/components/ui/Cta";
 import { Kicker } from "@/components/ui/Kicker";
+import { SizeTag } from "@/components/ui/SizeTag";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
@@ -40,6 +41,7 @@ export function Hero() {
         sizes="100vw"
         className="hidden object-cover object-[50%_12%] md:block"
       />
+      <SizeTag size="2560 × 1440 px" className="bottom-3 right-3" />
 
       {/* Scrim do topo (legibilidade da top bar) */}
       <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/45 to-transparent" />

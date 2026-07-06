@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SizeTag } from "@/components/ui/SizeTag";
 
 /**
  * Slot de imagem nomeado (§4/§6 — "onde o luxo morre").
@@ -68,6 +69,7 @@ export function ImageSlot({
           className="object-cover"
           style={position ? { objectPosition: position } : undefined}
         />
+        <SizeTag size={size} />
       </div>
     );
   }
@@ -92,12 +94,7 @@ export function ImageSlot({
           {alt}
         </span>
       </div>
-      {/* Tamanho ideal da foto — orientação p/ o cliente preparar a imagem. */}
-      {size ? (
-        <span className="absolute bottom-2 right-2 border border-brass/50 bg-black/45 px-2 py-1 text-[0.7rem] font-medium tracking-[0.1em] text-brass">
-          {size}
-        </span>
-      ) : null}
+      <SizeTag size={size} />
     </div>
   );
 }
