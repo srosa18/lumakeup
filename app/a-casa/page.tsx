@@ -37,12 +37,12 @@ export default function ACasa() {
       {/* HERO full-bleed */}
       <section aria-labelledby="acasa-heading" className="relative flex min-h-[80svh] items-end overflow-hidden bg-ink">
         <Image
-          src="/images/a-casa/hero.webp"
-          alt="Lu Rodrigues, fundadora da Lu Make Up"
+          src="/images/a-casa/hero-2.webp"
+          alt="Fachada da Casa Conceito, unidade São Paulo da Lu Make Up"
           fill
           sizes="100vw"
           className="object-cover"
-          style={{ objectPosition: "center 30%" }}
+          style={{ objectPosition: "center 58%" }}
           priority
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />

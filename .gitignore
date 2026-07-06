@@ -52,5 +52,6 @@ next-env.d.ts
 /public/images/servicos/serviços/**
 /public/images/beleza-discreta/novas/**
 /public/images/possibilidades/**
+/public/images/O ATELIE/**
 
 .vercel
