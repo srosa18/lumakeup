@@ -27,12 +27,15 @@ type Product = {
   rotation: number;
 };
 
+// Fotos reais do cliente (public/images/carrossel/*.webp; originais mantidos na
+// pasta). Sem label embutido na arte: o nome do serviço é renderizado como
+// overlay de texto na carta (ver abaixo).
 const PRODUCTS: Product[] = [
-  { slug: "labios", label: "Lábios", image: "/images/servicos/labios.png", alt: "Detalhe de lábios com micropigmentação labial", rotation: -2.7 },
-  { slug: "sobrancelhas", label: "Sobrancelha", image: "/images/servicos/sobrancelha.png", alt: "Detalhe de sobrancelha com micropigmentação fio a fio", rotation: -1.22 },
-  { slug: "olhos", label: "Olhos", image: "/images/servicos/olhos.png", alt: "Detalhe do olhar · micropigmentação de olhos e delineado", rotation: 0.26 },
-  { slug: "capilar", label: "Capilar", image: "/images/servicos/capilar.png", alt: "Retrato com micropigmentação capilar", rotation: 1.73 },
-  { slug: "exobrow", label: "Exobrow", subtitle: "Tratamento regenerativo", image: "/images/servicos/exobrow.png", alt: "Detalhe do olhar com técnica Exobrow", rotation: 3.21 },
+  { slug: "labios", label: "Lábios", image: "/images/carrossel/labios.webp", alt: "Detalhe de lábios com micropigmentação labial", rotation: -2.7 },
+  { slug: "sobrancelhas", label: "Sobrancelha", image: "/images/carrossel/sobrancelha.webp", alt: "Detalhe de sobrancelha com micropigmentação fio a fio", rotation: -1.22 },
+  { slug: "olhos", label: "Olhos", image: "/images/carrossel/olhos.webp", alt: "Detalhe do olhar · micropigmentação de olhos e delineado", rotation: 0.26 },
+  { slug: "capilar", label: "Capilar", image: "/images/carrossel/capilar.webp", alt: "Retrato com micropigmentação capilar", rotation: 1.73 },
+  { slug: "exobrow", label: "Exobrow", subtitle: "Tratamento regenerativo", image: "/images/carrossel/exobrow.webp", alt: "Detalhe do olhar com técnica Exobrow", rotation: 3.21 },
 ];
 
 const ARC_AMP = 0.5; // profundidade do arco (fração da largura do card)
@@ -264,7 +267,8 @@ export function ServicesCarousel() {
                 marginLeft: i === 0 ? "calc(var(--card) * -0.25)" : undefined,
               }}
             >
-              {/* O label já vem embutido na imagem exportada do Figma. */}
+              {/* Foto real (sem label na arte) + nome do serviço em overlay,
+                  sobre um degradê sutil na base p/ garantir contraste AA. */}
               <div className="relative overflow-hidden">
                 <ImageSlot
                   src={p.image}
@@ -275,6 +279,17 @@ export function ServicesCarousel() {
                   sizes="(min-width:1024px) 396px, 75vw"
                   className="transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
+                <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/65 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 lg:p-6">
+                  <p className="font-display text-lg font-light tracking-[0.04em] text-white lg:text-xl">
+                    {p.label}
+                  </p>
+                  {p.subtitle ? (
+                    <p className="mt-0.5 text-[0.62rem] uppercase tracking-[0.16em] text-white/75">
+                      {p.subtitle}
+                    </p>
+                  ) : null}
+                </div>
               </div>
             </Link>
           ))}
