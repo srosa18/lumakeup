@@ -199,18 +199,18 @@ export default function ACasa() {
             <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
               Na tradicional Avenida Nove de Julho, a Casa Conceito reúne mais de dez salas
               privativas, um centro cirúrgico com tecnologia de ponta e a atmosfera de quem
-              trata cada atendimento como um ritual. Abaixo, a unidade São Paulo.
+              trata cada atendimento como um ritual. Abaixo, os nossos espaços.
             </p>
           </div>
           <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
-            {[1, 2, 3, 4, 5].map((n) => (
+            {[1, 2, 3, 4, 5, 6].map((n) => (
               <div
                 key={n}
                 className={`relative overflow-hidden bg-stone/10 ${n === 1 ? "col-span-2 aspect-[4/3] lg:row-span-2 lg:aspect-[3/4]" : "aspect-[3/4]"}`}
               >
                 <Image
                   src={`/images/a-casa/espaco-${n}.webp`}
-                  alt={`Unidade São Paulo da Lu Make Up · ambiente ${n}`}
+                  alt={`Ateliês Lu Make Up · ambiente ${n}`}
                   fill
                   sizes="(min-width:1024px) 400px, 50vw"
                   className="object-cover"
