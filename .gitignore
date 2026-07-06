@@ -51,5 +51,6 @@ next-env.d.ts
 /public/images/**/_src/**
 /public/images/servicos/serviços/**
 /public/images/beleza-discreta/novas/**
+/public/images/possibilidades/**
 
 .vercel

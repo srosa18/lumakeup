@@ -53,9 +53,9 @@ export function PersonalizedServices() {
         {/* Retrato (direita) */}
         <div className="w-full lg:w-[344px]">
           <ImageSlot
-            src="/images/personalizados/retrato.webp"
-            alt="Retrato de cliente com pele natural valorizada"
-            art="Retrato editorial, pele real e traços naturais (stock AdobeStock · substituir por foto da Lu Make Up)"
+            src="/images/personalizados/retrato-2.webp"
+            alt="Retrato de cliente sorrindo, pele natural valorizada"
+            art="Foto real do cliente (original em public/images/possibilidades/)"
             ratio="344 / 455"
             tone="ink"
             sizes="(min-width:1024px) 344px, 100vw"
