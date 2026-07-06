@@ -21,6 +21,8 @@ type Piece = {
   src: string;
   alt: string;
   left: string;
+  /** posição esquerda no MOBILE (peças maiores; evita corte na borda direita) */
+  leftM: string;
   top: string;
   width: string;
   ratio: string;
@@ -28,12 +30,14 @@ type Piece = {
 };
 
 // Fotos reais do cliente (originais preservados em beleza-discreta/novas/).
+// leftM: no mobile as peças crescem ~80% (--img-scale 1.8), então cada uma tem
+// posição própria p/ caber na tela (largura_mobile = width × 1.8 ≤ 100 − leftM).
 const COLLAGE: Piece[] = [
-  { src: "/images/beleza-discreta/sorriso-2.webp", alt: "Retrato masculino em luz suave, pele natural", left: "4.5%", top: "3%", width: "27.6%", ratio: "249 / 380", size: "1000 × 1526 px" },
-  { src: "/images/beleza-discreta/mao-rosto-2.webp", alt: "Retrato de mulher jovem com a mão no rosto", left: "64%", top: "6%", width: "23%", ratio: "201 / 362", size: "900 × 1621 px" },
-  { src: "/images/beleza-discreta/madura-2.webp", alt: "Retrato de mulher, olhar sereno", left: "33%", top: "43%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
-  { src: "/images/beleza-discreta/loira-2.webp", alt: "Duas mulheres, duas gerações, pele natural", left: "72%", top: "38%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
-  { src: "/images/beleza-discreta/sobrancelha-2.webp", alt: "Mãe e filha abraçadas, sorrindo", left: "3%", top: "82%", width: "33.4%", ratio: "288 / 172", size: "1200 × 717 px" },
+  { src: "/images/beleza-discreta/sorriso-2.webp", alt: "Retrato masculino em luz suave, pele natural", left: "4.5%", leftM: "4%", top: "3%", width: "27.6%", ratio: "249 / 380", size: "1000 × 1526 px" },
+  { src: "/images/beleza-discreta/mao-rosto-2.webp", alt: "Retrato de mulher jovem com a mão no rosto", left: "64%", leftM: "55%", top: "6%", width: "23%", ratio: "201 / 362", size: "900 × 1621 px" },
+  { src: "/images/beleza-discreta/madura-2.webp", alt: "Retrato de mulher, olhar sereno", left: "33%", leftM: "22%", top: "43%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
+  { src: "/images/beleza-discreta/loira-2.webp", alt: "Duas mulheres, duas gerações, pele natural", left: "72%", leftM: "42%", top: "38%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
+  { src: "/images/beleza-discreta/sobrancelha-2.webp", alt: "Mãe e filha abraçadas, sorrindo", left: "3%", leftM: "3%", top: "82%", width: "33.4%", ratio: "288 / 172", size: "1200 × 717 px" },
 ];
 
 // Animação por imagem na linha do tempo (0..1): início + duração (= velocidade).
@@ -167,7 +171,7 @@ export function BelezaDiscreta() {
           // Telas grandes: o container cresce (1100→1540, +40%) → as imagens (que são
           // % dele) e as posições do parallax escalam juntas. clamp com 75vw mantém o
           // 13" (≤1440) em 1100 (intacto) e cappa em 1540 no 2560/4K.
-          className={`relative mx-auto w-full max-w-[clamp(1100px,75vw,1540px)] [--img-scale:1.4] md:[--img-scale:1] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
+          className={`relative mx-auto w-full max-w-[clamp(1100px,75vw,1540px)] [--img-scale:1.8] md:[--img-scale:1] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
         >
           {COLLAGE.map((p, i) => (
             <div
@@ -175,8 +179,13 @@ export function BelezaDiscreta() {
               ref={(el) => {
                 imgRefs.current[i] = el;
               }}
-              className="absolute will-change-transform"
-              style={{ left: p.left, top: animate ? "100%" : p.top, width: `calc(${p.width} * var(--img-scale, 1))` }}
+              className="absolute left-[var(--pl-m)] will-change-transform md:left-[var(--pl-d)]"
+              style={{
+                "--pl-m": p.leftM,
+                "--pl-d": p.left,
+                top: animate ? "100%" : p.top,
+                width: `calc(${p.width} * var(--img-scale, 1))`,
+              } as React.CSSProperties}
             >
               <ImageSlot src={p.src} alt={p.alt} art={p.alt} ratio={p.ratio} tone="ink" sizes="(min-width:1024px) 320px, 30vw" size={p.size} />
             </div>
