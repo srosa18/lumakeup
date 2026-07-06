@@ -51,7 +51,8 @@ export function Hero() {
       <div className="absolute inset-0 z-10 flex items-end">
         <div className="mx-auto w-full max-w-[1280px] px-6 pb-20 lg:px-8 lg:pb-24 min-[2000px]:pb-32">
           <Kicker tone="on-ink">Be Always Ready</Kicker>
-          <h1 className="mt-4 max-w-[16ch] font-display text-[2.1rem] font-light leading-[1.08] text-text-on-ink sm:text-[2.6rem] lg:text-[3.1rem] min-[2000px]:text-[3.6rem]">
+          {/* Linha ÚNICA sempre: nowrap + tamanho fluido (clamp) p/ caber do mobile ao 4K. */}
+          <h1 className="mt-4 whitespace-nowrap font-display text-[clamp(1.55rem,7.2vw,3.1rem)] font-light leading-[1.08] text-text-on-ink min-[2000px]:text-[3.6rem]">
             Você já nasceu pronta.
           </h1>
           <p className="mt-5 max-w-[48ch] text-base leading-relaxed text-text-on-ink/85 lg:text-lg">
