@@ -170,7 +170,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaAlign: "right",
     images: {
       hero: "/images/servicos/labios/hero.webp",
-      card: "/images/servicos/labios/card.webp",
+      card: "/images/servicos/labios/card-2.webp",
       heroPos: "70% 62%",
       band: "/images/servicos/labios/band.webp",
       bandPos: "center 38%",
@@ -213,7 +213,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaAlign: "right",
     images: {
       hero: "/images/servicos/olhos/hero.webp",
-      card: "/images/servicos/olhos/card-4.webp",
+      card: "/images/servicos/olhos/card-5.webp",
       heroPos: "center 32%",
       band: "/images/servicos/olhos/band-3.webp",
       bandPos: "center 50%",
@@ -255,7 +255,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Densidade, com naturalidade",
     images: {
       hero: "/images/servicos/capilar/hero-4.webp",
-      card: "/images/servicos/capilar/card-2.webp",
+      card: "/images/servicos/capilar/card-3.webp",
       heroPos: "center 42%",
       band: "/images/servicos/capilar/band-2.webp",
       bandPos: "center 40%",
@@ -300,7 +300,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       heroPos: "center 42%",
       diferenciais: "/images/servicos/alopecia/diferenciais-2.webp",
       diferenciaisPos: "65% 30%",
-      card: "/images/servicos/alopecia/card-4.webp",
+      card: "/images/servicos/alopecia/card-5.webp",
     },
   },
   exobrow: {
@@ -329,7 +329,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Sobrancelhas com vida",
     images: {
       hero: "/images/servicos/exobrow/hero.webp",
-      card: "/images/servicos/exobrow/card.webp",
+      card: "/images/servicos/exobrow/card-2.webp",
       band: "/images/servicos/exobrow/band.webp",
       bandPos: "center 45%",
       diferenciais: "/images/servicos/exobrow/diferenciais.webp",
@@ -407,7 +407,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Devolver a definição",
     images: {
       hero: "/images/servicos/reconstrucao-labial/hero.webp",
-      card: "/images/servicos/reconstrucao-labial/card-2.webp",
+      card: "/images/servicos/reconstrucao-labial/card-3.webp",
       band: "/images/servicos/reconstrucao-labial/band.webp",
       bandPos: "center 55%",
       diferenciais: "/images/servicos/reconstrucao-labial/diferenciais.webp",
