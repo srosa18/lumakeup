@@ -368,15 +368,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Um cuidado que reconstrói",
+    // Página SEM imagens por decisão do cliente (assunto sensível): todos os
+    // slots renderizam o placeholder "Imagem · a definir" até as fotos chegarem.
+    // O card do índice /servicos permanece (página separada).
     images: {
-      hero: "/images/servicos/paramedica/hero.webp",
       card: "/images/servicos/paramedica/card.webp",
-      band: "/images/servicos/paramedica/band.webp",
-      bandPos: "center 35%",
-      diferenciais: "/images/servicos/paramedica/diferenciais.webp",
-      diferenciaisPos: "center 30%",
-      cta: "/images/servicos/paramedica/cta.webp",
-      ctaPos: "center 25%",
     },
   },
   "reconstrucao-labial": {
