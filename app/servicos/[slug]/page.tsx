@@ -70,7 +70,7 @@ function MediaFill({
     >
       <span className="kicker max-w-[40ch] px-6 text-center text-text-on-ink/35">Imagem · {alt}</span>
       {size ? (
-        <span className="absolute bottom-3 right-4 text-[0.62rem] tracking-[0.08em] text-text-on-ink/45">
+        <span className="absolute bottom-3 right-3 z-10 border border-brass/50 bg-black/45 px-2 py-1 text-[0.7rem] font-medium tracking-[0.1em] text-brass">
           {size}
         </span>
       ) : null}

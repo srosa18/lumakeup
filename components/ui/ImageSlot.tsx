@@ -94,7 +94,7 @@ export function ImageSlot({
       </div>
       {/* Tamanho ideal da foto — orientação p/ o cliente preparar a imagem. */}
       {size ? (
-        <span className={`absolute bottom-2 right-3 text-[0.62rem] tracking-[0.08em] ${toneText} opacity-80`}>
+        <span className="absolute bottom-2 right-2 border border-brass/50 bg-black/45 px-2 py-1 text-[0.7rem] font-medium tracking-[0.1em] text-brass">
           {size}
         </span>
       ) : null}
