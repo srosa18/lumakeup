@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Lu Make Up — Micropigmentação de Assinatura | Desde 2002",
+    default: "Lu Make Up · Micropigmentação de Assinatura | Desde 2002",
     template: "%s | Lu Make Up",
   },
   description: SITE.description,
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: SITE.name,
-    title: "Lu Make Up — Micropigmentação de Assinatura",
+    title: "Lu Make Up · Micropigmentação de Assinatura",
     description: SITE.description,
     // ⚠️ TODO:CONFIRMAR imagem-capa OG definitiva.
     images: [{ url: "/images/hero.png", width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lu Make Up — Micropigmentação de Assinatura",
+    title: "Lu Make Up · Micropigmentação de Assinatura",
     description: SITE.description,
   },
   alternates: { canonical: "/" },

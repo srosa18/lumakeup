@@ -14,26 +14,27 @@ type Testimonial = { quote: string; name: string; role: string };
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Estou extremamente realizada com a micro. Escolhi a profissional certa e estou 100% realizada — foi um investimento que valeu super a pena.",
+      "Eu sonhava em fazer a micro com a equipe da Lu Make Up havia anos. Escolhi a profissional certa: estou 100% realizada. Foi um investimento que valeu super a pena.",
     name: "Fê",
-    role: "Cliente",
+    role: "Cliente · Micropigmentação",
   },
   {
     quote:
       "O feedback das minhas pacientes foi sensacional. Muito obrigada por todo o profissionalismo e o acolhimento.",
     name: "Dra. Paula",
-    role: "Dermatologista",
+    role: "Dermatologista · indica suas pacientes ao ateliê",
   },
   {
     quote:
       "Você foi tocada por Deus e fez com que meu pai voltasse a sorrir. Vencemos o câncer.",
-    name: "Familiar de paciente",
-    role: "Micropigmentação reparadora",
+    name: "Família de um paciente",
+    role: "Trabalho reparador",
   },
   {
-    quote: "Estou muito feliz de ver as ações dessa empresa. Satisfeita, do começo ao fim.",
+    quote:
+      "Fiz as sobrancelhas e voltei para o retorno no prazo. O contato pelo WhatsApp é muito eficiente. Estou satisfeita e muito feliz.",
     name: "Cliente",
-    role: "Instituto Living Sculpture",
+    role: "Sobrancelhas",
   },
 ];
 

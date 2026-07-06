@@ -23,21 +23,19 @@ type FaqItem = { q: string; a: string; todo?: boolean };
 const FAQS: FaqItem[] = [
   {
     q: "Quais formas de pagamento são aceitas?",
-    a: "A confirmar com a Lu Make Up — formas de pagamento aceitas e condições de parcelamento.",
-    todo: true,
+    a: "As condições variam conforme o procedimento e a unidade. Chame o ateliê no WhatsApp: explicamos tudo em detalhes, sem compromisso.",
   },
   {
-    q: "Onde a Lu Make Up está localizada? Quais são os horários de funcionamento?",
-    a: "A confirmar — endereço da(s) unidade(s) e horários de atendimento.",
-    todo: true,
+    q: "Onde a Lu Make Up está localizada?",
+    a: "O ateliê principal fica em São Paulo, no Jardim Paulista, com unidades no Rio de Janeiro, Brasília, Manaus e Miami. Os endereços completos estão na página de Localizações.",
   },
   {
-    q: "Por que algumas pessoas dizem que os tratamentos na Lu Make Up são mais caros?",
-    a: "Porque cada procedimento une biossegurança rigorosa, materiais de alta qualidade e uma técnica autoral voltada à naturalidade e à durabilidade. Você não investe em um retoque rápido, e sim em um resultado feito para envelhecer bem com você.",
+    q: "O que está incluído em um procedimento da Lu Make Up?",
+    a: "Biossegurança rigorosa, pigmentos próprios livres de metais pesados, uma técnica autoral voltada à naturalidade e o retorno de acabamento. Você não investe em um retoque rápido, e sim em um resultado feito para envelhecer bem com você.",
   },
   {
     q: "É minha primeira vez na Lu Make Up, o que devo saber?",
-    a: "Tudo começa por uma avaliação individual: entendemos seus traços, sua rotina e o que você deseja, e desenhamos um plano sob medida — sem fórmulas prontas e no seu tempo.",
+    a: "Tudo começa por uma avaliação individual: entendemos seus traços, sua rotina e o que você deseja, e desenhamos um plano sob medida, sem fórmulas prontas e no seu tempo.",
   },
   {
     q: "Como posso diminuir o tempo do meu tratamento?",
@@ -67,12 +65,12 @@ export function Faq() {
             Perguntas Frequentes
           </h2>
           <p className="mt-6 max-w-[34ch] text-sm leading-relaxed text-muted">
-            Não encontrou a resposta para a sua dúvida? Envie-nos pelo chat.
-            Teremos prazer em lhe responder!
+            Não encontrou a sua resposta? Chame o ateliê no WhatsApp. Quem responde
+            é gente da casa, sem compromisso.
           </p>
           <div className="mt-8">
             <Cta href={buildWhatsAppLink()} external variant="outline" className="w-full sm:w-auto">
-              Contato
+              Falar no WhatsApp
             </Cta>
           </div>
         </div>

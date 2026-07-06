@@ -6,7 +6,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * Lu Medical (§3/§5 Template C, §11 P2) — hub de transplante (EverBrow /
+ * Lu Medical (§3/§5 Template C, §11 P2) · hub de transplante (EverBrow /
  * EverLashes), energia ultra-premium "por avaliação / exclusivo". Sem preço.
  * Hub único por ora; sub-páginas /lu-medical/everbrow e /everlashes depois.
  *
@@ -14,7 +14,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  * de EverLashes, descrição de protocolo/segurança e fotos de resultado.
  */
 export const metadata: Metadata = {
-  title: "Lu Medical — EverBrow e EverLashes",
+  title: "Lu Medical · EverBrow e EverLashes",
   description:
     "Lu Medical: o transplante elevado a arte. EverBrow (transplante de sobrancelhas) e EverLashes (transplante de cílios) unem cirurgia e olhar artístico. Atendimento por avaliação.",
   alternates: { canonical: "/lu-medical" },
@@ -29,7 +29,7 @@ export default function LuMedical() {
       <section aria-labelledby="lumedical-heading" className="relative flex min-h-[88svh] items-end overflow-hidden bg-ink">
         <Image
           src="/images/lu-medical/hero.webp"
-          alt="Lu Medical — transplante de sobrancelhas e cílios, olhar artístico"
+          alt="Lu Medical · transplante de sobrancelhas e cílios, olhar artístico"
           fill
           sizes="100vw"
           className="object-cover"
@@ -50,7 +50,7 @@ export default function LuMedical() {
           </p>
           <div className="mt-9">
             <Cta href={avaliacao} external variant="outline">
-              Solicitar avaliação
+              Agendar avaliação
             </Cta>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function LuMedical() {
           </h2>
           <p className="mx-auto mt-8 max-w-[60ch] text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
             EverBrow e EverLashes unem cirurgia e olhar artístico para um resultado
-            impecável, seguro e exclusivo. Não é um procedimento de catálogo — é um
+            impecável, seguro e exclusivo. Não é um procedimento de catálogo. É um
             trabalho conduzido a partir do seu rosto, da sua expressão e do desenho que
             pertence a você.
           </p>
@@ -86,7 +86,7 @@ export default function LuMedical() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/everbrow/retrato.webp"
-                  alt="EverBrow — transplante de sobrancelhas"
+                  alt="EverBrow · transplante de sobrancelhas"
                   fill
                   sizes="(min-width:768px) 640px, 100vw"
                   className="object-cover"
@@ -100,7 +100,7 @@ export default function LuMedical() {
                 </h3>
                 <p className="mt-4 max-w-[46ch] text-sm leading-relaxed text-muted lg:text-base">
                   Para sobrancelhas com falhas definitivas, o transplante devolve densidade
-                  com fios reais — desenhados com o mesmo visagismo da casa.
+                  com fios reais, desenhados com o mesmo visagismo da casa.
                   {/* TODO:CONFIRMAR descrição técnica, número de fios/sessões e recuperação. */}
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function LuMedical() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/lu-medical/everlashes.webp"
-                  alt="EverLashes — transplante de cílios"
+                  alt="EverLashes · transplante de cílios"
                   fill
                   sizes="(min-width:768px) 640px, 100vw"
                   className="object-cover"
@@ -124,7 +124,7 @@ export default function LuMedical() {
                   Transplante de cílios
                 </h3>
                 <p className="mt-4 max-w-[46ch] text-sm leading-relaxed text-muted lg:text-base">
-                  Cílios mais densos e definidos, com naturalidade — para um olhar pleno
+                  Cílios mais densos e definidos, com naturalidade, para um olhar pleno
                   sem a rotina de alongamentos.
                   {/* TODO:CONFIRMAR grafia (EverLashes), descrição técnica e recuperação. */}
                 </p>
@@ -147,7 +147,7 @@ export default function LuMedical() {
             {[
               { n: "01", title: "Avaliação", body: "Um estudo do seu rosto e da sua indicação antes de qualquer decisão. Por avaliação, sempre." },
               { n: "02", title: "Procedimento", body: "Conduzido com rigor médico e desenho artístico, em ambiente de biossegurança. (TODO:CONFIRMAR protocolo.)" },
-              { n: "03", title: "Acompanhamento", body: "Um cuidado que continua depois — com o acompanhamento do resultado. (TODO:CONFIRMAR pós-operatório.)" },
+              { n: "03", title: "Acompanhamento", body: "Um cuidado que continua depois, com o acompanhamento do resultado. (TODO:CONFIRMAR pós-operatório.)" },
             ].map((s) => (
               <li key={s.n} className="bg-bone p-8 outline outline-1 outline-text-on-bone/10">
                 <span className="font-display text-sm font-light tracking-[0.1em] text-brass">{s.n}</span>
@@ -159,20 +159,20 @@ export default function LuMedical() {
           <p className="mt-10 max-w-[60ch] text-sm leading-relaxed text-text-on-bone/70">
             Quer entender a fundo?{" "}
             <Link href="/diario/everbrow-a-revolucao-no-transplante-de-sobrancelhas" className="text-brass underline underline-offset-4">
-              Leia sobre o EverBrow no Diário
+              Leia sobre o EverBrow nas Notícias
             </Link>
             .
           </p>
         </div>
       </section>
 
-      {/* CTA final — MOBILE off-white (bone + preto); DESKTOP normal (foto + branco). */}
+      {/* CTA final · MOBILE off-white (bone + preto); DESKTOP normal (foto + branco). */}
       <section className="relative flex min-h-[62vh] items-center justify-center overflow-hidden bg-bone text-center md:bg-ink lg:min-h-[70vh]">
         {/* foto + overlay só no desktop */}
         <div aria-hidden className="absolute inset-0 hidden md:block">
           <Image
             src="/images/lu-medical/cta.webp"
-            alt="Lu Medical — atendimento por avaliação"
+            alt="Lu Medical · atendimento por avaliação"
             fill
             sizes="100vw"
             className="object-cover"
@@ -185,19 +185,19 @@ export default function LuMedical() {
             Um resultado exclusivo começa por uma conversa
           </h2>
           <p className="mx-auto mt-5 max-w-[44ch] text-sm leading-relaxed text-text-on-bone/70 md:text-text-on-ink/80">
-            O atendimento da Lu Medical é por avaliação — pensado para o seu caso, sem
+            O atendimento da Lu Medical é por avaliação, pensado para o seu caso, sem
             compromisso.
           </p>
           <div className="mt-9 flex justify-center">
             {/* mobile: botão preto (on-bone) · desktop: botão branco (on-ink) */}
             <span className="md:hidden">
               <Cta href={avaliacao} external variant="outline" tone="on-bone">
-                Solicitar avaliação
+                Agendar avaliação
               </Cta>
             </span>
             <span className="hidden md:block">
               <Cta href={avaliacao} external variant="outline" tone="on-ink">
-                Solicitar avaliação
+                Agendar avaliação
               </Cta>
             </span>
           </div>

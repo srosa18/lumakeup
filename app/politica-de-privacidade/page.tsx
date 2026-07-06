@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description:
-    "Política de Privacidade da Lu Make Up — como tratamos os seus dados pessoais, em conformidade com a LGPD (Lei 13.709/2018).",
+    "Política de Privacidade da Lu Make Up: como tratamos os seus dados pessoais, em conformidade com a LGPD (Lei 13.709/2018).",
   alternates: { canonical: "/politica-de-privacidade" },
   robots: { index: true, follow: true },
 };

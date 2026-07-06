@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * Post do Diário — route dinâmico, SSG. Renderiza o HTML migrado e sanitizado
+ * Post do Diário · route dinâmico, SSG. Renderiza o HTML migrado e sanitizado
  * (lib/diario.ts) em container .prose-lu. Cabeçalho editorial + capa + corpo +
  * relacionados (mesmo tema). JSON-LD Article (§8).
  */
@@ -69,7 +69,7 @@ export default async function DiarioPost({
       <header className="bg-ink pb-12 pt-28 lg:pt-36">
         <div className="mx-auto max-w-[760px] px-6 lg:px-8">
           <Link href="/diario" className="kicker text-muted transition-colors hover:text-brass">
-            ← Diário
+            ← Notícias
           </Link>
           <p className="kicker mt-8 text-brass">{post.tema}</p>
           <h1 className="mt-4 font-display text-[2.1rem] font-light leading-[1.12] text-text-on-ink lg:text-[3rem]">

@@ -206,7 +206,7 @@ export function BelezaDiscreta() {
               className="mt-6 whitespace-nowrap border border-white/45 bg-black/20 px-4 py-2 text-[0.6rem] uppercase tracking-[0.16em] text-white backdrop-blur-md transition-colors hover:border-white hover:bg-black/40 sm:text-[0.68rem]"
               style={animate ? { opacity: 0 } : undefined}
             >
-              Agendar horário
+              Agendar avaliação
             </a>
           </div>
         </div>

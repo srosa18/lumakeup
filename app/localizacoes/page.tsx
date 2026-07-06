@@ -4,12 +4,12 @@ import { Kicker } from "@/components/ui/Kicker";
 import { UNITS, HORARIO } from "@/lib/units";
 
 /**
- * Localizações (§9/§11 P2) — índice das unidades. Server component (SEO local).
+ * Localizações (§9/§11 P2) · índice das unidades. Server component (SEO local).
  * Cada card leva à página da unidade (/localizacoes/[slug]). Endereços reais
  * (site atual). ⚠️ TODO:CONFIRMAR números de WhatsApp dedicados por unidade.
  */
 export const metadata: Metadata = {
-  title: "Localizações — Ateliês Lu Make Up",
+  title: "Localizações · Ateliês Lu Make Up",
   description:
     "Ateliês Lu Make Up em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami. Atendimento por agendamento. Encontre a unidade mais próxima.",
   alternates: { canonical: "/localizacoes" },
@@ -28,7 +28,7 @@ export default function LocalizacoesIndex() {
             Localizações
           </h1>
           <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
-            Cinco cidades, um mesmo cuidado. O atendimento é por agendamento — {HORARIO.toLowerCase()}.
+            Cinco cidades, um mesmo cuidado. O atendimento é por agendamento, {HORARIO.toLowerCase()}.
           </p>
         </div>
       </section>

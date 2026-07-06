@@ -7,7 +7,7 @@ import { UNITS } from "@/lib/units";
 /**
  * S11 · Rodapé (§4). Monograma + assinatura. Idioma PT consistente
  * (corrige "OUR STORY" → Nossa História). Localizações tratadas como ateliês.
- * ⚠️ Profissionais/Formação (§3) — pendente de confirmação; não incluído ainda.
+ * ⚠️ Profissionais/Formação (§3) · pendente de confirmação; não incluído ainda.
  */
 const COLS = [
   {

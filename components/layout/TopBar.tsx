@@ -7,12 +7,12 @@ import { Monogram } from "@/components/ui/Monogram";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * S0 · Top bar — réplica do Figma (node 40:137).
+ * S0 · Top bar · réplica do Figma (node 40:137).
  * Layout: hambúrguer (esquerda) · monograma (centro) · "AGENDAR HORÁRIO" (direita).
  * Nav completa vive no overlay do menu (inclusive no desktop, como no Figma).
  *
  * ⚠️ NAV REATIVA À COR DO FUNDO: a barra é transparente e flutua sobre as seções.
- * Quando a seção atrás é CLARA (`data-section-theme="light"` — ex.: Be Bold,
+ * Quando a seção atrás é CLARA (`data-section-theme="light"` · ex.: Be Bold,
  * Depoimentos), os elementos brancos sumiriam; então invertemos logo/hambúrguer/
  * botão para PRETO. Detecção pela seção que cruza a base da barra (scroll + rAF).
  *
@@ -49,7 +49,7 @@ export function TopBar() {
   // eventos de scroll, que nem sempre disparam com scroll programático/smooth).
   useEffect(() => {
     // Reset ao trocar de rota (nova página costuma abrir sobre seção escura) e
-    // RE-OBSERVA as seções da página atual — a TopBar persiste no layout, então o
+    // RE-OBSERVA as seções da página atual · a TopBar persiste no layout, então o
     // observer precisa reconstruir a cada navegação (dep: pathname).
     setOverLight(false);
     const sections = Array.from(
@@ -119,12 +119,12 @@ export function TopBar() {
         <Link
           href="/"
           className={`absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transition-colors duration-300 hover:text-brass sm:block ${dark ? "text-ink" : "text-white"}`}
-          aria-label="Lu Make Up — início"
+          aria-label="Lu Make Up · início"
         >
           <Monogram className="h-[37px] w-auto" />
         </Link>
 
-        {/* CTA (direita) — botão outline, como a referência */}
+        {/* CTA (direita) · botão outline, como a referência */}
         <a
           href={buildWhatsAppLink()}
           target="_blank"
@@ -136,7 +136,7 @@ export function TopBar() {
               : "border-white/45 text-white hover:border-white hover:bg-white/10",
           ].join(" ")}
         >
-          Agendar horário
+          Agendar avaliação
         </a>
       </div>
 
@@ -148,7 +148,7 @@ export function TopBar() {
           className="border-t border-line-subtle bg-black/95 backdrop-blur-sm"
         >
           <ul className="mx-auto flex max-w-[var(--container-boutique)] flex-col gap-6 px-6 py-12 lg:px-10">
-            {/* Início (voltar p/ home) — só no mobile; no desktop o monograma já leva à home. */}
+            {/* Início (voltar p/ home) · só no mobile; no desktop o monograma já leva à home. */}
             <li className="sm:hidden">
               <Link
                 href="/"

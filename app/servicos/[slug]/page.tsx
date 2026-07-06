@@ -14,7 +14,7 @@ import { SITE } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * Página de Serviço — route dinâmico (Template A do brief §5). Renderiza qualquer
+ * Página de Serviço · route dinâmico (Template A do brief §5). Renderiza qualquer
  * serviço de lib/services.ts a partir de lib/service-content.ts.
  *
  * Server component, SSG (generateStaticParams). Ritmo visual aprovado na
@@ -88,7 +88,7 @@ export default async function ServicoPage({
   const ctaRight = content.ctaAlign === "right";
   const ctaLight = !img.cta; // sem imagem de CTA → fundo off-white + texto preto
 
-  // §8 — Service + FAQPage (AEO/GEO: as FAQs viram rich results / chunks citáveis).
+  // §8 · Service + FAQPage (AEO/GEO: as FAQs viram rich results / chunks citáveis).
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -118,8 +118,8 @@ export default async function ServicoPage({
       <section aria-labelledby="servico-heading" className="relative flex min-h-[78svh] items-end overflow-hidden bg-ink">
         <MediaFill
           src={img.hero}
-          alt={`${content.h1} — Lu Make Up`}
-          art={`HERO full-bleed de ${content.h1}: retrato editorial, fundo escuro, pele real — foto real a entrar`}
+          alt={`${content.h1} · Lu Make Up`}
+          art={`HERO full-bleed de ${content.h1}: retrato editorial, fundo escuro, pele real · foto real a entrar`}
           position={img.heroPos ?? "center 22%"}
         />
         <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent" />
@@ -164,13 +164,13 @@ export default async function ServicoPage({
         </div>
       </section>
 
-      {/* 3 · FAIXA DE IMAGEM grande (opcional — omitida quando não há `band`) */}
+      {/* 3 · FAIXA DE IMAGEM grande (opcional · omitida quando não há `band`) */}
       {img.band ? (
         <section className={`relative overflow-hidden bg-ink ${img.bandTall ? "h-[56vh] min-h-[400px] lg:h-[66vh]" : "h-[40vh] min-h-[300px] lg:h-[48vh]"}`}>
           <MediaFill
             src={img.band}
             alt={`Detalhe do procedimento de ${content.h1}`}
-            art={`Faixa full-bleed de ${content.h1}: macro do procedimento, luz editorial — foto real a entrar`}
+            art={`Faixa full-bleed de ${content.h1}: macro do procedimento, luz editorial · foto real a entrar`}
             position={img.bandPos ?? "center 40%"}
           />
         </section>
@@ -197,14 +197,14 @@ export default async function ServicoPage({
         </div>
       </section>
 
-      {/* 5 · DIFERENCIAIS — 2 colunas com imagem */}
+      {/* 5 · DIFERENCIAIS · 2 colunas com imagem */}
       <section aria-labelledby="dif-heading" data-section-theme="light" className="overflow-hidden bg-bone">
         <div className="mx-auto grid max-w-[1280px] lg:grid-cols-2">
           <div className="relative min-h-[460px] lg:min-h-[680px]">
             <MediaFill
               src={img.diferenciais}
-              alt={`Retrato editorial — ${content.h1}`}
-              art={`Imagem grande (coluna) de ${content.h1}: retrato editorial, pele real — foto real a entrar`}
+              alt={`Retrato editorial · ${content.h1}`}
+              art={`Imagem grande (coluna) de ${content.h1}: retrato editorial, pele real · foto real a entrar`}
               position={img.diferenciaisPos ?? "center 25%"}
             />
           </div>
@@ -240,8 +240,8 @@ export default async function ServicoPage({
               <ImageSlot
                 key={i}
                 src={img.results?.[i]}
-                alt={`${content.h1} — resultado e procedimento Lu Make Up (${i + 1})`}
-                art={`Galeria de ${content.h1} — exemplo ${i + 1} (foto real a entrar)`}
+                alt={`${content.h1} · resultado e procedimento Lu Make Up (${i + 1})`}
+                art={`Galeria de ${content.h1} · exemplo ${i + 1} (foto real a entrar)`}
                 ratio="4 / 5"
                 tone="ink"
                 sizes="(min-width:1024px) 400px, (min-width:640px) 45vw, 100vw"
@@ -283,7 +283,7 @@ export default async function ServicoPage({
         </div>
       </section>
 
-      {/* 9 · CTA final — faixa full-bleed. Bloco dentro do container da página (guideline);
+      {/* 9 · CTA final · faixa full-bleed. Bloco dentro do container da página (guideline);
           ctaAlign="right" alinha à direita DA COLUNA (não da viewport), em bloco estreito. */}
       {/* No MOBILE, o CTA final é sempre off-white (bone + texto/botão pretos);
           no DESKTOP mantém o comportamento normal (foto+overlay quando há img.cta). */}
@@ -296,8 +296,8 @@ export default async function ServicoPage({
           <div aria-hidden className="absolute inset-0 hidden md:block">
             <MediaFill
               src={img.cta}
-              alt={`Retrato editorial — ${content.h1}`}
-              art={`CTA full-bleed de ${content.h1}: retrato editorial, fundo escuro — foto real a entrar`}
+              alt={`Retrato editorial · ${content.h1}`}
+              art={`CTA full-bleed de ${content.h1}: retrato editorial, fundo escuro · foto real a entrar`}
               position={img.ctaPos ?? "center 25%"}
             />
             <div className="absolute inset-0 bg-black/40" />
@@ -316,7 +316,7 @@ export default async function ServicoPage({
             <div className={`mt-9 flex ${ctaRight ? "justify-start" : "justify-center"}`}>
               {ctaLight ? (
                 <Cta href={agendar} external variant="outline" tone="on-bone">
-                  Reservar meu horário
+                  Agendar avaliação
                 </Cta>
               ) : (
                 <>
@@ -324,12 +324,12 @@ export default async function ServicoPage({
                       Visibilidade no wrapper p/ não brigar com o inline-flex base do Cta. */}
                   <span className="md:hidden">
                     <Cta href={agendar} external variant="outline" tone="on-bone">
-                      Reservar meu horário
+                      Agendar avaliação
                     </Cta>
                   </span>
                   <span className="hidden md:block">
                     <Cta href={agendar} external variant="outline" tone="on-ink">
-                      Reservar meu horário
+                      Agendar avaliação
                     </Cta>
                   </span>
                 </>

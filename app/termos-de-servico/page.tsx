@@ -12,7 +12,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Termos de Serviço",
   description:
-    "Termos de Serviço e de Uso do site da Lu Make Up — condições de uso, agendamento por avaliação, propriedade intelectual e responsabilidades.",
+    "Termos de Serviço e de Uso do site da Lu Make Up: condições de uso, agendamento por avaliação, propriedade intelectual e responsabilidades.",
   alternates: { canonical: "/termos-de-servico" },
   robots: { index: true, follow: true },
 };

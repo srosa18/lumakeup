@@ -8,13 +8,13 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
  * Contato (§4/§11 P2). Caminho de conversão do site = WhatsApp por avaliação
- * (§7). Sem formulário pesado — convite curado. Instagram real (@lumakeupbr) e
+ * (§7). Sem formulário pesado · convite curado. Instagram real (@lumakeupbr) e
  * WhatsApp central reais (site atual). Horário: seg–sáb por agendamento.
  */
 export const metadata: Metadata = {
-  title: "Contato — Falar com o ateliê",
+  title: "Contato · Falar com o ateliê",
   description:
-    "Fale com o ateliê Lu Make Up. Atendimento por avaliação, via WhatsApp — segunda a sábado, por agendamento. Unidades em São Paulo, Rio, Brasília, Manaus e Miami.",
+    "Fale com o ateliê Lu Make Up. Atendimento por avaliação, via WhatsApp, de segunda a sábado, por agendamento. Unidades em São Paulo, Rio, Brasília, Manaus e Miami.",
   alternates: { canonical: "/contato" },
 };
 
@@ -34,7 +34,7 @@ export default function Contato() {
             Falar com o ateliê
           </h1>
           <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-muted">
-            Todo atendimento começa por uma avaliação personalizada — sem compromisso.
+            Todo atendimento começa por uma avaliação personalizada, sem compromisso.
             Conte o que você deseja e desenhamos a partir do seu traço.
           </p>
         </div>

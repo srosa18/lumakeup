@@ -32,7 +32,7 @@ export async function generateMetadata({
   const u = UNITS.find((x) => x.slug === slug);
   if (!u) return {};
   return {
-    title: `Lu Make Up ${u.city} — Ateliê`,
+    title: `Lu Make Up ${u.city} · Ateliê`,
     description: `Ateliê Lu Make Up em ${u.city} (${u.state}). ${u.addresses[0].name}. Atendimento por agendamento.`,
     alternates: { canonical: `/localizacoes/${slug}` },
   };
@@ -60,7 +60,7 @@ export default async function UnidadePage({
     "@context": "https://schema.org",
     "@graph": unit.addresses.map((a) => ({
       "@type": "BeautySalon",
-      name: `${SITE.name} — ${a.name}`,
+      name: `${SITE.name} · ${a.name}`,
       parentOrganization: SITE.name,
       telephone: CENTRAL_PHONE_DISPLAY,
       url: `${SITE.url}/localizacoes/${unit.slug}`,
@@ -89,19 +89,19 @@ export default async function UnidadePage({
             {unit.city}
           </h1>
           <p className="mt-5 max-w-[52ch] text-sm leading-relaxed text-muted">
-            {HORARIO}. Atendimento por avaliação — fale com o ateliê para reservar o seu horário.
+            {HORARIO}. Atendimento por avaliação. Fale com o ateliê para reservar o seu horário.
           </p>
         </div>
       </header>
 
       {/* Fotos (quando houver) */}
       {photos.length > 0 && (
-        <section aria-label={`Ambientes — ${unit.city}`} className="bg-ink pb-6">
+        <section aria-label={`Ambientes · ${unit.city}`} className="bg-ink pb-6">
           <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
               {photos.slice(0, 4).map((src, i) => (
                 <div key={src} className={`relative overflow-hidden bg-stone/10 ${i === 0 ? "col-span-2 aspect-[4/3] lg:col-span-2 lg:row-span-2 lg:aspect-auto" : "aspect-[3/4]"}`}>
-                  <Image src={src} alt={`Ateliê Lu Make Up ${unit.city} — ambiente ${i + 1}`} fill sizes="(min-width:1024px) 500px, 50vw" className="object-cover" />
+                  <Image src={src} alt={`Ateliê Lu Make Up ${unit.city} · ambiente ${i + 1}`} fill sizes="(min-width:1024px) 500px, 50vw" className="object-cover" />
                 </div>
               ))}
             </div>
@@ -124,7 +124,7 @@ export default async function UnidadePage({
                 <address className="mt-4 not-italic text-sm leading-relaxed text-muted">
                   {a.street}
                   <br />
-                  {a.district} · {a.city} — {a.state}
+                  {a.district} · {a.city}, {a.state}
                   {a.zip ? <><br />CEP {a.zip}</> : null}
                 </address>
                 <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
@@ -142,7 +142,7 @@ export default async function UnidadePage({
           {unit.whatsappPlaceholder && (
             <p className="mt-8 text-xs leading-relaxed text-muted/70">
               {/* TODO:CONFIRMAR número dedicado por unidade */}
-              Atendimento centralizado — {CENTRAL_PHONE_DISPLAY}.
+              Atendimento centralizado: {CENTRAL_PHONE_DISPLAY}.
             </p>
           )}
         </div>

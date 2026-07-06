@@ -8,13 +8,13 @@ import { getServiceContent } from "@/lib/service-content";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * Índice de Serviços (§3) — listagem curada dos 8 serviços, no estilo quiet luxury.
+ * Índice de Serviços (§3) · listagem curada dos 8 serviços, no estilo quiet luxury.
  * Cada card leva à página do serviço (/servicos/[slug]). Server component (SEO).
  */
 export const metadata: Metadata = {
-  title: "Serviços — Micropigmentação de Assinatura",
+  title: "Serviços · Micropigmentação de Assinatura",
   description:
-    "Sobrancelhas, lábios, olhos, capilar, alopécia, Exobrow, micropigmentação paramédica e reconstrução labial. Técnica autoral da Lu Make Up — por avaliação.",
+    "Sobrancelhas, lábios, olhos, capilar, alopécia, Exobrow, micropigmentação paramédica e reconstrução labial. Técnica autoral da Lu Make Up, por avaliação.",
   alternates: { canonical: "/servicos" },
 };
 
@@ -32,7 +32,7 @@ export default function ServicosIndex() {
             Serviços
           </h1>
           <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-            Nenhum rosto se repete — e nenhum protocolo deveria. Cada procedimento
+            Nenhum rosto se repete. E nenhum protocolo deveria. Cada procedimento
             começa por um estudo do seu traço, da sua pele, do seu olhar.
           </p>
         </div>
@@ -48,14 +48,14 @@ export default function ServicosIndex() {
                 key={s.slug}
                 href={`/servicos/${s.slug}`}
                 className="group block focus:outline-none"
-                aria-label={`${s.label} — ${s.essence}`}
+                aria-label={`${s.label} · ${s.essence}`}
               >
                 <div className="overflow-hidden">
                   <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
                     <ImageSlot
                       src={c?.images?.card ?? c?.images?.results?.[0] ?? c?.images?.hero}
                       position={c?.images?.cardPos}
-                      alt={`${s.label} — Lu Make Up`}
+                      alt={`${s.label} · Lu Make Up`}
                       art={`Card do serviço ${s.label} (foto real a entrar)`}
                       ratio="4 / 5"
                       tone="ink"
@@ -81,7 +81,7 @@ export default function ServicosIndex() {
             Não sabe por onde começar?
           </h2>
           <p className="mx-auto mt-5 max-w-[46ch] text-sm leading-relaxed text-text-on-bone/75">
-            Conte o que você deseja — desenhamos a partir do seu traço, em uma avaliação
+            Conte o que você deseja: desenhamos a partir do seu traço, em uma avaliação
             personalizada e sem compromisso.
           </p>
           <div className="mt-9 flex justify-center">

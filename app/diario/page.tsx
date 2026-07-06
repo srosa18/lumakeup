@@ -5,14 +5,14 @@ import { Kicker } from "@/components/ui/Kicker";
 import { DIARIO, formatData } from "@/lib/diario";
 
 /**
- * Diário (§11) — índice do blog. Server component (SEO). Conteúdo migrado do
+ * Diário (§11) · índice do blog. Server component (SEO). Conteúdo migrado do
  * site atual (ver lib/diario.ts). Lista editorial: o último post em destaque,
  * os demais em grade. Sem filtro interativo (mantém server-only).
  */
 export const metadata: Metadata = {
-  title: "Diário",
+  title: "Notícias",
   description:
-    "Diário da Lu Make Up — micropigmentação, pigmentos, sobrancelhas e o trabalho reparador do Instituto Living Sculpture. Reflexões e bastidores da técnica autoral de Lu Rodrigues.",
+    "Notícias da Lu Make Up: micropigmentação, pigmentos, sobrancelhas e o trabalho reparador do Instituto Living Sculpture. Reflexões e bastidores da técnica autoral de Lu Rodrigues.",
   alternates: { canonical: "/diario" },
 };
 
@@ -29,7 +29,7 @@ export default function DiarioIndex() {
             id="diario-heading"
             className="mt-5 font-display text-[2.4rem] font-light uppercase leading-[1.08] tracking-[0.04em] text-text-on-ink lg:text-[3.2rem]"
           >
-            Diário
+            Notícias
           </h1>
           <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-muted">
             O que sustenta um resultado natural nem sempre se vê. Aqui dividimos a
@@ -38,7 +38,7 @@ export default function DiarioIndex() {
         </div>
       </section>
 
-      {/* Destaque — último post */}
+      {/* Destaque · último post */}
       {destaque && (
         <section aria-label="Em destaque" className="bg-ink pb-16 lg:pb-20">
           <div className="mx-auto max-w-[1100px] px-6 lg:px-8">

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 /**
- * S? · "BE BOLD • BE LIGHT • BE DIFFERENT • BE YOU" — réplica do Figma.
+ * S? · "BE BOLD • BE LIGHT • BE DIFFERENT • BE YOU" · réplica do Figma.
  *
  * Palco (canvas "Tool Tips", node 60:11): modelo central sobre fundo stone,
  * texto decorativo atravessando atrás, e 7 pins numerados no rosto.
@@ -23,8 +23,8 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
  * ⚠️ Copy: transcrita fiel do Figma. Pendências sinalizadas ao cliente:
  *    - card 3 tags: "Revitalização" repetido;
  *    - card 4 tags: "econstrução" (provável "Reconstrução");
- *    - card 7 corpo: parece copiado do card 6 (lábios) — confirmar texto de capilar.
- * ⚠️ Miniaturas: extraídas do Figma (stock pexels/unsplash/AdobeStock) — substituir
+ *    - card 7 corpo: parece copiado do card 6 (lábios) · confirmar texto de capilar.
+ * ⚠️ Miniaturas: extraídas do Figma (stock pexels/unsplash/AdobeStock) · substituir
  *    por fotos reais licenciadas da Lu Make Up.
  * ⚠️ Modelo: aguardando PNG transparente do cliente (assets-src/be-bold/).
  */
@@ -62,10 +62,10 @@ const PINS: Pin[] = [
     x: 57.78,
     y: 35.6,
     title: "A Revolução Biotecnológica na Regeneração de Sobrancelhas",
-    body: "Por muito tempo, sobrancelhas falhadas eram apenas disfarçadas. O Exobrow, tratamento exclusivo da Lu Make Up, muda essa lógica ao usar exossomos e fatores de crescimento para agir na raiz do problema: a saúde do folículo. Mais do que desenhar, ele reativa a vitalidade natural dos fios.",
+    body: "Por muito tempo, sobrancelhas falhadas eram apenas disfarçadas. O Exobrow, tratamento exclusivo da Lu Make Up, muda essa lógica: usa exossomos, ativos que estimulam a regeneração das células, para agir na raiz do problema. Mais do que desenhar, ele reativa a vitalidade natural dos fios.",
     tags: [],
     thumb: "/images/be-bold/thumbs/pin2.webp",
-    thumbAlt: "Detalhe do olhar e sobrancelha — tratamento Exobrow",
+    thumbAlt: "Detalhe do olhar e sobrancelha · tratamento Exobrow",
   },
   {
     n: 3,
@@ -85,7 +85,7 @@ const PINS: Pin[] = [
     body: "Acreditamos que beleza é também reconstrução. Na Lu Make Up, a micropigmentação paramédica suaviza cicatrizes, marcas e assimetrias com rigor clínico e sensibilidade artística, devolvendo uniformidade à pele e tranquilidade ao se olhar no espelho.",
     tags: ["Camuflagem de Cicatrizes e Estrias", "Reconstrução de Aréolas", "Camuflagem de Vitiligo e Manchas"],
     thumb: "/images/be-bold/thumbs/pin4.webp",
-    thumbAlt: "Detalhe de pele — micropigmentação paramédica",
+    thumbAlt: "Detalhe de pele · micropigmentação paramédica",
   },
   {
     n: 5,
@@ -105,7 +105,7 @@ const PINS: Pin[] = [
     body: "Quando a simetria dos lábios é afetada, a confiança também muda. Na Lu Make Up, a reconstrução labial combina colorimetria e visagismo para redesenhar, camuflar e harmonizar o formato da boca com naturalidade e precisão.",
     tags: ["Revitalização", "Efeito Batom", "Neutralização de Lábios Escuros"],
     thumb: "/images/be-bold/thumbs/pin6.webp",
-    thumbAlt: "Detalhe de lábios — reconstrução e harmonização",
+    thumbAlt: "Detalhe de lábios · reconstrução e harmonização",
   },
   {
     n: 7,
@@ -116,12 +116,12 @@ const PINS: Pin[] = [
     body: "A Técnica Capilar da Lu Make Up é uma solução não cirúrgica avançada para camuflar a calvície e a rarefação. Com uma técnica precisa de pontilhismo, recriamos visualmente os folículos capilares, devolvendo densidade, definição e confiança de forma imediata.",
     tags: ["Efeito Densidade", "Camuflagem de Cicatrizes"],
     thumb: "/images/be-bold/thumbs/pin7.webp",
-    thumbAlt: "Detalhe do couro cabeludo — micropigmentação capilar",
+    thumbAlt: "Detalhe do couro cabeludo · micropigmentação capilar",
   },
 ];
 
 /**
- * Conteúdo do card — PADRÃO ÚNICO para todos (idêntico ao Figma, 450×200):
+ * Conteúdo do card · PADRÃO ÚNICO para todos (idêntico ao Figma, 450×200):
  * proporção fixa via aspect-ratio, miniatura quadrada ocupando a altura toda,
  * texto sempre na mesma posição. Nenhum card fica mais alto/baixo que outro.
  */
@@ -191,7 +191,7 @@ export function BeBold() {
       aria-labelledby="bebold-titulo"
       data-section-theme="light"
       // -mt + z: a Be Bold sobe por baixo e vai cobrindo a cauda preta da seção
-      // sticky anterior (Beleza Discreta) enquanto o título dela sobe — sem buraco preto.
+      // sticky anterior (Beleza Discreta) enquanto o título dela sobe · sem buraco preto.
       // -85vh (não -100): entra um pouco MAIS TARDE, p/ não cobrir cedo demais o
       // botão/headline da Beleza Discreta no scroll rápido (entrada mais fluida).
       // overflow-x-clip (não -hidden): corta o sangramento horizontal do texto
@@ -201,7 +201,7 @@ export function BeBold() {
       className="relative z-10 -mt-[52vh] overflow-x-clip bg-stone pb-16 md:pb-0"
     >
       <h2 id="bebold-titulo" className="sr-only">
-        Be bold, be light, be different, be you — áreas e procedimentos
+        Be bold, be light, be different, be you · áreas e procedimentos
       </h2>
 
       {/* Palco: modelo + texto decorativo + pins. flex-col p/ o card (filho flow)
@@ -210,7 +210,7 @@ export function BeBold() {
           preenche mais espaço; pins (posição em % do palco) escalam junto, alinhados.
           Desktop intacto (md:w-full max-w-[1280px] mx-auto). */}
       <div className="relative left-1/2 flex aspect-[1529/1260] w-[132%] max-w-none -translate-x-1/2 flex-col md:left-auto md:mx-auto md:w-full md:max-w-[1280px] md:translate-x-0">
-        {/* Texto decorativo, atrás da modelo — marquee infinito (dir→esq), em PRETO.
+        {/* Texto decorativo, atrás da modelo · marquee infinito (dir→esq), em PRETO.
             Largura = viewport inteira (w-screen centralizado), recortado por overflow. */}
         <div
           aria-hidden="true"
@@ -223,7 +223,7 @@ export function BeBold() {
           </div>
         </div>
 
-        {/* Modelo central (PNG transparente do cliente) — posicionada exatamente
+        {/* Modelo central (PNG transparente do cliente) · posicionada exatamente
             como no Figma (img 1870×1236 em frame 1529×1260: left -297, top 24),
             convertido p/ % para os pins alinharem com o rosto. */}
         <div className="absolute inset-0 z-10">
@@ -241,7 +241,7 @@ export function BeBold() {
             <div
               role="img"
               aria-label="Retrato de modelo com áreas do rosto destacadas por pins"
-              data-art="PNG transparente da modelo (cliente) — assets-src/be-bold/"
+              data-art="PNG transparente da modelo (cliente) · assets-src/be-bold/"
               className="absolute inset-x-[12%] bottom-0 top-[6%] flex items-end justify-center rounded-t-[40%] border border-ink/10 bg-ink/[0.04]"
             >
               <span className="kicker mb-[18%] text-ink/40">Modelo · PNG a definir</span>
@@ -296,7 +296,7 @@ export function BeBold() {
           );
         })}
 
-        {/* DESKTOP — banner preso ao RODAPÉ da viewport (sticky bottom) enquanto a
+        {/* DESKTOP · banner preso ao RODAPÉ da viewport (sticky bottom) enquanto a
             seção preenche a tela, mas CLAMPADO ao palco: nunca desce abaixo do corpo
             da modelo nem cria faixa (o palco tem altura travada por aspect). É filho
             flex com mt-auto (vai pro fim do palco). Aparece só no hover/foco. */}
@@ -313,7 +313,7 @@ export function BeBold() {
         </div>
       </div>
 
-      {/* MOBILE — todos os cards empilhados na sequência, abaixo da modelo */}
+      {/* MOBILE · todos os cards empilhados na sequência, abaixo da modelo */}
       <div className="mx-auto mt-6 flex max-w-[440px] flex-col gap-4 px-5 md:hidden">
         {PINS.map((p) => (
           <div

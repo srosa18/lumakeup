@@ -5,13 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import { Kicker } from "@/components/ui/Kicker";
 
 /**
- * Prova social — clientes públicas. Galeria de celebridades atendidas pela
+ * Prova social · clientes públicas. Galeria de celebridades atendidas pela
  * Lu Make Up (migrada do site atual). Uso de imagem AUTORIZADO pelo cliente.
  * ⚠️ TODO:CONFIRMAR grafia exata dos nomes com a Lu.
  *
  * Interação (mobile sobretudo): as fotos são P&B por padrão. Ao TOCAR numa,
  * ela colore e dá um leve zoom; volta ao P&B sozinha após 2s. Só uma ativa por
- * vez — tocar outra acende a nova e apaga a anterior. No desktop, o hover do
+ * vez · tocar outra acende a nova e apaga a anterior. No desktop, o hover do
  * mouse também colore (comportamento nativo mantido).
  */
 const CELEBS: { slug: string; name: string }[] = [
@@ -57,7 +57,7 @@ export function Celebridades() {
             à Lu Make Up
           </h2>
           <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-            De atrizes e apresentadoras a mulheres que atravessaram o câncer — o mesmo
+            De atrizes e apresentadoras a mulheres que atravessaram o câncer: o mesmo
             cuidado, a mesma discrição.
           </p>
         </div>
@@ -71,13 +71,13 @@ export function Celebridades() {
                   type="button"
                   onClick={() => activate(c.slug)}
                   aria-pressed={isOn}
-                  aria-label={`${c.name} — ver foto em cor`}
+                  aria-label={`${c.name} · ver foto em cor`}
                   className="block w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brass"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden bg-stone/10">
                     <Image
                       src={`/images/celebridades/${c.slug}.webp`}
-                      alt={`${c.name} — cliente da Lu Make Up`}
+                      alt={`${c.name} · cliente da Lu Make Up`}
                       fill
                       sizes="(min-width:1024px) 230px, (min-width:640px) 30vw, 45vw"
                       className={[

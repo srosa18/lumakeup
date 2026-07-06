@@ -6,7 +6,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * Instituto Living Sculpture (§3/§5 Template B, §11 P2) — a alma reparadora da
+ * Instituto Living Sculpture (§3/§5 Template B, §11 P2) · a alma reparadora da
  * marca. Tom de PROPÓSITO, não de venda. ⚠️ Cuidado de imagem (§6): NADA
  * clínico-gráfico; retratos, mãos, fundadora, pigmento. Resultado sensível só
  * com introdução respeitosa.
@@ -15,9 +15,9 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  * abrangência do trabalho (vitiligo etc.) e o fluxo de encaminhamento médico.
  */
 export const metadata: Metadata = {
-  title: "Instituto Living Sculpture — Quando a arte reconstrói",
+  title: "Instituto Living Sculpture · Quando a arte reconstrói",
   description:
-    "Instituto Living Sculpture: o trabalho reparador da Lu Make Up — reconstrução de aréola pós-mastectomia, camuflagem de cicatrizes e a causa do câncer de mama. Conduzido com dignidade.",
+    "Instituto Living Sculpture: o trabalho reparador da Lu Make Up: reconstrução de aréola pós-mastectomia, camuflagem de cicatrizes e a causa do câncer de mama. Conduzido com dignidade.",
   alternates: { canonical: "/instituto-living-sculpture" },
 };
 
@@ -37,7 +37,7 @@ export default function InstitutoLivingSculpture() {
       <section aria-labelledby="instituto-heading" className="relative flex min-h-[82svh] items-end overflow-hidden bg-ink">
         <Image
           src="/images/instituto/hero.webp"
-          alt="Instituto Living Sculpture — o trabalho reparador da Lu Make Up"
+          alt="Instituto Living Sculpture · o trabalho reparador da Lu Make Up"
           fill
           sizes="100vw"
           className="object-cover"
@@ -54,7 +54,7 @@ export default function InstitutoLivingSculpture() {
             Quando a arte<br />reconstrói
           </h1>
           <p className="mt-6 max-w-[44ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
-            Há trabalhos que vão além da estética — e devolvem a uma pessoa a sensação de
+            Há trabalhos que vão além da estética. E devolvem a uma pessoa a sensação de
             inteireza.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function InstitutoLivingSculpture() {
           <div className="order-2 px-6 py-20 lg:order-1 lg:px-16 lg:py-32">
             <Kicker>A origem</Kicker>
             <h2 id="origem-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.6rem]">
-              Nasceu de uma história de família — e virou propósito
+              Nasceu de uma história de família e virou propósito
             </h2>
             <div className="mt-8 space-y-6 text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
               <p>
@@ -75,7 +75,7 @@ export default function InstitutoLivingSculpture() {
                 atravessou um tratamento difícil.
               </p>
               <p>
-                Tudo começou de perto — em uma história de família — e se transformou em
+                Tudo começou de perto, em uma história de família, e se transformou em
                 causa: acolher mulheres em reconstrução após o câncer de mama e devolver,
                 pela arte da micropigmentação, a sensação de se reconhecer no espelho.
                 {/* TODO:CONFIRMAR detalhes da origem (história de família). */}
@@ -91,7 +91,7 @@ export default function InstitutoLivingSculpture() {
           <div className="relative order-1 min-h-[440px] lg:order-2 lg:min-h-[640px]">
             <Image
               src="/images/a-casa/fundadora.webp"
-              alt="Lu Rodrigues — fundadora da Lu Make Up e do Instituto Living Sculpture"
+              alt="Lu Rodrigues · fundadora da Lu Make Up e do Instituto Living Sculpture"
               fill
               sizes="(min-width:1024px) 640px, 100vw"
               className="object-cover"
@@ -108,7 +108,7 @@ export default function InstitutoLivingSculpture() {
             <div className="relative aspect-[4/5] overflow-hidden bg-stone/10 lg:order-2">
               <Image
                 src="/images/instituto/trabalho.webp"
-                alt="O trabalho reparador do Instituto — retrato editorial, tom digno"
+                alt="O trabalho reparador do Instituto · retrato editorial, tom digno"
                 fill
                 sizes="(min-width:1024px) 560px, 100vw"
                 className="object-cover"
@@ -150,7 +150,7 @@ export default function InstitutoLivingSculpture() {
           <div className="relative min-h-[420px] lg:min-h-[600px]">
             <Image
               src="/images/a-casa/pigmentos.webp"
-              alt="Os pigmentos próprios da Lu Make Up — livres de metais pesados"
+              alt="Os pigmentos próprios da Lu Make Up · livres de metais pesados"
               fill
               sizes="(min-width:1024px) 640px, 100vw"
               className="object-cover"
@@ -183,7 +183,7 @@ export default function InstitutoLivingSculpture() {
           </h2>
           <p className="mx-auto mt-5 max-w-[48ch] text-sm leading-relaxed text-text-on-bone/75">
             Cada caso é único e tratado com sigilo. Fale com o ateliê para uma avaliação
-            personalizada — trabalhamos, quando necessário, em diálogo com a sua equipe
+            personalizada. Trabalhamos, quando necessário, em diálogo com a sua equipe
             médica. {/* TODO:CONFIRMAR fluxo de encaminhamento e parcerias. */}
           </p>
           <div className="mt-9 flex justify-center">

@@ -6,21 +6,21 @@ import { SITE } from "@/lib/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * A Casa (§3/§11 P2) — institucional "Sobre". Reúne História + Fundadora
+ * A Casa (§3/§11 P2) · institucional "Sobre". Reúne História + Fundadora
  * (#lu-rodrigues) + Pigmentos (#pigmentos) + Espaço numa página só. Fatos
  * estabelecidos: fundação em 2002, +20 anos, pigmentos próprios sem metais
  * pesados, unidades (lib/site). ⚠️ TODO:CONFIRMAR formação internacional,
  * marcos e números específicos da trajetória da Lu Rodrigues.
  */
 export const metadata: Metadata = {
-  title: "A Casa — Sobre a Lu Make Up",
+  title: "O Ateliê · Sobre a Lu Make Up",
   description:
     "Desde 2002, a Lu Make Up é um instituto de micropigmentação de assinatura fundado por Lu Rodrigues. Conheça a história, a fundadora, os pigmentos próprios e o espaço.",
   alternates: { canonical: "/a-casa" },
 };
 
 export default function ACasa() {
-  // §8 — Person (entidade Lu Rodrigues p/ E-E-A-T e grafo de conhecimento).
+  // §8 · Person (entidade Lu Rodrigues p/ E-E-A-T e grafo de conhecimento).
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -47,12 +47,12 @@ export default function ACasa() {
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 min-[2000px]:pb-28">
-          <Kicker tone="on-ink">A Casa · Desde 2002</Kicker>
+          <Kicker tone="on-ink">O Ateliê · Desde 2002</Kicker>
           <h1
             id="acasa-heading"
             className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[1.9rem] lg:text-[2.1rem] min-[2000px]:text-[2.5rem]"
           >
-            A Casa
+            O Ateliê
           </h1>
           <p className="mt-6 max-w-[40ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
             Mais de vinte anos refinando uma única obsessão: realçar sem revelar a técnica.
@@ -65,12 +65,12 @@ export default function ACasa() {
         <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
           <Kicker>O Instituto</Kicker>
           <h2 id="historia-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.6rem]">
-            Uma casa de micropigmentação de assinatura
+            Um ateliê de micropigmentação de assinatura
           </h2>
           <p className="mx-auto mt-8 max-w-[62ch] text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
             {SITE.boilerplate} Desde o primeiro dia, uma convicção orienta cada gesto:
             o resultado mais bonito é aquele que ninguém percebe ser feito. Não vendemos
-            um procedimento — devolvemos a quem nos procura a sensação de se reconhecer no
+            um procedimento. Devolvemos a quem nos procura a sensação de se reconhecer no
             espelho, com discrição e naturalidade.
           </p>
         </div>
@@ -99,12 +99,12 @@ export default function ACasa() {
                 Pioneira da micropigmentação de assinatura no Brasil, Lu Rodrigues fundou
                 a Lu Make Up em 2002, em Treze Tílias, Santa Catarina. O que começou como
                 um estúdio no interior cresceu, ao longo de mais de duas décadas, até se
-                tornar uma referência — hoje com unidades em São Paulo, Rio de Janeiro,
+                tornar uma referência, hoje com unidades em São Paulo, Rio de Janeiro,
                 Brasília, Manaus e Miami.
               </p>
               <p>
                 Com formação em biomedicina e cosmetologia, é uma das pioneiras no estudo
-                do Linergismo — a leitura das linhas do rosto. Sua busca pela excelência a
+                do Linergismo, a leitura das linhas do rosto. Sua busca pela excelência a
                 levou a mais de cinco anos de atuação e aperfeiçoamento na Europa (Alemanha,
                 França e Suíça) e a viagens de pesquisa até a China, absorvendo o que há de
                 mais avançado em técnica e tecnologia.
@@ -130,13 +130,13 @@ export default function ACasa() {
             </h2>
             <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
               Não basta uma boa mão. A técnica autoral da casa é transmitida a cada
-              profissional sob três princípios — para que a segurança de ser atendida pela
+              profissional sob três princípios, para que a segurança de ser atendida pela
               Lu Make Up não dependa de quem executa.
             </p>
           </div>
           <ol className="mt-14 grid gap-px overflow-hidden border border-line-subtle sm:grid-cols-3">
             {[
-              { t: "Formação multidisciplinar", b: "Fisiologia da pele, química do pigmento e geometria facial — a base científica por trás de cada traço." },
+              { t: "Formação multidisciplinar", b: "Fisiologia da pele, química do pigmento e geometria facial: a base científica por trás de cada traço." },
               { t: "Atualização constante", b: "Presença em congressos e workshops para incorporar as tendências e tecnologias globais." },
               { t: "Biossegurança hospitalar", b: "Protocolos rigorosos de esterilização e higiene, salas privativas e material descartável." },
             ].map((p) => (
@@ -147,7 +147,7 @@ export default function ACasa() {
             ))}
           </ol>
           <p className="mt-10 max-w-[60ch] text-sm leading-relaxed text-muted">
-            Ao lado de Lu Rodrigues, a casa reúne especialistas de referência — entre eles
+            Ao lado de Lu Rodrigues, a casa reúne especialistas de referência, entre eles
             André Ishimura, nome nacional em procedimentos capilares, Fabiana Avesani e
             Fernanda Eleutério. {/* TODO:CONFIRMAR nomes/funções atuais da equipe. */}
           </p>
@@ -165,20 +165,20 @@ export default function ACasa() {
             <div className="mt-8 space-y-6 text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
               <p>
                 Os pigmentos da Lu Make Up são desenvolvidos pela própria Lu Rodrigues,
-                livres de metais pesados. Não é um detalhe técnico — é o que separa um
+                livres de metais pesados. Não é um detalhe técnico: é o que separa um
                 resultado que envelhece bonito de um que esmaece em tons indesejados.
               </p>
               <p>
                 Cada cor é escolhida a partir do seu subtom de pele, em um estudo de
                 colorimetria que antecede qualquer agulha. O objetivo é sempre o mesmo:
-                uma cor que parece sua — nunca aplicada. {/* TODO:CONFIRMAR linha/nome dos pigmentos e certificações. */}
+                uma cor que parece sua, nunca aplicada. {/* TODO:CONFIRMAR linha/nome dos pigmentos e certificações. */}
               </p>
             </div>
           </div>
           <div className="relative order-1 min-h-[420px] lg:order-2 lg:min-h-[620px]">
             <Image
               src="/images/a-casa/pigmentos.webp"
-              alt="Detalhe do trabalho de micropigmentação — colorimetria e pigmentos próprios"
+              alt="Detalhe do trabalho de micropigmentação · colorimetria e pigmentos próprios"
               fill
               sizes="(min-width:1024px) 640px, 100vw"
               className="object-cover"
@@ -210,7 +210,7 @@ export default function ACasa() {
               >
                 <Image
                   src={`/images/a-casa/espaco-${n}.webp`}
-                  alt={`Unidade São Paulo da Lu Make Up — ambiente ${n}`}
+                  alt={`Unidade São Paulo da Lu Make Up · ambiente ${n}`}
                   fill
                   sizes="(min-width:1024px) 400px, 50vw"
                   className="object-cover"
@@ -225,7 +225,7 @@ export default function ACasa() {
       <section data-section-theme="light" className="bg-bone py-24 text-center lg:py-32">
         <div className="mx-auto max-w-[680px] px-6 lg:px-8">
           <h2 className="font-display text-[1.9rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.4rem]">
-            Conheça a casa de perto
+            Conheça o ateliê de perto
           </h2>
           <p className="mx-auto mt-5 max-w-[46ch] text-sm leading-relaxed text-text-on-bone/75">
             Agende uma avaliação personalizada e descubra o que a técnica da Lu Make Up

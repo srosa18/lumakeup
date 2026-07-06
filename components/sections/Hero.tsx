@@ -1,30 +1,32 @@
 import Image from "next/image";
-import { Logo } from "@/components/ui/Logo";
-import { ScrollCue } from "@/components/ui/ScrollCue";
+import { Cta } from "@/components/ui/Cta";
+import { Kicker } from "@/components/ui/Kicker";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * S1 · HERO — réplica do Figma (rUAWQOnyIjy7zNstGDtSGN, node 40:137).
- * Composição: foto full-bleed das duas mulheres · headline "BE ALWAYS READY"
- * no CENTRO vertical do hero · cue de scroll logo abaixo · lockup da marca
- * (logo oficial) na parte inferior central.
+ * S1 · HERO · mensagem-mãe da Home.
  *
- * Server component — renderiza sem JS (protege o LCP). Sem CLS.
- * Texto branco sobre foto, com scrims sutis para contraste AA (§9).
+ * Conceito da campanha "Be Always Ready" traduzido em promessa de
+ * empoderamento: a beleza já é da mulher; o ateliê revela e fortalece o que já
+ * é seu. Ela acorda pronta para o dia, para liderar, para ser ela mesma.
  *
- * ⚠️ TODO:CONFIRMAR — texto exato do cue de scroll (aprox. "Role para explorar").
+ * H1 de TEXTO real (SEO/AEO/GEO) no lugar do lettering em SVG. "Be Always
+ * Ready" permanece como assinatura da campanha (kicker). CTA por convite,
+ * conduzindo ao WhatsApp, sem compromisso.
+ *
+ * Server component · renderiza sem JS (protege o LCP). Sem CLS.
+ * Texto branco sobre foto, com scrims para contraste AA (§9).
  */
 export function Hero() {
+  const agendar = buildWhatsAppLink();
+
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-black">
-      {/* Imagem de fundo — ART DIRECTION (priority para LCP):
-          MOBILE = só a modelo da esquerda, enquadrada no centro (a foto larga das
-          duas cortava "metade de cada uma" no celular).
-          DESKTOP = foto larga original.
-          ⚠️ hero-mobile.webp é um RECORTE da foto atual (stopgap) — trocar pela
-          imagem dedicada da modelo quando o cliente enviar (assets-src/hero/). */}
+      {/* Imagem de fundo · ART DIRECTION (priority para LCP):
+          MOBILE = recorte vertical da modelo; DESKTOP = foto larga original. */}
       <Image
         src="/images/hero-mobile.webp"
-        alt="Retrato de mulher sorrindo, pele natural — Lu Make Up"
+        alt="Retrato de mulher sorrindo, pele natural · Lu Make Up"
         fill
         priority
         sizes="100vw"
@@ -41,33 +43,34 @@ export function Hero() {
 
       {/* Scrim do topo (legibilidade da top bar) */}
       <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/45 to-transparent" />
-      {/* Gradiente de transição hero → próxima seção: preto 100% na base,
-          esmaecendo até transparente (emenda invisível com o fundo preto). */}
-      <div aria-hidden className="absolute inset-x-0 bottom-0 h-[64%] bg-gradient-to-t from-black from-[8%] via-black/45 to-transparent" />
+      {/* Gradiente inferior · sustenta o bloco de texto com contraste AA e faz a
+          emenda invisível com o fundo preto da próxima seção. */}
+      <div aria-hidden className="absolute inset-x-0 bottom-0 h-[78%] bg-gradient-to-t from-black from-[10%] via-black/55 to-transparent" />
 
-      {/* Headline — só o título, centralizado e levemente abaixo do meio */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
-        {/* Headline em SVG (lettering oficial). <h1> real oculto para SEO/AEO. */}
-        <h1 className="w-[82vw] max-w-[426px] text-white">
-          <span className="sr-only">Be Always Ready</span>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/brand/be-always-ready.svg"
-            alt=""
-            aria-hidden="true"
-            className="h-auto w-full"
-          />
-        </h1>
-      </div>
-
-      {/* Lockup da marca — inferior central (logo oficial completo) */}
-      <div className="absolute inset-x-0 bottom-[12vh] z-10 flex justify-center px-6 text-white">
-        <Logo className="h-[82px] w-auto" />
-      </div>
-
-      {/* CTA de scroll — seta animada na base */}
-      <div className="absolute inset-x-0 bottom-5 z-10 flex justify-center">
-        <ScrollCue />
+      {/* Conteúdo · bloco inferior (kicker + H1 + subtítulo + CTAs) */}
+      <div className="absolute inset-0 z-10 flex items-end">
+        <div className="mx-auto w-full max-w-[1280px] px-6 pb-20 lg:px-8 lg:pb-24 min-[2000px]:pb-32">
+          <Kicker tone="on-ink">Be Always Ready</Kicker>
+          <h1 className="mt-4 max-w-[16ch] font-display text-[2.1rem] font-light leading-[1.08] text-text-on-ink sm:text-[2.6rem] lg:text-[3.1rem] min-[2000px]:text-[3.6rem]">
+            Você já nasceu pronta.
+          </h1>
+          <p className="mt-5 max-w-[48ch] text-base leading-relaxed text-text-on-ink/85 lg:text-lg">
+            A sua beleza já existe. Nós revelamos e fortalecemos o que é seu, com
+            naturalidade, para você acordar pronta para o dia e para tudo o que ele
+            pedir. Sobrancelhas, lábios e olhar, na assinatura de Lu Rodrigues desde 2002.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <Cta href={agendar} external variant="outline">
+              Agendar avaliação
+            </Cta>
+            <Cta href="/servicos" variant="quiet">
+              Ver os serviços
+            </Cta>
+          </div>
+          <p className="mt-5 text-[0.7rem] uppercase tracking-[0.16em] text-text-on-ink/55">
+            Sem compromisso, no WhatsApp
+          </p>
+        </div>
       </div>
     </section>
   );

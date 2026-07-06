@@ -6,22 +6,22 @@ import { Cta } from "@/components/ui/Cta";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * S7 · "Everbrow — By Lu Medical" — réplica do Figma (card node 74:39) +
+ * S7 · "Everbrow · By Lu Medical" · réplica do Figma (card node 74:39) +
  * interação descrita pelo cliente.
  *
  * Sequência scroll-pinned (CSS sticky h-screen + GSAP ScrollTrigger scrub):
- *  Fase 1 — o RETRATO ocupa a viewport inteira (full-bleed) e TRAVA (sticky).
- *  Fase 2 — seguindo o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom).
- *  Fase 3 — card fixo; o sticky SOLTA e tudo sobe junto p/ a próxima dobra.
+ *  Fase 1 · o RETRATO ocupa a viewport inteira (full-bleed) e TRAVA (sticky).
+ *  Fase 2 · seguindo o scroll, o CARD ENTRA EM CENA (fade + sobe + leve zoom).
+ *  Fase 3 · card fixo; o sticky SOLTA e tudo sobe junto p/ a próxima dobra.
  *
  * Layout do Figma: card VERTICAL (janela em cima + texto embaixo), pequeno,
  * CENTRALIZADO e um pouco ABAIXO do centro p/ a janela cair sobre o OLHAR dela.
  *
- * ⚠️ A "janela" é um VAZADO/RECORTE real — moldura stone (borda) + centro
+ * ⚠️ A "janela" é um VAZADO/RECORTE real · moldura stone (borda) + centro
  *    TRANSPARENTE → revela o PRÓPRIO retrato do fundo (em registro). Como fica
  *    centralizada, o olhar dela (centro da tela) aparece dentro dela.
  *
- * ⚠️ Retrato = stock do Figma (placeholder) — substituir por foto real Lu Medical.
+ * ⚠️ Retrato = stock do Figma (placeholder) · substituir por foto real Lu Medical.
  * Fundo CLARO → data-section-theme="light" (TopBar inverte p/ preto).
  */
 const PORTRAIT_SRC = "/images/everbrow/retrato.webp";
@@ -87,13 +87,13 @@ export function Everbrow() {
             : "relative h-[88vh] min-h-[660px] overflow-hidden"
         }
       >
-        {/* Retrato full-bleed (fundo) — é ele que aparece pelo vazado. ART DIRECTION:
+        {/* Retrato full-bleed (fundo) · é ele que aparece pelo vazado. ART DIRECTION:
             MOBILE usa um corte vertical mais recuado, já enquadrado p/ a sobrancelha
             + olho caírem dentro da janela (a foto original é close demais p/ caber
             bem numa tela estreita). DESKTOP usa a landscape em alta. */}
         <Image
           src="/images/everbrow/retrato-mobile.webp"
-          alt="Sobrancelhas e olhar de cliente em close — Lu Medical"
+          alt="Sobrancelhas e olhar de cliente em close · Lu Medical"
           fill
           sizes="100vw"
           className="object-cover object-center md:hidden"
@@ -127,7 +127,7 @@ export function Everbrow() {
                   o olhar real do fundo. Proporção 2:1. Sem borda embaixo. */}
               <div className="aspect-[2/1] w-full border-x-[14px] border-t-[14px] border-stone" />
 
-              {/* Texto — altura compacta: parágrafo LARGO (poucas linhas) p/ baixar
+              {/* Texto · altura compacta: parágrafo LARGO (poucas linhas) p/ baixar
                   a altura do card SEM mexer na janela do olhar. */}
               <div className="bg-stone px-7 pb-5 pt-5">
                 <h2
@@ -147,14 +147,14 @@ export function Everbrow() {
                 </p>
 
                 <p className="mt-2.5 text-[0.72rem] leading-normal text-text-on-bone/75">
-                  Everbrow é a tradução da visão inovadora de Lu Rodrigues: unir arte e
-                  ciência para oferecer às clientes um resultado impecável, seguro e
-                  exclusivo, o melhor transplante de sobrancelhas que você já conheceu.
+                  Para falhas que o pigmento não resolve, o EverBrow implanta fios
+                  verdadeiros, um a um, no desenho que pertence ao seu rosto. Cirurgia
+                  com olhar artístico, conduzida por avaliação.
                 </p>
 
                 <div className="mt-4">
                   <Cta href={buildWhatsAppLink()} external variant="outline" tone="on-bone">
-                    Agendar horário
+                    Agendar avaliação
                   </Cta>
                 </div>
               </div>
