@@ -65,7 +65,7 @@ export default async function DiarioPost({
   };
 
   return (
-    <article>
+    <article data-comment-id="artigo.conteudo" data-comment-label="Artigo · Conteúdo">
       {/* Cabeçalho */}
       <header className="bg-ink pb-12 pt-28 lg:pt-36">
         <div className="mx-auto max-w-[760px] px-6 lg:px-8">
@@ -123,7 +123,7 @@ export default async function DiarioPost({
 
       {/* Relacionados */}
       {relacionados.length > 0 && (
-        <section aria-label="Leituras relacionadas" className="bg-ink py-20 lg:py-28">
+        <section aria-label="Leituras relacionadas" className="bg-ink py-20 lg:py-28" data-comment-id="artigo.relacionados" data-comment-label="Artigo · Relacionados">
           <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
             <Kicker>Continue lendo · {post.tema}</Kicker>
             <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

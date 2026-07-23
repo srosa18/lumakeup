@@ -123,7 +123,7 @@ export default async function ServicoPage({
   return (
     <>
       {/* 1 · HERO full-bleed */}
-      <section aria-labelledby="servico-heading" className="relative flex min-h-[78svh] items-end overflow-hidden bg-ink">
+      <section aria-labelledby="servico-heading" className="relative flex min-h-[78svh] items-end overflow-hidden bg-ink" data-comment-id="servico.hero" data-comment-label="Serviço · Hero">
         <MediaFill
           src={img.hero}
           alt={`${content.h1} · Lu Make Up`}
@@ -161,7 +161,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 2 · A ARTE */}
-      <section aria-labelledby="arte-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
+      <section aria-labelledby="arte-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32" data-comment-id="servico.arte" data-comment-label="Serviço · A arte">
         <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
           <Kicker>A arte</Kicker>
           <h2 id="arte-heading" className="mt-5 whitespace-pre-line font-display text-[1.55rem] font-light leading-[1.12] text-text-on-bone lg:text-[1.95rem]">
@@ -175,7 +175,7 @@ export default async function ServicoPage({
 
       {/* 3 · FAIXA DE IMAGEM grande (opcional · omitida quando não há `band`) */}
       {img.band ? (
-        <section className={`relative overflow-hidden bg-ink ${img.bandTall ? "h-[56vh] min-h-[400px] lg:h-[66vh]" : "h-[40vh] min-h-[300px] lg:h-[48vh]"}`}>
+        <section className={`relative overflow-hidden bg-ink ${img.bandTall ? "h-[56vh] min-h-[400px] lg:h-[66vh]" : "h-[40vh] min-h-[300px] lg:h-[48vh]"}`} data-comment-id="servico.imagem" data-comment-label="Serviço · Imagem">
           <MediaFill
             src={img.band}
             alt={`Detalhe do procedimento de ${content.h1}`}
@@ -187,7 +187,7 @@ export default async function ServicoPage({
       ) : null}
 
       {/* 4 · A EXPERIÊNCIA (ritual) */}
-      <section aria-labelledby="ritual-heading" className="bg-ink py-24 lg:py-32">
+      <section aria-labelledby="ritual-heading" className="bg-ink py-24 lg:py-32" data-comment-id="servico.ritual" data-comment-label="Serviço · Ritual">
         <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
           <div className="max-w-[640px]">
             <Kicker>A experiência</Kicker>
@@ -208,7 +208,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 5 · DIFERENCIAIS · 2 colunas com imagem */}
-      <section aria-labelledby="dif-heading" data-section-theme="light" className="overflow-hidden bg-bone">
+      <section aria-labelledby="dif-heading" data-section-theme="light" className="overflow-hidden bg-bone" data-comment-id="servico.diferenciais" data-comment-label="Serviço · Diferenciais">
         <div className="mx-auto grid max-w-[1280px] lg:grid-cols-2">
           <div className="relative min-h-[460px] lg:min-h-[680px]">
             <MediaFill
@@ -238,7 +238,7 @@ export default async function ServicoPage({
       </section>
 
       {/* 6 · RESULTADOS */}
-      <section aria-labelledby="result-heading" className="overflow-hidden bg-ink py-24 lg:py-32">
+      <section aria-labelledby="result-heading" className="overflow-hidden bg-ink py-24 lg:py-32" data-comment-id="servico.resultado" data-comment-label="Serviço · Resultado">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
           <div className="max-w-[640px]">
             <Kicker>Resultados</Kicker>
@@ -265,7 +265,7 @@ export default async function ServicoPage({
 
       {/* 7 · PROVA (opcional) */}
       {proof && (
-        <section aria-labelledby="prova-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
+        <section aria-labelledby="prova-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32" data-comment-id="servico.prova" data-comment-label="Serviço · Prova social">
           <div className="mx-auto max-w-[820px] px-6 text-center lg:px-8">
             <h2 id="prova-heading" className="sr-only">Prova social</h2>
             <span aria-hidden="true" className="font-display text-6xl leading-none text-brass/40">&ldquo;</span>
@@ -278,7 +278,7 @@ export default async function ServicoPage({
       )}
 
       {/* 8 · FAQ DO SERVIÇO */}
-      <section aria-labelledby="faq-heading" className="bg-ink py-24 lg:py-32">
+      <section aria-labelledby="faq-heading" className="bg-ink py-24 lg:py-32" data-comment-id="servico.faq" data-comment-label="Serviço · Perguntas frequentes">
         <div className="mx-auto max-w-[860px] px-6 lg:px-8">
           <Kicker>Perguntas frequentes</Kicker>
           <h2 id="faq-heading" className="mt-5 font-display text-[1.55rem] font-light leading-[1.12] text-text-on-ink lg:text-[1.85rem]">
@@ -302,6 +302,8 @@ export default async function ServicoPage({
       <section
         data-section-theme={ctaLight ? "light" : undefined}
         className={`relative flex min-h-[42vh] items-center overflow-hidden lg:min-h-[48vh] ${ctaLight ? "bg-bone" : "bg-bone md:bg-ink"}`}
+        data-comment-id="servico.cta"
+        data-comment-label="Serviço · CTA"
       >
         {!ctaLight && (
           // foto + overlay só no desktop; no mobile some (fundo bone)

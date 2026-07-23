@@ -80,7 +80,7 @@ export default async function UnidadePage({
   return (
     <>
       {/* Cabeçalho */}
-      <header className="bg-ink pb-12 pt-28 lg:pt-36">
+      <header className="bg-ink pb-12 pt-28 lg:pt-36" data-comment-id="unidade.hero" data-comment-label="Unidade · Hero">
         <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
           <Link href="/localizacoes" className="kicker text-muted transition-colors hover:text-brass">
             ← Localizações
@@ -97,7 +97,7 @@ export default async function UnidadePage({
 
       {/* Fotos (quando houver) */}
       {photos.length > 0 && (
-        <section aria-label={`Ambientes · ${unit.city}`} className="bg-ink pb-6">
+        <section aria-label={`Ambientes · ${unit.city}`} className="bg-ink pb-6" data-comment-id="unidade.ambientes" data-comment-label="Unidade · Ambientes">
           <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
               {photos.slice(0, 4).map((src, i) => (
@@ -112,7 +112,7 @@ export default async function UnidadePage({
       )}
 
       {/* Endereços */}
-      <section aria-labelledby="enderecos-heading" className="bg-ink py-20 lg:py-28">
+      <section aria-labelledby="enderecos-heading" className="bg-ink py-20 lg:py-28" data-comment-id="unidade.enderecos" data-comment-label="Unidade · Endereços">
         <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
           <Kicker>{unit.addresses.length > 1 ? "Endereços" : "Endereço"}</Kicker>
           <h2 id="enderecos-heading" className="mt-5 font-display text-[1.8rem] font-light leading-[1.15] text-text-on-ink lg:text-[2.2rem]">
@@ -151,7 +151,7 @@ export default async function UnidadePage({
       </section>
 
       {/* CTA */}
-      <section data-section-theme="light" className="bg-bone py-24 text-center lg:py-32">
+      <section data-section-theme="light" className="bg-bone py-24 text-center lg:py-32" data-comment-id="unidade.cta" data-comment-label="Unidade · CTA">
         <div className="mx-auto max-w-[640px] px-6 lg:px-8">
           <h2 className="font-display text-[1.9rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.4rem]">
             Reserve o seu horário em {unit.city}
