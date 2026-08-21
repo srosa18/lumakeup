@@ -75,7 +75,7 @@ export function ServicesScroll() {
     >
       {/* Cabeçalho */}
       <div className="mx-auto max-w-[var(--container-boutique)] px-6 lg:px-10 lg:pt-28">
-        <Kicker as="h2">O Ateliê</Kicker>
+        <Kicker as="h2">A Clínica</Kicker>
         <p id="servicos-heading" className="mt-4 max-w-xl font-display text-3xl font-light leading-tight text-text-on-ink sm:text-4xl">
           Cada serviço, um estudo do seu rosto.
         </p>

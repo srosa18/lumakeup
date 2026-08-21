@@ -6,12 +6,12 @@ import { UNITS } from "@/lib/units";
 
 /**
  * S11 · Rodapé (§4). Monograma + assinatura. Idioma PT consistente
- * (corrige "OUR STORY" → Nossa História). Localizações tratadas como ateliês.
+ * (corrige "OUR STORY" → Nossa História). Localizações tratadas coma clínicas.
  * ⚠️ Profissionais/Formação (§3) · pendente de confirmação; não incluído ainda.
  */
 const COLS = [
   {
-    title: "O Ateliê",
+    title: "A Clínica",
     links: [
       { href: "/a-casa", label: "Nossa História" },
       { href: "/a-casa#lu-rodrigues", label: "Lu Rodrigues" },
@@ -25,7 +25,7 @@ const COLS = [
       { href: "/servicos", label: "Serviços" },
       { href: "/lu-medical", label: "Lu Medical" },
       { href: "/instituto-living-sculpture", label: "Instituto Living Sculpture" },
-      { href: "/contato", label: "Falar com o ateliê" },
+      { href: "/contato", label: "Falar com a clínica" },
     ],
   },
 ];
@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Localizações */}
           <nav aria-label="Localizações" className="lg:col-span-2">
-            <Kicker as="h2">Ateliês</Kicker>
+            <Kicker as="h2">Clínicas</Kicker>
             <ul className="mt-5 flex flex-col gap-3">
               {UNITS.map((u) => (
                 <li key={u.slug}>

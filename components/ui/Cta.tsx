@@ -2,8 +2,8 @@ import Link from "next/link";
 
 /**
  * CTA "por convite" (§1/§6). Banir "AGENDE AGORA".
- * Copy permitida: Agendar avaliação · Reservar meu horário · Falar com o ateliê
- * · Solicitar avaliação · Ver todos os serviços · Conheça o Instituto.
+ * Copy permitida: Agendar avaliação · Reservar meu horário · Falar com a clínica
+ * · Solicitar avaliação · Ver todos os serviços · Conheça a Clínica.
  *
  * `external` (WhatsApp deep-link) abre em nova aba com rel seguro.
  */

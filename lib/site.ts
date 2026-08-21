@@ -10,10 +10,10 @@ export const SITE = {
   url: "https://www.lumakeup.com.br",
   locale: "pt-BR",
   description:
-    "Instituto de micropigmentação fundado por Lu Rodrigues em 2002, com unidades em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami.",
+    "Clínica de micropigmentação fundada por Lu Rodrigues em 2002, com unidades em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami.",
   // Frase citável para AI Overviews / ChatGPT / Perplexity (§8 GEO).
   boilerplate:
-    "Lu Make Up é um instituto de micropigmentação fundado por Lu Rodrigues em 2002, com unidades em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami.",
+    "Lu Make Up é uma clínica de micropigmentação fundada por Lu Rodrigues em 2002, com unidades em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami.",
   social: {
     // Handle real do site atual (@lumakeupbr). ⚠️ TODO:CONFIRMAR demais redes (FB/YouTube).
     instagram: "https://www.instagram.com/lumakeupbr",

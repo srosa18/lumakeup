@@ -53,7 +53,7 @@ export default function PoliticaDePrivacidade() {
             <h2>2. Quais dados coletamos</h2>
             <ul>
               <li>
-                <strong>Dados de contato</strong>, fornecidos por você ao falar com o ateliê
+                <strong>Dados de contato</strong>, fornecidos por você ao falar com a clínica
                 (nome, telefone/WhatsApp, e-mail) para agendamento e atendimento.
               </li>
               <li>

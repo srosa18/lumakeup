@@ -33,8 +33,8 @@ export async function generateMetadata({
   const u = UNITS.find((x) => x.slug === slug);
   if (!u) return {};
   return {
-    title: `Lu Make Up ${u.city} · Ateliê`,
-    description: `Ateliê Lu Make Up em ${u.city} (${u.state}). ${u.addresses[0].name}. Atendimento por agendamento.`,
+    title: `Lu Make Up ${u.city} · Clínica`,
+    description: `Clínica Lu Make Up em ${u.city} (${u.state}). ${u.addresses[0].name}. Atendimento por agendamento.`,
     alternates: { canonical: `/localizacoes/${slug}` },
   };
 }
@@ -90,7 +90,7 @@ export default async function UnidadePage({
             {unit.city}
           </h1>
           <p className="mt-5 max-w-[52ch] text-sm leading-relaxed text-muted">
-            {HORARIO}. Atendimento por avaliação. Fale com o ateliê para reservar o seu horário.
+            {HORARIO}. Atendimento por avaliação. Fale com a clínica para reservar o seu horário.
           </p>
         </div>
       </header>
@@ -102,7 +102,7 @@ export default async function UnidadePage({
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
               {photos.slice(0, 4).map((src, i) => (
                 <div key={src} className={`relative overflow-hidden bg-stone/10 ${i === 0 ? "col-span-2 aspect-[4/3] lg:col-span-2 lg:row-span-2 lg:aspect-auto" : "aspect-[3/4]"}`}>
-                  <Image src={src} alt={`Ateliê Lu Make Up ${unit.city} · ambiente ${i + 1}`} fill sizes="(min-width:1024px) 500px, 50vw" className="object-cover" />
+                  <Image src={src} alt={`Clínica Lu Make Up ${unit.city} · ambiente ${i + 1}`} fill sizes="(min-width:1024px) 500px, 50vw" className="object-cover" />
                   <SizeTag size="1200 × 900 px" />
                 </div>
               ))}
@@ -116,7 +116,7 @@ export default async function UnidadePage({
         <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
           <Kicker>{unit.addresses.length > 1 ? "Endereços" : "Endereço"}</Kicker>
           <h2 id="enderecos-heading" className="mt-5 font-display text-[1.8rem] font-light leading-[1.15] text-text-on-ink lg:text-[2.2rem]">
-            {unit.addresses.length > 1 ? `${unit.addresses.length} ateliês em ${unit.city}` : `O ateliê em ${unit.city}`}
+            {unit.addresses.length > 1 ? `${unit.addresses.length} clínicas em ${unit.city}` : `A clínica em ${unit.city}`}
           </h2>
 
           <div className="mt-12 grid gap-px overflow-hidden border border-line-subtle md:grid-cols-2">
@@ -134,7 +134,7 @@ export default async function UnidadePage({
                     Como chegar
                   </a>
                   <a href={buildWhatsAppLink({ unitSlug: unit.slug, service: `atendimento em ${a.name}` })} target="_blank" rel="noopener noreferrer" className="kicker text-muted underline underline-offset-4 transition-colors hover:text-brass">
-                    Falar com o ateliê
+                    Falar com a clínica
                   </a>
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default async function UnidadePage({
           </p>
           <div className="mt-9 flex justify-center">
             <Cta href={agendar} external variant="solid" tone="on-bone">
-              Falar com o ateliê
+              Falar com a clínica
             </Cta>
           </div>
         </div>

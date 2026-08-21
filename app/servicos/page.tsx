@@ -117,7 +117,7 @@ export default function ServicosIndex() {
             </p>
             <div className="mt-9 flex justify-center">
               <Cta href={buildWhatsAppLink()} external variant="solid" tone="on-bone">
-                Falar com o ateliê
+                Falar com a clínica
               </Cta>
             </div>
           </div>

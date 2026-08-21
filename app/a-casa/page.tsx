@@ -14,9 +14,9 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  * marcos e números específicos da trajetória da Lu Rodrigues.
  */
 export const metadata: Metadata = {
-  title: "O Ateliê · Sobre a Lu Make Up",
+  title: "A Clínica · Sobre a Lu Make Up",
   description:
-    "Desde 2002, a Lu Make Up é um instituto de micropigmentação fundado por Lu Rodrigues. Conheça a história, a fundadora, os pigmentos próprios e o espaço.",
+    "Desde 2002, a Lu Make Up é uma clínica de micropigmentação fundada por Lu Rodrigues. Conheça a história, a fundadora, os pigmentos próprios e o espaço.",
   alternates: { canonical: "/a-casa" },
 };
 
@@ -50,12 +50,12 @@ export default function ACasa() {
           <SizeTag size="2560 × 1440 px" className="bottom-3 right-3" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
           <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-14 lg:px-8 lg:pb-12 3xl:pb-28">
-            <Kicker tone="on-ink">O Ateliê · Desde 2002</Kicker>
+            <Kicker tone="on-ink">A Clínica · Desde 2002</Kicker>
             <h1
               id="acasa-heading"
               className="mt-3 font-display text-[1.6rem] font-light uppercase leading-[1.05] tracking-[0.07em] text-text-on-ink sm:text-[1.9rem] lg:text-[2.1rem] 3xl:text-[2.5rem]"
             >
-              O Ateliê
+              A Clínica
             </h1>
             <p className="mt-6 max-w-[40ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
               Mais de vinte anos refinando uma única obsessão: realçar sem revelar a técnica.
@@ -68,9 +68,9 @@ export default function ACasa() {
       <div data-comment-id="a-casa.historia" data-comment-label="A Casa · História">
         <section aria-labelledby="historia-heading" data-section-theme="light" className="bg-bone py-24 lg:py-32">
           <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
-            <Kicker>O Instituto</Kicker>
+            <Kicker>A Clínica</Kicker>
             <h2 id="historia-heading" className="mt-5 text-balance font-display text-[1.6rem] font-light leading-[1.18] text-text-on-bone sm:text-[2rem] sm:leading-[1.15] lg:text-[2.6rem]">
-              Um ateliê de micropigmentação
+              Onde ciência, técnica e sensibilidade se encontram para revelar a beleza natural
             </h2>
             <p className="mx-auto mt-8 max-w-[62ch] text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
               {SITE.boilerplate} Desde o primeiro dia, uma convicção orienta cada gesto:
@@ -111,7 +111,7 @@ export default function ACasa() {
                   Brasília, Manaus e Miami.
                 </p>
                 <p>
-                  Com formação em biomedicina e cosmetologia, é uma das pioneiras no estudo
+                  Com formação em biomedicina, farmácia e cosmetologia, é uma das pioneiras no estudo
                   do Linergismo, a leitura das linhas do rosto. Sua busca pela excelência a
                   levou a mais de cinco anos de atuação e aperfeiçoamento na Europa (Alemanha,
                   França e Suíça) e a viagens de pesquisa até a China, absorvendo o que há de
@@ -136,12 +136,12 @@ export default function ACasa() {
             <div className="max-w-[640px]">
               <Kicker>O Método Lu Rodrigues</Kicker>
               <h2 id="metodo-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-ink lg:text-[2.4rem]">
-                Um rigor que se ensina
+                A mesma excelência, sempre
               </h2>
               <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
-                Não basta uma boa mão. A técnica autoral da casa é transmitida a cada
-                profissional sob três princípios, para que a segurança de ser atendida pela
-                Lu Make Up não dependa de quem executa.
+                A excelência da Lu Make Up é construída para ser consistente. Por isso, nossa
+                técnica autoral é transmitida a cada profissional, preservando o mesmo padrão
+                de qualidade, precisão e segurança em todos os atendimentos.
               </p>
             </div>
             <ol className="mt-14 grid gap-px overflow-hidden border border-line-subtle sm:grid-cols-3">
@@ -156,11 +156,6 @@ export default function ACasa() {
                 </li>
               ))}
             </ol>
-            <p className="mt-10 max-w-[60ch] text-sm leading-relaxed text-muted">
-              Ao lado de Lu Rodrigues, a casa reúne especialistas de referência, entre eles
-              André Ishimura, nome nacional em procedimentos capilares, Fabiana Avesani e
-              Fernanda Eleutério. {/* TODO:CONFIRMAR nomes/funções atuais da equipe. */}
-            </p>
           </div>
         </section>
       </div>
@@ -209,7 +204,7 @@ export default function ACasa() {
             <div className="max-w-[640px]">
               <Kicker>O Espaço</Kicker>
               <h2 id="espaco-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-ink lg:text-[2.4rem]">
-                Ateliês pensados para o seu conforto
+                Clínicas pensadas para o seu conforto
               </h2>
               <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
                 Na tradicional Avenida Nove de Julho, a Casa Conceito reúne mais de dez salas
@@ -225,7 +220,7 @@ export default function ACasa() {
                 >
                   <Image
                     src={`/images/a-casa/espaco-${n}.webp`}
-                    alt={`Ateliês Lu Make Up · ambiente ${n}`}
+                    alt={`Clínicas Lu Make Up · ambiente ${n}`}
                     fill
                     sizes="(min-width:1024px) 400px, 50vw"
                     className="object-cover"
@@ -243,7 +238,7 @@ export default function ACasa() {
         <section data-section-theme="light" className="bg-bone py-24 text-center lg:py-32">
           <div className="mx-auto max-w-[680px] px-6 lg:px-8">
             <h2 className="font-display text-[1.9rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.4rem]">
-              Conheça o ateliê de perto
+              Conheça a clínica de perto
             </h2>
             <p className="mx-auto mt-5 max-w-[46ch] text-sm leading-relaxed text-text-on-bone/75">
               Agende uma avaliação personalizada e descubra o que a técnica da Lu Make Up
@@ -251,7 +246,7 @@ export default function ACasa() {
             </p>
             <div className="mt-9 flex justify-center">
               <Cta href={buildWhatsAppLink()} external variant="solid" tone="on-bone">
-                Falar com o ateliê
+                Falar com a clínica
               </Cta>
             </div>
           </div>

@@ -20,7 +20,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  * por clique fora; foco visível; nav navegável por teclado.
  */
 const NAV = [
-  { href: "/a-casa", label: "O Ateliê" },
+  { href: "/a-casa", label: "A Clínica" },
   { href: "/servicos", label: "Serviços" },
   { href: "/lu-medical", label: "Lu Medical" },
   { href: "/instituto-living-sculpture", label: "Instituto" },

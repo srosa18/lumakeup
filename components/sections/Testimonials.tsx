@@ -22,7 +22,7 @@ const TESTIMONIALS: Testimonial[] = [
     quote:
       "O feedback das minhas pacientes foi sensacional. Muito obrigada por todo o profissionalismo e o acolhimento.",
     name: "Dra. Paula",
-    role: "Dermatologista · indica suas pacientes ao ateliê",
+    role: "Dermatologista · indica suas pacientes à clínica",
   },
   {
     quote:

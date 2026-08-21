@@ -8,7 +8,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  * S1 · HERO · mensagem-mãe da Home.
  *
  * Conceito da campanha "Be Always Ready" traduzido em promessa de
- * empoderamento: a beleza já é da mulher; o ateliê revela e fortalece o que já
+ * empoderamento: a beleza já é da mulher; a clínica revela e fortalece o que já
  * é seu. Ela acorda pronta para o dia, para liderar, para ser ela mesma.
  *
  * H1 de TEXTO real (SEO/AEO/GEO) no lugar do lettering em SVG. "Be Always

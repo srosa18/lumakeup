@@ -9,9 +9,9 @@ import { UNITS, HORARIO } from "@/lib/units";
  * (site atual). ⚠️ TODO:CONFIRMAR números de WhatsApp dedicados por unidade.
  */
 export const metadata: Metadata = {
-  title: "Localizações · Ateliês Lu Make Up",
+  title: "Localizações · Clínicas Lu Make Up",
   description:
-    "Ateliês Lu Make Up em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami. Atendimento por agendamento. Encontre a unidade mais próxima.",
+    "Clínicas Lu Make Up em São Paulo, Rio de Janeiro, Brasília, Manaus e Miami. Atendimento por agendamento. Encontre a unidade mais próxima.",
   alternates: { canonical: "/localizacoes" },
 };
 

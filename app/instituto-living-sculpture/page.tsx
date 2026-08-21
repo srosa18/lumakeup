@@ -196,13 +196,13 @@ export default function InstitutoLivingSculpture() {
               Conheça o Instituto
             </h2>
             <p className="mx-auto mt-5 max-w-[48ch] text-sm leading-relaxed text-text-on-bone/75">
-              Cada caso é único e tratado com sigilo. Fale com o ateliê para uma avaliação
+              Cada caso é único e tratado com sigilo. Fale com a clínica para uma avaliação
               personalizada. Trabalhamos, quando necessário, em diálogo com a sua equipe
               médica. {/* TODO:CONFIRMAR fluxo de encaminhamento e parcerias. */}
             </p>
             <div className="mt-9 flex justify-center">
               <Cta href={agendar} external variant="solid" tone="on-bone">
-                Falar com o ateliê
+                Falar com a clínica
               </Cta>
             </div>
           </div>

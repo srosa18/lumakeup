@@ -17,10 +17,10 @@ import { Faq } from "@/components/sections/Faq";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Lu Make Up · Ateliê de Micropigmentação em São Paulo",
+      "Lu Make Up · Clínica de Micropigmentação em São Paulo",
   },
   description:
-    "Ateliê de micropigmentação de sobrancelhas, lábios e olhar, na técnica autoral de Lu Rodrigues desde 2002. Naturalidade que ninguém percebe. Agende sua avaliação, sem compromisso.",
+    "Clínica de micropigmentação de sobrancelhas, lábios e olhar, na técnica autoral de Lu Rodrigues desde 2002. Naturalidade que ninguém percebe. Agende sua avaliação, sem compromisso.",
   alternates: { canonical: "/" },
 };
 

@@ -114,7 +114,7 @@ export default async function DiarioPost({
             </p>
             <div className="mt-6">
               <Cta href={buildWhatsAppLink()} external variant="solid" tone="on-bone">
-                Falar com o ateliê
+                Falar com a clínica
               </Cta>
             </div>
           </div>

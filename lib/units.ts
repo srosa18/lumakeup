@@ -1,5 +1,5 @@
 /**
- * Unidades (ateliês). Usadas nos deep-links de WhatsApp, no rodapé e nas
+ * Unidades (clínicas). Usadas nos deep-links de WhatsApp, no rodapé e nas
  * páginas de Localização (LocalBusiness JSON-LD por unidade).
  *
  * Endereços e WhatsApp central extraídos do site atual (lumakeup.com.br/contato).

@@ -23,11 +23,11 @@ type FaqItem = { q: string; a: string; todo?: boolean };
 const FAQS: FaqItem[] = [
   {
     q: "Quais formas de pagamento são aceitas?",
-    a: "As condições variam conforme o procedimento e a unidade. Chame o ateliê no WhatsApp: explicamos tudo em detalhes, sem compromisso.",
+    a: "As condições variam conforme o procedimento e a unidade. Chame a clínica no WhatsApp: explicamos tudo em detalhes, sem compromisso.",
   },
   {
     q: "Onde a Lu Make Up está localizada?",
-    a: "O ateliê principal fica em São Paulo, no Jardim Paulista, com unidades no Rio de Janeiro, Brasília, Manaus e Miami. Os endereços completos estão na página de Localizações.",
+    a: "A clínica principal fica em São Paulo, no Jardim Paulista, com unidades no Rio de Janeiro, Brasília, Manaus e Miami. Os endereços completos estão na página de Localizações.",
   },
   {
     q: "O que está incluído em um procedimento da Lu Make Up?",
@@ -65,7 +65,7 @@ export function Faq() {
             Perguntas Frequentes
           </h2>
           <p className="mt-6 max-w-[34ch] text-sm leading-relaxed text-muted">
-            Não encontrou a sua resposta? Chame o ateliê no WhatsApp. Quem responde
+            Não encontrou a sua resposta? Chame a clínica no WhatsApp. Quem responde
             é gente da casa, sem compromisso.
           </p>
           <div className="mt-8">

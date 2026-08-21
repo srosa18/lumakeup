@@ -12,9 +12,9 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
  * WhatsApp central reais (site atual). Horário: seg–sáb por agendamento.
  */
 export const metadata: Metadata = {
-  title: "Contato · Falar com o ateliê",
+  title: "Contato · Falar com a clínica",
   description:
-    "Fale com o ateliê Lu Make Up. Atendimento por avaliação, via WhatsApp, de segunda a sábado, por agendamento. Unidades em São Paulo, Rio, Brasília, Manaus e Miami.",
+    "Fale com a clínica Lu Make Up. Atendimento por avaliação, via WhatsApp, de segunda a sábado, por agendamento. Unidades em São Paulo, Rio, Brasília, Manaus e Miami.",
   alternates: { canonical: "/contato" },
 };
 
@@ -32,7 +32,7 @@ export default function Contato() {
               id="contato-heading"
               className="mt-5 font-display text-[2.4rem] font-light uppercase leading-[1.08] tracking-[0.04em] text-text-on-ink lg:text-[3.2rem]"
             >
-              Falar com o ateliê
+              Falar com a clínica
             </h1>
             <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-muted">
               Todo atendimento começa por uma avaliação personalizada, sem compromisso.

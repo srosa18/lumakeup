@@ -81,7 +81,7 @@ export const RITUAL_ESTETICA: RitualStep[] = [
 // FAQ de marca (§6) — base reutilizável.
 const FAQ_AGENDAMENTO: QA = {
   q: "Como funciona o agendamento?",
-  a: "Atendimento por agendamento, com avaliação personalizada antes de qualquer procedimento. Chame o ateliê no WhatsApp e agende a sua avaliação, sem compromisso.",
+  a: "Atendimento por agendamento, com avaliação personalizada antes de qualquer procedimento. Chame a clínica no WhatsApp e agende a sua avaliação, sem compromisso.",
 };
 const FAQ_INVESTIMENTO: QA = {
   q: "Por que a Lu Make Up é um investimento?",
