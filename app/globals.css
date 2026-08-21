@@ -234,3 +234,11 @@ body {
     --card: clamp(396px, 24vw, 1000px);
   }
 }
+
+/* ============================================================================
+   TIPOGRAFIA · anti-órfão (viúva). Equilibra títulos e impede que a última
+   linha do corpo termine com uma palavra sozinha. Só aplica onde o browser
+   suporta; degrada sem quebrar. Respeita <br>/quebras forçadas (h1Break etc.).
+   ============================================================================ */
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, blockquote, figcaption { text-wrap: pretty; }

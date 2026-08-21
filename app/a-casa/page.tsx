@@ -16,7 +16,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 export const metadata: Metadata = {
   title: "O Ateliê · Sobre a Lu Make Up",
   description:
-    "Desde 2002, a Lu Make Up é um instituto de micropigmentação de assinatura fundado por Lu Rodrigues. Conheça a história, a fundadora, os pigmentos próprios e o espaço.",
+    "Desde 2002, a Lu Make Up é um instituto de micropigmentação fundado por Lu Rodrigues. Conheça a história, a fundadora, os pigmentos próprios e o espaço.",
   alternates: { canonical: "/a-casa" },
 };
 
@@ -28,7 +28,7 @@ export default function ACasa() {
     name: "Lu Rodrigues",
     jobTitle: "Fundadora e micropigmentadora",
     description:
-      "Pioneira da micropigmentação de assinatura no Brasil e do estudo do Linergismo. Fundou a Lu Make Up em 2002.",
+      "Pioneira da micropigmentação no Brasil e do estudo do Linergismo. Fundou a Lu Make Up em 2002.",
     worksFor: { "@type": "Organization", name: SITE.name, url: SITE.url },
     sameAs: [SITE.social.instagram],
   };
@@ -70,7 +70,7 @@ export default function ACasa() {
           <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
             <Kicker>O Instituto</Kicker>
             <h2 id="historia-heading" className="mt-5 text-balance font-display text-[1.6rem] font-light leading-[1.18] text-text-on-bone sm:text-[2rem] sm:leading-[1.15] lg:text-[2.6rem]">
-              Um ateliê de micropigmentação de assinatura
+              Um ateliê de micropigmentação
             </h2>
             <p className="mx-auto mt-8 max-w-[62ch] text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
               {SITE.boilerplate} Desde o primeiro dia, uma convicção orienta cada gesto:
@@ -104,7 +104,7 @@ export default function ACasa() {
               </h2>
               <div className="mt-8 space-y-6 text-base leading-relaxed text-muted lg:text-lg">
                 <p>
-                  Pioneira da micropigmentação de assinatura no Brasil, Lu Rodrigues fundou
+                  Pioneira da micropigmentação no Brasil, Lu Rodrigues fundou
                   a Lu Make Up em 2002, em Treze Tílias, Santa Catarina. O que começou como
                   um estúdio no interior cresceu, ao longo de mais de duas décadas, até se
                   tornar uma referência, hoje com unidades em São Paulo, Rio de Janeiro,

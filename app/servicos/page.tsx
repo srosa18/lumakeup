@@ -3,27 +3,59 @@ import Link from "next/link";
 import { Cta } from "@/components/ui/Cta";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { Kicker } from "@/components/ui/Kicker";
-import { SERVICES } from "@/lib/services";
+import { SERVICES, PILLARS, type Service } from "@/lib/services";
 import { getServiceContent } from "@/lib/service-content";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
- * Índice de Serviços (§3) · listagem curada dos 8 serviços, no estilo quiet luxury.
- * Cada card leva à página do serviço (/servicos/[slug]). Server component (SEO).
+ * Índice de Serviços (§3) · organizado em PILARES (seções visíveis numa rolada,
+ * NÃO acordeão): Micropigmentação · Realce & Estética · Reparador & Paramédico.
+ * Cada serviço segue a um clique e tem página própria indexada. Server component.
  */
 export const metadata: Metadata = {
-  title: "Serviços · Micropigmentação de Assinatura",
+  title: "Serviços · Micropigmentação, Estética e Reparação",
   description:
-    "Sobrancelhas, lábios, olhos, capilar, alopécia, Exobrow, micropigmentação paramédica e reconstrução labial. Técnica autoral da Lu Make Up, por avaliação.",
+    "Micropigmentação, realce e estética e trabalho reparador da Lu Make Up: sobrancelhas, lábios, olhos, capilar, alopécia, brow lamination, lash lifting, camuflagem paramédica e mais. Por avaliação.",
   alternates: { canonical: "/servicos" },
 };
+
+function ServiceCard({ s }: { s: Service }) {
+  const c = getServiceContent(s.slug);
+  return (
+    <Link
+      href={`/servicos/${s.slug}`}
+      className="group block focus:outline-none"
+      aria-label={`${s.label} · ${s.essence}`}
+    >
+      <div className="overflow-hidden">
+        <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+          <ImageSlot
+            src={c?.images?.card ?? c?.images?.results?.[0] ?? c?.images?.hero}
+            position={c?.images?.cardPos}
+            alt={`${s.label} · Lu Make Up`}
+            art={`Card do serviço ${s.label} (foto real a entrar)`}
+            ratio="4 / 5"
+            tone="ink"
+            label={s.label}
+            sizes="(min-width:1024px) 340px, (min-width:640px) 45vw, 100vw"
+            size="1000 × 1250 px"
+          />
+        </div>
+      </div>
+      <h3 className="mt-5 font-display text-lg font-light text-text-on-ink transition-colors group-hover:text-brass">
+        {s.label}
+      </h3>
+      <p className="mt-1 max-w-[36ch] text-sm leading-relaxed text-muted">{s.essence}</p>
+    </Link>
+  );
+}
 
 export default function ServicosIndex() {
   return (
     <>
       {/* Intro */}
       <div data-comment-id="servicos.hero" data-comment-label="Serviços · Hero">
-        <section aria-labelledby="servicos-heading" className="bg-ink pb-16 pt-28 lg:pb-20 lg:pt-36">
+        <section aria-labelledby="servicos-heading" className="bg-ink pb-14 pt-28 lg:pb-16 lg:pt-36">
           <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
             <Kicker>Possibilidades infinitas</Kicker>
             <h1
@@ -32,52 +64,45 @@ export default function ServicosIndex() {
             >
               Serviços
             </h1>
-            <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-              Nenhum rosto se repete. E nenhum protocolo deveria. Cada procedimento
-              começa por um estudo do seu traço, da sua pele, do seu olhar.
+            <p className="mt-6 max-w-[54ch] text-base leading-relaxed text-muted">
+              Nenhum rosto se repete. E nenhum protocolo deveria. Do realce que ninguém
+              percebe ao trabalho que reconstrói, cada procedimento começa por um estudo
+              do seu traço, da sua pele, do seu olhar.
             </p>
           </div>
         </section>
       </div>
 
-      {/* Grade de serviços */}
-      <div data-comment-id="servicos.grade" data-comment-label="Serviços · Grade de serviços">
-        <section aria-label="Lista de serviços" className="bg-ink pb-24 lg:pb-32">
-          <div className="mx-auto grid max-w-[1100px] gap-x-6 gap-y-12 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-8">
-            {SERVICES.map((s) => {
-              const c = getServiceContent(s.slug);
-              return (
-                <Link
-                  key={s.slug}
-                  href={`/servicos/${s.slug}`}
-                  className="group block focus:outline-none"
-                  aria-label={`${s.label} · ${s.essence}`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
-                      <ImageSlot
-                        src={c?.images?.card ?? c?.images?.results?.[0] ?? c?.images?.hero}
-                        position={c?.images?.cardPos}
-                        alt={`${s.label} · Lu Make Up`}
-                        art={`Card do serviço ${s.label} (foto real a entrar)`}
-                        ratio="4 / 5"
-                        tone="ink"
-                        label={s.label}
-                        sizes="(min-width:1024px) 340px, (min-width:640px) 45vw, 100vw"
-                      size="1000 × 1250 px"
-                      />
-                    </div>
-                  </div>
-                  <h2 className="mt-5 font-display text-lg font-light text-text-on-ink transition-colors group-hover:text-brass">
-                    {s.label}
+      {/* Pilares · cada categoria é uma seção com título, tudo visível na rolagem */}
+      {PILLARS.map((pillar) => {
+        const items = SERVICES.filter((s) => s.category === pillar.id);
+        if (items.length === 0) return null;
+        return (
+          <div
+            key={pillar.id}
+            data-comment-id={`servicos.${pillar.id}`}
+            data-comment-label={`Serviços · ${pillar.label}`}
+          >
+            <section aria-label={pillar.label} className="bg-ink pb-20 lg:pb-28">
+              <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
+                <div className="border-b border-line-subtle pb-5">
+                  <h2 className="font-display text-[1.5rem] font-light leading-[1.12] text-text-on-ink lg:text-[1.9rem]">
+                    {pillar.label}
                   </h2>
-                  <p className="mt-1 max-w-[36ch] text-sm leading-relaxed text-muted">{s.essence}</p>
-                </Link>
-              );
-            })}
+                  <p className="mt-3 max-w-[52ch] text-sm leading-relaxed text-muted">
+                    {pillar.intro}
+                  </p>
+                </div>
+                <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                  {items.map((s) => (
+                    <ServiceCard key={s.slug} s={s} />
+                  ))}
+                </div>
+              </div>
+            </section>
           </div>
-        </section>
-      </div>
+        );
+      })}
 
       {/* CTA */}
       <div data-comment-id="servicos.cta" data-comment-label="Serviços · CTA">

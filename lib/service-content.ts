@@ -69,6 +69,15 @@ export const DEFAULT_DIFERENCIAIS: Diferencial[] = [
   { title: "Técnica autoral", body: "Mais de vinte anos refinando uma única obsessão: realçar sem revelar a técnica." },
 ];
 
+// Ritual dos serviços de Realce & Estética (o default de micropigmentação fala em
+// colorimetria/pigmento, que não cabe aqui). Passos neutros, aplicáveis a todos.
+export const RITUAL_ESTETICA: RitualStep[] = [
+  { n: "01", title: "Avaliação", body: "Entendemos o seu objetivo, a sua pele e a sua rotina antes de qualquer procedimento." },
+  { n: "02", title: "Preparo", body: "Preparamos a área com o cuidado que o seu caso pede, no seu tempo." },
+  { n: "03", title: "Procedimento", body: "Em ambiente de biossegurança, com material descartável e mãos treinadas na casa." },
+  { n: "04", title: "Cuidado", body: "Orientações de pós-procedimento e o acompanhamento do seu resultado." },
+];
+
 // FAQ de marca (§6) — base reutilizável.
 const FAQ_AGENDAMENTO: QA = {
   q: "Como funciona o agendamento?",
@@ -444,6 +453,164 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     images: {
       card: "/images/servicos/reconstrucao-de-areola/card.webp",
     },
+  },
+
+  // ——————————————————————————————————————————————————————————————
+  // PILAR · REALCE & ESTÉTICA (novos serviços · textos do cliente refinados;
+  // fatos de FAQ pendentes da Lu = TODO:CONFIRMAR). Ritual próprio (RITUAL_ESTETICA).
+  // ——————————————————————————————————————————————————————————————
+  "brow-lamination": {
+    title: "Brow Lamination em São Paulo | Lu Make Up",
+    description:
+      "Brow Lamination: alinhamento e modelagem dos fios naturais da sobrancelha, com efeito preenchido e sofisticado. Técnica da Lu Make Up, por avaliação.",
+    h1: "Brow Lamination",
+    essence: "Os seus fios, no lugar certo.",
+    diferenciaisHeading: "O que organiza sem endurecer",
+    diferenciais: [
+      { title: "Respeita o seu desenho", body: "Reposicionamos os fios que já são seus, no sentido que valoriza o seu rosto. Nunca um molde pronto." },
+      { title: "Densidade que aparece", body: "Fios alinhados preenchem os espaços e criam a impressão de uma sobrancelha mais cheia, com naturalidade." },
+      { title: "Cuidado com o fio", body: "Modelamos para organizar sem ressecar. É realce, não força." },
+    ],
+    arte: {
+      heading: "O desenho que\njá é seu",
+      body: "Às vezes a sobrancelha bonita já está ali: só falta cada fio no lugar. O Brow Lamination alinha e modela os pelos que são seus, no sentido que o seu rosto pede. Sem molde, sem exagero. A impressão é de uma sobrancelha mais cheia e definida, que continua sendo a sua.",
+    },
+    ritual: RITUAL_ESTETICA,
+    faq: [
+      { q: "Quanto dura o resultado?", a: "Em média até seis semanas, variando conforme o seu tipo de fio e os cuidados." },
+      { q: "Dói?", a: "Não. É um procedimento confortável, sem agulha." },
+      { q: "Posso combinar com micropigmentação?", a: "Sim. O laminado organiza os fios; a micropigmentação preenche onde há falhas. Na avaliação indicamos o que valoriza o seu olhar." },
+      { q: "Quais os cuidados depois?", a: "A confirmar com a Lu Make Up — o protocolo de cuidado das primeiras 24 a 48 horas (molhar, dormir, maquiagem)." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Comece pela sua sobrancelha",
+  },
+  "lash-lifting": {
+    title: "Lash Lifting em São Paulo | Lu Make Up",
+    description:
+      "Lash Lifting: curvatura e definição dos cílios naturais, sem extensões, para um olhar mais aberto e expressivo. Técnica da Lu Make Up, por avaliação.",
+    h1: "Lash Lifting",
+    essence: "Cílios seus, olhar mais aberto.",
+    diferenciaisHeading: "O que abre o olhar com leveza",
+    diferenciais: [
+      { title: "Sem extensões", body: "Trabalhamos o seu próprio cílio: curvatura, alinhamento e definição, sem a manutenção dos alongamentos." },
+      { title: "Efeito natural", body: "Abrimos o olhar preservando a leveza dos fios. Ninguém precisa saber como." },
+      { title: "Cuidado na região sensível", body: "Biossegurança e delicadeza onde o cuidado importa ainda mais." },
+    ],
+    arte: {
+      heading: "O olhar aberto,\nsem esforço",
+      body: "Nem todo olhar precisa de alongamento para se abrir. O Lash Lifting trabalha a curvatura dos seus próprios cílios, alinhando e definindo fio a fio. O olhar fica mais desperto e expressivo, com a leveza de quem não colou nada, e sem a manutenção constante das extensões.",
+    },
+    ritual: RITUAL_ESTETICA,
+    faq: [
+      { q: "Quanto dura?", a: "A confirmar com a Lu Make Up — durabilidade média do lifting (em geral acompanha o ciclo natural do cílio)." },
+      { q: "Preciso de manutenção como no alongamento?", a: "Não. Por trabalhar o fio natural, não exige a reposição constante das extensões." },
+      { q: "Posso usar máscara de cílios depois?", a: "A confirmar com a Lu Make Up — quando liberar rímel e o que evitar nas primeiras horas." },
+      { q: "É seguro?", a: "Sim. É um procedimento tranquilo, conduzido com produtos próprios para a região dos olhos e sem contato com o globo ocular." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Um olhar mais aberto",
+  },
+  "tintura-de-sobrancelhas": {
+    title: "Tintura de Sobrancelhas em São Paulo | Lu Make Up",
+    description:
+      "Tintura de sobrancelhas: cor personalizada que intensifica e uniformiza o desenho, com naturalidade. Técnica da Lu Make Up, por avaliação.",
+    h1: "Tintura de Sobrancelhas",
+    essence: "Um realce de cor, sem parecer maquiagem.",
+    diferenciaisHeading: "O que intensifica sem pesar",
+    diferenciais: [
+      { title: "Cor personalizada", body: "A tonalidade é escolhida para harmonizar com a cor natural dos seus cabelos e do seu tom de pele." },
+      { title: "Uniformidade no desenho", body: "Preenche visualmente os fios mais claros e dá definição ao contorno, com discrição." },
+      { title: "Realce imediato", body: "Um destaque no olhar sem depender da maquiagem do dia a dia." },
+    ],
+    arte: {
+      heading: "A cor que\nharmoniza o olhar",
+      body: "Uma cor mais definida muda o olhar sem que ninguém saiba explicar por quê. A tintura preenche visualmente os fios mais claros e uniformiza o desenho, na tonalidade escolhida para conversar com o seu cabelo e a sua pele. Um realce discreto, para quem quer destacar o olhar sem parecer maquiada.",
+    },
+    ritual: RITUAL_ESTETICA,
+    faq: [
+      { q: "Quanto tempo dura a cor?", a: "A confirmar com a Lu Make Up — durabilidade média da tintura conforme o tipo de pelo e os cuidados." },
+      { q: "É diferente da micropigmentação?", a: "Sim. A tintura colore o fio existente e é temporária; a micropigmentação implanta pigmento na pele e dura muito mais. Na avaliação indicamos o que faz sentido para você." },
+      { q: "Serve para quem tem poucos fios?", a: "Ajuda a dar cor e definição aos fios existentes. Para preencher falhas, o indicado costuma ser a micropigmentação ou o Exobrow." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Um realce sutil no olhar",
+  },
+  "hidratacao-labial": {
+    title: "Hidratação Labial (Dermapen) em São Paulo | Lu Make Up",
+    description:
+      "Hidratação labial profunda: esfoliação, ativos e microinfusão com Dermapen para lábios macios, uniformes e iluminados. Protocolo da Lu Make Up, por avaliação.",
+    h1: "Hidratação Labial",
+    essence: "O viço que devolve vida ao lábio.",
+    diferenciaisHeading: "O que devolve viço ao lábio",
+    diferenciais: [
+      { title: "Protocolo em etapas", body: "Esfoliação, ativos específicos e microinfusão com Dermapen para potencializar a absorção." },
+      { title: "Resultado natural", body: "Lábios mais hidratados, macios e uniformes, com um viço que parece seu." },
+      { title: "Cuidado, não só estética", body: "O foco é a saúde do lábio: devolver vida, não disfarçar." },
+    ],
+    arte: {
+      heading: "O viço que\nvolta ao lábio",
+      body: "Lábios ressecados entregam um cansaço que a gente nem percebe. Este protocolo devolve vida a eles em etapas: esfoliação, ativos de tratamento e uma microinfusão com Dermapen (uma caneta de microagulhas) que leva os nutrientes mais fundo. Você sai com lábios macios, uniformes e com um viço que parece seu, porque é.",
+    },
+    ritual: RITUAL_ESTETICA,
+    faq: [
+      { q: "Quantas sessões são necessárias?", a: "A confirmar com a Lu Make Up — número de sessões e intervalos para o melhor resultado." },
+      { q: "Dói?", a: "A confirmar com a Lu Make Up — a sensação da microinfusão e se há uso de anestésico tópico." },
+      { q: "Combina com a micropigmentação labial?", a: "Sim. A hidratação cuida da saúde do lábio; a micropigmentação trabalha a cor e o contorno. Na avaliação desenhamos o melhor plano." },
+      { q: "Tenho herpes labial. Posso fazer?", a: "A confirmar com a Lu Make Up — em geral procedimentos labiais pedem medicação profilática prescrita por médico quando há histórico de herpes." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Devolver viço aos seus lábios",
+  },
+  "limpeza-de-pele-glow": {
+    title: "Limpeza de Pele Glow em São Paulo | Lu Make Up",
+    description:
+      "Limpeza de Pele Glow: protocolo completo de renovação que desobstrui, equilibra e ilumina a pele. Técnica da Lu Make Up, por avaliação.",
+    h1: "Limpeza de Pele Glow",
+    essence: "Mais do que limpar: revelar a sua pele.",
+    diferenciaisHeading: "O que renova de verdade",
+    diferenciais: [
+      { title: "Protocolo completo", body: "Cada etapa remove impurezas, desobstrui os poros e equilibra a pele, não é só uma extração." },
+      { title: "Renovação natural", body: "Estimulamos a renovação da própria pele, revelando textura mais uniforme e luminosa." },
+      { title: "Efeito glow", body: "Viço, leveza e aparência revitalizada ao fim da sessão." },
+    ],
+    arte: {
+      heading: "A pele que\nse renova",
+      body: "Não é só tirar a impureza do dia: é dar à pele a chance de se refazer. Cada etapa desobstrui, equilibra e estimula a sua renovação natural, revelando uma textura mais uniforme e luminosa. No fim, aquele glow que não vem de filtro nenhum: viço, leveza e cara de descansada.",
+    },
+    ritual: RITUAL_ESTETICA,
+    faq: [
+      { q: "Com que frequência devo fazer?", a: "A confirmar com a Lu Make Up — a frequência recomendada conforme o seu tipo de pele." },
+      { q: "Serve para pele oleosa e acneica?", a: "A confirmar com a Lu Make Up — indicações e cuidados para cada tipo de pele." },
+      { q: "A pele fica vermelha depois?", a: "A confirmar com a Lu Make Up — o que esperar nas horas seguintes e os cuidados de pós." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "A sua pele, revelada",
+  },
+  "depilacao-facial-com-linha": {
+    title: "Depilação Facial com Linha em São Paulo | Lu Make Up",
+    description:
+      "Depilação facial com linha: remoção precisa e delicada dos pelos do rosto, sem química, ideal para peles sensíveis. Técnica da Lu Make Up, por avaliação.",
+    h1: "Depilação Facial com Linha",
+    essence: "Contorno limpo, sem agredir a pele.",
+    diferenciaisHeading: "O que limpa com delicadeza",
+    diferenciais: [
+      { title: "Precisão no contorno", body: "A linha remove os pelos com exatidão, valorizando os contornos naturais do rosto." },
+      { title: "Sem química", body: "Dispensa produtos químicos, o que a torna indicada até para peles sensíveis." },
+      { title: "Acabamento uniforme", body: "Um resultado limpo e delicado, que preserva a saúde da pele." },
+    ],
+    arte: {
+      heading: "O contorno limpo,\ncom delicadeza",
+      body: "A linha faz o que a cera nem sempre consegue: tira o pelo com precisão e desenha o contorno sem maltratar a pele. Sem química e sem calor, limpa e uniformiza até as peles mais sensíveis, valorizando as linhas naturais do rosto com delicadeza.",
+    },
+    ritual: RITUAL_ESTETICA,
+    faq: [
+      { q: "Dói?", a: "A sensação é rápida e bem tolerável. Por não usar cera nem química, costuma agredir menos a pele sensível." },
+      { q: "Quais áreas do rosto podem ser feitas?", a: "A confirmar com a Lu Make Up — as áreas atendidas (sobrancelha, buço, laterais do rosto)." },
+      { q: "Serve para pele sensível ou com acne?", a: "É justamente uma das indicações, por não usar produtos químicos. Em casos de acne ativa, avaliamos individualmente." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Um contorno limpo e natural",
   },
 };
 
