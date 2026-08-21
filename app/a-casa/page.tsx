@@ -165,15 +165,16 @@ export default function ACasa() {
         <section id="pigmentos" aria-labelledby="pigmentos-heading" data-section-theme="light" className="overflow-hidden bg-bone scroll-mt-20">
           <div className="mx-auto grid max-w-[1280px] lg:grid-cols-2">
             <div className="order-2 px-6 py-20 lg:order-1 lg:px-16 lg:py-32">
-              <Kicker>Os Pigmentos</Kicker>
+              <Kicker>Natural Pigmento</Kicker>
               <h2 id="pigmentos-heading" className="mt-5 font-display text-[2rem] font-light leading-[1.15] text-text-on-bone lg:text-[2.6rem]">
                 A cor nasce na própria casa
               </h2>
               <div className="mt-8 space-y-6 text-base leading-relaxed text-text-on-bone/80 lg:text-lg">
                 <p>
-                  Os pigmentos da Lu Make Up são desenvolvidos pela própria Lu Rodrigues,
-                  livres de metais pesados. Não é um detalhe técnico: é o que separa um
-                  resultado que envelhece bonito de um que esmaece em tons indesejados.
+                  Os pigmentos da Lu Make Up, a linha Natural Pigmento, são desenvolvidos
+                  pela própria Lu Rodrigues, livres de metais pesados. Não é um detalhe
+                  técnico: é o que separa um resultado que envelhece bonito de um que esmaece
+                  em tons indesejados.
                 </p>
                 <p>
                   Cada cor é escolhida a partir do seu subtom de pele, em um estudo de
