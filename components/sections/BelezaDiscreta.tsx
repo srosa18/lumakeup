@@ -37,7 +37,7 @@ const COLLAGE: Piece[] = [
   { src: "/images/beleza-discreta/mao-rosto-2.webp", alt: "Retrato de mulher jovem com a mão no rosto", left: "64%", leftM: "55%", top: "6%", width: "23%", ratio: "201 / 362", size: "900 × 1621 px" },
   { src: "/images/beleza-discreta/madura-2.webp", alt: "Retrato de mulher, olhar sereno", left: "33%", leftM: "22%", top: "43%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
   { src: "/images/beleza-discreta/loira-2.webp", alt: "Duas mulheres, duas gerações, pele natural", left: "72%", leftM: "42%", top: "38%", width: "31%", ratio: "312 / 444", size: "1000 × 1423 px" },
-  { src: "/images/beleza-discreta/sobrancelha-2.webp", alt: "Mãe e filha abraçadas, sorrindo", left: "3%", leftM: "3%", top: "82%", width: "33.4%", ratio: "288 / 172", size: "1200 × 717 px" },
+  { src: "/images/beleza-discreta/sobrancelha-2.webp", alt: "Mãe e filha abraçadas, sorrindo", left: "3%", leftM: "3%", top: "80%", width: "30%", ratio: "312 / 444", size: "1000 × 1423 px" },
 ];
 
 // Animação por imagem na linha do tempo (0..1): início + duração (= velocidade).
@@ -171,7 +171,7 @@ export function BelezaDiscreta() {
           // Telas grandes: o container cresce (1100→1540, +40%) → as imagens (que são
           // % dele) e as posições do parallax escalam juntas. clamp com 75vw mantém o
           // 13" (≤1440) em 1100 (intacto) e cappa em 1540 no 2560/4K.
-          className={`relative mx-auto w-full max-w-[clamp(1100px,75vw,1540px)] [--img-scale:1.8] md:[--img-scale:1] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
+          className={`relative mx-auto w-full max-w-[clamp(1100px,75vw,1540px)] [--img-scale:1.8] md:[--img-scale:1.2] ${animate ? "h-full" : "aspect-[1150/1007]"}`}
         >
           {COLLAGE.map((p, i) => (
             <div
