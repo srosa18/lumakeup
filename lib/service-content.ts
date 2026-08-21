@@ -285,14 +285,14 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     h1: "Micropigmentação para Alopécia",
     h1Break: ["Micropigmentação", "para Alopécia"],
     essence: "Reconstruir a moldura do rosto.",
-    diferenciaisHeading: "O que devolve a moldura do rosto",
+    diferenciaisHeading: "O que reconstrói com naturalidade",
     diferenciais: [
       { title: "Sensibilidade caso a caso", body: "Cada alopécia é única. Avaliamos e desenhamos com o tempo e o cuidado que a sua história pede." },
       { title: "Técnica autoral", body: "Mais de vinte anos reconstruindo molduras com naturalidade, para você se reconhecer no espelho." },
       { title: "Pigmentos próprios e biossegurança hospitalar", body: "Livres de metais pesados, em salas privativas e com material 100% descartável." },
     ],
     arte: {
-      heading: "Reconstruir a moldura\ndo seu rosto",
+      heading: "Devolver o contorno\ndo olhar",
       body: "A alopécia chega de muitas formas: por um tratamento oncológico, por uma condição autoimune, pelo tempo. Quando os fios se vão, a sobrancelha e o contorno do olhar fazem falta no espelho. Reconstruímos essa moldura com técnica e sensibilidade, para você se reconhecer de novo.",
     },
     proof: DEFAULT_PROOF,
@@ -303,7 +303,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_PRIMEIRA,
       FAQ_AGENDAMENTO,
     ],
-    ctaHeading: "Reconhecer-se no espelho",
+    ctaHeading: "Voltar a se ver pronta",
     images: {
       hero: "/images/servicos/alopecia/hero-7.webp",
       heroPos: "center 42%",
