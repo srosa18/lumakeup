@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 const REPARADORES = [
-  { slug: "reconstrucao-de-areola", label: "Reconstrução de Aréola", essence: "Devolver a sensação de inteireza." },
+  { slug: "reconstrucao-de-areola", label: "Reconstrução de Aréola", essence: "Voltar a se reconhecer no espelho." },
   { slug: "paramedica", label: "Micropigmentação Paramédica", essence: "Camuflagem de cicatrizes, com discrição." },
   { slug: "reconstrucao-labial", label: "Reconstrução Labial", essence: "Devolver o contorno, com cuidado." },
   { slug: "alopecia", label: "Alopécia", essence: "Reconstruir a moldura do rosto." },
@@ -57,8 +57,8 @@ export default function InstitutoLivingSculpture() {
               Quando a arte<br />reconstrói
             </h1>
             <p className="mt-6 max-w-[44ch] font-display text-xl font-light leading-snug text-text-on-ink/90 lg:text-2xl">
-              Há trabalhos que vão além da estética. E devolvem a uma pessoa a sensação de
-              inteireza.
+              Há trabalhos que vão além da estética. E devolvem a alguém a sensação de se sentir
+              inteira.
             </p>
           </div>
         </section>

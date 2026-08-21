@@ -39,7 +39,7 @@ export const PILLARS: { id: ServiceCategory; label: string; intro: string }[] = 
   {
     id: "reparador",
     label: "Reparador & Paramédico",
-    intro: "A técnica a serviço de devolver inteireza, com discrição e cuidado.",
+    intro: "A técnica a serviço de devolver mais do que estética, com discrição e cuidado.",
   },
 ];
 
@@ -165,10 +165,42 @@ export const SERVICES: Service[] = [
   {
     slug: "reconstrucao-de-areola",
     label: "Reconstrução de Aréola",
-    essence: "Devolver a sensação de inteireza.",
+    essence: "Voltar a se reconhecer no espelho.",
     category: "reparador",
     art: "IMG: retrato digno e sereno, ou mãos/pigmentos · tom editorial, SEM teor clínico-gráfico em destaque (cuidado §6) · substituir",
     alt: "Reconstrução de aréola e mama pós-mastectomia — trabalho reparador da Lu Make Up",
+  },
+  {
+    slug: "camuflagem-de-cicatrizes-e-estrias",
+    label: "Camuflagem de Cicatrizes e Estrias",
+    essence: "Deixar a marca mais leve.",
+    category: "reparador",
+    art: "IMG: pele em tom natural após camuflagem, luz suave e digna, sem teor clínico-gráfico · substituir",
+    alt: "Camuflagem de cicatrizes e estrias com micropigmentação paramédica",
+  },
+  {
+    slug: "camuflagem-de-manchas",
+    label: "Camuflagem de Manchas",
+    essence: "Uniformizar o tom, com discrição.",
+    category: "reparador",
+    art: "IMG: detalhe de pele uniforme, tom editorial e sereno · substituir",
+    alt: "Camuflagem de manchas e alterações de pigmentação",
+  },
+  {
+    slug: "camuflagem-de-vitiligo",
+    label: "Camuflagem de Vitiligo",
+    essence: "Reencontrar a pele uniforme.",
+    category: "reparador",
+    art: "IMG: retrato ou detalhe de pele em tom digno e acolhedor, sem teor clínico-gráfico · substituir",
+    alt: "Camuflagem de vitiligo estabilizado com micropigmentação",
+  },
+  {
+    slug: "despigmentacao-a-laser",
+    label: "Despigmentação a Laser",
+    essence: "Espaço para um novo desenho.",
+    category: "reparador",
+    art: "IMG: detalhe sóbrio da técnica/equipamento em tom editorial, sem teor clínico-gráfico · substituir",
+    alt: "Despigmentação a laser de micropigmentação e pigmentações indesejadas",
   },
 ];
 

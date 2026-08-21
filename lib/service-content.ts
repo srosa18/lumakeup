@@ -361,7 +361,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     diferenciaisHeading: "O que reconstrói com dignidade",
     diferenciais: [
       { title: "Discrição e acolhimento", body: "Conduzimos cada atendimento com respeito pela sua história e pelo seu tempo." },
-      { title: "Técnica a serviço da reparação", body: "Mais de vinte anos a serviço de devolver inteireza, não apenas estética." },
+      { title: "Técnica a serviço da reparação", body: "Mais de vinte anos a serviço de devolver muito mais que estética: a sensação de se sentir inteira." },
       { title: "Biossegurança hospitalar", body: "Salas privativas e material 100% descartável." },
     ],
     arte: {
@@ -426,7 +426,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     description:
       "Reconstrução de aréola e mama pós-mastectomia com micropigmentação. Trabalho reparador do Instituto Living Sculpture, conduzido com cuidado e dignidade. Por avaliação.",
     h1: "Reconstrução de Aréola",
-    essence: "Devolver a sensação de inteireza.",
+    essence: "Voltar a se reconhecer no espelho.",
     diferenciaisHeading: "O que reconstrói com dignidade",
     diferenciais: [
       { title: "Acolhimento em cada etapa", body: "Conduzimos o atendimento com discrição e respeito pela sua história — do primeiro contato ao retorno." },
@@ -434,19 +434,20 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { title: "Pigmentos próprios e biossegurança hospitalar", body: "Livres de metais pesados, em salas privativas e com material 100% descartável." },
     ],
     arte: {
-      heading: "Quando a arte\ndevolve a inteireza",
-      body: "Após a mastectomia, a reconstrução da aréola é, muitas vezes, o último gesto de um longo caminho. E o que devolve a sensação de se reconhecer no espelho. Com a técnica de realismo 3D, recriamos cor, contorno e a impressão de relevo com naturalidade e sensibilidade. Cada atendimento é conduzido com discrição, acolhimento e respeito pela sua história.",
+      heading: "O último gesto\nde um caminho",
+      body: "Após uma mastectomia, uma cirurgia ou um trauma, a reconstrução da aréola é, muitas vezes, o último gesto de um longo caminho. E o que devolve a sensação de se reconhecer no espelho. Com a técnica de realismo 3D, recriamos cor, contorno e a impressão de relevo num trabalho personalizado, que respeita a sua anatomia, a simetria e o tom exato da sua pele. Cada atendimento é conduzido com discrição, acolhimento e respeito pela sua história.",
     },
     proof: { quote: "Foi o gesto que faltava para eu me sentir inteira de novo.", author: "Cliente do Instituto Living Sculpture" },
     faq: [
       { q: "Quando posso fazer a reconstrução da aréola?", a: "Em geral, pedimos a liberação do seu mastologista ou cirurgião plástico. Na média, aguardamos de 6 a 12 meses após a cirurgia final." },
+      { q: "Como é feita a avaliação?", a: "Presencial ou por fotografia, com toda a discrição. É nela que entendemos o seu caso e planejamos a reconstrução. Para pacientes em tratamento oncológico, pedimos também a autorização médica." },
       { q: "O resultado parece natural?", a: "Sim. A técnica de realismo 3D trabalha luz e sombra para simular a projeção do mamilo e a textura da aréola, inclusive as glândulas de Montgomery. Parece tridimensional, mesmo sendo plano na pele." },
       { q: "Que pigmentos são usados?", a: "Não usamos tinta de tatuagem. Usamos pigmentos paramédicos desenvolvidos para não migrar (borrar) e esmaecer de forma natural, sem virar azul ou verde com os anos." },
       { q: "Quanto dura?", a: "Em média de 2 a 4 anos, com clareamento gradual. Um retoque é recomendado após esse período." },
       { q: "Dói?", a: "Na maioria dos casos pós-mastectomia a sensibilidade da região está diminuída, tornando o procedimento indolor. Quando necessário, usamos anestésico tópico." },
       FAQ_AGENDAMENTO,
     ],
-    ctaHeading: "Um cuidado que devolve inteireza",
+    ctaHeading: "Um cuidado que acolhe você",
     // Página SEM imagens por decisão do cliente (assunto sensível): todos os
     // slots renderizam o placeholder "Imagem · a definir" até as fotos chegarem.
     // O card do índice /servicos permanece (página separada).
@@ -611,6 +612,113 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Um contorno limpo e natural",
+  },
+
+  // ——————————————————————————————————————————————————————————————
+  // PILAR · REPARADOR & PARAMÉDICO (novos serviços · textos do cliente refinados;
+  // temas sensíveis: transparência sobre autorização médica e avaliação prévia.
+  // Fatos de FAQ pendentes da Lu = TODO:CONFIRMAR).
+  // ——————————————————————————————————————————————————————————————
+  "camuflagem-de-cicatrizes-e-estrias": {
+    title: "Camuflagem de Cicatrizes e Estrias em São Paulo | Lu Make Up",
+    description:
+      "Camuflagem de cicatrizes e estrias com micropigmentação paramédica: pigmentos no tom da pele saudável para suavizar as marcas. Por avaliação, na Lu Make Up.",
+    h1: "Camuflagem de Cicatrizes e Estrias",
+    essence: "Deixar a marca mais leve.",
+    diferenciaisHeading: "O que suaviza com naturalidade",
+    diferenciais: [
+      { title: "Cor no tom da sua pele", body: "Pigmentos paramédicos desenvolvidos para reproduzir fielmente o tom da pele saudável ao redor da marca." },
+      { title: "Textura, não só cor", body: "Quando indicado, somamos técnicas regenerativas para melhorar também a textura da pele." },
+      { title: "Avaliação caso a caso", body: "Cada cicatriz e cada estria contam uma história. Avaliamos antes de indicar qualquer coisa." },
+    ],
+    arte: {
+      heading: "Suavizar o que\na pele guardou",
+      body: "A pele guarda histórias, e algumas marcas incomodam mais do que parecem. Com a micropigmentação paramédica, implantamos pigmentos no tom exato da pele saudável para suavizar cicatrizes e estrias claras, reduzindo o contraste com a região ao redor. Quando faz sentido, somamos técnicas regenerativas para melhorar a textura, num resultado ainda mais harmonioso.",
+    },
+    faq: [
+      { q: "Funciona em qualquer estria?", a: "O melhor resultado é nas estrias brancas (maduras). As mais recentes, ainda avermelhadas, pedem que o tecido se recupere antes." },
+      { q: "E cicatrizes recentes?", a: "A confirmar com a Lu Make Up — o tempo de cicatrização recomendado antes de camuflar." },
+      { q: "Quanto dura?", a: "O resultado é duradouro, com desgaste natural ao longo dos anos. Um retoque periódico mantém a cor e o realismo." },
+      { q: "Preciso de encaminhamento médico?", a: "Em alguns casos sim. Avaliamos cada situação com transparência e segurança, e recusamos o procedimento quando não é indicado." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Pare de se esconder",
+  },
+  "camuflagem-de-manchas": {
+    title: "Camuflagem de Manchas (hipopigmentação) em São Paulo | Lu Make Up",
+    description:
+      "Camuflagem de manchas brancas e alterações de pigmentação com micropigmentação: uniformiza a pele reduzindo o contraste. Por avaliação, na Lu Make Up.",
+    h1: "Camuflagem de Manchas",
+    essence: "Uniformizar o tom, com discrição.",
+    diferenciaisHeading: "O que uniformiza a pele",
+    diferenciais: [
+      { title: "Pigmento no tom exato", body: "Reproduzimos a cor da pele saudável para reduzir o contraste com a área mais clara." },
+      { title: "Avaliação antes de tudo", body: "Manchas têm origens diferentes. Avaliamos individualmente, presencial ou por foto, antes de indicar." },
+      { title: "Discrição e acolhimento", body: "Um atendimento conduzido com respeito pela sua história." },
+    ],
+    arte: {
+      heading: "Reduzir o contraste,\ncom cuidado",
+      body: "Manchas brancas, cicatrizes ou alterações de pigmentação podem incomodar mais do que parecem. A camuflagem implanta pigmentos personalizados no tom da pele saudável, reduzindo o contraste entre a área clara e a região ao redor, para um tom mais uniforme. É sempre precedida por uma avaliação individual, presencial ou por fotografia.",
+    },
+    faq: [
+      { q: "Serve para qualquer mancha?", a: "Depende da origem e do tipo. Por isso a avaliação, presencial ou por foto, é obrigatória antes de indicar o tratamento." },
+      { q: "Como é feita a avaliação?", a: "Presencial ou por fotografia, para entender a mancha e definir o planejamento adequado ao seu caso." },
+      { q: "Quanto dura?", a: "O resultado é duradouro, com desgaste natural ao longo dos anos. Um retoque periódico mantém a uniformidade." },
+      { q: "Precisa de autorização médica?", a: "Em alguns casos sim, dependendo da origem da mancha. Avaliamos com transparência e recusamos quando não é indicado." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Chega de disfarçar",
+  },
+  "camuflagem-de-vitiligo": {
+    title: "Camuflagem de Vitiligo em São Paulo | Lu Make Up",
+    description:
+      "Camuflagem de vitiligo estabilizado com micropigmentação: pigmentos personalizados para uniformizar a pele. Realizada mediante autorização do dermatologista. Por avaliação.",
+    h1: "Camuflagem de Vitiligo",
+    essence: "Reencontrar a pele uniforme.",
+    diferenciaisHeading: "O que uniformiza com segurança",
+    diferenciais: [
+      { title: "Pigmento personalizado", body: "Desenvolvido para reproduzir a tonalidade natural da região e uniformizar a pele." },
+      { title: "Só com liberação médica", body: "Realizada exclusivamente mediante autorização do dermatologista, para total segurança." },
+      { title: "Indicação criteriosa", body: "Indicada para vitiligo estabilizado ou áreas de hipopigmentação, avaliadas caso a caso." },
+    ],
+    arte: {
+      heading: "Uniformizar a pele,\ncom segurança",
+      body: "Para quem convive com o vitiligo estabilizado ou com áreas de hipopigmentação, a camuflagem promove a uniformização da pele por meio da implantação de pigmentos personalizados, desenvolvidos para reproduzir a tonalidade natural da região. É um procedimento realizado exclusivamente mediante autorização do médico dermatologista, garantindo segurança e a indicação adequada para cada caso.",
+    },
+    faq: [
+      { q: "Qualquer pessoa com vitiligo pode fazer?", a: "Não. É indicada para vitiligo estabilizado (sem evolução recente) ou áreas de hipopigmentação, e exige a autorização do seu dermatologista." },
+      { q: "Por que preciso da autorização do dermatologista?", a: "Porque o vitiligo deve estar estável e acompanhado. A liberação médica garante segurança e a indicação correta para o seu caso." },
+      { q: "O resultado fica natural?", a: "O pigmento é personalizado para reproduzir a tonalidade da sua pele, uniformizando a região. Avaliamos cada caso individualmente." },
+      { q: "Quanto dura?", a: "A confirmar com a Lu Make Up — durabilidade e recomendação de retoque para a camuflagem de vitiligo." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "A sua pele não é para esconder",
+  },
+  "despigmentacao-a-laser": {
+    title: "Despigmentação a Laser em São Paulo | Lu Make Up",
+    description:
+      "Despigmentação a laser para suavizar ou remover micropigmentação antiga e pigmentações indesejadas, de forma segura e gradual. Por avaliação, na Lu Make Up.",
+    h1: "Despigmentação a Laser",
+    essence: "Espaço para um novo desenho.",
+    diferenciaisHeading: "O que remove com segurança",
+    diferenciais: [
+      { title: "Tecnologia que fragmenta", body: "O laser quebra o pigmento depositado na pele, que o próprio organismo elimina aos poucos." },
+      { title: "Remoção gradual e controlada", body: "Em sessões, respeitando a sua pele e o tempo de cada resposta." },
+      { title: "O caminho para recomeçar", body: "Ideal para corrigir uma micropigmentação antiga antes de um novo desenho." },
+    ],
+    arte: {
+      heading: "Apagar para\nrecomeçar",
+      body: "Nem todo trabalho anterior envelhece bem. A despigmentação a laser suaviza ou remove pigmentações indesejadas, como uma micropigmentação antiga que perdeu a cor ou o desenho. A tecnologia fragmenta o pigmento depositado na pele, permitindo que o seu organismo o elimine de forma gradual, segura e controlada, abrindo espaço para um novo começo.",
+    },
+    ritual: RITUAL_ESTETICA,
+    faq: [
+      { q: "Quantas sessões são necessárias?", a: "A confirmar com a Lu Make Up — o número de sessões e os intervalos, que variam conforme o pigmento e a profundidade." },
+      { q: "Remove totalmente a micropigmentação?", a: "A confirmar com a Lu Make Up — o grau de remoção esperado conforme cada caso." },
+      { q: "Dói?", a: "A confirmar com a Lu Make Up — a sensação durante a sessão e se há uso de anestésico." },
+      { q: "Posso fazer uma nova micropigmentação depois?", a: "Sim, é justamente um dos objetivos: abrir espaço para um novo desenho. O intervalo até a nova aplicação é definido na avaliação." },
+      FAQ_AGENDAMENTO,
+    ],
+    ctaHeading: "Recomeçar o seu desenho",
   },
 };
 
