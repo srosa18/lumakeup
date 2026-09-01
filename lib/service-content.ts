@@ -313,10 +313,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     },
   },
   exobrow: {
-    title: "Exobrow · Regeneração de Sobrancelhas | Lu Make Up",
+    title: "Exossomos: Tratamento Regenerativo de Sobrancelhas | Lu Make Up",
     description:
-      "Exobrow: tratamento exclusivo da Lu Make Up para a saúde e o volume das sobrancelhas. Por avaliação personalizada.",
-    h1: "Exobrow",
+      "Exossomos: tratamento regenerativo exclusivo da Lu Make Up para a saúde e o volume das sobrancelhas. Por avaliação personalizada.",
+    h1: "Exossomos: tratamento regenerativo",
     essence: "Volume e desenho em um gesto.",
     diferenciaisHeading: "O que age na raiz, não no disfarce",
     diferenciais: [
@@ -326,12 +326,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     arte: {
       heading: "Mais do que desenhar:\nreativar",
-      body: "Por muito tempo, sobrancelhas falhadas eram apenas disfarçadas. O Exobrow, tratamento exclusivo da Lu Make Up, age na raiz do problema: a saúde do folículo. Com exossomos, ativos que estimulam a regeneração das células, reativa fios em dormência e fortalece os existentes, devolvendo densidade natural.",
+      body: "Por muito tempo, sobrancelhas falhadas eram apenas disfarçadas. O nosso tratamento regenerativo com exossomos age na raiz do problema: a saúde do folículo. Os exossomos, ativos que estimulam a regeneração das células, reativam fios em dormência e fortalecem os existentes, devolvendo densidade natural.",
     },
     faq: [
-      { q: "Como o Exobrow funciona?", a: "É um protocolo regenerativo que usa exossomos, ativos que estimulam a regeneração das células, aplicados por microagulhamento de precisão ou laser de baixa potência. Fios em fase de repouso voltam a crescer e fios finos ganham espessura e força." },
+      { q: "Como o tratamento com exossomos funciona?", a: "É um protocolo regenerativo que usa exossomos, ativos que estimulam a regeneração das células, aplicados por microagulhamento de precisão ou laser de baixa potência. Fios em fase de repouso voltam a crescer e fios finos ganham espessura e força." },
       { q: "Quantas sessões?", a: "Um ciclo de 3 a 5 sessões, com intervalos de 15 a 30 dias, para a melhor regeneração celular. Os resultados são graduais." },
-      { q: "Substitui a micropigmentação?", a: "Não. O Exobrow recupera o fio natural; a micropigmentação recria visualmente o fio onde não há raiz viável. Podem se complementar, inclusive com o EverBrow." },
+      { q: "Substitui a micropigmentação?", a: "Não. O tratamento regenerativo recupera o fio natural; a micropigmentação recria visualmente o fio onde não há raiz viável. Podem se complementar, inclusive com o EverBrow." },
       { q: "Dói?", a: "É um procedimento muito tranquilo, com anestésico tópico e mínima sensação." },
       FAQ_AGENDAMENTO,
     ],
@@ -353,10 +353,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     },
   },
   paramedica: {
-    title: "Micropigmentação Paramédica em São Paulo | Lu Make Up",
+    title: "Cicatriz de Lifting em São Paulo | Lu Make Up",
     description:
-      "Micropigmentação paramédica: a técnica a serviço da reconstrução. Trabalho reparador da Lu Make Up, conduzido com cuidado e dignidade. Por avaliação.",
-    h1: "Micropigmentação Paramédica",
+      "Cicatriz de lifting: camuflagem de cicatrizes e marcas com micropigmentação, a técnica a serviço da reconstrução. Trabalho reparador da Lu Make Up, conduzido com cuidado e dignidade. Por avaliação.",
+    h1: "Cicatriz de Lifting",
     essence: "A técnica a serviço da reconstrução.",
     diferenciaisHeading: "O que reconstrói com dignidade",
     diferenciais: [
@@ -366,10 +366,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     arte: {
       heading: "Quando a técnica\nreconstrói",
-      body: "Uma cicatriz de cirurgia, uma estria, uma mancha que a pele guardou. Algumas histórias a gente escolhe suavizar. A micropigmentação paramédica devolve uniformidade à pele e tranquilidade na frente do espelho, em atendimentos conduzidos com discrição, cuidado e respeito pela sua história.",
+      body: "Uma cicatriz de lifting, uma marca de cirurgia, uma estria que a pele guardou. Algumas histórias a gente escolhe suavizar. A camuflagem devolve uniformidade à pele e tranquilidade na frente do espelho, em atendimentos conduzidos com discrição, cuidado e respeito pela sua história.",
     },
     faq: [
-      { q: "O que a micropigmentação paramédica trata?", a: "Camuflagem de cicatrizes cirúrgicas (abdominoplastia, cesárea, mamoplastia), estrias brancas, vitiligo estável (sem evolução há pelo menos seis meses), manchas de hipopigmentação (áreas onde a pele perdeu cor) e reconstrução de aréola." },
+      { q: "O que a Cicatriz de Lifting trata?", a: "Camuflagem de cicatrizes cirúrgicas (lifting, abdominoplastia, cesárea, mamoplastia), estrias brancas, manchas de hipopigmentação (áreas onde a pele perdeu cor) e reconstrução de aréola." },
       { q: "Como funciona?", a: "Implantamos pigmentos no tom exato da pele saudável sobre a área com cicatriz ou mancha. Em alguns casos combinamos indução de colágeno para melhorar a textura da pele." },
       { q: "Funciona em qualquer estria?", a: "O melhor resultado é em estrias brancas (maduras). Estrias recentes, ainda avermelhadas, precisam que o tecido se recupere antes." },
       { q: "Quanto dura?", a: "O resultado é duradouro, com desgaste natural ao longo dos anos. Recomendamos um retoque a cada 2 a 3 anos para manter cor e realismo." },
@@ -532,7 +532,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     faq: [
       { q: "Quanto tempo dura a cor?", a: "A confirmar com a Lu Make Up — durabilidade média da tintura conforme o tipo de pelo e os cuidados." },
       { q: "É diferente da micropigmentação?", a: "Sim. A tintura colore o fio existente e é temporária; a micropigmentação implanta pigmento na pele e dura muito mais. Na avaliação indicamos o que faz sentido para você." },
-      { q: "Serve para quem tem poucos fios?", a: "Ajuda a dar cor e definição aos fios existentes. Para preencher falhas, o indicado costuma ser a micropigmentação ou o Exobrow." },
+      { q: "Serve para quem tem poucos fios?", a: "Ajuda a dar cor e definição aos fios existentes. Para preencher falhas, o indicado costuma ser a micropigmentação ou o tratamento regenerativo com exossomos." },
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Um realce sutil no olhar",
@@ -564,10 +564,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "Devolver viço aos seus lábios",
   },
   "limpeza-de-pele-glow": {
-    title: "Limpeza de Pele Glow em São Paulo | Lu Make Up",
+    title: "Limpeza de Pele em São Paulo | Lu Make Up",
     description:
       "Limpeza de Pele Glow: protocolo completo de renovação que desobstrui, equilibra e ilumina a pele. Técnica da Lu Make Up, por avaliação.",
-    h1: "Limpeza de Pele Glow",
+    h1: "Limpeza de Pele",
     essence: "Mais do que limpar: revelar a sua pele.",
     diferenciaisHeading: "O que renova de verdade",
     diferenciais: [
@@ -589,10 +589,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ctaHeading: "A sua pele, revelada",
   },
   "depilacao-facial-com-linha": {
-    title: "Depilação Facial com Linha em São Paulo | Lu Make Up",
+    title: "Depilação Facial em São Paulo | Lu Make Up",
     description:
       "Depilação facial com linha: remoção precisa e delicada dos pelos do rosto, sem química, ideal para peles sensíveis. Técnica da Lu Make Up, por avaliação.",
-    h1: "Depilação Facial com Linha",
+    h1: "Depilação Facial",
     essence: "Contorno limpo, sem agredir a pele.",
     diferenciaisHeading: "O que limpa com delicadeza",
     diferenciais: [
@@ -668,31 +668,6 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       FAQ_AGENDAMENTO,
     ],
     ctaHeading: "Chega de disfarçar",
-  },
-  "camuflagem-de-vitiligo": {
-    title: "Camuflagem de Vitiligo em São Paulo | Lu Make Up",
-    description:
-      "Camuflagem de vitiligo estabilizado com micropigmentação: pigmentos personalizados para uniformizar a pele. Realizada mediante autorização do dermatologista. Por avaliação.",
-    h1: "Camuflagem de Vitiligo",
-    essence: "Reencontrar a pele uniforme.",
-    diferenciaisHeading: "O que uniformiza com segurança",
-    diferenciais: [
-      { title: "Pigmento personalizado", body: "Desenvolvido para reproduzir a tonalidade natural da região e uniformizar a pele." },
-      { title: "Só com liberação médica", body: "Realizada exclusivamente mediante autorização do dermatologista, para total segurança." },
-      { title: "Indicação criteriosa", body: "Indicada para vitiligo estabilizado ou áreas de hipopigmentação, avaliadas caso a caso." },
-    ],
-    arte: {
-      heading: "Uniformizar a pele,\ncom segurança",
-      body: "Para quem convive com o vitiligo estabilizado ou com áreas de hipopigmentação, a camuflagem promove a uniformização da pele por meio da implantação de pigmentos personalizados, desenvolvidos para reproduzir a tonalidade natural da região. É um procedimento realizado exclusivamente mediante autorização do médico dermatologista, garantindo segurança e a indicação adequada para cada caso.",
-    },
-    faq: [
-      { q: "Qualquer pessoa com vitiligo pode fazer?", a: "Não. É indicada para vitiligo estabilizado (sem evolução recente) ou áreas de hipopigmentação, e exige a autorização do seu dermatologista." },
-      { q: "Por que preciso da autorização do dermatologista?", a: "Porque o vitiligo deve estar estável e acompanhado. A liberação médica garante segurança e a indicação correta para o seu caso." },
-      { q: "O resultado fica natural?", a: "O pigmento é personalizado para reproduzir a tonalidade da sua pele, uniformizando a região. Avaliamos cada caso individualmente." },
-      { q: "Quanto dura?", a: "A confirmar com a Lu Make Up — durabilidade e recomendação de retoque para a camuflagem de vitiligo." },
-      FAQ_AGENDAMENTO,
-    ],
-    ctaHeading: "A sua pele não é para esconder",
   },
   "despigmentacao-a-laser": {
     title: "Despigmentação a Laser em São Paulo | Lu Make Up",

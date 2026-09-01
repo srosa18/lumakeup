@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const REPARADORES = [
   { slug: "reconstrucao-de-areola", label: "Reconstrução de Aréola", essence: "Voltar a se reconhecer no espelho." },
-  { slug: "paramedica", label: "Micropigmentação Paramédica", essence: "Camuflagem de cicatrizes, com discrição." },
+  { slug: "paramedica", label: "Cicatriz de Lifting", essence: "Camuflagem de cicatrizes, com discrição." },
   { slug: "reconstrucao-labial", label: "Reconstrução Labial", essence: "Devolver o contorno, com cuidado." },
   { slug: "alopecia", label: "Alopécia", essence: "Reconstruir a moldura do rosto." },
 ];

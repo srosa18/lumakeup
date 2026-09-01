@@ -90,11 +90,11 @@ export const SERVICES: Service[] = [
   // ——— Realce & Estética ———
   {
     slug: "exobrow",
-    label: "Exobrow",
+    label: "Exossomos: tratamento regenerativo",
     essence: "Volume e desenho em um gesto.",
     category: "estetica",
-    art: "IMG: detalhe de sobrancelha com técnica Exobrow, fundo escuro · substituir",
-    alt: "Detalhe de sobrancelha com técnica Exobrow",
+    art: "IMG: detalhe de sobrancelha, tratamento regenerativo com exossomos, fundo escuro · substituir",
+    alt: "Detalhe de sobrancelha após tratamento regenerativo com exossomos",
   },
   {
     slug: "brow-lamination",
@@ -130,7 +130,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "limpeza-de-pele-glow",
-    label: "Limpeza de Pele Glow",
+    label: "Limpeza de Pele",
     essence: "Mais do que limpar: revelar a sua pele.",
     category: "estetica",
     art: "IMG: retrato de pele iluminada e uniforme, aspecto glow, luz editorial · foto real a entrar",
@@ -138,7 +138,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "depilacao-facial-com-linha",
-    label: "Depilação Facial com Linha",
+    label: "Depilação Facial",
     essence: "Contorno limpo, sem agredir a pele.",
     category: "estetica",
     art: "IMG: detalhe do contorno do rosto limpo e uniforme, luz suave · foto real a entrar",
@@ -148,11 +148,11 @@ export const SERVICES: Service[] = [
   // ——— Reparador & Paramédico ———
   {
     slug: "paramedica",
-    label: "Micropigmentação Paramédica",
+    label: "Cicatriz de Lifting",
     essence: "A técnica a serviço da reconstrução.",
     category: "reparador",
     art: "IMG: mãos da profissional com materiais/pigmento, tom digno e cuidadoso, sem teor clínico-gráfico · substituir",
-    alt: "Materiais e pigmentos da micropigmentação paramédica",
+    alt: "Camuflagem de cicatriz de lifting com micropigmentação",
   },
   {
     slug: "reconstrucao-labial",
@@ -185,14 +185,6 @@ export const SERVICES: Service[] = [
     category: "reparador",
     art: "IMG: detalhe de pele uniforme, tom editorial e sereno · substituir",
     alt: "Camuflagem de manchas e alterações de pigmentação",
-  },
-  {
-    slug: "camuflagem-de-vitiligo",
-    label: "Camuflagem de Vitiligo",
-    essence: "Reencontrar a pele uniforme.",
-    category: "reparador",
-    art: "IMG: retrato ou detalhe de pele em tom digno e acolhedor, sem teor clínico-gráfico · substituir",
-    alt: "Camuflagem de vitiligo estabilizado com micropigmentação",
   },
   {
     slug: "despigmentacao-a-laser",

@@ -41,9 +41,6 @@ export function Footer() {
             <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-muted">
               {SITE.boilerplate}
             </p>
-            <p className="mt-6 text-sm tracking-[0.14em] text-muted">
-              São Paulo · Miami
-            </p>
           </div>
 
           {/* Colunas de navegação */}

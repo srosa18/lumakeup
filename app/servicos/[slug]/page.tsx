@@ -173,18 +173,7 @@ export default async function ServicoPage({
         </div>
       </section>
 
-      {/* 3 · FAIXA DE IMAGEM grande (opcional · omitida quando não há `band`) */}
-      {img.band ? (
-        <section className={`relative overflow-hidden bg-ink ${img.bandTall ? "h-[56vh] min-h-[400px] lg:h-[66vh]" : "h-[40vh] min-h-[300px] lg:h-[48vh]"}`} data-comment-id="servico.imagem" data-comment-label="Serviço · Imagem">
-          <MediaFill
-            src={img.band}
-            alt={`Detalhe do procedimento de ${content.h1}`}
-            art={`Faixa full-bleed de ${content.h1}: macro do procedimento, luz editorial · foto real a entrar`}
-            position={img.bandPos ?? "center 40%"}
-            size="2560 × 1300 px"
-          />
-        </section>
-      ) : null}
+      {/* (faixa de imagem removida a pedido do cliente · não há foto nesse tamanho) */}
 
       {/* 4 · A EXPERIÊNCIA (ritual) */}
       <section aria-labelledby="ritual-heading" className="bg-ink py-24 lg:py-32" data-comment-id="servico.ritual" data-comment-label="Serviço · Ritual">
@@ -253,10 +242,10 @@ export default async function ServicoPage({
                 src={img.results?.[i]}
                 alt={`${content.h1} · resultado e procedimento Lu Make Up (${i + 1})`}
                 art={`Galeria de ${content.h1} · exemplo ${i + 1} (foto real a entrar)`}
-                ratio="4 / 5"
+                ratio="1 / 1"
                 tone="ink"
                 sizes="(min-width:1024px) 400px, (min-width:640px) 45vw, 100vw"
-                size="1000 × 1250 px"
+                size="1000 × 1000 px"
               />
             ))}
           </div>

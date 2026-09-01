@@ -73,7 +73,7 @@ export function Celebridades() {
                   onClick={() => activate(c.slug)}
                   aria-pressed={isOn}
                   aria-label={`${c.name} · ver foto em cor`}
-                  className="block w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brass"
+                  className="group block w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brass"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden bg-stone/10">
                     <Image
@@ -86,7 +86,10 @@ export function Celebridades() {
                         isOn ? "grayscale-0 scale-[1.05]" : "grayscale scale-100",
                       ].join(" ")}
                     />
-                    <SizeTag size="900 × 1200 px" />
+                    <SizeTag
+                      size="900 × 1200 px"
+                      imgClassName="grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.05]"
+                    />
                   </div>
                   <p className="mt-3 font-display text-sm font-light text-text-on-ink">{c.name}</p>
                 </button>

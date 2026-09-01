@@ -35,7 +35,7 @@ const PRODUCTS: Product[] = [
   { slug: "sobrancelhas", label: "Sobrancelha", image: "/images/carrossel/sobrancelha.webp", alt: "Detalhe de sobrancelha com micropigmentação fio a fio", rotation: -1.22 },
   { slug: "olhos", label: "Olhos", image: "/images/carrossel/olhos.webp", alt: "Detalhe do olhar · micropigmentação de olhos e delineado", rotation: 0.26 },
   { slug: "capilar", label: "Capilar", image: "/images/carrossel/capilar.webp", alt: "Retrato com micropigmentação capilar", rotation: 1.73 },
-  { slug: "exobrow", label: "Tratamento Regenerativo", subtitle: "Exobrow", image: "/images/carrossel/exobrow.webp", alt: "Detalhe do olhar com técnica Exobrow", rotation: 3.21 },
+  { slug: "exobrow", label: "Exossomos: tratamento regenerativo", image: "/images/carrossel/exobrow.webp", alt: "Detalhe do olhar após tratamento regenerativo com exossomos", rotation: 3.21 },
 ];
 
 const ARC_AMP = 0.5; // profundidade do arco (fração da largura do card)
@@ -162,7 +162,7 @@ export function ServicesCarousel() {
       const cw = cardRefs.current[0]?.offsetWidth ?? 300;
       const max = el.scrollWidth - vw;
       // Sangria simétrica à direita: o scroll para 0.25 do card antes do fim,
-      // então o Exobrow fica sempre cortado pela borda direita (igual à 1ª na esquerda).
+      // então o último card fica sempre cortado pela borda direita (igual à 1ª na esquerda).
       const effMax = Math.max(0, max - cw * 0.35);
       // Scroll dirigido pela posição do mouse (finito, clampado a effMax)
       if (!s.dragging) {

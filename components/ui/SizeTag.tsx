@@ -11,7 +11,7 @@ import { getSlotImage, uploadSlotImage, clearSlotImage } from "@/lib/qa-uploads"
  * Vive DENTRO de um pai `relative`; a imagem enviada cobre esse pai.
  * Some do site inteiro com SHOW_IMAGE_SIZE_TAGS = false (nada vaza pra produção).
  */
-export function SizeTag({ size, className }: { size?: string; className?: string }) {
+export function SizeTag({ size, className, imgClassName }: { size?: string; className?: string; imgClassName?: string }) {
   const tagRef = useRef<HTMLSpanElement>(null);
   const [slot, setSlot] = useState<string | null>(null);
   const [img, setImg] = useState<string | null>(null);
@@ -64,7 +64,7 @@ export function SizeTag({ size, className }: { size?: string; className?: string
         <img
           src={img}
           alt=""
-          className="pointer-events-none absolute inset-0 z-10 h-full w-full object-cover"
+          className={`pointer-events-none absolute inset-0 z-0 h-full w-full object-cover ${imgClassName ?? ""}`}
         />
       ) : null}
       <span

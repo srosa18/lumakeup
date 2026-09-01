@@ -15,7 +15,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 export const metadata: Metadata = {
   title: "Serviços · Micropigmentação, Estética e Reparação",
   description:
-    "Micropigmentação, realce e estética e trabalho reparador da Lu Make Up: sobrancelhas, lábios, olhos, capilar, alopécia, brow lamination, lash lifting, camuflagem paramédica e mais. Por avaliação.",
+    "Micropigmentação, realce e estética e trabalho reparador da Lu Make Up: sobrancelhas, lábios, olhos, capilar, alopécia, brow lamination, lash lifting, cicatriz de lifting e mais. Por avaliação.",
   alternates: { canonical: "/servicos" },
 };
 
