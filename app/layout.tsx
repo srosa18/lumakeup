@@ -73,8 +73,8 @@ export default function RootLayout({
         <Script
           src="https://srosa18.github.io/qa-widget/qa.js"
           strategy="afterInteractive"
-          data-supabase-url="https://itwaxivhuxtnatjuoebe.supabase.co"
-          data-supabase-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0d2F4aXZodXh0bmF0anVvZWJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkzNzI5NzMsImV4cCI6MjA5NDk0ODk3M30.mbjL6lV5Y05TaBBo3_BuGhK6AdIa6Bm6WDRcc2BC9-Q"
+          data-supabase-url="https://kddvtnuhdlsxohhpvqjv.supabase.co"
+          data-supabase-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkZHZ0bnVoZGxzeG9oaHB2cWp2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0MTA5OTQsImV4cCI6MjA5Nzk4Njk5NH0.mF-F6akejAvjwsGS9QPclzgoowFLpt_IQ99kZe0J2kY"
           data-project="lumakeup"
           data-multi="1"
           data-hide-on=""
